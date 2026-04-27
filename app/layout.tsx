@@ -22,9 +22,6 @@ export const metadata: Metadata = {
     'writer',
     'storytelling',
     'blog',
-    'Indian author',
-    'self help books',
-    'relationship books',
   ],
 
   authors: [{ name: 'Vihaan Writes' }],
@@ -41,30 +38,14 @@ export const metadata: Metadata = {
     type: 'website',
   },
 
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Vihaan Writes',
-    description:
-      'Official website of Vihaan Writes. Explore books and soulful writing.',
-  },
-
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
 
   verification: {
-    google: 'F9oI4gvV-C2oI4Wg_6DI74z9Fh9Paw1GLEvGw6QjGQc',
+    google: 'weGpqdMpx3QRhD0siqAtXZHzFfEqiYZs4-XTp08WmqA',
   },
-
-  category: 'books',
 }
 
 type RootLayoutProps = {
