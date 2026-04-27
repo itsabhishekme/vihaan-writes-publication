@@ -2,241 +2,218 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import {
   HiOutlineBookOpen,
-  HiOutlineHeart,
-  HiOutlineSparkles,
-  HiOutlineStar,
   HiOutlineArrowRight,
+  HiOutlineSparkles,
+  HiOutlineHeart,
+  HiOutlineStar,
+  HiOutlineGlobeAlt,
   HiOutlineCheckCircle,
 } from 'react-icons/hi2'
 
 export const metadata: Metadata = {
-  title: 'Book | My Spouse Before I Met Her',
+  title: 'Books | Vihaan Writes',
   description:
-    'Explore the featured book by Vihaan Writes: My Spouse Before I Met Her — karmic clues, dreams, and the echoes of her soul.',
+    'Explore books by Vihaan Writes including My Spouse Before I Met Her and She Came, She Healed, She Left. Emotional, spiritual and transformational storytelling.',
   keywords: [
-    'Vihaan Writes Book',
+    'Vihaan Writes Books',
     'My Spouse Before I Met Her',
-    'Indian Author Book',
-    'Love Book',
-    'Spiritual Book',
-    'Relationship Book',
+    'She Came She Healed She Left',
+    'Indian Author Books',
+    'Emotional Growth Books',
+    'Soulmate Books',
+    'Transformation Books',
   ],
+  openGraph: {
+    title: 'Books by Vihaan Writes',
+    description:
+      'Two powerful books on destiny, love, heartbreak, healing and transformation.',
+    type: 'website',
+  },
 }
 
-const highlights = [
-  'Emotional storytelling with depth',
-  'Karmic and spiritual themes',
-  'Modern relationship reflections',
-  'Meaningful gift for readers',
-  'Timeless writing style',
-]
-
-const features = [
+const books = [
   {
-    title: 'Soulful Narrative',
-    text: 'A journey written from the heart before destiny arrived.',
-    icon: HiOutlineHeart,
+    id: 'spouse',
+    badge: 'Soulmate Journey',
+    title: 'My Spouse Before I Met Her',
+    subtitle:
+      'Karmic clues, dreams, and the echoes of her soul.',
+    desc:
+      'A reflective spiritual journey exploring divine timing, soulmates, inner awakening and love remembered before arrival.',
+    link: 'https://www.amazon.in/dp/B0FLDCNYTR',
+    quote:
+      'I haven’t seen her face, but my soul has known her shadow.',
+    points: [
+      'Divine timing and soul connections',
+      'Dreams, signs and inner guidance',
+      'Healing loneliness through faith',
+      'Poetic reflections and emotional depth',
+    ],
   },
   {
-    title: 'Premium Experience',
-    text: 'Crafted for readers who love meaningful modern books.',
-    icon: HiOutlineSparkles,
-  },
-  {
-    title: 'Reader Favorite',
-    text: 'Loved by readers who seek emotional connection in words.',
-    icon: HiOutlineStar,
+    id: 'destiny',
+    badge: 'The Destiny Trilogy • Book 1',
+    title: 'She Came, She Healed, She Left',
+    subtitle:
+      'The Three Women Destiny Sent to Break and Build Me',
+    desc:
+      'A deeply emotional journey about awakening, healing, heartbreak and how certain people enter our lives to transform us forever.',
+    link: 'https://www.amazon.in/dp/B0GSMYRY67',
+    quote:
+      'Not every love story is meant to last forever. Some love stories are meant to change you forever.',
+    points: [
+      'Emotional awakening and growth',
+      'Love, loss and self-discovery',
+      'Thought-provoking memoir style',
+      'Wisdom hidden inside heartbreak',
+    ],
   },
 ]
 
 export default function BookPage() {
   return (
     <main className="relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_25%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.04),transparent_30%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.06),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.04),transparent_28%)]" />
 
       {/* Hero */}
-      <section className="container-main py-24 md:py-32 grid md:grid-cols-2 gap-10 items-center">
-        {/* Left */}
-        <div>
-          <p className="uppercase tracking-[0.35em] text-sm text-neutral-500">
-            Featured Book
-          </p>
+      <section className="container-main py-24 md:py-32 text-center">
+        <p className="uppercase tracking-[0.35em] text-sm text-neutral-500">
+          Official Book Collection
+        </p>
 
-          <h1 className="mt-5 text-5xl md:text-7xl font-black leading-tight">
-            My Spouse <br />
-            <span className="text-neutral-400">Before I Met Her</span>
-          </h1>
+        <h1 className="mt-5 text-5xl md:text-7xl font-black leading-tight">
+          Books by <span className="text-neutral-400">Vihaan Writes</span>
+        </h1>
 
-          <p className="mt-8 text-lg md:text-xl text-neutral-300 leading-relaxed">
-            Karmic clues, dreams, and the echoes of her soul — a heartfelt book
-            exploring love, destiny, and emotional truth before two souls meet.
-          </p>
+        <p className="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-neutral-300 leading-relaxed">
+          Stories of destiny, love, healing, heartbreak and transformation.
+          Written for readers who seek depth, truth and emotional connection.
+        </p>
+      </section>
 
-          <div className="mt-8 flex items-center gap-2 text-yellow-400">
-            <HiOutlineStar />
-            <HiOutlineStar />
-            <HiOutlineStar />
-            <HiOutlineStar />
-            <HiOutlineStar />
-            <span className="text-neutral-400 ml-2 text-sm">
-              Reader Favorite
-            </span>
-          </div>
+      {/* Books */}
+      <section className="container-main pb-16 space-y-12">
+        {books.map((book, index) => (
+          <div
+            key={book.id}
+            className="grid md:grid-cols-2 gap-8 items-center rounded-[2rem] border border-white/10 bg-neutral-900/80 p-8 md:p-10"
+          >
+            {/* Cover */}
+            <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
+              <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-neutral-950 to-neutral-800 p-8">
+                <div className="aspect-[3/4] rounded-[1.5rem] bg-black border border-white/10 flex flex-col items-center justify-center text-center p-8">
+                  <HiOutlineBookOpen className="text-6xl text-neutral-400" />
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <Link
-              href="#buy"
-              className="px-7 py-4 rounded-2xl bg-white text-black font-semibold hover:scale-105 transition"
-            >
-              Buy Now
-            </Link>
+                  <p className="mt-6 text-xs uppercase tracking-[0.35em] text-neutral-500">
+                    {book.badge}
+                  </p>
 
-            <Link
-              href="#preview"
-              className="px-7 py-4 rounded-2xl border border-white/15 hover:bg-white/5 transition"
-            >
-              Read Preview
-            </Link>
-          </div>
-        </div>
+                  <h2 className="mt-4 text-2xl md:text-4xl font-black leading-tight">
+                    {book.title}
+                  </h2>
 
-        {/* Right Book Card */}
-        <div className="relative">
-          <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-800 p-10 shadow-2xl">
-            <div className="aspect-[3/4] rounded-[1.5rem] border border-white/10 bg-black flex items-center justify-center p-8">
-              <div className="text-center">
-                <HiOutlineBookOpen className="mx-auto text-6xl text-neutral-400" />
-                <h3 className="mt-6 text-2xl font-bold leading-tight">
-                  My Spouse Before I Met Her
-                </h3>
-                <p className="mt-4 text-neutral-500 text-sm">
-                  by Vihaan Writes
-                </p>
+                  <p className="mt-4 text-neutral-500 text-sm">
+                    by Vihaan Writes
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Highlights */}
-      <section className="container-main py-8 md:py-16">
-        <div className="rounded-[2rem] border border-white/10 bg-neutral-900 p-8 md:p-10">
-          <h2 className="text-3xl md:text-5xl font-black">
-            Why Readers Love This Book
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-5 mt-8">
-            {highlights.map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3 text-neutral-300"
-              >
-                <HiOutlineCheckCircle className="text-white text-xl" />
-                {item}
+            {/* Content */}
+            <div className={`${index % 2 === 1 ? 'md:order-1' : ''}`}>
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-neutral-300">
+                <HiOutlineSparkles />
+                {book.badge}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Features */}
-      <section className="container-main py-20">
-        <div className="text-center max-w-3xl mx-auto">
-          <p className="uppercase tracking-[0.35em] text-sm text-neutral-500">
-            Inside The Book
-          </p>
+              <h2 className="mt-6 text-4xl md:text-6xl font-black leading-tight">
+                {book.title}
+              </h2>
 
-          <h2 className="mt-4 text-4xl md:text-6xl font-black">
-            More Than Words
-          </h2>
+              <p className="mt-4 text-neutral-400 text-xl">
+                {book.subtitle}
+              </p>
 
-          <p className="mt-6 text-neutral-400 text-lg">
-            A reading experience filled with feeling, insight, and connection.
-          </p>
-        </div>
+              <p className="mt-6 text-neutral-300 leading-relaxed text-lg">
+                {book.desc}
+              </p>
 
-        <div className="grid md:grid-cols-3 gap-7 mt-14">
-          {features.map((item) => {
-            const Icon = item.icon
-
-            return (
-              <div
-                key={item.title}
-                className="rounded-[2rem] border border-white/10 bg-neutral-900 p-8 hover:-translate-y-1 transition"
-              >
-                <div className="h-14 w-14 rounded-2xl bg-white text-black flex items-center justify-center text-2xl">
-                  <Icon />
-                </div>
-
-                <h3 className="mt-6 text-2xl font-bold">{item.title}</h3>
-
-                <p className="mt-4 text-neutral-400 leading-relaxed">
-                  {item.text}
-                </p>
+              <div className="mt-8 space-y-3">
+                {book.points.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-3 text-neutral-300"
+                  >
+                    <HiOutlineCheckCircle className="text-white" />
+                    {item}
+                  </div>
+                ))}
               </div>
-            )
-          })}
-        </div>
+
+              <div className="mt-8 flex items-center gap-1 text-yellow-400">
+                <HiOutlineStar />
+                <HiOutlineStar />
+                <HiOutlineStar />
+                <HiOutlineStar />
+                <HiOutlineStar />
+                <span className="ml-2 text-sm text-neutral-500">
+                  Reader Favorite
+                </span>
+              </div>
+
+              <blockquote className="mt-8 border-l-2 border-white/20 pl-5 text-neutral-400 italic leading-relaxed">
+                “{book.quote}”
+              </blockquote>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <a
+                  href={book.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-7 py-4 rounded-2xl bg-white text-black font-semibold hover:scale-105 transition text-center"
+                >
+                  Buy on Amazon
+                </a>
+
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl border border-white/15 hover:bg-white/5 transition"
+                >
+                  Contact Author
+                  <HiOutlineArrowRight />
+                </Link>
+              </div>
+
+              <p className="mt-5 text-sm text-neutral-500 inline-flex items-center gap-2">
+                <HiOutlineGlobeAlt />
+                Available on Amazon India
+              </p>
+            </div>
+          </div>
+        ))}
       </section>
 
-      {/* Preview */}
-      <section
-        id="preview"
-        className="container-main py-8 md:py-16"
-      >
-        <div className="rounded-[2rem] border border-white/10 bg-neutral-900 p-10">
-          <p className="uppercase tracking-[0.35em] text-sm text-neutral-500">
-            Preview
-          </p>
-
-          <h2 className="mt-4 text-3xl md:text-5xl font-black">
-            Opening Reflection
-          </h2>
-
-          <p className="mt-6 text-neutral-300 leading-relaxed text-lg">
-            “Some souls are written into our story long before they enter our
-            life. We feel them in dreams, silence, and signs we do not yet
-            understand.”
-          </p>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section
-        id="buy"
-        className="container-main pb-24"
-      >
+      {/* Final CTA */}
+      <section className="container-main pb-24">
         <div className="rounded-[2rem] bg-white text-black p-10 md:p-14 text-center">
-          <p className="uppercase tracking-[0.35em] text-sm text-neutral-600">
-            Own The Book
-          </p>
+          <HiOutlineHeart className="mx-auto text-4xl" />
 
-          <h2 className="mt-4 text-4xl md:text-6xl font-black leading-tight">
-            Begin The Journey
+          <h2 className="mt-5 text-4xl md:text-6xl font-black leading-tight">
+            Read What Changes You
           </h2>
 
-          <p className="mt-6 text-neutral-700 max-w-2xl mx-auto">
-            Add this heartfelt title to your reading collection and experience a
-            story written before destiny arrived.
+          <p className="mt-6 max-w-3xl mx-auto text-neutral-700 text-lg">
+            Some books entertain. Some books awaken. Explore the emotional and
+            spiritual writing journey of Vihaan Writes.
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="#"
-              className="px-7 py-4 rounded-2xl bg-black text-white font-semibold hover:scale-105 transition"
-            >
-              Buy on Amazon
-            </Link>
-
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl border border-black/10 font-semibold"
-            >
-              Bulk / Media Enquiry
-              <HiOutlineArrowRight />
-            </Link>
-          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 mt-8 px-7 py-4 rounded-2xl bg-black text-white font-semibold hover:scale-105 transition"
+          >
+            Connect Now
+            <HiOutlineArrowRight />
+          </Link>
         </div>
       </section>
     </main>
