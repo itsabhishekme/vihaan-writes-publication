@@ -6,48 +6,68 @@ import {
   HiOutlineUser,
   HiOutlinePaperAirplane,
   HiOutlineArrowRight,
+  HiOutlineGlobeAlt,
+  HiOutlineSparkles,
+  HiOutlineClock,
+  HiOutlineBookOpen,
 } from 'react-icons/hi2'
 
 export const metadata: Metadata = {
   title: 'Contact | Vihaan Writes',
   description:
-    'Contact Vihaan Writes for collaborations, reader messages, interviews, speaking requests, or book related enquiries.',
+    'Contact Vihaan Writes for collaborations, interviews, media requests, speaking opportunities, and book enquiries.',
   keywords: [
     'Contact Vihaan Writes',
     'Author Contact',
+    'Writer Collaboration',
+    'Interview Request',
     'Book Enquiry',
-    'Collaboration',
-    'Writer Contact',
   ],
+  openGraph: {
+    title: 'Contact | Vihaan Writes',
+    description:
+      'Get in touch with Vihaan Writes for opportunities and enquiries.',
+    type: 'website',
+  },
 }
+
+const reasons = [
+  'Book partnerships & publishing discussions',
+  'Media interviews & podcast invitations',
+  'Speaking opportunities & events',
+  'Brand collaborations',
+  'Reader appreciation & personal messages',
+  'Creative business enquiries',
+]
 
 export default function ContactPage() {
   return (
     <main className="relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_25%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.04),transparent_30%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.06),transparent_24%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.04),transparent_30%)]" />
 
       {/* Hero */}
-      <section className="container-main py-24 md:py-32">
-        <div className="max-w-4xl">
-          <p className="uppercase tracking-[0.35em] text-sm text-neutral-500">
-            Get In Touch
-          </p>
+      <section className="container-main py-24 md:py-32 text-center">
+        <div className="max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-neutral-300">
+            <HiOutlineSparkles />
+            Let&apos;s Connect
+          </div>
 
-          <h1 className="mt-5 text-5xl md:text-7xl font-black leading-tight">
+          <h1 className="mt-6 text-5xl md:text-7xl font-black leading-tight">
             Contact <span className="text-neutral-400">Vihaan Writes</span>
           </h1>
 
-          <p className="mt-8 text-lg md:text-xl text-neutral-300 leading-relaxed max-w-3xl">
-            For collaborations, interviews, speaking opportunities, reader
-            messages, media requests, or book enquiries.
+          <p className="mt-8 text-lg md:text-xl text-neutral-300 leading-relaxed">
+            Reach out for collaborations, interviews, events, reader messages,
+            and meaningful opportunities.
           </p>
         </div>
       </section>
 
-      {/* Main Grid */}
-      <section className="container-main pb-24 grid md:grid-cols-2 gap-8 items-start">
-        {/* Left Info */}
+      {/* Main */}
+      <section className="container-main pb-20 grid md:grid-cols-2 gap-8 items-start">
+        {/* Left Side */}
         <div className="space-y-6">
           <div className="rounded-[2rem] border border-white/10 bg-neutral-900 p-8">
             <div className="h-14 w-14 rounded-2xl bg-white text-black flex items-center justify-center text-2xl">
@@ -55,11 +75,11 @@ export default function ContactPage() {
             </div>
 
             <h2 className="mt-6 text-3xl font-black">
-              Email
+              Direct Email
             </h2>
 
             <p className="mt-4 text-neutral-400 leading-relaxed">
-              Reach out directly for business or personal communication.
+              Best for business enquiries and professional communication.
             </p>
 
             <a
@@ -72,7 +92,7 @@ export default function ContactPage() {
 
           <div className="rounded-[2rem] border border-white/10 bg-neutral-900 p-8">
             <div className="h-14 w-14 rounded-2xl bg-white text-black flex items-center justify-center text-2xl">
-              <HiOutlineChatBubbleLeftRight />
+              <HiOutlineClock />
             </div>
 
             <h2 className="mt-6 text-3xl font-black">
@@ -80,34 +100,45 @@ export default function ContactPage() {
             </h2>
 
             <p className="mt-4 text-neutral-400 leading-relaxed">
-              Most messages receive a response within 1–3 business days.
+              Most responses are sent within 1 to 3 business days.
             </p>
           </div>
 
           <div className="rounded-[2rem] border border-white/10 bg-neutral-900 p-8">
-            <h2 className="text-2xl font-bold">
-              Best Topics To Reach Out For
-            </h2>
+            <div className="flex items-center gap-3">
+              <HiOutlineChatBubbleLeftRight className="text-3xl text-neutral-300" />
 
-            <ul className="mt-5 space-y-3 text-neutral-400">
-              <li>• Book partnerships</li>
-              <li>• Media interviews</li>
-              <li>• Reader appreciation</li>
-              <li>• Event speaking invites</li>
-              <li>• Brand collaborations</li>
-            </ul>
+              <h2 className="text-3xl font-black">
+                Reach Out For
+              </h2>
+            </div>
+
+            <div className="mt-6 space-y-3">
+              {reasons.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-xl bg-black/30 px-4 py-3 text-neutral-300"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Right Form */}
-        <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-800 p-8 md:p-10">
+        {/* Right Side */}
+        <div className="rounded-[2rem] border border-white/10 bg-neutral-900 p-8 md:p-10">
           <p className="uppercase tracking-[0.35em] text-sm text-neutral-500">
             Send Message
           </p>
 
-          <h2 className="mt-4 text-4xl font-black">
+          <h2 className="mt-4 text-4xl md:text-5xl font-black">
             Start A Conversation
           </h2>
+
+          <p className="mt-4 text-neutral-400">
+            Every great opportunity begins with a message.
+          </p>
 
           <form className="mt-8 space-y-5">
             <div>
@@ -121,7 +152,7 @@ export default function ContactPage() {
                 <input
                   type="text"
                   placeholder="Your full name"
-                  className="w-full rounded-2xl border border-white/10 bg-black/40 pl-12 pr-4 py-4 outline-none focus:border-white/30"
+                  className="w-full rounded-2xl border border-white/10 bg-black/40 pl-12 pr-4 py-4 outline-none"
                 />
               </div>
             </div>
@@ -137,9 +168,21 @@ export default function ContactPage() {
                 <input
                   type="email"
                   placeholder="you@example.com"
-                  className="w-full rounded-2xl border border-white/10 bg-black/40 pl-12 pr-4 py-4 outline-none focus:border-white/30"
+                  className="w-full rounded-2xl border border-white/10 bg-black/40 pl-12 pr-4 py-4 outline-none"
                 />
               </div>
+            </div>
+
+            <div>
+              <label className="text-sm text-neutral-400">
+                Subject
+              </label>
+
+              <input
+                type="text"
+                placeholder="Partnership / Interview / Reader Message"
+                className="mt-2 w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-4 outline-none"
+              />
             </div>
 
             <div>
@@ -150,7 +193,7 @@ export default function ContactPage() {
               <textarea
                 rows={6}
                 placeholder="Write your message..."
-                className="mt-2 w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-4 outline-none focus:border-white/30 resize-none"
+                className="mt-2 w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-4 outline-none resize-none"
               />
             </div>
 
@@ -168,7 +211,9 @@ export default function ContactPage() {
       {/* CTA */}
       <section className="container-main pb-24">
         <div className="rounded-[2rem] bg-white text-black p-10 md:p-14 text-center">
-          <p className="uppercase tracking-[0.35em] text-sm text-neutral-600">
+          <HiOutlineBookOpen className="mx-auto text-4xl" />
+
+          <p className="uppercase tracking-[0.35em] text-sm text-neutral-600 mt-4">
             Explore More
           </p>
 
@@ -177,16 +222,27 @@ export default function ContactPage() {
           </h2>
 
           <p className="mt-6 text-neutral-700 max-w-2xl mx-auto">
-            Read books, reflections, and stories from Vihaan Writes.
+            Read books, reflections, and transformational stories from Vihaan
+            Writes.
           </p>
 
-          <Link
-            href="/book"
-            className="inline-flex items-center gap-2 mt-8 px-7 py-4 rounded-2xl bg-black text-white font-semibold hover:scale-105 transition"
-          >
-            View Book
-            <HiOutlineArrowRight />
-          </Link>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/book"
+              className="inline-flex items-center gap-2 px-7 py-4 rounded-2xl bg-black text-white font-semibold hover:scale-105 transition"
+            >
+              View Books
+              <HiOutlineArrowRight />
+            </Link>
+
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 px-7 py-4 rounded-2xl border border-black/10 font-semibold"
+            >
+              About Author
+              <HiOutlineGlobeAlt />
+            </Link>
+          </div>
         </div>
       </section>
     </main>
