@@ -115,7 +115,7 @@ export default function Hero() {
 
             <div className="mt-8 flex items-center justify-between">
               <span className="text-neutral-400 text-sm">
-                By Vihaan Writes
+                By Vihaan
               </span>
 
               <Link
