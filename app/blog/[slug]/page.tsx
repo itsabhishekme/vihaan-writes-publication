@@ -142,7 +142,6 @@ export default async function BlogDetails({
       {/* ================= CONTENT ================= */}
       <article className="max-w-3xl mx-auto px-6 py-16">
 
-        {/* 💡 PROSE (SEO + READABILITY) */}
         <div
           className="prose prose-invert prose-lg max-w-none
           prose-headings:text-white
@@ -153,28 +152,6 @@ export default async function BlogDetails({
         "
         >
           {post.content}
-        </div>
-
-        {/* 🔥 SEO BOOST SECTIONS */}
-        <div className="mt-20 space-y-12">
-
-          <section>
-            <h2 className="text-2xl font-bold">Deep Insight</h2>
-            <p className="text-neutral-400 mt-4">
-              This section strengthens SEO by adding semantic depth,
-              improving topical authority, and increasing dwell time.
-              Long-form content signals quality to search engines.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-bold">Why Audio Matters</h2>
-            <p className="text-neutral-400 mt-4">
-              Audio transforms reading into an experience. Users stay longer,
-              engage deeper, and revisit content — boosting ranking signals.
-            </p>
-          </section>
-
         </div>
 
         {/* AUTHOR */}

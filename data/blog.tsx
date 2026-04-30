@@ -14,8 +14,6 @@ export type BlogPost = {
   tags?: string[];
   author?: string;
   featured?: boolean;
-
-  // 🔊 NEW FIELD
   audio?: string;
 };
 
@@ -29,108 +27,115 @@ export const blogPosts: BlogPost[] = [
       "Meaningful books stay because they connect with emotion, not just plot.",
     image: "/blog1.jpg",
     date: "2026-04-10",
-    time: "9 min read",
+    time: "12 min read",
     category: "Books",
-    tags: ["Reading", "Psychology", "Memory", "Deep Reading"],
+    tags: ["Deep Reading", "Psychology", "Memory", "Astrology"],
     author: "Vihaan",
     featured: true,
-
-    // 🔊 ADD YOUR AUDIO FILE HERE
     audio: "/audio/deep-readers.mp3",
 
     content: (
       <>
         <p className="text-xl text-neutral-200 leading-relaxed">
-          Some books don’t just stay in memory — they become part of identity.
+          Some books don’t stay in your memory — they become part of your soul.
         </p>
 
         <p>
-          In today’s fast-moving digital world, readers are exposed to thousands
-          of stories every year. Yet, only a few stay. These are not random —
-          they are deeply emotional experiences disguised as books.
+          You were never meant to read casually. With your Aries (Mesh) Moon,
+          emotions don’t pass through you — they imprint. That’s why certain
+          books don’t feel like stories… they feel like memories you never lived,
+          yet somehow recognize.
         </p>
 
         <h2 className="text-2xl font-bold text-white mt-10">
-          Reading Beyond Words
+          Emotional Imprinting Through Reading
         </h2>
 
         <p>
-          Deep readers engage with text on a psychological level. They don’t
-          just consume content; they internalize it. Every sentence becomes a
-          reflection of their inner world.
+          Most people read for information. You read for emotional truth.
+          Every sentence you connect with activates something deeper —
+          something karmic.
         </p>
 
         <p>
-          When a book mirrors your thoughts, it stops being fiction. It becomes
-          recognition. It feels like someone has translated your unspoken
-          emotions into words.
-        </p>
-
-        <p>
-          This is why deep reading is not passive. It is immersive, reflective,
-          and transformative.
+          Aries Moon individuals absorb emotional intensity instantly.
+          When a line resonates, it doesn’t stay on the page — it becomes part
+          of your identity.
         </p>
 
         <blockquote className="border-l-4 border-white/20 pl-6 italic text-neutral-400 text-lg">
-          “The books you remember are the ones that understood you before you
-          understood yourself.”
+          “You don’t remember books — you remember who you became while reading them.”
         </blockquote>
 
         <h2 className="text-2xl font-bold text-white mt-10">
-          Emotional Memory vs Logical Memory
+          Why You Forget Plots But Remember Feelings
         </h2>
 
         <p>
-          Human memory prioritizes emotion over logic. This is why you may forget
-          entire plots but remember how a book made you feel.
+          Logical memory fades. Emotional memory stays.
         </p>
 
         <p>
-          Emotional resonance creates long-term memory. When a story connects to
-          your real-life experiences, it becomes unforgettable.
+          You may forget characters, timelines, and endings —
+          but you never forget how a sentence made you pause.
         </p>
 
         <p>
-          This explains why certain novels stay with you for years — they are not
-          just stories, they are emotional landmarks.
+          This is because your emotional brain is stronger than your analytical
+          one. You store feelings, not facts.
         </p>
 
         <h2 className="text-2xl font-bold text-white mt-10">
-          Identity and Literature
+          Karmic Books and Destiny Alignment
         </h2>
 
         <p>
-          Over time, powerful books shape your thinking patterns. They influence
-          your beliefs, your decisions, and even your personality.
+          Some books are not random. They arrive when you need them.
         </p>
 
         <p>
-          A deep reader carries fragments of every meaningful book within them.
-          These fragments become part of their identity.
+          Your kundali suggests strong karmic alignment with words and
+          storytelling. This means certain books act like guides —
+          appearing at the exact moment your soul needs direction.
         </p>
 
         <p>
-          This is why literature is more than entertainment — it is a silent
-          mentor.
+          That’s why some books feel like they were written for you.
         </p>
 
         <h2 className="text-2xl font-bold text-white mt-10">
-          Why Some Stories Stay Forever
+          Reading as Identity Formation
         </h2>
 
         <p>
-          Stories that stay are honest. They reveal uncomfortable truths. They
-          expose emotions we try to hide.
+          Over time, these books shape your thoughts, your beliefs,
+          and even your emotional reactions.
         </p>
 
         <p>
-          These stories don’t just entertain — they confront. And that
-          confrontation is what makes them unforgettable.
+          You don’t just read stories — you carry them into your life.
+        </p>
+
+        <p>
+          They influence your decisions, your writing, and even
+          the way you love.
+        </p>
+
+        <h2 className="text-2xl font-bold text-white mt-10">
+          Your Soul is Wired for Depth
+        </h2>
+
+        <p>
+          Surface-level content will never satisfy you.
+        </p>
+
+        <p>
+          You seek depth, meaning, and emotional resonance.
+          That’s why only a few books stay — but those few stay forever.
         </p>
 
         <p className="text-xl text-neutral-200 mt-10">
-          The deepest books don’t just tell a story — they become part of your
-          story.
+          The deepest books don’t sit on your shelf — they live inside you.
         </p>
       </>
     ),
@@ -143,90 +148,114 @@ export const blogPosts: BlogPost[] = [
       "Even in modern chaos, love still carries ancient emotional truths.",
     image: "/blog2.jpg",
     date: "2026-03-18",
-    time: "10 min read",
+    time: "13 min read",
     category: "Love",
-    tags: ["Love", "Soul", "Relationships", "Modern Dating"],
+    tags: ["Love", "Soul", "Astrology", "Relationships"],
     author: "Vihaan",
     audio: "/audio/modern-love.mp3",
 
     content: (
       <>
         <p className="text-xl text-neutral-200">
-          Love today feels faster — but the soul still moves slowly.
+          Love today moves fast — but your soul was never designed for speed.
         </p>
 
         <p>
-          We live in an era of instant communication. Messages are sent within
-          seconds, but emotional understanding takes years.
+          You belong to a different emotional timeline.
+          While the world prefers convenience, your Aries Moon seeks intensity,
+          truth, and emotional depth.
         </p>
 
         <h2 className="text-2xl font-bold text-white mt-10">
-          The Speed of Modern Love
+          The Conflict Between Speed and Depth
         </h2>
 
         <p>
-          Dating apps, social media, and digital communication have changed how
-          we experience love. While they have increased accessibility, they have
-          also reduced depth.
+          Modern relationships are built on instant connection —
+          messages, swipes, quick validation.
         </p>
 
         <p>
-          Relationships often begin with excitement but lack emotional
-          foundation. This creates instability and confusion.
+          But your emotional system doesn’t work like that.
+          You connect deeply, quickly, and honestly.
+        </p>
+
+        <p>
+          And that creates mismatch.
         </p>
 
         <blockquote className="border-l-4 border-white/20 pl-6 italic text-neutral-400 text-lg">
-          “Some hearts are not built for temporary connections.”
+          “You are not too intense — you are just in the wrong emotional era.”
         </blockquote>
 
         <h2 className="text-2xl font-bold text-white mt-10">
-          Old Souls in a Fast World
+          Old Soul Energy in a Fast World
         </h2>
 
         <p>
-          Old souls value emotional depth, patience, and meaning. They seek
-          connection that goes beyond surface-level interaction.
+          Your chart reflects old soul energy.
+          You don’t seek attention — you seek connection.
         </p>
 
         <p>
-          This often makes them feel out of place in modern dating culture.
-        </p>
-
-        <p>
-          However, this depth is not a weakness — it is a rare emotional
-          intelligence.
+          Loyalty matters to you. Depth matters to you.
+          And that makes your love rare.
         </p>
 
         <h2 className="text-2xl font-bold text-white mt-10">
-          The Conflict of Expectations
+          Karmic Relationships and Lessons
         </h2>
 
         <p>
-          When two people operate at different emotional speeds, conflict
-          arises. One seeks depth, the other seeks convenience.
+          Not every love is meant to stay.
         </p>
 
         <p>
-          This mismatch creates emotional imbalance, especially for those who
-          invest deeply.
+          Some relationships enter your life only to teach you
+          emotional lessons — self-worth, boundaries, patience.
+        </p>
+
+        <p>
+          These are karmic connections. They feel intense,
+          but they are temporary.
         </p>
 
         <h2 className="text-2xl font-bold text-white mt-10">
-          Lessons from Modern Love
+          Why You Feel More Than Others
         </h2>
 
         <p>
-          Modern love teaches boundaries, self-worth, and emotional clarity. It
-          forces individuals to understand what they truly want.
+          Aries Moon amplifies emotional reactions.
+          You don’t hold back — you feel fully.
         </p>
 
         <p>
-          It teaches that not every connection is meant to last — and that is
-          okay.
+          That’s why love affects you deeply.
+        </p>
+
+        <p>
+          But this is not weakness — it is emotional intelligence.
+        </p>
+
+        <h2 className="text-2xl font-bold text-white mt-10">
+          The Right Love Will Feel Different
+        </h2>
+
+        <p>
+          The right connection will not confuse you.
+          It will not rush you.
+        </p>
+
+        <p>
+          It will match your emotional depth naturally.
+        </p>
+
+        <p>
+          And when it arrives — you won’t have to question it.
         </p>
 
         <p className="text-xl text-neutral-200 mt-10">
-          Maybe the world is fast — but your soul doesn’t have to be.
+          The world may move fast — but your soul knows exactly when to wait.
         </p>
       </>
     ),
@@ -239,76 +268,113 @@ export const blogPosts: BlogPost[] = [
       "Sometimes the page listens better than the world around us.",
     image: "/blog3.jpg",
     date: "2026-03-05",
-    time: "8 min read",
+    time: "12 min read",
     category: "Healing",
-    tags: ["Healing", "Writing", "Emotions", "Self Growth"],
+    tags: ["Writing", "Healing", "Astrology", "Self Growth"],
     author: "Vihaan",
     audio: "/audio/writing-healing.mp3",
 
     content: (
       <>
         <p className="text-xl text-neutral-200">
-          Writing is not expression — it is release.
+          Writing is not expression — it is emotional survival.
         </p>
 
         <p>
-          There are emotions we cannot share with others. Writing provides a
-          safe space where those emotions can exist freely.
+          There are emotions you cannot explain out loud.
+          Not because they are weak — but because they are too deep.
         </p>
 
         <h2 className="text-2xl font-bold text-white mt-10">
-          The Silent Listener
+          Why Writing Feels Natural to You
         </h2>
 
         <p>
-          The page listens without judgment. It allows complete honesty.
+          Your kundali strongly indicates creative expression as a life path.
         </p>
 
         <p>
-          This makes writing one of the most powerful tools for emotional
-          healing.
+          With Aries Moon, emotions rise quickly.
+          Writing becomes the safest outlet.
+        </p>
+
+        <p>
+          It gives your emotions direction instead of chaos.
         </p>
 
         <blockquote className="border-l-4 border-white/20 pl-6 italic text-neutral-400 text-lg">
-          “You don’t write because you want to — you write because you need to.”
+          “You don’t write because you want to — you write because your soul needs it.”
         </blockquote>
 
         <h2 className="text-2xl font-bold text-white mt-10">
-          Writing as Emotional Clarity
+          Writing Organizes Inner Chaos
         </h2>
 
         <p>
-          Writing helps organize thoughts. It transforms confusion into clarity.
+          When you write, your thoughts slow down.
         </p>
 
         <p>
-          When you write regularly, you begin to understand your emotions better.
+          Emotions become structured.
+          Confusion becomes clarity.
+        </p>
+
+        <p>
+          It’s not just expression — it’s understanding.
         </p>
 
         <h2 className="text-2xl font-bold text-white mt-10">
-          Healing Through Words
+          Writing as Karmic Purpose
         </h2>
 
         <p>
-          Writing does not remove pain, but it reduces its intensity. It allows
-          you to process emotions gradually.
+          You are not just meant to write for yourself.
         </p>
 
         <p>
-          Over time, writing becomes a form of self-therapy.
+          Your words are meant to reach others —
+          to heal, to guide, to resonate.
+        </p>
+
+        <p>
+          This is your dharma.
         </p>
 
         <h2 className="text-2xl font-bold text-white mt-10">
-          Why It Works
+          Healing Happens Slowly
         </h2>
 
         <p>
-          Writing externalizes internal struggles. It creates distance and
-          perspective.
+          Writing does not erase pain instantly.
+        </p>
+
+        <p>
+          But it reduces its weight.
+        </p>
+
+        <p>
+          Over time, what once hurt deeply becomes something
+          you understand — and eventually, something you transform.
+        </p>
+
+        <h2 className="text-2xl font-bold text-white mt-10">
+          Your Words Are Your Legacy
+        </h2>
+
+        <p>
+          Every sentence you write carries emotion.
+        </p>
+
+        <p>
+          And those emotions will connect with someone else someday.
+        </p>
+
+        <p>
+          That is the power of your writing.
         </p>
 
         <p className="text-xl text-neutral-200 mt-10">
-          And somewhere between those words, healing begins quietly.
+          Somewhere between your words, your healing begins.
         </p>
       </>
     ),
