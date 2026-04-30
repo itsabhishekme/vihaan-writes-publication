@@ -1,12 +1,19 @@
-import Link from 'next/link'
+import Link from "next/link"
 import {
   HiOutlineEnvelope,
   HiOutlineBookOpen,
   HiOutlineUserCircle,
   HiOutlineArrowUp,
   HiOutlineSparkles,
-  HiOutlineHeart,
-} from 'react-icons/hi2'
+} from "react-icons/hi2"
+
+import {
+  FaInstagram,
+  FaThreads,
+  FaXTwitter,
+  FaFacebook,
+  FaYoutube,
+} from "react-icons/fa6"
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -14,18 +21,18 @@ export default function Footer() {
   return (
     <footer className="relative mt-24 border-t border-white/10 bg-black overflow-hidden">
 
-      {/* Background Glow */}
+      {/* 🌌 BACKGROUND GLOW */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.05),transparent_30%)]" />
 
-      {/* SEO Hidden Content */}
+      {/* SEO Hidden */}
       <h2 className="sr-only">
         Vihaan Writes official author website footer with books, blog, about, contact, and storytelling platform
       </h2>
 
-      {/* MAIN GRID */}
+      {/* ================= MAIN GRID ================= */}
       <div className="container-main py-20 grid gap-12 md:grid-cols-4">
 
-        {/* BRAND */}
+        {/* 🔹 BRAND */}
         <div>
           <div className="flex items-center gap-3">
             <div className="h-12 w-12 rounded-2xl bg-white text-black flex items-center justify-center font-black text-lg">
@@ -49,9 +56,32 @@ export default function Footer() {
             <HiOutlineSparkles />
             Independent Author Platform
           </div>
+
+          {/* 🔥 SOCIAL ICONS */}
+          <div className="mt-8 flex items-center gap-4">
+
+            {[
+              { icon: <FaInstagram />, link: "https://instagram.com/itsabhishekme" },
+              { icon: <FaThreads />, link: "https://threads.com/@itsabhishekme" },
+              { icon: <FaXTwitter />, link: "https://x.com/itsabhishekme" },
+              { icon: <FaFacebook />, link: "https://facebook.com/itsabhishekmeOfficial" },
+              { icon: <FaYoutube />, link: "https://www.youtube.com/@itsabhishekme" },
+            ].map((item, i) => (
+              <a
+                key={i}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 flex items-center justify-center rounded-xl bg-neutral-900 text-neutral-400 border border-white/10 transition duration-300 hover:text-white hover:-translate-y-1 hover:scale-105 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)]"
+              >
+                {item.icon}
+              </a>
+            ))}
+
+          </div>
         </div>
 
-        {/* NAVIGATION */}
+        {/* 🔹 NAVIGATION */}
         <div>
           <h4 className="font-semibold text-white mb-5">Explore</h4>
 
@@ -84,7 +114,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* FEATURED */}
+        {/* 🔹 FEATURED */}
         <div>
           <h4 className="font-semibold text-white mb-5">Featured Book</h4>
 
@@ -104,7 +134,7 @@ export default function Footer() {
           </Link>
         </div>
 
-        {/* CONTACT + CTA */}
+        {/* 🔹 CONTACT */}
         <div>
           <h4 className="font-semibold text-white mb-5">Connect</h4>
 
@@ -127,7 +157,6 @@ export default function Footer() {
             Send Message →
           </Link>
 
-          {/* MINI CTA */}
           <div className="mt-8 p-4 rounded-2xl border border-white/10 bg-neutral-900">
             <p className="text-sm text-neutral-400">
               Get future books & insights
@@ -144,7 +173,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* BOTTOM BAR */}
+      {/* ================= BOTTOM BAR ================= */}
       <div className="border-t border-white/10">
         <div className="container-main py-6 flex flex-col md:flex-row gap-4 items-center justify-between">
 
@@ -170,6 +199,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
     </footer>
   )
 }
