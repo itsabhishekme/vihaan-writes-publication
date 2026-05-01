@@ -355,7 +355,7 @@ export default function ContactClient() {
           href="/book"
           className="inline-flex mt-6 items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-white/5"
         >
-          Explore Books <HiOutlineArrowRight />
+          Explore Books
         </Link>
       </section>
     </main>
