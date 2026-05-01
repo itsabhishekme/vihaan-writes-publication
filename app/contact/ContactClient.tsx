@@ -56,14 +56,14 @@ export default function ContactClient() {
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
+  /* ================= HELPERS ================= */
+
   const validateEmail = (email: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const progress =
     [form.name, form.email, form.message, form.intent].filter(Boolean).length /
     4;
-
-  /* ================= PLACEHOLDER ================= */
 
   const getPlaceholder = () => {
     switch (form.intent) {
@@ -82,10 +82,12 @@ export default function ContactClient() {
     }
   };
 
-  /* ================= SUBMIT ================= */
+  /* ================= SUBMIT (FINAL VERSION) ================= */
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
+    if (loading) return;
 
     if (!form.name || !form.email || !form.message || !form.intent) {
       setStatus("Please complete all fields including intent");
@@ -97,21 +99,34 @@ export default function ContactClient() {
       return;
     }
 
+    setLoading(true);
+    setStatus("");
+
     try {
-      setLoading(true);
-
-      // 👉 Replace with your backend API later
-      await new Promise((res) => setTimeout(res, 1500));
-
-      setStatus("success");
-      setForm({
-        name: "",
-        email: "",
-        message: "",
-        intent: "",
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
       });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus("success");
+
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+          intent: "",
+        });
+      } else {
+        setStatus(data.message || "Failed to send message");
+      }
     } catch (err) {
-      setStatus("Something went wrong");
+      setStatus("Server error. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -124,7 +139,6 @@ export default function ContactClient() {
 
       {/* BACKGROUND */}
       <div className="absolute inset-0 -z-10 bg-black" />
-
       <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_20%_20%,#6366f1,transparent_40%),radial-gradient(circle_at_80%_80%,#ec4899,transparent_40%)]" />
 
       <motion.div
@@ -158,8 +172,8 @@ export default function ContactClient() {
       {/* MAIN */}
       <section className="grid lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-6 pb-32">
 
-        {/* ================= INTENT SELECTOR ================= */}
-        <div className="space-y-5">
+        {/* ================= INTENT SELECTOR (PREMIUM) ================= */}
+        <div className="space-y-6">
 
           <h3 className="text-xl font-semibold">Select Intent</h3>
 
@@ -179,18 +193,18 @@ export default function ContactClient() {
                     setForm({ ...form, intent: item.title });
                   }
                 }}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className={`relative cursor-pointer rounded-2xl p-[1px] transition
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                className={`relative cursor-pointer rounded-2xl p-[1px] transition-all
 
                 ${
                   isActive
-                    ? "bg-gradient-to-r from-indigo-500 to-pink-500"
-                    : "bg-white/10"
+                    ? "bg-gradient-to-r from-indigo-500 to-pink-500 shadow-[0_0_25px_rgba(99,102,241,0.5)]"
+                    : "bg-white/10 hover:bg-white/20"
                 }`}
               >
                 <div
-                  className={`relative rounded-2xl p-5 transition
+                  className={`relative rounded-2xl p-5
 
                   ${
                     isActive
@@ -198,6 +212,7 @@ export default function ContactClient() {
                       : "bg-white/5 hover:bg-white/10"
                   }`}
                 >
+
                   {/* Glow */}
                   {isActive && (
                     <motion.div
@@ -206,7 +221,8 @@ export default function ContactClient() {
                     />
                   )}
 
-                  <div className="relative z-10 flex justify-between items-start">
+                  <div className="relative z-10 flex justify-between">
+
                     <div>
                       <h4 className="font-semibold text-lg">
                         {item.title}
@@ -216,7 +232,6 @@ export default function ContactClient() {
                       </p>
                     </div>
 
-                    {/* Check */}
                     <motion.div
                       animate={{
                         scale: isActive ? 1 : 0,
@@ -226,9 +241,9 @@ export default function ContactClient() {
                     >
                       ✓
                     </motion.div>
+
                   </div>
 
-                  {/* Bottom line */}
                   <motion.div
                     animate={{ width: isActive ? "100%" : "0%" }}
                     className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-indigo-400 to-pink-400"
@@ -241,10 +256,9 @@ export default function ContactClient() {
 
         {/* ================= FORM ================= */}
         <div className="lg:col-span-2">
-
           <div className="p-10 rounded-[30px] bg-white/5 border border-white/10 backdrop-blur-xl">
 
-            {/* Progress */}
+            {/* PROGRESS */}
             <div className="h-1 bg-white/10 rounded-full mb-6 overflow-hidden">
               <motion.div
                 animate={{ width: `${progress * 100}%` }}
@@ -255,79 +269,61 @@ export default function ContactClient() {
             <AnimatePresence mode="wait">
 
               {status === "success" ? (
-                <motion.div
-                  key="success"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="text-center py-20"
-                >
+                <motion.div className="text-center py-20">
                   <HiOutlineCheckCircle className="text-6xl text-green-400 mx-auto" />
                   <h2 className="text-3xl font-bold mt-6">
-                    Message Sent Successfully
+                    Message Sent
                   </h2>
                 </motion.div>
               ) : (
 
-                <motion.form
-                  key="form"
-                  onSubmit={handleSubmit}
-                  className="space-y-6"
-                >
+                <motion.form onSubmit={handleSubmit} className="space-y-6">
 
-                  {/* NAME */}
                   <div className="relative">
                     <HiOutlineUser className="absolute top-4 left-3 text-neutral-400" />
                     <input
                       value={form.name}
                       placeholder="Your Name"
-                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-indigo-400"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 outline-none"
                       onChange={(e) =>
                         setForm({ ...form, name: e.target.value })
                       }
                     />
                   </div>
 
-                  {/* EMAIL */}
                   <div className="relative">
                     <HiOutlineEnvelope className="absolute top-4 left-3 text-neutral-400" />
                     <input
                       value={form.email}
                       placeholder="Email Address"
-                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-indigo-400"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 outline-none"
                       onChange={(e) =>
                         setForm({ ...form, email: e.target.value })
                       }
                     />
                   </div>
 
-                  {/* MESSAGE */}
                   <div className="relative">
                     <HiOutlineChatBubbleLeftRight className="absolute top-4 left-3 text-neutral-400" />
                     <textarea
                       rows={5}
                       value={form.message}
                       placeholder={getPlaceholder()}
-                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-indigo-400"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 outline-none"
                       onChange={(e) =>
                         setForm({ ...form, message: e.target.value })
                       }
                     />
                   </div>
 
-                  {/* INTENT PREVIEW */}
                   {form.intent && (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="p-4 rounded-xl bg-indigo-500/10 border border-indigo-400/30 text-indigo-300 text-sm"
-                    >
+                    <motion.div className="p-4 rounded-xl bg-indigo-500/10 border border-indigo-400/30 text-sm text-indigo-300">
                       {
                         intents.find((i) => i.title === form.intent)?.tone
                       }
                     </motion.div>
                   )}
 
-                  {/* BUTTON */}
                   <motion.button
                     whileTap={{ scale: 0.96 }}
                     disabled={loading}
@@ -337,38 +333,31 @@ export default function ContactClient() {
                     <HiOutlinePaperAirplane />
                   </motion.button>
 
-                  {/* ERROR */}
                   {status && status !== "success" && (
-                    <p className="text-red-400 text-sm">
-                      {status}
-                    </p>
+                    <p className="text-red-400 text-sm">{status}</p>
                   )}
 
                 </motion.form>
               )}
 
             </AnimatePresence>
-
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
       <section className="text-center pb-32">
-
         <h2 className="text-4xl font-bold">
           Continue the Journey
         </h2>
 
         <Link
           href="/book"
-          className="inline-flex mt-6 items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition"
+          className="inline-flex mt-6 items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-white/5"
         >
           Explore Books <HiOutlineArrowRight />
         </Link>
-
       </section>
-
     </main>
   );
 }
