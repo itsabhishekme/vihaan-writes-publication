@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -7,66 +9,114 @@ import {
   HiOutlineArrowRight,
   HiOutlineSparkles,
   HiOutlineTag,
-  HiOutlineStar,
+  HiOutlineFire,
+  HiOutlineEnvelope,
 } from "react-icons/hi2";
 
-import { blogPosts } from "@/data/blog"; // ✅ FIXED SOURCE
-
-/* ================= SEO ================= */
-export const metadata: Metadata = {
-  title: "Blog | Vihaan Writes",
-  description:
-    "Explore deep reflections on love, destiny, healing, growth, and storytelling by Vihaan.",
-};
-
-/* ================= PAGE ================= */
+import { blogPosts } from "@/data/blog";
 
 export default function BlogPage() {
+  const [activeTag, setActiveTag] = useState("All");
+  const [visiblePosts, setVisiblePosts] = useState(6);
+  const [search, setSearch] = useState("");
+  const [scroll, setScroll] = useState(0);
+  const [email, setEmail] = useState("");
+
+  /* 📊 SCROLL PROGRESS */
+  useEffect(() => {
+    const handleScroll = () => {
+      const total = document.body.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / total) * 100;
+      setScroll(progress);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const tags = ["All", "Love", "Destiny", "Healing", "Spiritual"];
+
+  const filteredPosts = blogPosts
+    .filter((post) =>
+      activeTag === "All" ? true : post.category === activeTag
+    )
+    .filter((post) =>
+      post.title.toLowerCase().includes(search.toLowerCase())
+    );
+
+  const trendingPosts = blogPosts.slice(0, 3);
+
+  const handleSubscribe = () => {
+    if (!email) return alert("Enter email first");
+    alert("Subscribed successfully ✨");
+    setEmail("");
+  };
+
   return (
     <main className="relative overflow-hidden text-white">
 
+      {/* 📊 SCROLL BAR */}
+      <div
+        className="fixed top-0 left-0 h-1 bg-white z-50 transition-all"
+        style={{ width: `${scroll}%` }}
+      />
+
       {/* 🌌 BACKGROUND */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-black via-neutral-900 to-black" />
-      <div className="absolute inset-0 -z-10 opacity-30 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.25),transparent_50%)]" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/20 blur-3xl rounded-full" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-600/20 blur-3xl rounded-full" />
 
       {/* ✨ HERO */}
-      <section className="max-w-6xl mx-auto px-6 py-28 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 border border-white/10 rounded-full text-sm text-neutral-300 backdrop-blur">
+      <section className="max-w-7xl mx-auto px-6 py-28 text-center">
+        <div className="inline-flex items-center gap-2 px-5 py-2 border border-white/10 rounded-full text-sm text-neutral-300 backdrop-blur-xl">
           <HiOutlineSparkles />
           Soulful Writing Space
         </div>
 
         <h1 className="mt-6 text-6xl md:text-8xl font-black tracking-tight">
-          Vihaan <span className="text-neutral-500">Blog</span>
+          Echoes of <span className="text-neutral-500">Her Soul</span>
         </h1>
 
-        <p className="mt-8 max-w-2xl mx-auto text-lg text-neutral-400 leading-relaxed">
-          A space where emotions meet meaning — exploring love, destiny,
-          creativity, and personal transformation.
+        <p className="mt-6 text-neutral-400 max-w-2xl mx-auto">
+          A space where love, destiny, and unseen emotions are written before they unfold.
         </p>
+
+        {/* SEARCH */}
+        <div className="mt-8 max-w-xl mx-auto">
+          <input
+            type="text"
+            placeholder="Search reflections..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 outline-none backdrop-blur-xl"
+          />
+        </div>
       </section>
 
-      {/* ⭐ FEATURED */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
-        <div className="relative rounded-[2.5rem] overflow-hidden border border-white/10">
+      {/* 🌟 FEATURED BLOG */}
+      <section className="max-w-7xl mx-auto px-6 pb-20">
+        <div className="relative rounded-[2.5rem] overflow-hidden group border border-white/10">
 
           <Image
             src="/featured.jpg"
-            alt="Featured Blog"
+            alt="Words Written Before Destiny Arrived"
             fill
-            className="object-cover opacity-40"
+            className="object-cover opacity-40 group-hover:scale-105 transition duration-700"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
 
-          <div className="relative p-12 md:p-16 backdrop-blur-xl">
+          <div className="relative p-12 md:p-16">
             <span className="flex items-center gap-2 text-sm text-neutral-300">
-              <HiOutlineStar /> Featured Story
+              <HiOutlineFire /> Featured Story
             </span>
 
-            <h2 className="mt-6 text-5xl font-bold max-w-3xl leading-tight">
+            <h2 className="mt-6 text-4xl md:text-5xl font-bold max-w-3xl leading-tight">
               Words Written Before Destiny Arrived
             </h2>
+
+            <p className="mt-4 text-neutral-400 max-w-xl">
+              A reflection of love that existed before meeting — written in time and sealed by destiny.
+            </p>
 
             <Link
               href="/blog/featured"
@@ -78,45 +128,76 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* 📝 POSTS */}
-      <section className="max-w-6xl mx-auto px-6 py-14">
-        <div className="grid md:grid-cols-3 gap-10">
+      {/* 🔥 TRENDING */}
+      <section className="max-w-7xl mx-auto px-6 pb-16">
+        <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+          <HiOutlineFire /> Trending Stories
+        </h3>
 
-          {blogPosts.map((post) => (
+        <div className="grid md:grid-cols-3 gap-6">
+          {trendingPosts.map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`}>
+              <div className="p-6 rounded-xl bg-white/5 hover:bg-white/10 transition backdrop-blur-xl">
+                <h4 className="font-semibold">{post.title}</h4>
+                <p className="text-sm text-neutral-400 mt-2">
+                  {post.excerpt.slice(0, 80)}...
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 🔍 FILTER */}
+      <section className="max-w-7xl mx-auto px-6 pb-10">
+        <div className="flex flex-wrap gap-3 justify-center">
+          {tags.map((tag) => (
+            <button
+              key={tag}
+              onClick={() => setActiveTag(tag)}
+              className={`px-4 py-2 rounded-full border transition ${
+                activeTag === tag
+                  ? "bg-white text-black"
+                  : "border-white/10 hover:bg-white hover:text-black"
+              }`}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* 📝 POSTS */}
+      <section className="max-w-7xl mx-auto px-6 py-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+          {filteredPosts.slice(0, visiblePosts).map((post) => (
             <article
               key={post.slug}
-              className="group rounded-[2rem] overflow-hidden border border-white/10 bg-neutral-900 hover:-translate-y-2 hover:shadow-2xl transition duration-500"
+              className="group rounded-[2rem] overflow-hidden border border-white/10 bg-neutral-900 hover:-translate-y-3 hover:shadow-2xl transition"
             >
-
-              {/* IMAGE */}
-              <div className="relative h-56">
+              <div className="relative h-60">
                 <Image
                   src={post.image}
                   alt={post.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition duration-700"
+                  className="object-cover group-hover:scale-110 transition"
                 />
               </div>
 
-              {/* CONTENT */}
               <div className="p-6">
-
-                {/* CATEGORY */}
-                <span className="text-xs text-neutral-400 flex items-center gap-1">
+                <span className="text-xs text-neutral-400 flex gap-1">
                   <HiOutlineTag /> {post.category}
                 </span>
 
-                {/* TITLE */}
-                <h3 className="mt-4 text-xl font-bold">
+                <h3 className="mt-3 text-xl font-bold">
                   {post.title}
                 </h3>
 
-                {/* EXCERPT */}
-                <p className="mt-3 text-neutral-400 text-sm">
+                <p className="mt-2 text-neutral-400 text-sm">
                   {post.excerpt}
                 </p>
 
-                {/* META */}
                 <div className="mt-4 flex gap-4 text-xs text-neutral-500">
                   <span className="flex items-center gap-1">
                     <HiOutlineCalendarDays />
@@ -129,46 +210,60 @@ export default function BlogPage() {
                   </span>
                 </div>
 
-                {/* TAGS */}
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {post.tags?.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-3 py-1 bg-white/5 rounded-full"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* CTA */}
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-2 mt-6 font-semibold text-sm group-hover:text-white"
+                  className="inline-flex items-center gap-2 mt-5 font-semibold"
                 >
                   Read More <HiOutlineArrowRight />
                 </Link>
-
               </div>
             </article>
           ))}
-
         </div>
+
+        {/* LOAD MORE */}
+        {visiblePosts < filteredPosts.length && (
+          <div className="text-center mt-12">
+            <button
+              onClick={() => setVisiblePosts((prev) => prev + 3)}
+              className="px-6 py-3 border border-white/10 rounded-xl hover:bg-white hover:text-black transition"
+            >
+              Load More
+            </button>
+          </div>
+        )}
       </section>
 
-      {/* 🚀 CTA */}
-      <section className="max-w-6xl mx-auto px-6 pb-28 text-center">
-        <div className="rounded-[2rem] bg-white text-black p-12 shadow-2xl">
-          <h2 className="text-4xl font-black">
-            More Words Coming Soon
+      {/* 💌 SUBSCRIBE */}
+      <section className="max-w-4xl mx-auto px-6 pb-28 text-center">
+        <div className="rounded-[2rem] border border-white/10 p-12 backdrop-blur-xl">
+
+          <HiOutlineEnvelope className="mx-auto text-4xl mb-4 opacity-70" />
+
+          <h2 className="text-3xl font-bold">
+            Stay Connected with My Words
           </h2>
 
-          <Link
-            href="/contact"
-            className="inline-block mt-6 px-6 py-3 bg-black text-white rounded-xl hover:scale-105 transition"
-          >
-            Connect Now
-          </Link>
+          <p className="mt-3 text-neutral-400">
+            Get reflections, emotions, and unseen stories directly in your inbox.
+          </p>
+
+          <div className="mt-6 flex gap-3 justify-center">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="px-5 py-3 rounded-xl bg-white/10 border border-white/10 outline-none"
+            />
+            <button
+              onClick={handleSubscribe}
+              className="px-6 py-3 bg-white text-black rounded-xl font-semibold hover:scale-105 transition"
+            >
+              Subscribe
+            </button>
+          </div>
+
         </div>
       </section>
 
