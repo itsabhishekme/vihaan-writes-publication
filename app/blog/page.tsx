@@ -22,7 +22,7 @@ export default function BlogPage() {
   const [search, setSearch] = useState("");
   const [scroll, setScroll] = useState(0);
 
-  // 🔥 NEW STATES
+  // 🔥 STATES
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -51,33 +51,71 @@ export default function BlogPage() {
 
   const trendingPosts = blogPosts.slice(0, 3);
 
-  /* ✨ UPDATED SUBSCRIBE FUNCTION */
-  const handleSubscribe = () => {
+  /* 🔥 FULLY UPGRADED SUBSCRIBE FUNCTION */
+  const handleSubscribe = async () => {
+    // Reset
     setError("");
+    setIsSubscribed(false);
 
+    // Prevent spam click
+    if (loading) return;
+
+    // Validation
     if (!email) {
       setError("Please enter your email");
       return;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailTrimmed = email.trim();
 
-    if (!emailRegex.test(email)) {
+    const emailRegex =
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(emailTrimmed)) {
       setError("Enter a valid email address");
       return;
     }
 
-    setLoading(true);
+    try {
+      setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
+      // 🌐 Backend call
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: emailTrimmed }),
+      });
+
+      const data = await response.json();
+
+      // ❌ Handle backend errors
+      if (!response.ok || !data.success) {
+        setError(
+          data?.message ||
+          "Subscription failed. Try again."
+        );
+        setLoading(false);
+        return;
+      }
+
+      // ✅ Success
       setIsSubscribed(true);
       setEmail("");
 
+      // Auto hide success
       setTimeout(() => {
         setIsSubscribed(false);
       }, 4000);
-    }, 1500);
+
+    } catch (err: any) {
+      setError(
+        "Network error. Please check your connection."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -184,10 +222,11 @@ export default function BlogPage() {
             <button
               key={tag}
               onClick={() => setActiveTag(tag)}
-              className={`px-4 py-2 rounded-full border transition ${activeTag === tag
+              className={`px-4 py-2 rounded-full border transition ${
+                activeTag === tag
                   ? "bg-white text-black"
                   : "border-white/10 hover:bg-white hover:text-black"
-                }`}
+              }`}
             >
               {tag}
             </button>
@@ -261,7 +300,7 @@ export default function BlogPage() {
         )}
       </section>
 
-      {/* 💌 SUBSCRIBE (UPGRADED) */}
+      {/* 💌 SUBSCRIBE */}
       <section className="max-w-4xl mx-auto px-6 pb-28 text-center">
         <div className="relative rounded-[2rem] border border-white/10 p-12 backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/0">
 
@@ -275,7 +314,6 @@ export default function BlogPage() {
             Get reflections, emotions, and unseen stories directly in your inbox.
           </p>
 
-          {/* SUCCESS MESSAGE */}
           {isSubscribed && (
             <div className="mt-6 flex items-center justify-center gap-2 text-green-400 animate-fadeIn">
               <HiOutlineCheckCircle />
@@ -283,7 +321,6 @@ export default function BlogPage() {
             </div>
           )}
 
-          {/* INPUT */}
           <div className="mt-6 flex gap-3 justify-center">
             <input
               type="email"
@@ -301,7 +338,6 @@ export default function BlogPage() {
             </button>
           </div>
 
-          {/* ERROR */}
           {error && (
             <p className="mt-3 text-red-400 text-sm">{error}</p>
           )}
