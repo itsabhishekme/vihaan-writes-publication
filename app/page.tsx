@@ -40,12 +40,6 @@ export default function Home() {
                     Enter The Journey
                   </span>
                 </Link>
-
-                <Link href="https://vihaan-writes.vercel.app/" target="_blank">
-                  <span className="px-10 py-4 border border-white/20 rounded-xl font-semibold hover:bg-white hover:text-black transition">
-                    Visit Website
-                  </span>
-                </Link>
               </div>
             </div>
 
