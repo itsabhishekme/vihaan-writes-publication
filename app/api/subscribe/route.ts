@@ -10,20 +10,18 @@ const subscribers = new Set<string>();
    📧 EMAIL VALIDATION
 ====================================================== */
 const isValidEmail = (email: string) => {
-  const regex =
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 };
 
 /* ======================================================
    🚀 API ROUTE
 ====================================================== */
 export async function POST(req: Request) {
-  try {
-    console.log("📥 Incoming subscribe request");
+  console.log("📥 Incoming subscribe request");
 
-    const body = await req.json();
-    const email: string = body?.email?.trim();
+  try {
+    const body = await req.json().catch(() => null);
+    const email: string = body?.email?.trim()?.toLowerCase();
 
     /* ============================
        ❌ VALIDATION
@@ -46,7 +44,7 @@ export async function POST(req: Request) {
        🔁 DUPLICATE CHECK
     ============================ */
     if (subscribers.has(email)) {
-      console.log("⚠️ Already subscribed:", email);
+      console.warn("⚠️ Already subscribed:", email);
 
       return NextResponse.json(
         { success: false, message: "Already subscribed" },
@@ -61,29 +59,32 @@ export async function POST(req: Request) {
     console.log("✅ Saved subscriber:", email);
 
     /* ============================
-       📩 SEND EMAIL
+       📩 SEND EMAIL (NON-BLOCKING SAFE)
     ============================ */
-    const mailResult = await sendWelcomeEmail(email);
+    let emailStatus = "sent";
 
-    /* ============================
-       ❌ EMAIL FAILED
-    ============================ */
-    if (!mailResult || mailResult.success === false) {
-      console.error("❌ Email sending failed");
+    try {
+      const mailResult = await sendWelcomeEmail(email);
 
-      return NextResponse.json(
-        {
-          success: false,
-          message: "Subscription saved but email failed",
-        },
-        { status: 500 }
-      );
+      if (!mailResult?.success) {
+        emailStatus = "failed";
+        console.error("❌ Email returned unsuccessful result");
+      }
+    } catch (mailError: any) {
+      emailStatus = "failed";
+      console.error("❌ Email sending error:", mailError?.message);
     }
 
     /* ============================
-       ✅ SUCCESS
+       🎯 RESPONSE (SMART UX)
     ============================ */
-    console.log("🎉 Subscription complete:", email);
+
+    if (emailStatus === "failed") {
+      return NextResponse.json({
+        success: true,
+        message: "Subscribed successfully (email delivery pending)",
+      });
+    }
 
     return NextResponse.json({
       success: true,
