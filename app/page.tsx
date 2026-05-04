@@ -8,7 +8,7 @@ export default function Home() {
 
       {/* 🌌 GLOBAL BACKGROUND */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] bg-purple-600/20 blur-[300px] rounded-full"></div>
+        <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] bg-purple-600/20 blur-[300px] rounded-full animate-pulse"></div>
         <div className="absolute bottom-[-150px] right-[-100px] w-[800px] h-[800px] bg-pink-500/10 blur-[220px] rounded-full"></div>
       </div>
 
@@ -101,9 +101,10 @@ export default function Home() {
 
       {/* BOOK SHOWCASE */}
       <section className="container-main py-28">
-        <div className="relative rounded-3xl bg-gradient-to-br from-white to-neutral-200 text-black p-16 md:p-24 shadow-2xl overflow-hidden">
+        <div className="relative rounded-3xl bg-gradient-to-br from-white via-neutral-100 to-neutral-200 text-black p-16 md:p-24 shadow-2xl overflow-hidden group">
 
-          <div className="absolute -top-20 -right-20 w-72 h-72 bg-black/10 blur-3xl rounded-full"></div>
+          {/* glowing aura */}
+          <div className="absolute -top-20 -right-20 w-72 h-72 bg-purple-500/20 blur-3xl rounded-full group-hover:scale-110 transition duration-700"></div>
 
           <h2 className="text-6xl font-black leading-tight">
             My Spouse Before I Met Her
@@ -115,13 +116,33 @@ export default function Home() {
           </p>
 
           <div className="mt-12 flex gap-6 flex-wrap">
-            <button className="px-10 py-4 bg-black text-white rounded-xl font-semibold hover:opacity-90">
-              Start Reading
-            </button>
-            <button className="px-10 py-4 border border-black rounded-xl font-semibold hover:bg-black hover:text-white transition">
-              Explore Details
-            </button>
+
+            {/* START READING */}
+            <Link
+              href="https://www.flipkart.com/my-spouse-before-met-her-karmic-clues-dreams-echoes-soul/p/itme369d1e7ca422?pid=9798898547820"
+              target="_blank"
+              className="group"
+            >
+              <span className="px-10 py-4 bg-black text-white rounded-xl font-semibold inline-block hover:scale-105 hover:shadow-[0_0_30px_rgba(0,0,0,0.4)] transition duration-300">
+                Start Reading
+              </span>
+            </Link>
+
+            {/* EXPLORE DETAILS */}
+            <Link
+              href="https://medium.com/@itsabhishekme/my-spouse-before-i-met-her-b2f7f118625f"
+              target="_blank"
+              className="group"
+            >
+              <span className="px-10 py-4 border border-black rounded-xl font-semibold inline-block hover:bg-black hover:text-white hover:scale-105 transition duration-300">
+                Explore Details
+              </span>
+            </Link>
+
           </div>
+
+          {/* subtle bottom glow */}
+          <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/10 to-transparent"></div>
         </div>
       </section>
 
@@ -175,7 +196,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🚀 FINAL CTA (FIXED SPACING) */}
+      {/* FINAL CTA */}
       <section className="container-main pt-24 pb-16">
         <div className="rounded-3xl p-16 bg-gradient-to-r from-purple-500 to-pink-500 text-black text-center shadow-2xl">
 
@@ -187,9 +208,15 @@ export default function Home() {
             Join readers who feel before life happens.
           </p>
 
-          <button className="mt-10 px-10 py-4 bg-black text-white rounded-xl font-semibold hover:opacity-90">
-            Join Now
-          </button>
+          <Link
+            href="https://www.amazon.in/dp/B0GSSM874J"
+            target="_blank"
+          >
+            <span className="mt-10 inline-block px-10 py-4 bg-black text-white rounded-xl font-semibold hover:opacity-90 hover:scale-105 transition">
+              Start Now
+            </span>
+          </Link>
+
         </div>
       </section>
     </main>
