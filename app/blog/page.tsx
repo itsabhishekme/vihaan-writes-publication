@@ -11,6 +11,7 @@ import {
   HiOutlineTag,
   HiOutlineFire,
   HiOutlineEnvelope,
+  HiOutlineCheckCircle,
 } from "react-icons/hi2";
 
 import { blogPosts } from "@/data/blog";
@@ -20,7 +21,12 @@ export default function BlogPage() {
   const [visiblePosts, setVisiblePosts] = useState(6);
   const [search, setSearch] = useState("");
   const [scroll, setScroll] = useState(0);
+
+  // 🔥 NEW STATES
   const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   /* 📊 SCROLL PROGRESS */
   useEffect(() => {
@@ -45,10 +51,33 @@ export default function BlogPage() {
 
   const trendingPosts = blogPosts.slice(0, 3);
 
+  /* ✨ UPDATED SUBSCRIBE FUNCTION */
   const handleSubscribe = () => {
-    if (!email) return alert("Enter email first");
-    alert("Subscribed successfully ✨");
-    setEmail("");
+    setError("");
+
+    if (!email) {
+      setError("Please enter your email");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      setError("Enter a valid email address");
+      return;
+    }
+
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+      setIsSubscribed(true);
+      setEmail("");
+
+      setTimeout(() => {
+        setIsSubscribed(false);
+      }, 4000);
+    }, 1500);
   };
 
   return (
@@ -56,14 +85,14 @@ export default function BlogPage() {
 
       {/* 📊 SCROLL BAR */}
       <div
-        className="fixed top-0 left-0 h-1 bg-white z-50 transition-all"
+        className="fixed top-0 left-0 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 z-50 transition-all"
         style={{ width: `${scroll}%` }}
       />
 
       {/* 🌌 BACKGROUND */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-black via-neutral-900 to-black" />
-      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/20 blur-3xl rounded-full" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-600/20 blur-3xl rounded-full" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/20 blur-3xl rounded-full animate-pulse" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-600/20 blur-3xl rounded-full animate-pulse" />
 
       {/* ✨ HERO */}
       <section className="max-w-7xl mx-auto px-6 py-28 text-center">
@@ -87,7 +116,7 @@ export default function BlogPage() {
             placeholder="Search reflections..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 outline-none backdrop-blur-xl"
+            className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 outline-none backdrop-blur-xl focus:ring-2 focus:ring-purple-500"
           />
         </div>
       </section>
@@ -137,7 +166,7 @@ export default function BlogPage() {
         <div className="grid md:grid-cols-3 gap-6">
           {trendingPosts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`}>
-              <div className="p-6 rounded-xl bg-white/5 hover:bg-white/10 transition backdrop-blur-xl">
+              <div className="p-6 rounded-xl bg-white/5 hover:bg-white/10 transition backdrop-blur-xl hover:scale-105">
                 <h4 className="font-semibold">{post.title}</h4>
                 <p className="text-sm text-neutral-400 mt-2">
                   {post.excerpt.slice(0, 80)}...
@@ -155,11 +184,10 @@ export default function BlogPage() {
             <button
               key={tag}
               onClick={() => setActiveTag(tag)}
-              className={`px-4 py-2 rounded-full border transition ${
-                activeTag === tag
+              className={`px-4 py-2 rounded-full border transition ${activeTag === tag
                   ? "bg-white text-black"
                   : "border-white/10 hover:bg-white hover:text-black"
-              }`}
+                }`}
             >
               {tag}
             </button>
@@ -221,7 +249,6 @@ export default function BlogPage() {
           ))}
         </div>
 
-        {/* LOAD MORE */}
         {visiblePosts < filteredPosts.length && (
           <div className="text-center mt-12">
             <button
@@ -234,11 +261,11 @@ export default function BlogPage() {
         )}
       </section>
 
-      {/* 💌 SUBSCRIBE */}
+      {/* 💌 SUBSCRIBE (UPGRADED) */}
       <section className="max-w-4xl mx-auto px-6 pb-28 text-center">
-        <div className="rounded-[2rem] border border-white/10 p-12 backdrop-blur-xl">
+        <div className="relative rounded-[2rem] border border-white/10 p-12 backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/0">
 
-          <HiOutlineEnvelope className="mx-auto text-4xl mb-4 opacity-70" />
+          <HiOutlineEnvelope className="mx-auto text-5xl mb-4 opacity-80" />
 
           <h2 className="text-3xl font-bold">
             Stay Connected with My Words
@@ -248,25 +275,38 @@ export default function BlogPage() {
             Get reflections, emotions, and unseen stories directly in your inbox.
           </p>
 
+          {/* SUCCESS MESSAGE */}
+          {isSubscribed && (
+            <div className="mt-6 flex items-center justify-center gap-2 text-green-400 animate-fadeIn">
+              <HiOutlineCheckCircle />
+              Subscribed successfully ✨
+            </div>
+          )}
+
+          {/* INPUT */}
           <div className="mt-6 flex gap-3 justify-center">
             <input
               type="email"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="px-5 py-3 rounded-xl bg-white/10 border border-white/10 outline-none"
+              className="px-5 py-3 rounded-xl bg-white/10 border border-white/10 outline-none focus:ring-2 focus:ring-purple-500"
             />
+
             <button
               onClick={handleSubscribe}
-              className="px-6 py-3 bg-white text-black rounded-xl font-semibold hover:scale-105 transition"
+              className="px-6 py-3 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl font-semibold hover:scale-105 transition flex items-center gap-2"
             >
-              Subscribe
+              {loading ? "Subscribing..." : "Subscribe"}
             </button>
           </div>
 
+          {/* ERROR */}
+          {error && (
+            <p className="mt-3 text-red-400 text-sm">{error}</p>
+          )}
         </div>
       </section>
-
     </main>
   );
 }
