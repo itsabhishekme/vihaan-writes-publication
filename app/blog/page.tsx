@@ -222,11 +222,10 @@ export default function BlogPage() {
             <button
               key={tag}
               onClick={() => setActiveTag(tag)}
-              className={`px-4 py-2 rounded-full border transition ${
-                activeTag === tag
+              className={`px-4 py-2 rounded-full border transition ${activeTag === tag
                   ? "bg-white text-black"
                   : "border-white/10 hover:bg-white hover:text-black"
-              }`}
+                }`}
             >
               {tag}
             </button>
@@ -298,50 +297,6 @@ export default function BlogPage() {
             </button>
           </div>
         )}
-      </section>
-
-      {/* 💌 SUBSCRIBE */}
-      <section className="max-w-4xl mx-auto px-6 pb-28 text-center">
-        <div className="relative rounded-[2rem] border border-white/10 p-12 backdrop-blur-xl bg-gradient-to-br from-white/5 to-white/0">
-
-          <HiOutlineEnvelope className="mx-auto text-5xl mb-4 opacity-80" />
-
-          <h2 className="text-3xl font-bold">
-            Stay Connected with My Words
-          </h2>
-
-          <p className="mt-3 text-neutral-400">
-            Get reflections, emotions, and unseen stories directly in your inbox.
-          </p>
-
-          {isSubscribed && (
-            <div className="mt-6 flex items-center justify-center gap-2 text-green-400 animate-fadeIn">
-              <HiOutlineCheckCircle />
-              Subscribed successfully ✨
-            </div>
-          )}
-
-          <div className="mt-6 flex gap-3 justify-center">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="px-5 py-3 rounded-xl bg-white/10 border border-white/10 outline-none focus:ring-2 focus:ring-purple-500"
-            />
-
-            <button
-              onClick={handleSubscribe}
-              className="px-6 py-3 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl font-semibold hover:scale-105 transition flex items-center gap-2"
-            >
-              {loading ? "Subscribing..." : "Subscribe"}
-            </button>
-          </div>
-
-          {error && (
-            <p className="mt-3 text-red-400 text-sm">{error}</p>
-          )}
-        </div>
       </section>
     </main>
   );

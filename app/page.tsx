@@ -1,14 +1,15 @@
 import Hero from '@/components/Hero'
+import Link from "next/link"
 import FeatureSection from '@/components/FeatureSection'
 
 export default function Home() {
   return (
     <main className="relative overflow-hidden bg-black text-white">
 
-      {/* GLOBAL GRADIENT BACKGROUND */}
+      {/* 🌌 GLOBAL BACKGROUND */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[1200px] h-[1200px] bg-purple-600/20 blur-[300px] rounded-full"></div>
-        <div className="absolute bottom-[-200px] right-[-100px] w-[900px] h-[900px] bg-pink-500/10 blur-[250px] rounded-full"></div>
+        <div className="absolute bottom-[-150px] right-[-100px] w-[800px] h-[800px] bg-pink-500/10 blur-[220px] rounded-full"></div>
       </div>
 
       {/* HERO */}
@@ -18,7 +19,7 @@ export default function Home() {
       <FeatureSection />
 
       {/* ABOUT */}
-      <section className="container-main py-32 relative z-10">
+      <section className="container-main py-28 relative z-10">
         <div className="grid md:grid-cols-2 gap-20 items-center">
 
           <div className="space-y-6">
@@ -31,9 +32,11 @@ export default function Home() {
               Words written before moments existed, yet felt deeply when they arrive.
             </p>
 
-            <button className="px-10 py-4 bg-white text-black rounded-xl font-semibold hover:scale-105 hover:shadow-2xl transition duration-300">
-              Enter The Journey
-            </button>
+            <Link href="/journey" className="inline-block">
+              <span className="px-10 py-4 bg-white text-black rounded-xl font-semibold hover:scale-105 hover:shadow-2xl transition duration-300 inline-block">
+                Enter The Journey
+              </span>
+            </Link>
           </div>
 
           <div className="relative group">
@@ -51,7 +54,7 @@ export default function Home() {
       </section>
 
       {/* TIMELINE */}
-      <section className="container-main py-32">
+      <section className="container-main py-28">
         <h2 className="text-5xl font-black text-center mb-20">
           The Reading Journey
         </h2>
@@ -97,7 +100,7 @@ export default function Home() {
       </section>
 
       {/* BOOK SHOWCASE */}
-      <section className="container-main py-32">
+      <section className="container-main py-28">
         <div className="relative rounded-3xl bg-gradient-to-br from-white to-neutral-200 text-black p-16 md:p-24 shadow-2xl overflow-hidden">
 
           <div className="absolute -top-20 -right-20 w-72 h-72 bg-black/10 blur-3xl rounded-full"></div>
@@ -122,8 +125,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* QUOTE STRIP */}
-      <section className="py-24 text-center border-y border-white/10">
+      {/* QUOTE */}
+      <section className="py-20 text-center border-y border-white/10">
         <p className="text-3xl italic text-neutral-300 max-w-3xl mx-auto">
           “The most powerful stories are the ones you feel before they happen.”
         </p>
@@ -131,7 +134,7 @@ export default function Home() {
       </section>
 
       {/* AUTHOR */}
-      <section className="container-main py-32">
+      <section className="container-main py-28">
         <div className="grid md:grid-cols-2 gap-20 items-center">
 
           <div className="p-12 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition">
@@ -151,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="container-main py-32">
+      <section className="container-main py-28">
         <h2 className="text-5xl font-black text-center mb-20">
           What Readers Feel
         </h2>
@@ -172,30 +175,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EMAIL CAPTURE */}
-      <section className="container-main py-32 text-center">
-        <h2 className="text-5xl font-black">
-          Stay Connected to the Journey
-        </h2>
-
-        <p className="mt-6 text-neutral-400">
-          Get new stories, emotional insights, and exclusive writings.
-        </p>
-
-        <div className="mt-10 flex justify-center gap-4 flex-wrap">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="px-6 py-4 rounded-xl bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-purple-500"
-          />
-          <button className="px-8 py-4 bg-white text-black rounded-xl font-semibold hover:scale-105 transition">
-            Subscribe
-          </button>
-        </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <section className="container-main py-32">
+      {/* 🚀 FINAL CTA (FIXED SPACING) */}
+      <section className="container-main pt-24 pb-16">
         <div className="rounded-3xl p-16 bg-gradient-to-r from-purple-500 to-pink-500 text-black text-center shadow-2xl">
 
           <h2 className="text-6xl font-black">
@@ -211,7 +192,6 @@ export default function Home() {
           </button>
         </div>
       </section>
-
     </main>
   )
 }
