@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Analytics } from "@vercel/analytics/next"
 import { Inter } from 'next/font/google'
+import Script from 'next/script' // ✅ GA import
 
 /* 🔤 FONT OPTIMIZATION */
 const inter = Inter({
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.png', // 🔁 add this in /public
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Vihaan Writes',
@@ -99,13 +100,29 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
         {/* 📱 MOBILE OPTIMIZATION */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* ✅ GOOGLE ANALYTICS */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-4S8ELNEWQZ"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-4S8ELNEWQZ', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
       </head>
 
       <body
         suppressHydrationWarning
         className={`${inter.variable} min-h-screen bg-neutral-950 text-white antialiased`}
       >
-        {/* 🌌 GLOBAL WRAPPER */}
         <div className="flex min-h-screen flex-col">
 
           {/* 🔝 NAVBAR */}
@@ -120,9 +137,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Footer />
         </div>
 
-        {/* 📊 GLOBAL ANALYTICS (CORRECT PLACEMENT) */}
+        {/* 📊 VERCEL ANALYTICS */}
         <Analytics />
-
       </body>
     </html>
   )
