@@ -902,4 +902,416 @@ export const blogPosts: BlogPost[] = [
       </div>
     ),
   },
+
+  /* ================= BLOG 6 ================= */
+
+  {
+    slug: "i-wrote-to-someone-i-hadnt-met-yet-soul-connection-writing",
+    title:
+      "I Wrote to Someone I Hadn’t Met Yet — And Somehow, She Felt Real",
+    excerpt:
+      "A deeply introspective story about writing to a soulmate before meeting them, exploring destiny, unseen connections, and the mysterious truth beyond logic.",
+    image: "/blog-writing-soul-connection.jpg",
+    date: "2026-05-08",
+    time: "12 min read",
+    category: "Soul Connection",
+    tags: ["Soulmate", "Destiny", "Writing", "Spiritual Connection", "Love"],
+    author: "Vihaan",
+    featured: true,
+    audio: "/audio/wrote-before-we-met.mp3",
+
+    content: (
+      <div className="space-y-12">
+
+        {/* INTRO */}
+        <p className="text-xl text-neutral-200 leading-relaxed">
+          There is a strange kind of truth that doesn’t wait for reality to confirm it.
+        </p>
+
+        <p className="text-neutral-300">
+          It doesn’t ask for proof. It doesn’t need timing. It doesn’t follow logic.
+        </p>
+
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-white/10 text-center italic text-neutral-300">
+          It simply exists.
+        </div>
+
+        <p className="text-neutral-300 text-center italic">
+          And sometimes… it arrives in the form of words.
+        </p>
+
+        {/* SECTION 1 */}
+        <h2 className="text-2xl font-semibold text-white">
+          The Beginning That Didn’t Feel Like a Beginning
+        </h2>
+
+        <p className="text-neutral-300">
+          Most stories begin with an event — a meeting, a moment, a turning point.
+        </p>
+
+        <p className="text-neutral-300">
+          But some stories begin without any of that.
+        </p>
+
+        <ul className="list-disc pl-6 text-neutral-300 space-y-2">
+          <li>No introduction</li>
+          <li>No timeline</li>
+          <li>No physical presence</li>
+        </ul>
+
+        <blockquote className="border-l-4 border-indigo-500 pl-6 italic text-lg text-neutral-300">
+          “Just a feeling… that someone exists.”
+        </blockquote>
+
+        <p className="text-neutral-300">
+          Not in your life yet — but already in your inner world.
+        </p>
+
+        {/* SECTION 2 */}
+        <h2 className="text-2xl font-semibold text-white">
+          Writing Without Knowing Why
+        </h2>
+
+        <p className="text-neutral-300">
+          At first, it didn’t make sense.
+        </p>
+
+        <p className="text-neutral-300">
+          Why write pages for someone you hadn’t met?
+        </p>
+
+        <p className="text-neutral-300">
+          Why did the words feel so specific, so personal, so real?
+        </p>
+
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-white/10 text-center italic text-neutral-300">
+          There was no face. No voice. No memory. Yet there was a connection.
+        </div>
+
+        <p className="text-neutral-300">
+          Not created — but felt.
+        </p>
+
+        {/* SECTION 3 */}
+        <h2 className="text-2xl font-semibold text-white">
+          When Words Start Feeling Like Memories
+        </h2>
+
+        <p className="text-neutral-300">
+          The most unusual part wasn’t writing — it was how the writing felt.
+        </p>
+
+        <p className="text-neutral-300">
+          It didn’t feel like imagination.
+        </p>
+
+        <p className="text-neutral-300">
+          It felt like remembering something that hadn’t happened yet.
+        </p>
+
+        <blockquote className="border-l-4 border-pink-500 pl-6 italic text-lg text-neutral-300">
+          “As if the emotions weren’t created… they were recalled.”
+        </blockquote>
+
+        <ul className="list-disc pl-6 text-neutral-300 space-y-2">
+          <li>A bridge between present and unknown</li>
+          <li>A connection between visible and unseen</li>
+          <li>A language of the soul</li>
+        </ul>
+
+        {/* SECTION 4 */}
+        <h2 className="text-2xl font-semibold text-white">
+          The Invisible Presence
+        </h2>
+
+        <p className="text-neutral-300">
+          Some people enter your life physically.
+        </p>
+
+        <p className="text-neutral-300">
+          Others arrive as energy.
+        </p>
+
+        <p className="text-neutral-300">
+          You don’t see them. You don’t hear them.
+        </p>
+
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-white/10 text-center italic text-neutral-300">
+          But you feel them — in thoughts, emotions, and words.
+        </div>
+
+        {/* SECTION 5 */}
+        <h2 className="text-2xl font-semibold text-white">
+          Why This Feels Impossible to Explain
+        </h2>
+
+        <p className="text-neutral-300">
+          Because it doesn’t follow logic.
+        </p>
+
+        <p className="text-neutral-300">
+          And anything beyond logic is questioned.
+        </p>
+
+        <ul className="list-disc pl-6 text-neutral-300 space-y-2">
+          <li>“It’s imagination.”</li>
+          <li>“It’s emotional projection.”</li>
+          <li>“You’ll understand later.”</li>
+        </ul>
+
+        <blockquote className="border-l-4 border-indigo-500 pl-6 italic text-lg text-neutral-300">
+          “But the truth is — you already understand.”
+        </blockquote>
+
+        {/* SECTION 6 */}
+        <h2 className="text-2xl font-semibold text-white">
+          Writing as Connection, Not Creation
+        </h2>
+
+        <p className="text-neutral-300">
+          What if writing is not about creating something new?
+        </p>
+
+        <p className="text-neutral-300">
+          What if it is about connecting to something that already exists?
+        </p>
+
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-pink-500/10 to-indigo-500/10 border border-white/10 text-center italic text-neutral-300">
+          You don’t feel like the creator — you feel like the medium.
+        </div>
+
+        <p className="text-neutral-300">
+          The words don’t feel forced. They feel received.
+        </p>
+
+        {/* SECTION 7 */}
+        <h2 className="text-2xl font-semibold text-white">
+          The Book That Shouldn’t Have Existed — But Did
+        </h2>
+
+        <p className="text-neutral-300">
+          At some point, writing becomes more than a habit.
+        </p>
+
+        <p className="text-neutral-300">
+          It becomes a calling. A responsibility to something you cannot ignore.
+        </p>
+
+        <p className="text-neutral-300">
+          And that’s when a book is born.
+        </p>
+
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-white/10 text-center italic text-neutral-300">
+          Not from planning. Not from strategy. But from inevitability.
+        </div>
+
+        <p className="text-neutral-300 text-center italic">
+          A book written before meeting the person it is about…
+        </p>
+
+        <p className="text-xl text-white italic text-center">
+          sounds impossible — but sometimes, the impossible is the most honest truth.
+        </p>
+
+        {/* CTA */}
+        <div className="p-10 rounded-3xl bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-white/10 text-center">
+          <p className="text-lg text-white mb-3">
+            If this resonates with you…
+          </p>
+          <p className="text-neutral-300 italic">
+            Maybe this connection is not yours alone.
+          </p>
+          <p className="text-white mt-4 font-semibold">
+            Explore the full journey in my book →
+          </p>
+        </div>
+
+        {/* SIGNATURE */}
+        <p className="text-right mt-10 text-lg">
+          — <strong>Vihaan</strong>
+        </p>
+
+      </div>
+    ),
+  },
+
+  /* ================= BLOG 7 ================= */
+
+  {
+    slug: "the-fire-that-found-its-forever-karmic-love-destiny-union",
+    title:
+      "The Fire That Found Its Forever",
+    excerpt:
+      "An intense and soulful journey of love that begins with karmic attraction, moves through distance and growth, and transforms into a destined union.",
+    image: "/blog-fire-destiny-love.jpg",
+    date: "2026-05-09",
+    time: "13 min read",
+    category: "Love & Destiny",
+    tags: ["Karmic Love", "Destiny", "Soulmate", "Spiritual Connection", "Twin Flame"],
+    author: "Vihaan",
+    featured: true,
+    audio: "/audio/fire-that-found-forever.mp3",
+
+    content: (
+      <div className="space-y-12">
+
+        {/* INTRO */}
+        <p className="text-xl text-neutral-200 leading-relaxed">
+          Some love stories don’t begin gently…
+          they begin like fire — sudden, intense, impossible to ignore.
+        </p>
+
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-orange-500/10 to-pink-500/10 border border-white/10 text-center italic text-neutral-300">
+          Not all flames are meant to burn out. Some are meant to become forever.
+        </div>
+
+        {/* ================= SECTION 1 ================= */}
+        <h2 className="text-2xl font-semibold text-white">
+          1. The Attraction That Didn’t Feel Random
+        </h2>
+
+        <p className="text-neutral-300">
+          You didn’t fall in love.
+        </p>
+
+        <p className="text-neutral-300">
+          You were pulled into it… as if something unseen had already decided this moment long before you arrived.
+        </p>
+
+        <ul className="list-disc pl-6 text-neutral-300 space-y-2">
+          <li>It wasn’t slow</li>
+          <li>It wasn’t logical</li>
+          <li>It wasn’t explainable</li>
+        </ul>
+
+        <blockquote className="border-l-4 border-orange-500 pl-6 italic text-lg text-neutral-300">
+          “It was immediate. Intense. Undeniable.”
+        </blockquote>
+
+        <p className="text-neutral-300">
+          There was familiarity — not in her face, but in her energy.
+        </p>
+
+        <p className="text-neutral-300 text-center italic">
+          “I know this… I’ve felt this before.”
+        </p>
+
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-white/10 text-center italic text-neutral-300">
+          This wasn’t attraction alone — this was recognition disguised as desire.
+        </div>
+
+        <p className="text-neutral-300 text-center font-semibold text-white">
+          👉 You didn’t meet someone new — you remembered someone old.
+        </p>
+
+        {/* ================= SECTION 2 ================= */}
+        <h2 className="text-2xl font-semibold text-white">
+          2. The Push and Pull of Destiny
+        </h2>
+
+        <p className="text-neutral-300">
+          There were moments when everything felt aligned…
+          as if the universe itself wanted you closer.
+        </p>
+
+        <p className="text-neutral-300">
+          Conversations flowed. Silence felt complete. Presence felt enough.
+        </p>
+
+        <p className="text-neutral-300">
+          And just when it felt certain —
+        </p>
+
+        <p className="text-neutral-300 italic text-center">
+          something shifted.
+        </p>
+
+        <ul className="list-disc pl-6 text-neutral-300 space-y-2">
+          <li>Distance appeared</li>
+          <li>Timing became uncertain</li>
+          <li>Life pulled you in different directions</li>
+        </ul>
+
+        <blockquote className="border-l-4 border-pink-500 pl-6 italic text-lg text-neutral-300">
+          “Destiny doesn’t always move in straight lines.”
+        </blockquote>
+
+        <p className="text-neutral-300">
+          You came close… and then moved apart. Again and again.
+        </p>
+
+        <p className="text-neutral-300">
+          It felt confusing.
+        </p>
+
+        <p className="text-neutral-300">
+          If it was real — why wasn’t it stable?
+          If it was true — why wasn’t it easy?
+        </p>
+
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-pink-500/10 to-orange-500/10 border border-white/10 text-center italic text-neutral-300">
+          Sometimes distance is not separation — it is preparation.
+        </div>
+
+        <p className="text-neutral-300">
+          In those moments apart, you didn’t lose each other.
+        </p>
+
+        <p className="text-neutral-300">
+          You understood each other more.
+        </p>
+
+        <ul className="list-disc pl-6 text-neutral-300 space-y-2">
+          <li>You reflected</li>
+          <li>You questioned</li>
+          <li>You grew</li>
+        </ul>
+
+        <p className="text-neutral-300">
+          Because what you felt was too strong to disappear —
+          but too early to fully stay.
+        </p>
+
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-orange-500/10 to-pink-500/10 border border-white/10 text-center italic text-neutral-300">
+          This wasn’t rejection — this was timing aligning two souls.
+        </div>
+
+        <p className="text-neutral-300 text-center font-semibold text-white">
+          👉 You weren’t being pulled away… you were being prepared.
+        </p>
+
+        {/* ================= FINAL IMPACT ================= */}
+        <div className="p-10 rounded-3xl bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-white/10 text-center">
+          <p className="text-xl italic text-white">
+            Some love stories burn fast…
+          </p>
+          <p className="text-xl italic text-white mt-2">
+            but the rare ones —
+          </p>
+          <p className="text-xl italic text-white mt-2">
+            burn until they become forever.
+          </p>
+        </div>
+
+        {/* CTA */}
+        <div className="p-8 rounded-3xl bg-gradient-to-r from-pink-500/20 to-orange-500/20 border border-white/10 text-center">
+          <p className="text-lg text-white mb-2">
+            If this feels like your story…
+          </p>
+          <p className="text-neutral-300 italic">
+            maybe this connection was never accidental.
+          </p>
+          <p className="text-white mt-4 font-semibold">
+            Continue the journey in my book →
+          </p>
+        </div>
+
+        {/* SIGNATURE */}
+        <p className="text-right mt-10 text-lg">
+          — <strong>Vihaan</strong>
+        </p>
+
+      </div>
+    ),
+  },
 ];
