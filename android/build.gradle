@@ -1,0 +1,33 @@
+// Top-level build file
+
+buildscript {
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.5.2'   // ✅ stable version
+        classpath 'com.google.gms:google-services:4.4.4'
+    }
+}
+
+// ✅ IMPORTANT: define SDK versions here
+ext {
+    compileSdkVersion = 34
+    targetSdkVersion = 34
+    minSdkVersion = 22
+}
+
+apply from: "variables.gradle"
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
