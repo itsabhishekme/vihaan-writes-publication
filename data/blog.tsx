@@ -469,7 +469,7 @@ export const blogPosts: BlogPost[] = [
       "The Day Destiny Became Real",
     excerpt:
       "A deeply emotional reflection on the moment destiny stops being a belief and becomes a lived experience through connection, recognition, and timing.",
-    image: "/blog-destiny-real.jpg",
+    image: "/blog-destiny-real2.jpg",
     date: "2026-05-08",
     time: "11 min read",
     category: "Love",
@@ -697,6 +697,204 @@ export const blogPosts: BlogPost[] = [
           but when you finally recognize it.
         </p>
 
+        <p className="text-right mt-10 text-lg">
+          — <strong>Vihaan</strong>
+        </p>
+
+      </div>
+    ),
+  },
+
+  /* ================= BLOG 5 ================= */
+
+  {
+    slug: "where-love-becomes-destiny-first-meeting-connection-story",
+    title:
+      "Where Love Becomes Destiny",
+    excerpt:
+      "A deeply emotional story about first meeting, silent connection, and the invisible distance that transforms love into destiny.",
+    image: "/blog-love-destiny-meeting.jpg",
+    date: "2026-05-06",
+    time: "13 min read",
+    category: "Love",
+    tags: ["Destiny", "Soulmate", "Love Story", "Connection", "Emotional Journey"],
+    author: "Vihaan",
+    featured: true,
+    audio: "/audio/where-love-becomes-destiny.mp3",
+
+    content: (
+      <div className="space-y-12">
+
+        {/* INTRO */}
+        <p className="text-xl text-neutral-200 leading-relaxed">
+          Some meetings don’t feel like beginnings…
+          they feel like something that was always meant to happen.
+        </p>
+
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-indigo-500/10 to-pink-500/10 border border-white/10 text-center italic text-neutral-300">
+          Not planned. Not expected. Yet deeply familiar.
+        </div>
+
+        {/* ================= SECTION 1 ================= */}
+        <h2 className="text-2xl font-semibold text-white">
+          1. The Day Destiny Introduced Us
+        </h2>
+
+        <p className="text-neutral-300">
+          It wasn’t planned. There was no perfect timing, no grand setup.
+          Just another ordinary day — moving through routine, carrying quiet expectations.
+        </p>
+
+        <p className="text-neutral-300">
+          And then… she appeared.
+        </p>
+
+        <p className="text-neutral-300">
+          Not loudly. Not dramatically. But like something that gently shifts the air around you.
+        </p>
+
+        <blockquote className="border-l-4 border-indigo-500 pl-6 italic text-lg text-neutral-300">
+          “It didn’t feel like the first time… it felt like recognition.”
+        </blockquote>
+
+        <p className="text-neutral-300">
+          There was no need to impress, no nervousness — just a calm, unexplainable presence.
+        </p>
+
+        <p className="text-neutral-300">
+          The world continued as it was. But inside… something shifted.
+        </p>
+
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-500/10 to-indigo-500/10 border border-white/10 text-center italic text-neutral-300">
+          This was not attraction. This was not coincidence. This was something deeper.
+        </div>
+
+        <p className="text-neutral-300">
+          A quiet voice remained:
+        </p>
+
+        <p className="text-center text-white italic text-lg">
+          “This is not the first time you’ve met her.”
+        </p>
+
+        {/* ================= SECTION 2 ================= */}
+        <h2 className="text-2xl font-semibold text-white">
+          2. The Silence Between Words
+        </h2>
+
+        <p className="text-neutral-300">
+          Some connections grow through conversations.
+          Ours grew through silence.
+        </p>
+
+        <p className="text-neutral-300">
+          Words existed… but they were never necessary.
+        </p>
+
+        <p className="text-neutral-300">
+          In a world where silence feels awkward, with you — it felt complete.
+        </p>
+
+        <blockquote className="border-l-4 border-pink-500 pl-6 italic text-lg text-neutral-300">
+          “We didn’t speak everything… yet everything was understood.”
+        </blockquote>
+
+        <p className="text-neutral-300">
+          It lived in the way we noticed each other…
+          in the way time slowed down slightly…
+          in the way presence itself felt like connection.
+        </p>
+
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-indigo-500/10 to-pink-500/10 border border-white/10 text-center italic text-neutral-300">
+          Trust without reason. Comfort without history. Connection without definition.
+        </div>
+
+        <p className="text-neutral-300">
+          No labels. No pressure. No explanations.
+        </p>
+
+        <p className="text-neutral-300 text-center italic">
+          Just two souls… quietly recognizing each other again.
+        </p>
+
+        {/* ================= SECTION 3 ================= */}
+        <h2 className="text-2xl font-semibold text-white">
+          3. The Distance That Was Not Physical
+        </h2>
+
+        <p className="text-neutral-300">
+          We were still there — in the same world, under the same sky.
+        </p>
+
+        <p className="text-neutral-300">
+          Nothing had ended. And yet… something had changed.
+        </p>
+
+        <p className="text-neutral-300">
+          It didn’t happen suddenly. It arrived quietly.
+        </p>
+
+        <ul className="list-disc pl-6 text-neutral-300 space-y-2">
+          <li>Conversations became shorter</li>
+          <li>Silences became heavier</li>
+          <li>Ease slowly turned into uncertainty</li>
+        </ul>
+
+        <blockquote className="border-l-4 border-indigo-500 pl-6 italic text-lg text-neutral-300">
+          “We didn’t lose each other… we stopped understanding each other.”
+        </blockquote>
+
+        <p className="text-neutral-300">
+          The distance wasn’t physical — it was emotional.
+        </p>
+
+        <p className="text-neutral-300">
+          Messages turned into doubts. Silence turned into questions.
+        </p>
+
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-white/10 text-center italic text-neutral-300">
+          Physical distance can be crossed… but emotional distance requires courage.
+        </div>
+
+        <p className="text-neutral-300">
+          Courage to speak. Courage to be vulnerable. Courage to risk losing what you feel.
+        </p>
+
+        <p className="text-neutral-300">
+          But in that moment… we had feelings, not courage.
+        </p>
+
+        <p className="text-neutral-300 text-center italic">
+          So we stayed — not apart, but not truly together.
+        </p>
+
+        {/* ================= FINAL IMPACT ================= */}
+        <div className="p-10 rounded-3xl bg-gradient-to-r from-indigo-500/20 to-pink-500/20 border border-white/10 text-center">
+          <p className="text-xl italic text-white">
+            Love doesn’t always end…
+          </p>
+          <p className="text-xl italic text-white mt-2">
+            sometimes it transforms into something deeper —
+          </p>
+          <p className="text-xl italic text-white mt-2">
+            something called destiny.
+          </p>
+        </div>
+
+        {/* CTA (IMPORTANT FOR SALES) */}
+        <div className="p-8 rounded-3xl bg-gradient-to-r from-purple-500/20 to-indigo-500/20 border border-white/10 text-center">
+          <p className="text-lg text-white mb-3">
+            If this story feels familiar…
+          </p>
+          <p className="text-neutral-300 italic">
+            You may not be reading it by coincidence.
+          </p>
+          <p className="text-white mt-4 font-semibold">
+            Discover the deeper journey in my book →
+          </p>
+        </div>
+
+        {/* SIGNATURE */}
         <p className="text-right mt-10 text-lg">
           — <strong>Vihaan</strong>
         </p>
