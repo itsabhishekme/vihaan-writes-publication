@@ -1314,4 +1314,538 @@ export const blogPosts: BlogPost[] = [
       </div>
     ),
   },
+
+  /* ================= BLOG 8 ================= */
+
+  {
+    slug: "the-silence-that-guided-me-before-destiny-arrived",
+    title:
+      "The Silence That Guided Me Before Destiny Arrived",
+    excerpt:
+      "A deeply spiritual reflection on karma, astrology, soul connections, silence, and the unseen timing that guides destiny before it fully arrives.",
+    image: "/blog-spiritual-destiny.jpg",
+    date: "2026-05-10",
+    time: "15 min read",
+    category: "Spiritual Awakening",
+    tags: [
+      "Spirituality",
+      "Karma",
+      "Astrology",
+      "Soul Connection",
+      "Destiny",
+      "Inner Healing",
+    ],
+    author: "Vihaan",
+    featured: true,
+    audio: "/audio/silence-before-destiny.mp3",
+
+    content: (
+      <div className="space-y-12">
+
+        {/* HERO */}
+        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-950/40 via-black to-purple-950/40 p-10">
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.15),transparent_40%)]" />
+
+          <div className="relative z-10 space-y-6">
+
+            <p className="text-2xl md:text-3xl font-light leading-relaxed text-neutral-100">
+              There are moments in life that cannot be explained through logic.
+            </p>
+
+            <p className="text-lg leading-relaxed text-neutral-300">
+              Moments that feel older than memory.
+              Older than language.
+              Older than the version of ourselves the world sees every day.
+            </p>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+              <p className="text-center text-xl italic text-neutral-200">
+                “Certain experiences arrive because the soul has already met them before.”
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        {/* SECTION 1 */}
+        <section className="space-y-6">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Soul Always Knows Before the Mind Understands
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            One of the deepest spiritual truths I have learned is this:
+          </p>
+
+          <blockquote className="border-l-4 border-indigo-500 pl-6 text-xl italic text-neutral-200">
+            “The soul recognizes destiny before the mind can explain it.”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            That is why certain places feel familiar the first time you visit them.
+            Why some people feel emotionally close even when they are strangers.
+            Why some moments carry emotional weight beyond logic.
+          </p>
+
+        </section>
+
+        {/* SECTION 2 */}
+        <section className="space-y-6">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Creativity Is Spiritual
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Writing became my spiritual mirror.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Every sentence felt less like imagination and more like remembering.
+          </p>
+
+          <div className="rounded-3xl border border-indigo-500/20 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 p-8">
+
+            <p className="text-center text-xl italic leading-relaxed text-white">
+              “True art does not come from performance.
+              It comes from alignment.”
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 3 */}
+        <section className="space-y-6">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Spiritual Meaning of Waiting
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            The soul does not operate through urgency.
+            It operates through timing.
+          </p>
+
+          <blockquote className="border-l-4 border-purple-500 pl-6 text-xl italic text-neutral-200">
+            “Invisible growth is still growth.”
+          </blockquote>
+
+        </section>
+
+        {/* SECTION 4 */}
+        <section className="space-y-6">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Why Certain Souls Feel Different
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Not every connection is karmic.
+            But the karmic ones change you forever.
+          </p>
+
+          <div className="rounded-3xl border border-pink-500/20 bg-gradient-to-r from-pink-500/10 to-indigo-500/10 p-8">
+
+            <p className="text-center text-xl italic leading-relaxed text-white">
+              “Love, in its highest form, is recognition.”
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 5 */}
+        <section className="space-y-6">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Maybe Your Silence Is Preparing You Too
+          </h2>
+
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 p-10">
+
+            <p className="text-center text-2xl italic leading-relaxed text-white">
+              “Not all silence means abandonment.
+              Sometimes silence is preparation.”
+            </p>
+
+          </div>
+
+          <p className="leading-relaxed text-neutral-300">
+            You are not late.
+            You are unfolding.
+          </p>
+
+        </section>
+
+        {/* FINAL */}
+        <section className="space-y-6">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Final Reflection
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            The soul always remembers.
+          </p>
+
+          <div className="rounded-3xl border border-indigo-500/20 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 p-10 text-center">
+
+            <p className="text-2xl italic leading-relaxed text-white">
+              Keep healing.
+              Keep creating.
+              Keep trusting.
+            </p>
+
+            <p className="mt-4 text-neutral-300">
+              Your story is still unfolding beautifully.
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* CTA */}
+        <div className="rounded-3xl border border-white/10 bg-black/40 p-10 text-center">
+
+          <p className="mb-3 text-xl text-white">
+            Explore more spiritual reflections by Vihaan
+          </p>
+
+          <p className="italic text-neutral-400">
+            Where destiny, soul connection, karma, and healing meet through words.
+          </p>
+
+        </div>
+
+        {/* SIGNATURE */}
+        <p className="mt-12 text-right text-lg text-neutral-300">
+          — Vihaan
+        </p>
+
+      </div>
+    ),
+  },
+
+  /* ================= BLOG 9 ================= */
+
+  {
+    slug: "the-soul-already-knew-spiritual-destiny-karma",
+    title:
+      "The Soul Already Knew: Why Certain Destinies Cannot Be Escaped",
+    excerpt:
+      "A deeply spiritual reflection on karma, destiny, intuition, soul timing, and the invisible forces guiding certain lives toward sacred alignment.",
+    image: "/blog-soul-destiny.jpg",
+    date: "2026-05-11",
+    time: "16 min read",
+    category: "Spiritual",
+    tags: [
+      "Spiritual Awakening",
+      "Karma",
+      "Destiny",
+      "Soul Journey",
+      "Inner Healing",
+      "Astrology",
+    ],
+    author: "Vihaan",
+    featured: true,
+    audio: "/audio/the-soul-already-knew.mp3",
+
+    content: (
+      <div className="space-y-14">
+
+        {/* HERO SECTION */}
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-indigo-950/40 via-black to-purple-950/40 p-10 md:p-14">
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.15),transparent_40%)]" />
+
+          <div className="relative z-10 space-y-8">
+
+            <p className="text-3xl md:text-5xl font-light leading-tight text-white">
+              Some destinies do not arrive suddenly.
+            </p>
+
+            <p className="text-xl leading-relaxed text-neutral-300">
+              They exist quietly within the soul long before life understands them.
+            </p>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+
+              <p className="text-center text-2xl italic leading-relaxed text-neutral-100">
+                “The soul recognizes certain futures before reality reveals them.”
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* SECTION 1 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Spiritual Fire Within
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            There are some feelings that do not begin in this lifetime.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            A strange familiarity.
+            An invisible longing.
+            An emotional pull toward something beyond explanation.
+          </p>
+
+          <blockquote className="border-l-4 border-indigo-500 pl-6 text-2xl italic text-neutral-100">
+            “The soul moves through destiny long before the mind understands where life is going.”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            As someone born under Mesh Rashi, I have always carried intensity within me —
+            not loud intensity, but spiritual fire.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-3">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Fire
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Not only destruction — illumination.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Silence
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                The place where intuition becomes clear.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Destiny
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                A spiritual unfolding guided through timing.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 2 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Astrology Is the Language of the Soul
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Astrology is not merely prediction.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            It is spiritual psychology.
+            A map of karmic energy carried into this lifetime.
+          </p>
+
+          <div className="rounded-3xl border border-indigo-500/20 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 p-10">
+
+            <p className="text-center text-2xl italic leading-relaxed text-white">
+              “Every soul arrives carrying unfinished lessons, hidden strengths, and sacred purpose.”
+            </p>
+
+          </div>
+
+          <ul className="list-disc space-y-3 pl-6 text-neutral-300">
+            <li>Why certain experiences repeat</li>
+            <li>Why some souls feel instantly familiar</li>
+            <li>Why pain sometimes transforms us permanently</li>
+            <li>Why destiny often feels emotionally guided</li>
+          </ul>
+
+        </section>
+
+        {/* SECTION 3 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Spiritual Weight of Loneliness
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            One of the hardest spiritual lessons is learning how to survive silence.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Not temporary silence.
+            Soul silence.
+          </p>
+
+          <blockquote className="border-l-4 border-purple-500 pl-6 text-2xl italic text-neutral-100">
+            “Not all loneliness is emptiness. Sometimes loneliness is preparation.”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            The universe isolates certain souls because transformation requires stillness.
+          </p>
+
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 p-8">
+
+            <p className="text-center text-xl italic leading-relaxed text-neutral-100">
+              “A seed grows underground before the world sees the flower.”
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 4 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Karmic Connections Feel Different
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Not every relationship is spiritual.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            But karmic connections feel ancient, familiar, emotionally heavy with meaning.
+          </p>
+
+          <div className="rounded-3xl border border-pink-500/20 bg-gradient-to-r from-pink-500/10 to-purple-500/10 p-10">
+
+            <p className="text-center text-2xl italic leading-relaxed text-white">
+              “The heart recognizes frequencies the mind cannot explain.”
+            </p>
+
+          </div>
+
+          <p className="leading-relaxed text-neutral-300">
+            Some souls arrive not to complete life —
+            but to awaken it.
+          </p>
+
+        </section>
+
+        {/* SECTION 5 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Destiny Often Arrives Slowly
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Modern culture teaches urgency.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-2">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="font-medium text-white">
+                Faster success
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="font-medium text-white">
+                Faster healing
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="font-medium text-white">
+                Faster love
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="font-medium text-white">
+                Faster achievement
+              </p>
+            </div>
+
+          </div>
+
+          <blockquote className="border-l-4 border-indigo-500 pl-6 text-2xl italic text-neutral-100">
+            “The universe prepares souls internally before changing their external reality.”
+          </blockquote>
+
+        </section>
+
+        {/* FINAL REFLECTION */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Final Reflection
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Perhaps destiny is not something we chase.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Perhaps destiny is something we slowly become aligned with.
+          </p>
+
+          <div className="rounded-[32px] border border-indigo-500/20 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 p-12 text-center">
+
+            <p className="text-3xl italic leading-relaxed text-white">
+              “The soul already knew…
+              long before life made sense.”
+            </p>
+
+          </div>
+
+          <p className="text-center text-lg leading-relaxed text-neutral-300">
+            Keep healing.
+            Keep trusting.
+            Keep becoming.
+          </p>
+
+        </section>
+
+        {/* CTA */}
+        <div className="rounded-3xl border border-white/10 bg-black/40 p-10 text-center">
+
+          <p className="mb-4 text-2xl text-white">
+            Explore More Spiritual Reflections
+          </p>
+
+          <p className="italic leading-relaxed text-neutral-400">
+            Where karma, destiny, astrology, healing, and soul connection become stories of awakening.
+          </p>
+
+        </div>
+
+        {/* SIGNATURE */}
+        <p className="mt-12 text-right text-lg text-neutral-300">
+          — Vihaan
+        </p>
+
+      </div>
+    ),
+  },
+
+
 ];
