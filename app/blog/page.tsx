@@ -1,303 +1,880 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import {
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
+
+import Image from "next/image";
+import Link from "next/link";
+
+import {
+  HiOutlineAdjustmentsHorizontal,
+  HiOutlineArrowRight,
+  HiOutlineBars3BottomLeft,
   HiOutlineCalendarDays,
   HiOutlineClock,
-  HiOutlineArrowRight,
-  HiOutlineSparkles,
-  HiOutlineTag,
   HiOutlineFire,
-  HiOutlineEnvelope,
-  HiOutlineCheckCircle,
+  HiOutlineMagnifyingGlass,
+  HiOutlineSparkles,
+  HiOutlineSquares2X2,
+  HiOutlineTag,
+  HiOutlineStar,
+  HiOutlineHeart,
+  HiOutlineBookOpen,
 } from "react-icons/hi2";
 
 import { blogPosts } from "@/data/blog";
 
 export default function BlogPage() {
-  const [activeTag, setActiveTag] = useState("All");
-  const [visiblePosts, setVisiblePosts] = useState(6);
-  const [search, setSearch] = useState("");
-  const [scroll, setScroll] = useState(0);
+  /* -------------------------------- */
+  /* STATES */
+  /* -------------------------------- */
 
-  // 🔥 STATES
-  const [email, setEmail] = useState("");
-  const [isSubscribed, setIsSubscribed] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [activeTag, setActiveTag] =
+    useState<string>("All");
 
-  /* 📊 SCROLL PROGRESS */
+  const [visiblePosts, setVisiblePosts] =
+    useState<number>(6);
+
+  const [search, setSearch] =
+    useState<string>("");
+
+  const [showFilters, setShowFilters] =
+    useState<boolean>(false);
+
+  const [viewMode, setViewMode] =
+    useState<"grid" | "list">("grid");
+
+  const [scrollWidth, setScrollWidth] =
+    useState<string>("0%");
+
+  /* -------------------------------- */
+  /* SCROLL EFFECT */
+  /* -------------------------------- */
+
   useEffect(() => {
     const handleScroll = () => {
-      const total = document.body.scrollHeight - window.innerHeight;
-      const progress = (window.scrollY / total) * 100;
-      setScroll(progress);
+      const totalHeight =
+        document.documentElement
+          .scrollHeight -
+        window.innerHeight;
+
+      const progress =
+        totalHeight > 0
+          ? (window.scrollY /
+              totalHeight) *
+            100
+          : 0;
+
+      setScrollWidth(`${progress}%`);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
-  const tags = ["All", "Love", "Destiny", "Healing", "Spiritual"];
+    handleScroll();
 
-  const filteredPosts = blogPosts
-    .filter((post) =>
-      activeTag === "All" ? true : post.category === activeTag
-    )
-    .filter((post) =>
-      post.title.toLowerCase().includes(search.toLowerCase())
+    window.addEventListener(
+      "scroll",
+      handleScroll
     );
 
-  const trendingPosts = blogPosts.slice(0, 3);
-
-  /* 🔥 FULLY UPGRADED SUBSCRIBE FUNCTION */
-  const handleSubscribe = async () => {
-    // Reset
-    setError("");
-    setIsSubscribed(false);
-
-    // Prevent spam click
-    if (loading) return;
-
-    // Validation
-    if (!email) {
-      setError("Please enter your email");
-      return;
-    }
-
-    const emailTrimmed = email.trim();
-
-    const emailRegex =
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailRegex.test(emailTrimmed)) {
-      setError("Enter a valid email address");
-      return;
-    }
-
-    try {
-      setLoading(true);
-
-      // 🌐 Backend call
-      const response = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email: emailTrimmed }),
-      });
-
-      const data = await response.json();
-
-      // ❌ Handle backend errors
-      if (!response.ok || !data.success) {
-        setError(
-          data?.message ||
-          "Subscription failed. Try again."
-        );
-        setLoading(false);
-        return;
-      }
-
-      // ✅ Success
-      setIsSubscribed(true);
-      setEmail("");
-
-      // Auto hide success
-      setTimeout(() => {
-        setIsSubscribed(false);
-      }, 4000);
-
-    } catch (err: any) {
-      setError(
-        "Network error. Please check your connection."
+    return () =>
+      window.removeEventListener(
+        "scroll",
+        handleScroll
       );
-    } finally {
-      setLoading(false);
-    }
-  };
+  }, []);
+
+  /* -------------------------------- */
+  /* TAGS */
+  /* -------------------------------- */
+
+  const tags: string[] = [
+    "All",
+    "Love",
+    "Destiny",
+    "Healing",
+    "Spiritual",
+  ];
+
+  /* -------------------------------- */
+  /* FILTERED POSTS */
+  /* -------------------------------- */
+
+  const filteredPosts = useMemo(() => {
+    return blogPosts
+      .filter((post) =>
+        activeTag === "All"
+          ? true
+          : post.category === activeTag
+      )
+      .filter((post) =>
+        post.title
+          .toLowerCase()
+          .includes(
+            search.toLowerCase()
+          )
+      );
+  }, [activeTag, search]);
+
+  /* -------------------------------- */
+  /* FEATURED POSTS */
+  /* -------------------------------- */
+
+  const featuredPosts =
+    filteredPosts.slice(0, 3);
+
+  /* -------------------------------- */
+  /* RETURN */
+  /* -------------------------------- */
 
   return (
-    <main className="relative overflow-hidden text-white">
+    <main className="relative min-h-screen overflow-hidden bg-black text-white">
 
-      {/* 📊 SCROLL BAR */}
-      <div
-        className="fixed top-0 left-0 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 z-50 transition-all"
-        style={{ width: `${scroll}%` }}
-      />
+      {/* -------------------------------- */}
+      {/* SCROLL BAR */}
+      {/* -------------------------------- */}
 
-      {/* 🌌 BACKGROUND */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-black via-neutral-900 to-black" />
-      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/20 blur-3xl rounded-full animate-pulse" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-600/20 blur-3xl rounded-full animate-pulse" />
+      <div className="fixed left-0 top-0 z-50 h-[3px] w-full bg-transparent">
 
-      {/* ✨ HERO */}
-      <section className="max-w-7xl mx-auto px-6 py-28 text-center">
-        <div className="inline-flex items-center gap-2 px-5 py-2 border border-white/10 rounded-full text-sm text-neutral-300 backdrop-blur-xl">
+        <div
+          className="
+            h-full
+            bg-gradient-to-r
+            from-fuchsia-500
+            via-purple-500
+            to-indigo-500
+            transition-all
+            duration-300
+          "
+          style={{
+            width: scrollWidth,
+          }}
+        />
+
+      </div>
+
+      {/* -------------------------------- */}
+      {/* BACKGROUND */}
+      {/* -------------------------------- */}
+
+      <div className="absolute inset-0 -z-10 bg-black" />
+
+      <div className="absolute left-0 top-0 -z-10 h-[500px] w-[500px] rounded-full bg-fuchsia-600/20 blur-3xl" />
+
+      <div className="absolute bottom-0 right-0 -z-10 h-[500px] w-[500px] rounded-full bg-indigo-600/20 blur-3xl" />
+
+      <div className="absolute left-1/2 top-1/2 -z-10 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-600/10 blur-3xl" />
+
+      {/* -------------------------------- */}
+      {/* HERO */}
+      {/* -------------------------------- */}
+
+      <section className="mx-auto max-w-7xl px-6 pb-20 pt-28 text-center">
+
+        <div
+          className="
+            inline-flex
+            items-center
+            gap-2
+            rounded-full
+            border
+            border-white/10
+            bg-white/5
+            px-6
+            py-3
+            text-sm
+            text-neutral-300
+            backdrop-blur-xl
+          "
+        >
           <HiOutlineSparkles />
-          Soulful Writing Space
+          Vihaan Writes
         </div>
 
-        <h1 className="mt-6 text-6xl md:text-8xl font-black tracking-tight">
-          Echoes of <span className="text-neutral-500">Her Soul</span>
+        <h1 className="mt-8 text-6xl font-black tracking-tight md:text-8xl">
+
+          Echoes of{" "}
+
+          <span className="bg-gradient-to-r from-fuchsia-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+            Her Soul
+          </span>
+
         </h1>
 
-        <p className="mt-6 text-neutral-400 max-w-2xl mx-auto">
-          A space where love, destiny, and unseen emotions are written before they unfold.
+        <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-neutral-400 md:text-xl">
+          A cinematic space of destiny,
+          soulful reflections, karmic
+          love, healing emotions, and
+          stories written before life
+          revealed their meaning.
         </p>
 
-        {/* SEARCH */}
-        <div className="mt-8 max-w-xl mx-auto">
-          <input
-            type="text"
-            placeholder="Search reflections..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 outline-none backdrop-blur-xl focus:ring-2 focus:ring-purple-500"
-          />
+        {/* STATS */}
+
+        <div className="mt-14 flex flex-wrap items-center justify-center gap-6">
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 px-8 py-5 backdrop-blur-xl">
+            <div className="text-3xl font-black">
+              {blogPosts.length}+
+            </div>
+            <div className="mt-1 text-sm text-neutral-400">
+              Soulful Stories
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 px-8 py-5 backdrop-blur-xl">
+            <div className="text-3xl font-black">
+              10K+
+            </div>
+            <div className="mt-1 text-sm text-neutral-400">
+              Readers
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 px-8 py-5 backdrop-blur-xl">
+            <div className="text-3xl font-black">
+              Endless
+            </div>
+            <div className="mt-1 text-sm text-neutral-400">
+              Emotions
+            </div>
+          </div>
+
         </div>
+
       </section>
 
-      {/* 🌟 FEATURED BLOG */}
-      <section className="max-w-7xl mx-auto px-6 pb-20">
-        <div className="relative rounded-[2.5rem] overflow-hidden group border border-white/10">
+      {/* -------------------------------- */}
+      {/* FEATURED STORY */}
+      {/* -------------------------------- */}
 
-          <Image
-            src="/featured.jpg"
-            alt="Words Written Before Destiny Arrived"
-            fill
-            className="object-cover opacity-40 group-hover:scale-105 transition duration-700"
-          />
+      <section className="mx-auto max-w-7xl px-6 pb-24">
+
+        <div
+          className="
+            group
+            relative
+            overflow-hidden
+            rounded-[3rem]
+            border
+            border-white/10
+            min-h-[600px]
+          "
+        >
+
+          {/* IMAGE */}
+
+          <div className="absolute inset-0">
+
+            <Image
+              src="/featured.jpg"
+              alt="Featured Story"
+              fill
+              priority
+              sizes="100vw"
+              className="
+                object-cover
+                opacity-40
+                transition
+                duration-700
+                group-hover:scale-105
+              "
+            />
+
+          </div>
+
+          {/* OVERLAY */}
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
 
-          <div className="relative p-12 md:p-16">
+          {/* BADGE */}
+
+          <div className="absolute right-8 top-8 z-20 rounded-full border border-white/10 bg-black/40 px-5 py-3 backdrop-blur-xl">
+
+            <div className="flex items-center gap-2 text-sm font-semibold">
+
+              <HiOutlineStar className="text-yellow-400" />
+
+              Featured Story
+
+            </div>
+
+          </div>
+
+          {/* CONTENT */}
+
+          <div className="relative z-10 flex min-h-[600px] flex-col justify-end p-10 md:p-16">
+
             <span className="flex items-center gap-2 text-sm text-neutral-300">
-              <HiOutlineFire /> Featured Story
+
+              <HiOutlineFire />
+
+              Destiny Writing
+
             </span>
 
-            <h2 className="mt-6 text-4xl md:text-5xl font-bold max-w-3xl leading-tight">
+            <h2 className="mt-6 max-w-5xl text-4xl font-black leading-tight md:text-7xl">
+
               Words Written Before Destiny Arrived
+
             </h2>
 
-            <p className="mt-4 text-neutral-400 max-w-xl">
-              A reflection of love that existed before meeting — written in time and sealed by destiny.
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-neutral-300 md:text-xl">
+
+              A reflection of love that
+              existed before meeting —
+              written through emotion,
+              silence, karmic timing,
+              and the invisible threads
+              connecting souls long
+              before they recognize
+              each other.
+
             </p>
 
-            <Link
-              href="/blog/featured"
-              className="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-white text-black rounded-xl font-semibold hover:scale-105 transition"
-            >
-              Read Story <HiOutlineArrowRight />
-            </Link>
-          </div>
-        </div>
-      </section>
+            <div className="mt-10 flex flex-wrap items-center gap-5">
 
-      {/* 🔥 TRENDING */}
-      <section className="max-w-7xl mx-auto px-6 pb-16">
-        <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-          <HiOutlineFire /> Trending Stories
-        </h3>
+              <Link
+                href="/blog/featured"
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  rounded-2xl
+                  bg-white
+                  px-8
+                  py-4
+                  font-semibold
+                  text-black
+                  transition-all
+                  duration-300
+                  hover:scale-105
+                "
+              >
+                Read Story
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {trendingPosts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`}>
-              <div className="p-6 rounded-xl bg-white/5 hover:bg-white/10 transition backdrop-blur-xl hover:scale-105">
-                <h4 className="font-semibold">{post.title}</h4>
-                <p className="text-sm text-neutral-400 mt-2">
-                  {post.excerpt.slice(0, 80)}...
-                </p>
+                <HiOutlineArrowRight />
+
+              </Link>
+
+              <div className="rounded-2xl border border-white/10 bg-white/5 px-6 py-4 backdrop-blur-xl">
+
+                <div className="text-sm text-neutral-400">
+                  Reading Time
+                </div>
+
+                <div className="mt-1 font-semibold">
+                  8 Min Read
+                </div>
+
               </div>
-            </Link>
-          ))}
+
+            </div>
+
+          </div>
+
         </div>
+
       </section>
 
-      {/* 🔍 FILTER */}
-      <section className="max-w-7xl mx-auto px-6 pb-10">
-        <div className="flex flex-wrap gap-3 justify-center">
-          {tags.map((tag) => (
+      {/* -------------------------------- */}
+      {/* TOOLBAR */}
+      {/* -------------------------------- */}
+
+      <section className="mx-auto max-w-7xl px-6 pb-12">
+
+        <div
+          className="
+            flex
+            flex-col
+            gap-5
+            rounded-[2rem]
+            border
+            border-white/10
+            bg-white/5
+            p-5
+            backdrop-blur-2xl
+            lg:flex-row
+            lg:items-center
+            lg:justify-between
+          "
+        >
+
+          {/* SEARCH */}
+
+          <div className="relative w-full lg:flex-1">
+
+            <HiOutlineMagnifyingGlass
+              className="
+                absolute
+                left-5
+                top-1/2
+                -translate-y-1/2
+                text-xl
+                text-neutral-500
+              "
+            />
+
+            <input
+              type="text"
+              value={search}
+              onChange={(e) =>
+                setSearch(
+                  e.target.value
+                )
+              }
+              placeholder="Search destiny, soulmate, karmic love..."
+              aria-label="Search blog posts"
+              className="
+                h-16
+                w-full
+                rounded-2xl
+                border
+                border-white/10
+                bg-black/40
+                pl-14
+                pr-5
+                text-white
+                outline-none
+                transition-all
+                placeholder:text-neutral-500
+                focus:border-fuchsia-500
+                focus:ring-2
+                focus:ring-fuchsia-500/20
+              "
+            />
+
+          </div>
+
+          {/* ACTIONS */}
+
+          <div className="flex items-center gap-4">
+
+            {/* FILTER */}
+
             <button
-              key={tag}
-              onClick={() => setActiveTag(tag)}
-              className={`px-4 py-2 rounded-full border transition ${activeTag === tag
-                  ? "bg-white text-black"
-                  : "border-white/10 hover:bg-white hover:text-black"
-                }`}
+              type="button"
+              title="Toggle Filters"
+              aria-label="Toggle Filters"
+              onClick={() =>
+                setShowFilters(
+                  !showFilters
+                )
+              }
+              className="
+                flex
+                h-16
+                w-16
+                items-center
+                justify-center
+                rounded-2xl
+                border
+                border-white/10
+                bg-black/30
+                transition-all
+                hover:bg-white
+                hover:text-black
+              "
             >
-              {tag}
+              <HiOutlineAdjustmentsHorizontal className="text-2xl" />
             </button>
-          ))}
+
+            {/* GRID */}
+
+            <button
+              type="button"
+              title="Grid View"
+              aria-label="Grid View"
+              onClick={() =>
+                setViewMode("grid")
+              }
+              className={`
+                flex
+                h-16
+                w-16
+                items-center
+                justify-center
+                rounded-2xl
+                border
+                transition-all
+
+                ${
+                  viewMode === "grid"
+                    ? "border-white bg-white text-black"
+                    : "border-white/10 bg-black/30 hover:bg-white hover:text-black"
+                }
+              `}
+            >
+              <HiOutlineSquares2X2 className="text-2xl" />
+            </button>
+
+            {/* LIST */}
+
+            <button
+              type="button"
+              title="List View"
+              aria-label="List View"
+              onClick={() =>
+                setViewMode("list")
+              }
+              className={`
+                flex
+                h-16
+                w-16
+                items-center
+                justify-center
+                rounded-2xl
+                border
+                transition-all
+
+                ${
+                  viewMode === "list"
+                    ? "border-white bg-white text-black"
+                    : "border-white/10 bg-black/30 hover:bg-white hover:text-black"
+                }
+              `}
+            >
+              <HiOutlineBars3BottomLeft className="text-2xl" />
+            </button>
+
+          </div>
+
         </div>
+
+        {/* FILTERS */}
+
+        {showFilters && (
+
+          <div
+            className="
+              mt-6
+              flex
+              flex-wrap
+              justify-center
+              gap-4
+              rounded-[2rem]
+              border
+              border-white/10
+              bg-white/5
+              p-6
+              backdrop-blur-2xl
+            "
+          >
+
+            {tags.map((tag) => (
+
+              <button
+                key={tag}
+                type="button"
+                onClick={() =>
+                  setActiveTag(tag)
+                }
+                className={`
+                  rounded-full
+                  border
+                  px-6
+                  py-3
+                  transition-all
+
+                  ${
+                    activeTag === tag
+                      ? "border-white bg-white text-black"
+                      : "border-white/10 bg-black/30 hover:bg-white hover:text-black"
+                  }
+                `}
+              >
+                {tag}
+              </button>
+
+            ))}
+
+          </div>
+
+        )}
+
       </section>
 
-      {/* 📝 POSTS */}
-      <section className="max-w-7xl mx-auto px-6 py-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      {/* -------------------------------- */}
+      {/* FEATURED CARDS */}
+      {/* -------------------------------- */}
 
-          {filteredPosts.slice(0, visiblePosts).map((post) => (
-            <article
+      <section className="mx-auto max-w-7xl px-6 pb-20">
+
+        <div className="mb-10 flex items-center justify-between">
+
+          <div>
+
+            <h3 className="text-3xl font-black">
+              Featured Reflections
+            </h3>
+
+            <p className="mt-2 text-neutral-400">
+              Soulful writings loved by readers
+            </p>
+
+          </div>
+
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-3">
+
+          {featuredPosts.map((post) => (
+
+            <Link
               key={post.slug}
-              className="group rounded-[2rem] overflow-hidden border border-white/10 bg-neutral-900 hover:-translate-y-3 hover:shadow-2xl transition"
+              href={`/blog/${post.slug}`}
+              className="
+                group
+                overflow-hidden
+                rounded-[2rem]
+                border
+                border-white/10
+                bg-white/5
+                backdrop-blur-xl
+              "
             >
-              <div className="relative h-60">
+
+              <div className="relative h-72 overflow-hidden">
+
                 <Image
                   src={post.image}
                   alt={post.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition"
+                  sizes="100vw"
+                  className="
+                    object-cover
+                    transition
+                    duration-700
+                    group-hover:scale-110
+                  "
                 />
+
               </div>
 
               <div className="p-6">
-                <span className="text-xs text-neutral-400 flex gap-1">
-                  <HiOutlineTag /> {post.category}
-                </span>
 
-                <h3 className="mt-3 text-xl font-bold">
-                  {post.title}
-                </h3>
+                <div className="flex items-center gap-2 text-sm text-neutral-400">
 
-                <p className="mt-2 text-neutral-400 text-sm">
-                  {post.excerpt}
-                </p>
+                  <HiOutlineHeart />
 
-                <div className="mt-4 flex gap-4 text-xs text-neutral-500">
-                  <span className="flex items-center gap-1">
-                    <HiOutlineCalendarDays />
-                    {new Date(post.date).toLocaleDateString()}
-                  </span>
+                  {post.category}
 
-                  <span className="flex items-center gap-1">
-                    <HiOutlineClock />
-                    {post.time}
-                  </span>
                 </div>
 
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-2 mt-5 font-semibold"
-                >
-                  Read More <HiOutlineArrowRight />
-                </Link>
+                <h4 className="mt-4 text-2xl font-bold leading-snug">
+
+                  {post.title}
+
+                </h4>
+
+                <p className="mt-4 line-clamp-3 text-neutral-400">
+
+                  {post.excerpt}
+
+                </p>
+
               </div>
-            </article>
+
+            </Link>
+
           ))}
+
         </div>
 
-        {visiblePosts < filteredPosts.length && (
-          <div className="text-center mt-12">
-            <button
-              onClick={() => setVisiblePosts((prev) => prev + 3)}
-              className="px-6 py-3 border border-white/10 rounded-xl hover:bg-white hover:text-black transition"
-            >
-              Load More
-            </button>
-          </div>
-        )}
       </section>
+
+      {/* -------------------------------- */}
+      {/* POSTS */}
+      {/* -------------------------------- */}
+
+      <section className="mx-auto max-w-7xl px-6 pb-24">
+
+        <div className="mb-10 flex items-center gap-3">
+
+          <HiOutlineBookOpen className="text-3xl text-fuchsia-400" />
+
+          <h3 className="text-3xl font-black">
+            All Stories
+          </h3>
+
+        </div>
+
+        <div
+          className={
+            viewMode === "grid"
+              ? "grid gap-10 md:grid-cols-2 xl:grid-cols-3"
+              : "flex flex-col gap-8"
+          }
+        >
+
+          {filteredPosts
+            .slice(0, visiblePosts)
+            .map((post) => (
+
+              <article
+                key={post.slug}
+                className={`
+                  group
+                  overflow-hidden
+                  rounded-[2rem]
+                  border
+                  border-white/10
+                  bg-neutral-900
+                  transition-all
+                  duration-500
+                  hover:-translate-y-2
+                  hover:border-fuchsia-500/30
+
+                  ${
+                    viewMode === "list"
+                      ? "flex flex-col md:flex-row"
+                      : ""
+                  }
+                `}
+              >
+
+                {/* IMAGE */}
+
+                <div
+                  className={`
+                    relative
+                    overflow-hidden
+
+                    ${
+                      viewMode === "list"
+                        ? "h-[320px] md:w-[420px]"
+                        : "h-80 w-full"
+                    }
+                  `}
+                >
+
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    sizes="100vw"
+                    className="
+                      object-cover
+                      transition
+                      duration-700
+                      group-hover:scale-110
+                    "
+                  />
+
+                </div>
+
+                {/* CONTENT */}
+
+                <div className="flex flex-1 flex-col p-7">
+
+                  <div className="flex items-center gap-2 text-sm text-neutral-400">
+
+                    <HiOutlineTag />
+
+                    {post.category}
+
+                  </div>
+
+                  <h3 className="mt-4 text-3xl font-bold leading-snug">
+
+                    {post.title}
+
+                  </h3>
+
+                  <p className="mt-5 leading-relaxed text-neutral-400">
+
+                    {post.excerpt}
+
+                  </p>
+
+                  <div className="mt-8 flex flex-wrap gap-5 text-sm text-neutral-500">
+
+                    <span className="flex items-center gap-2">
+
+                      <HiOutlineCalendarDays />
+
+                      {new Date(
+                        post.date
+                      ).toLocaleDateString()}
+
+                    </span>
+
+                    <span className="flex items-center gap-2">
+
+                      <HiOutlineClock />
+
+                      {post.time}
+
+                    </span>
+
+                  </div>
+
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="
+                      mt-10
+                      inline-flex
+                      items-center
+                      gap-2
+                      font-semibold
+                      text-white
+                      transition-all
+                      hover:gap-4
+                    "
+                  >
+                    Read More
+
+                    <HiOutlineArrowRight />
+
+                  </Link>
+
+                </div>
+
+              </article>
+
+            ))}
+
+        </div>
+
+        {/* LOAD MORE */}
+
+        {visiblePosts <
+          filteredPosts.length && (
+
+          <div className="mt-20 text-center">
+
+            <button
+              type="button"
+              onClick={() =>
+                setVisiblePosts(
+                  (prev) => prev + 3
+                )
+              }
+              className="
+                rounded-2xl
+                border
+                border-white/10
+                bg-white/5
+                px-10
+                py-5
+                text-lg
+                font-semibold
+                backdrop-blur-xl
+                transition-all
+                hover:bg-white
+                hover:text-black
+              "
+            >
+              Load More Stories
+            </button>
+
+          </div>
+
+        )}
+
+      </section>
+
     </main>
   );
 }
