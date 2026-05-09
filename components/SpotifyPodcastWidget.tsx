@@ -4,18 +4,18 @@ import { useEffect, useState } from 'react'
 
 export default function SpotifyPodcastWidget() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isMounted, setIsMounted] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
+
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined'
+      ? window.innerWidth < 768
+      : false
+  )
 
   useEffect(() => {
-    setIsMounted(true)
-
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768)
     }
-
-    handleResize()
 
     window.addEventListener('resize', handleResize)
 
@@ -23,8 +23,6 @@ export default function SpotifyPodcastWidget() {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
-
-  if (!isMounted) return null
 
   return (
     <>
@@ -263,69 +261,6 @@ export default function SpotifyPodcastWidget() {
             '0 30px 90px rgba(0,0,0,0.55)',
         }}
       >
-        {/* HEADER */}
-        <div
-          style={{
-            padding: '18px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-
-            background:
-              'linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01))',
-
-            borderBottom:
-              '1px solid rgba(255,255,255,0.06)',
-          }}
-        >
-          <div>
-            <div
-              style={{
-                color: '#ffffff',
-                fontWeight: 700,
-                fontSize: '15px',
-                marginBottom: '3px',
-              }}
-            >
-              Vihaan Writes Podcast
-            </div>
-
-            <div
-              style={{
-                color: 'rgba(255,255,255,0.65)',
-                fontSize: '12px',
-              }}
-            >
-              Stream on Spotify
-            </div>
-          </div>
-
-          {/* CLOSE */}
-          <button
-            onClick={() => setIsOpen(false)}
-            style={{
-              width: '36px',
-              height: '36px',
-
-              borderRadius: '9999px',
-
-              border: 'none',
-
-              background:
-                'rgba(255,255,255,0.06)',
-
-              color: '#ffffff',
-
-              fontSize: '18px',
-
-              cursor: 'pointer',
-            }}
-          >
-            ×
-          </button>
-        </div>
-
-        {/* IFRAME */}
         <iframe
           src="https://open.spotify.com/embed/show/41IpFA5SUvPrT8ALlHUnr4?utm_source=generator&theme=0"
           width="100%"
@@ -342,7 +277,6 @@ export default function SpotifyPodcastWidget() {
         />
       </div>
 
-      {/* 🎨 ANIMATIONS */}
       <style jsx>{`
         @keyframes spotifyPulse {
           0% {
