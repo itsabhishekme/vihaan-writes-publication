@@ -30,7 +30,7 @@ export default function Home() {
               </h1>
 
               <p className="text-neutral-400 text-lg leading-relaxed max-w-xl">
-                Vihaan Writes is not just storytelling — it's emotional foresight.
+                Vihaan Writes is not just storytelling — It&apos;s emotional foresight.
                 Words written before moments exist, yet recognized when life unfolds.
               </p>
 

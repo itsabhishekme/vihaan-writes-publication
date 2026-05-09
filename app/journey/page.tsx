@@ -16,7 +16,7 @@ import {
   Orbit,
 } from "lucide-react"
 
-import { useRef, useState } from "react"
+import { useMemo, useRef, useState } from "react"
 import Link from "next/link"
 
 export default function JourneyPage() {
@@ -32,6 +32,17 @@ export default function JourneyPage() {
   const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.2])
   const bgRotate = useTransform(scrollYProgress, [0, 1], [0, 10])
   const bgOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.4])
+
+  // FIXED RANDOM PARTICLES
+  const particles = useMemo(() => {
+    return Array.from({ length: 80 }, (_, i) => ({
+      id: i,
+      size: Math.random() * 4 + 1,
+      top: Math.random() * 100,
+      left: Math.random() * 100,
+      duration: 8 + Math.random() * 12,
+    }))
+  }, [])
 
   const steps = [
     {
@@ -85,13 +96,13 @@ export default function JourneyPage() {
 
   const nextStep = () => {
     if (activeStep < steps.length - 1) {
-      setActiveStep(activeStep + 1)
+      setActiveStep((prev) => prev + 1)
     }
   }
 
   const prevStep = () => {
     if (activeStep > 0) {
-      setActiveStep(activeStep - 1)
+      setActiveStep((prev) => prev - 1)
     }
   }
 
@@ -131,23 +142,25 @@ export default function JourneyPage() {
       {/* PARTICLES */}
 
       <div className="absolute inset-0 -z-10 overflow-hidden">
-        {[...Array(80)].map((_, i) => (
+        {particles.map((particle) => (
           <motion.div
-            key={i}
+            key={particle.id}
             animate={{
               y: [0, -120, 0],
               opacity: [0.2, 1, 0.2],
+              scale: [1, 1.8, 1],
             }}
             transition={{
-              duration: 10 + i,
+              duration: particle.duration,
               repeat: Infinity,
+              ease: "easeInOut",
             }}
-            className="absolute rounded-full bg-white"
+            className="absolute rounded-full bg-white shadow-[0_0_20px_rgba(255,255,255,0.8)]"
             style={{
-              width: `${Math.random() * 4}px`,
-              height: `${Math.random() * 4}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
+              width: `${particle.size}px`,
+              height: `${particle.size}px`,
+              top: `${particle.top}%`,
+              left: `${particle.left}%`,
             }}
           />
         ))}
@@ -176,13 +189,14 @@ export default function JourneyPage() {
 
             <br />
 
-            <span className="bg-gradient-to-r from-fuchsia-500 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-fuchsia-500 via-purple-500 to-cyan-400 bg-clip-text text-transparent animate-pulse">
               JOURNEY
             </span>
           </h1>
 
           <p className="mt-10 max-w-3xl mx-auto text-xl md:text-2xl text-neutral-400 leading-relaxed">
-            This is not just a page. <br />
+            This is not just a page.
+            <br />
             It is an emotional universe designed to awaken consciousness.
           </p>
 
@@ -193,14 +207,13 @@ export default function JourneyPage() {
               className="px-10 py-5 rounded-2xl bg-white text-black font-semibold flex items-center gap-3 shadow-2xl"
             >
               Begin Experience
-
               <ArrowRight className="w-5 h-5" />
             </motion.button>
 
             <motion.button
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl"
+              className="px-10 py-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition"
             >
               Explore Vision
             </motion.button>
@@ -230,8 +243,11 @@ export default function JourneyPage() {
           ].map((item, i) => (
             <motion.div
               key={i}
-              whileHover={{ y: -10 }}
-              className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-2xl p-10"
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+              }}
+              className="rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-2xl p-10 hover:bg-white/10 transition"
             >
               <h2 className="text-5xl font-black bg-gradient-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
                 {item.value}
@@ -245,7 +261,7 @@ export default function JourneyPage() {
         </div>
       </section>
 
-      {/* JOURNEY SECTION */}
+      {/* TIMELINE */}
 
       <section className="relative z-10 mt-40 px-6 max-w-7xl mx-auto">
         <div className="flex items-center gap-4 mb-16">
@@ -258,7 +274,6 @@ export default function JourneyPage() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* LEFT */}
-
           <div className="space-y-10">
             {steps.map((step, index) => (
               <motion.div
@@ -304,7 +319,6 @@ export default function JourneyPage() {
           </div>
 
           {/* RIGHT */}
-
           <div className="sticky top-24">
             <AnimatePresence mode="wait">
               <motion.div
@@ -320,23 +334,11 @@ export default function JourneyPage() {
                 />
 
                 <div className="relative z-10">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="uppercase tracking-[0.3em] text-sm text-fuchsia-300">
-                        Stage {steps[activeStep].id}
-                      </p>
+                  <h3 className="text-6xl font-black">
+                    {steps[activeStep].title}
+                  </h3>
 
-                      <h3 className="mt-4 text-6xl font-black">
-                        {steps[activeStep].title}
-                      </h3>
-                    </div>
-
-                    <div className="w-24 h-24 rounded-full bg-white/10 flex items-center justify-center">
-                      <Star className="w-10 h-10 text-white" />
-                    </div>
-                  </div>
-
-                  <p className="mt-10 text-xl leading-relaxed text-neutral-300">
+                  <p className="mt-8 text-xl leading-relaxed text-neutral-300">
                     {steps[activeStep].description}
                   </p>
 
@@ -364,76 +366,6 @@ export default function JourneyPage() {
                 </div>
               </motion.div>
             </AnimatePresence>
-          </div>
-        </div>
-      </section>
-
-      {/* QUOTE */}
-
-      <section className="relative z-10 mt-48 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <motion.div
-            whileInView={{
-              opacity: [0, 1],
-              y: [60, 0],
-            }}
-            transition={{ duration: 1 }}
-            className="relative overflow-hidden rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-2xl p-20"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-500/10 to-cyan-500/10" />
-
-            <h2 className="relative z-10 text-5xl md:text-7xl font-black leading-tight">
-              You Are Not
-
-              <br />
-
-              <span className="bg-gradient-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
-                Reading Words
-              </span>
-            </h2>
-
-            <p className="relative z-10 mt-10 max-w-3xl mx-auto text-2xl text-neutral-400 leading-relaxed">
-              You are remembering truths your soul already knew before this moment.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA */}
-
-      <section className="relative z-10 mt-48 pb-40 px-6">
-        <div className="max-w-6xl mx-auto rounded-[50px] overflow-hidden border border-white/10 bg-white/5 backdrop-blur-3xl">
-          <div className="relative p-20 text-center">
-            <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-500/10 via-transparent to-cyan-500/10" />
-
-            <motion.h2
-              whileInView={{
-                opacity: [0, 1],
-                y: [60, 0],
-              }}
-              transition={{ duration: 1 }}
-              className="relative z-10 text-6xl md:text-8xl font-black"
-            >
-              BEGIN NOW
-            </motion.h2>
-
-            <p className="relative z-10 mt-8 max-w-2xl mx-auto text-xl text-neutral-400 leading-relaxed">
-              The next version of yourself is already waiting beyond this moment.
-            </p>
-
-            <Link href="/book">
-              <motion.button
-                whileHover={{
-                  scale: 1.08,
-                }}
-                whileTap={{
-                  scale: 0.95,
-                }}
-                className="relative z-10 mt-14 rounded-3xl bg-white px-14 py-6 text-lg font-bold text-black shadow-2xl"
-              >
-                Start The Experience
-              </motion.button>
-            </Link>
           </div>
         </div>
       </section>
