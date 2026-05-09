@@ -10,15 +10,20 @@ type ContactBody = {
   intent: string;
 };
 
+type MailError = {
+  message?: string;
+};
+
 /* ================= HELPERS ================= */
 
-const validateEmail = (email: string) =>
+const validateEmail = (email: string): boolean =>
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-const sanitize = (str: string) => str.trim();
+const sanitize = (str: string): string => str.trim();
 
-/* ================= RATE LIMIT (BASIC) ================= */
-// ⚠️ In-memory (works per instance, good enough for now)
+/* ================= RATE LIMIT ================= */
+// ⚠️ In-memory rate limit (per instance)
+
 const requestMap = new Map<string, number>();
 
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
@@ -31,6 +36,7 @@ export async function POST(req: Request) {
 
   try {
     /* ===== ENV CHECK ===== */
+
     console.log("🔐 ENV CHECK:", {
       EMAIL_USER: process.env.EMAIL_USER ? "✅" : "❌",
       EMAIL_PASS: process.env.EMAIL_PASS ? "✅" : "❌",
@@ -41,117 +47,174 @@ export async function POST(req: Request) {
     }
 
     /* ===== RATE LIMIT ===== */
+
+    const forwardedFor = req.headers.get("x-forwarded-for");
+    const realIp = req.headers.get("x-real-ip");
+
     const ip =
-      req.headers.get("x-forwarded-for") ||
-      req.headers.get("x-real-ip") ||
+      forwardedFor?.split(",")[0]?.trim() ||
+      realIp ||
       "unknown";
 
     const now = Date.now();
-    const lastRequest = requestMap.get(ip) || 0;
 
-    if (now - lastRequest < RATE_LIMIT_WINDOW) {
-      requestMap.set(ip, lastRequest + 1);
+    const currentCount = requestMap.get(ip) || 0;
 
-      if (lastRequest > MAX_REQUESTS) {
-        return NextResponse.json(
-          { success: false, message: "Too many requests" },
-          { status: 429 }
-        );
-      }
-    } else {
-      requestMap.set(ip, 1);
+    if (currentCount >= MAX_REQUESTS) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Too many requests. Please try again later.",
+        },
+        { status: 429 }
+      );
     }
 
+    requestMap.set(ip, currentCount + 1);
+
+    setTimeout(() => {
+      const count = requestMap.get(ip);
+
+      if (count !== undefined) {
+        if (count <= 1) {
+          requestMap.delete(ip);
+        } else {
+          requestMap.set(ip, count - 1);
+        }
+      }
+    }, RATE_LIMIT_WINDOW);
+
     /* ===== PARSE BODY ===== */
+
     let body: ContactBody;
 
     try {
-      body = await req.json();
+      body = (await req.json()) as ContactBody;
     } catch {
       return NextResponse.json(
-        { success: false, message: "Invalid JSON body" },
+        {
+          success: false,
+          message: "Invalid JSON body",
+        },
         { status: 400 }
       );
     }
 
     /* ===== SANITIZE ===== */
+
     const name = sanitize(body.name || "");
     const email = sanitize(body.email || "");
     const message = sanitize(body.message || "");
     const intent = sanitize(body.intent || "");
 
     /* ===== VALIDATION ===== */
+
     if (!name || !email || !message || !intent) {
       return NextResponse.json(
-        { success: false, message: "All fields are required" },
+        {
+          success: false,
+          message: "All fields are required",
+        },
         { status: 400 }
       );
     }
 
     if (!validateEmail(email)) {
       return NextResponse.json(
-        { success: false, message: "Invalid email format" },
+        {
+          success: false,
+          message: "Invalid email format",
+        },
         { status: 400 }
       );
     }
 
     if (message.length < 10) {
       return NextResponse.json(
-        { success: false, message: "Message too short" },
+        {
+          success: false,
+          message: "Message too short",
+        },
         { status: 400 }
       );
     }
 
     if (message.length > 2000) {
       return NextResponse.json(
-        { success: false, message: "Message too long" },
+        {
+          success: false,
+          message: "Message too long",
+        },
         { status: 400 }
       );
     }
 
-    /* ===== LOG REQUEST (SAFE) ===== */
+    /* ===== SAFE LOG ===== */
+
     console.log("📩 Incoming:", {
       name,
-      emailMasked: email.replace(/(.{2}).+(@.+)/, "$1***$2"),
+      emailMasked: email.replace(
+        /(.{2}).+(@.+)/,
+        "$1***$2"
+      ),
       intent,
       messageLength: message.length,
     });
 
-    /* ===== TIMEOUT WRAPPER ===== */
-    const sendWithTimeout = async () => {
-      return Promise.race([
-        sendMail({ name, email, message, intent }),
-        new Promise((_, reject) =>
-          setTimeout(() => reject(new Error("Email timeout")), 15000)
+    /* ===== SEND EMAIL WITH TIMEOUT ===== */
+
+    const sendWithTimeout = async (): Promise<void> => {
+      await Promise.race([
+        sendMail({
+          name,
+          email,
+          message,
+          intent,
+        }),
+        new Promise<never>((_, reject) =>
+          setTimeout(
+            () => reject(new Error("Email timeout")),
+            15000
+          )
         ),
       ]);
     };
 
-    /* ===== SEND EMAIL ===== */
     try {
       await sendWithTimeout();
-    } catch (mailError: any) {
+    } catch (mailError: unknown) {
       console.error("📛 MAIL FAILURE:", mailError);
 
       let errorMessage = "Email sending failed";
 
-      if (mailError?.message?.includes("Invalid login")) {
-        errorMessage =
-          "Email authentication failed. Use Gmail App Password.";
-      } else if (mailError?.message?.includes("timeout")) {
-        errorMessage =
-          "Email server timeout. Try again later.";
-      } else if (mailError?.message) {
-        errorMessage = mailError.message;
+      if (
+        typeof mailError === "object" &&
+        mailError !== null
+      ) {
+        const err = mailError as MailError;
+
+        if (err.message?.includes("Invalid login")) {
+          errorMessage =
+            "Email authentication failed. Use Gmail App Password.";
+        } else if (err.message?.includes("timeout")) {
+          errorMessage =
+            "Email server timeout. Try again later.";
+        } else if (err.message) {
+          errorMessage = err.message;
+        }
       }
 
       return NextResponse.json(
-        { success: false, message: errorMessage },
+        {
+          success: false,
+          message: errorMessage,
+        },
         { status: 500 }
       );
     }
 
     /* ===== SUCCESS ===== */
+
     const duration = Date.now() - startTime;
 
     console.log(`✅ Email sent in ${duration}ms`);
@@ -160,15 +223,23 @@ export async function POST(req: Request) {
       success: true,
       message: "Email sent successfully",
     });
-
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("❌ SERVER ERROR:", error);
+
+    let errorMessage = "Internal server error";
+
+    if (
+      typeof error === "object" &&
+      error !== null &&
+      "message" in error
+    ) {
+      errorMessage = String(error.message);
+    }
 
     return NextResponse.json(
       {
         success: false,
-        message:
-          error?.message || "Internal server error",
+        message: errorMessage,
       },
       { status: 500 }
     );

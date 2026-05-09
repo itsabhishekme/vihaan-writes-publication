@@ -9,7 +9,6 @@ import {
   HiOutlineArrowLeft,
   HiOutlineCalendarDays,
   HiOutlineClock,
-  HiOutlineTag,
   HiOutlineSparkles,
   HiOutlineArrowRight,
 } from "react-icons/hi2";

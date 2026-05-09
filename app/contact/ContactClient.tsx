@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -8,10 +8,23 @@ import {
   HiOutlinePaperAirplane,
   HiOutlineSparkles,
   HiOutlineCheckCircle,
-  HiOutlineArrowRight,
   HiOutlineUser,
   HiOutlineChatBubbleLeftRight,
 } from "react-icons/hi2";
+
+/* ================= TYPES ================= */
+
+type ContactForm = {
+  name: string;
+  email: string;
+  message: string;
+  intent: string;
+};
+
+type ContactResponse = {
+  success: boolean;
+  message?: string;
+};
 
 /* ================= INTENTS ================= */
 
@@ -46,56 +59,88 @@ const intents = [
 /* ================= COMPONENT ================= */
 
 export default function ContactClient() {
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<ContactForm>({
     name: "",
     email: "",
     message: "",
     intent: "",
   });
 
-  const [status, setStatus] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   /* ================= HELPERS ================= */
 
-  const validateEmail = (email: string) =>
+  const validateEmail = (email: string): boolean =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const progress =
-    [form.name, form.email, form.message, form.intent].filter(Boolean).length /
-    4;
+    [
+      form.name,
+      form.email,
+      form.message,
+      form.intent,
+    ].filter(Boolean).length / 4;
 
-  const getPlaceholder = () => {
+  const getPlaceholder = (): string => {
     switch (form.intent) {
       case "Collaboration":
         return "Describe your idea or vision...";
+
       case "Interview":
         return "Share your platform / audience details...";
+
       case "Reader Message":
         return "Write from your heart...";
+
       case "Business":
         return "Explain your proposal clearly...";
+
       case "Speaking":
         return "Event details, location, audience size...";
+
       default:
         return "Write your message...";
     }
   };
 
-  /* ================= SUBMIT (FINAL VERSION) ================= */
+  const updateField = (
+    field: keyof ContactForm,
+    value: string
+  ) => {
+    setForm((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
 
-  const handleSubmit = async (e: any) => {
+  /* ================= SUBMIT ================= */
+
+  const handleSubmit = async (
+    e: FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
 
-    if (loading) return;
+    if (loading) {
+      return;
+    }
 
-    if (!form.name || !form.email || !form.message || !form.intent) {
-      setStatus("Please complete all fields including intent");
+    if (
+      !form.name ||
+      !form.email ||
+      !form.message ||
+      !form.intent
+    ) {
+      setStatus(
+        "Please complete all fields including intent"
+      );
+
       return;
     }
 
     if (!validateEmail(form.email)) {
       setStatus("Invalid email format");
+
       return;
     }
 
@@ -111,7 +156,8 @@ export default function ContactClient() {
         body: JSON.stringify(form),
       });
 
-      const data = await res.json();
+      const data =
+        (await res.json()) as ContactResponse;
 
       if (data.success) {
         setStatus("success");
@@ -122,10 +168,14 @@ export default function ContactClient() {
           message: "",
           intent: "",
         });
-      } else {
-        setStatus(data.message || "Failed to send message");
+
+        return;
       }
-    } catch (err) {
+
+      setStatus(
+        data.message || "Failed to send message"
+      );
+    } catch {
       setStatus("Server error. Please try again.");
     } finally {
       setLoading(false);
@@ -135,50 +185,53 @@ export default function ContactClient() {
   /* ================= UI ================= */
 
   return (
-    <main className="relative text-white overflow-hidden">
-
+    <main className="relative overflow-hidden text-white">
       {/* BACKGROUND */}
       <div className="absolute inset-0 -z-10 bg-black" />
-      <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_20%_20%,#6366f1,transparent_40%),radial-gradient(circle_at_80%_80%,#ec4899,transparent_40%)]" />
+
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#6366f1,transparent_40%),radial-gradient(circle_at_80%_80%,#ec4899,transparent_40%)] opacity-40" />
 
       <motion.div
         animate={{ y: [0, 30, 0] }}
-        transition={{ duration: 8, repeat: Infinity }}
-        className="absolute w-[400px] h-[400px] bg-indigo-500/20 blur-[120px] rounded-full top-10 left-10"
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+        }}
+        className="absolute left-10 top-10 h-[400px] w-[400px] rounded-full bg-indigo-500/20 blur-[120px]"
       />
 
       {/* HERO */}
-      <section className="text-center py-24 px-6 max-w-5xl mx-auto">
-
-        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 border border-white/10">
+      <section className="mx-auto max-w-5xl px-6 py-24 text-center">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2">
           <HiOutlineSparkles />
           Intent-Based Communication
         </div>
 
-        <h1 className="text-6xl font-black mt-6 leading-tight">
+        <h1 className="mt-6 text-6xl font-black leading-tight">
           Every Message
           <br />
-          <span className="bg-gradient-to-r from-indigo-400 to-pink-400 text-transparent bg-clip-text">
+          <span className="bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
             Has Energy.
           </span>
         </h1>
 
-        <p className="text-neutral-400 mt-6 max-w-xl mx-auto">
-          Choose your intent. The experience adapts to you.
+        <p className="mx-auto mt-6 max-w-xl text-neutral-400">
+          Choose your intent. The experience adapts to
+          you.
         </p>
-
       </section>
 
       {/* MAIN */}
-      <section className="grid lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-6 pb-32">
-
-        {/* ================= INTENT SELECTOR (PREMIUM) ================= */}
+      <section className="mx-auto grid max-w-7xl gap-10 px-6 pb-32 lg:grid-cols-3">
+        {/* INTENT SELECTOR */}
         <div className="space-y-6">
-
-          <h3 className="text-xl font-semibold">Select Intent</h3>
+          <h3 className="text-xl font-semibold">
+            Select Intent
+          </h3>
 
           {intents.map((item) => {
-            const isActive = form.intent === item.title;
+            const isActive =
+              form.intent === item.title;
 
             return (
               <motion.div
@@ -186,47 +239,47 @@ export default function ContactClient() {
                 role="button"
                 tabIndex={0}
                 onClick={() =>
-                  setForm({ ...form, intent: item.title })
+                  updateField("intent", item.title)
                 }
                 onKeyDown={(e) => {
-                  if (e.key === "Enter") {
-                    setForm({ ...form, intent: item.title });
+                  if (
+                    e.key === "Enter" ||
+                    e.key === " "
+                  ) {
+                    updateField(
+                      "intent",
+                      item.title
+                    );
                   }
                 }}
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                className={`relative cursor-pointer rounded-2xl p-[1px] transition-all
-
-                ${
+                className={`relative cursor-pointer rounded-2xl p-[1px] transition-all ${
                   isActive
                     ? "bg-gradient-to-r from-indigo-500 to-pink-500 shadow-[0_0_25px_rgba(99,102,241,0.5)]"
                     : "bg-white/10 hover:bg-white/20"
                 }`}
               >
                 <div
-                  className={`relative rounded-2xl p-5
-
-                  ${
+                  className={`relative rounded-2xl p-5 ${
                     isActive
                       ? "bg-black/80 backdrop-blur-xl"
                       : "bg-white/5 hover:bg-white/10"
                   }`}
                 >
-
-                  {/* Glow */}
                   {isActive && (
                     <motion.div
                       layoutId="intentGlow"
-                      className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-pink-500/20 blur-xl rounded-2xl"
+                      className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500/20 to-pink-500/20 blur-xl"
                     />
                   )}
 
                   <div className="relative z-10 flex justify-between">
-
                     <div>
-                      <h4 className="font-semibold text-lg">
+                      <h4 className="text-lg font-semibold">
                         {item.title}
                       </h4>
+
                       <p className="text-sm text-neutral-400">
                         {item.desc}
                       </p>
@@ -237,15 +290,18 @@ export default function ContactClient() {
                         scale: isActive ? 1 : 0,
                         opacity: isActive ? 1 : 0,
                       }}
-                      className="w-6 h-6 rounded-full bg-gradient-to-r from-indigo-400 to-pink-400 flex items-center justify-center text-black text-xs"
+                      className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-r from-indigo-400 to-pink-400 text-xs text-black"
                     >
                       ✓
                     </motion.div>
-
                   </div>
 
                   <motion.div
-                    animate={{ width: isActive ? "100%" : "0%" }}
+                    animate={{
+                      width: isActive
+                        ? "100%"
+                        : "0%",
+                    }}
                     className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-indigo-400 to-pink-400"
                   />
                 </div>
@@ -254,106 +310,137 @@ export default function ContactClient() {
           })}
         </div>
 
-        {/* ================= FORM ================= */}
+        {/* FORM */}
         <div className="lg:col-span-2">
-          <div className="p-10 rounded-[30px] bg-white/5 border border-white/10 backdrop-blur-xl">
-
+          <div className="rounded-[30px] border border-white/10 bg-white/5 p-10 backdrop-blur-xl">
             {/* PROGRESS */}
-            <div className="h-1 bg-white/10 rounded-full mb-6 overflow-hidden">
+            <div className="mb-6 h-1 overflow-hidden rounded-full bg-white/10">
               <motion.div
-                animate={{ width: `${progress * 100}%` }}
+                animate={{
+                  width: `${progress * 100}%`,
+                }}
                 className="h-full bg-gradient-to-r from-indigo-400 to-pink-400"
               />
             </div>
 
             <AnimatePresence mode="wait">
-
               {status === "success" ? (
-                <motion.div className="text-center py-20">
-                  <HiOutlineCheckCircle className="text-6xl text-green-400 mx-auto" />
-                  <h2 className="text-3xl font-bold mt-6">
+                <motion.div className="py-20 text-center">
+                  <HiOutlineCheckCircle className="mx-auto text-6xl text-green-400" />
+
+                  <h2 className="mt-6 text-3xl font-bold">
                     Message Sent
                   </h2>
                 </motion.div>
               ) : (
-
-                <motion.form onSubmit={handleSubmit} className="space-y-6">
-
+                <motion.form
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
+                >
                   <div className="relative">
-                    <HiOutlineUser className="absolute top-4 left-3 text-neutral-400" />
+                    <HiOutlineUser className="absolute left-3 top-4 text-neutral-400" />
+
                     <input
+                      type="text"
                       value={form.name}
                       placeholder="Your Name"
-                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 outline-none"
-                      onChange={(e) =>
-                        setForm({ ...form, name: e.target.value })
+                      className="w-full rounded-xl border border-white/10 bg-white/5 py-3 pl-10 pr-4 outline-none"
+                      onChange={(
+                        e: ChangeEvent<HTMLInputElement>
+                      ) =>
+                        updateField(
+                          "name",
+                          e.target.value
+                        )
                       }
                     />
                   </div>
 
                   <div className="relative">
-                    <HiOutlineEnvelope className="absolute top-4 left-3 text-neutral-400" />
+                    <HiOutlineEnvelope className="absolute left-3 top-4 text-neutral-400" />
+
                     <input
+                      type="email"
                       value={form.email}
                       placeholder="Email Address"
-                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 outline-none"
-                      onChange={(e) =>
-                        setForm({ ...form, email: e.target.value })
+                      className="w-full rounded-xl border border-white/10 bg-white/5 py-3 pl-10 pr-4 outline-none"
+                      onChange={(
+                        e: ChangeEvent<HTMLInputElement>
+                      ) =>
+                        updateField(
+                          "email",
+                          e.target.value
+                        )
                       }
                     />
                   </div>
 
                   <div className="relative">
-                    <HiOutlineChatBubbleLeftRight className="absolute top-4 left-3 text-neutral-400" />
+                    <HiOutlineChatBubbleLeftRight className="absolute left-3 top-4 text-neutral-400" />
+
                     <textarea
                       rows={5}
                       value={form.message}
                       placeholder={getPlaceholder()}
-                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 outline-none"
-                      onChange={(e) =>
-                        setForm({ ...form, message: e.target.value })
+                      className="w-full rounded-xl border border-white/10 bg-white/5 py-3 pl-10 pr-4 outline-none"
+                      onChange={(
+                        e: ChangeEvent<HTMLTextAreaElement>
+                      ) =>
+                        updateField(
+                          "message",
+                          e.target.value
+                        )
                       }
                     />
                   </div>
 
                   {form.intent && (
-                    <motion.div className="p-4 rounded-xl bg-indigo-500/10 border border-indigo-400/30 text-sm text-indigo-300">
+                    <motion.div className="rounded-xl border border-indigo-400/30 bg-indigo-500/10 p-4 text-sm text-indigo-300">
                       {
-                        intents.find((i) => i.title === form.intent)?.tone
+                        intents.find(
+                          (i) =>
+                            i.title ===
+                            form.intent
+                        )?.tone
                       }
                     </motion.div>
                   )}
 
                   <motion.button
+                    type="submit"
                     whileTap={{ scale: 0.96 }}
                     disabled={loading}
-                    className="w-full py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-pink-500 flex items-center justify-center gap-2 font-semibold disabled:opacity-60"
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-500 to-pink-500 py-4 font-semibold disabled:opacity-60"
                   >
-                    {loading ? "Sending..." : "Send Message"}
+                    {loading
+                      ? "Sending..."
+                      : "Send Message"}
+
                     <HiOutlinePaperAirplane />
                   </motion.button>
 
-                  {status && status !== "success" && (
-                    <p className="text-red-400 text-sm">{status}</p>
-                  )}
-
+                  {status &&
+                    status !== "success" && (
+                      <p className="text-sm text-red-400">
+                        {status}
+                      </p>
+                    )}
                 </motion.form>
               )}
-
             </AnimatePresence>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <section className="text-center pb-32">
+      <section className="pb-32 text-center">
         <h2 className="text-4xl font-bold">
           Continue the Journey
         </h2>
 
         <Link
           href="/book"
-          className="inline-flex mt-6 items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-white/5"
+          className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3"
         >
           Explore Books
         </Link>
