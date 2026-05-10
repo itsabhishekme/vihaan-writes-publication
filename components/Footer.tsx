@@ -589,42 +589,107 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
       {/* BOTTOM */}
+      <div className="relative overflow-hidden border-t border-white/10 bg-gradient-to-b from-black/60 via-neutral-950 to-black backdrop-blur-xl">
 
-      <div className="border-t border-white/10">
-        <div className="container-main flex flex-col items-center justify-between gap-5 py-8 md:flex-row">
-          <p className="text-center text-sm text-neutral-500 md:text-left">
-            © {year} Vihaan Writes.
-            Crafted with emotion, soul, and
-            timeless storytelling.
-          </p>
+        {/* Soft Glow Effects */}
+        <div className="absolute left-0 top-0 h-40 w-40 rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-56 w-56 rounded-full bg-indigo-500/10 blur-3xl" />
 
-          <div className="flex items-center gap-6 text-sm text-neutral-500">
-            <Link
-              href="/privacy"
-              className="transition duration-300 hover:text-white"
-            >
-              Privacy
-            </Link>
+        <div className="container-main relative z-10 flex flex-col gap-10 py-10 md:flex-row md:items-center md:justify-between">
 
-            <Link
-              href="/terms"
-              className="transition duration-300 hover:text-white"
-            >
-              Terms
-            </Link>
+          {/* Left Section */}
+          <div className="space-y-4 text-center md:text-left">
 
+            {/* Brand */}
+            <div>
+              <h3 className="bg-gradient-to-r from-white via-neutral-300 to-neutral-500 bg-clip-text text-2xl font-bold tracking-wide text-transparent">
+                Vihaan Writes
+              </h3>
+
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-neutral-400">
+                A universe of emotions, soulful storytelling,
+                poetic reflections, and timeless words crafted
+                to touch hearts deeply.
+              </p>
+            </div>
+
+            {/* Copyright */}
+            <div className="space-y-1">
+              <p className="text-sm text-neutral-500">
+                © {year} Vihaan Writes. All rights reserved.
+              </p>
+
+              <p className="text-xs tracking-wide text-neutral-600">
+                Crafted with emotion, soul, and timeless storytelling.
+              </p>
+            </div>
+
+            {/* Developer Credit */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-neutral-300 shadow-lg shadow-black/20 backdrop-blur-md">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-400" />
+              Developed by EchoSoul Studios
+            </div>
+          </div>
+
+          {/* Right Section */}
+          <div className="flex flex-col items-center gap-6 md:items-end">
+
+            {/* Navigation */}
+            <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-neutral-400">
+
+              <Link
+                href="/privacy"
+                className="group relative transition duration-300 hover:text-white"
+              >
+                Privacy Policy
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full" />
+              </Link>
+
+              <Link
+                href="/terms"
+                className="group relative transition duration-300 hover:text-white"
+              >
+                Terms & Conditions
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full" />
+              </Link>
+
+              <Link
+                href="/contact"
+                className="group relative transition duration-300 hover:text-white"
+              >
+                Contact
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full" />
+              </Link>
+            </div>
+
+            {/* Back To Top */}
             <a
               href="#top"
-              className="flex items-center gap-2 transition duration-300 hover:text-white"
+              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm text-neutral-300 backdrop-blur-md transition-all duration-500 hover:border-cyan-400/40 hover:bg-cyan-500/10 hover:text-white hover:shadow-lg hover:shadow-cyan-500/10"
             >
-              Top
-              <HiOutlineArrowUp />
+              <span className="relative z-10">Back to Top</span>
+
+              <HiOutlineArrowUp className="relative z-10 transition-transform duration-500 group-hover:-translate-y-1" />
+
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
             </a>
           </div>
         </div>
+
+        {/* Closing Bottom */}
+        <div className="relative border-t border-white/5 py-5">
+
+          <div className="absolute left-1/2 top-0 h-px w-40 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
+
+          <p className="text-center text-[10px] uppercase tracking-[0.4em] text-neutral-600">
+            Words that heal • Stories that stay • Souls that connect
+          </p>
+
+          <div className="mx-auto mt-3 h-[2px] w-24 rounded-full bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
+        </div>
       </div>
+
     </footer>
   );
 }
