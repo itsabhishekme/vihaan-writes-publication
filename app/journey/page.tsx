@@ -28,6 +28,7 @@ import {
 import type {
   LucideIcon,
 } from "lucide-react";
+import Link from "next/link";
 
 import {
   useRef,
@@ -474,31 +475,65 @@ export default function JourneyPage() {
 
           {/* BUTTONS */}
 
-          <div className="mt-14 flex flex-wrap justify-center gap-6">
+          <div className="mt-16 flex flex-wrap items-center justify-center gap-6">
+            {/* BEGIN JOURNEY BUTTON */}
+
+            <Link href="/begin-journey">
+              <motion.button
+                whileHover={{
+                  scale: 1.06,
+                  y: -3,
+                }}
+                whileTap={{
+                  scale: 0.95,
+                }}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white px-10 py-5 font-bold text-black shadow-[0_20px_80px_rgba(255,255,255,0.15)] transition-all duration-500 hover:shadow-fuchsia-500/30"
+              >
+                {/* ANIMATED BACKGROUND */}
+
+                <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-400 via-pink-400 to-cyan-400 opacity-20 blur-2xl" />
+                </div>
+
+                {/* SHINE EFFECT */}
+
+                <div className="absolute -left-20 top-0 h-full w-20 rotate-12 bg-white/40 blur-xl transition-all duration-700 group-hover:left-[120%]" />
+
+                {/* CONTENT */}
+
+                <div className="relative z-10 flex items-center gap-3">
+                  <span className="tracking-wide">Begin Journey</span>
+
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-black text-white transition-all duration-300 group-hover:translate-x-1 group-hover:bg-fuchsia-500">
+                    <ArrowRight className="h-4 w-4" />
+                  </div>
+                </div>
+              </motion.button>
+            </Link>
+
+            {/* EXPLORE VISION BUTTON */}
+
             <motion.button
               whileHover={{
                 scale: 1.05,
+                y: -3,
               }}
               whileTap={{
                 scale: 0.95,
               }}
-              className="group flex items-center gap-3 rounded-2xl bg-white px-10 py-5 font-bold text-black shadow-2xl transition-all duration-300 hover:shadow-fuchsia-500/20"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 px-10 py-5 font-semibold text-white backdrop-blur-2xl transition-all duration-500 hover:border-fuchsia-500/40 hover:bg-white/10 hover:shadow-[0_0_50px_rgba(217,70,239,0.15)]"
             >
-              Begin Journey
+              {/* BACKGROUND GLOW */}
 
-              <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </motion.button>
+              <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-500/0 via-fuchsia-500/10 to-cyan-500/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-              }}
-              whileTap={{
-                scale: 0.95,
-              }}
-              className="rounded-2xl border border-white/10 bg-white/5 px-10 py-5 font-semibold backdrop-blur-xl transition-all duration-500 hover:border-fuchsia-500/40 hover:bg-white/10"
-            >
-              Explore Vision
+              {/* CONTENT */}
+
+              <div className="relative z-10 flex items-center gap-3">
+                <span className="tracking-wide">Explore Vision</span>
+
+                <Sparkles className="h-5 w-5 text-fuchsia-400 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110" />
+              </div>
             </motion.button>
           </div>
 
