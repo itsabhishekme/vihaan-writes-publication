@@ -628,7 +628,7 @@ export default function Footer() {
             {/* Developer Credit */}
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-neutral-300 shadow-lg shadow-black/20 backdrop-blur-md">
               <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-400" />
-              Developed by EchoSoul Studios
+              Developed by EchoSoul Developer
             </div>
           </div>
 
