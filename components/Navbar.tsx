@@ -121,11 +121,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-50 w-full transition-all duration-500 ${
-        scrolled
-          ? "border-b border-white/10 bg-black/70 shadow-[0_8px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
-          : "bg-transparent"
-      }`}
+      className={`fixed left-0 top-0 z-50 w-full transition-all duration-500 ${scrolled
+        ? "border-b border-white/10 bg-black/70 shadow-[0_8px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
+        : "bg-transparent"
+        }`}
       role="banner"
       aria-label="Main Navigation"
     >
@@ -187,11 +186,10 @@ export default function Navbar() {
                 key={item.name}
                 href={item.url}
                 title={item.name}
-                className={`group relative overflow-hidden rounded-2xl px-5 py-3 text-sm font-medium transition-all duration-300 ${
-                  active
-                    ? "bg-white text-black shadow-xl"
-                    : "text-neutral-300 hover:text-white"
-                }`}
+                className={`group relative overflow-hidden rounded-2xl px-5 py-3 text-sm font-medium transition-all duration-300 ${active
+                  ? "bg-white text-black shadow-xl"
+                  : "text-neutral-300 hover:text-white"
+                  }`}
               >
                 {!active && (
                   <span className="absolute inset-0 rounded-2xl bg-white/5 opacity-0 transition duration-300 group-hover:opacity-100" />
@@ -219,7 +217,6 @@ export default function Navbar() {
 
             <span>Read Now</span>
 
-            <HiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
 
           {/* ANDROID APP */}
@@ -316,11 +313,10 @@ export default function Navbar() {
                     onClick={
                       closeMenu
                     }
-                    className={`rounded-2xl px-5 py-4 transition-all duration-300 ${
-                      active
-                        ? "bg-white font-semibold text-black shadow-xl"
-                        : "bg-white/[0.03] text-neutral-300 hover:bg-white/10 hover:text-white"
-                    }`}
+                    className={`rounded-2xl px-5 py-4 transition-all duration-300 ${active
+                      ? "bg-white font-semibold text-black shadow-xl"
+                      : "bg-white/[0.03] text-neutral-300 hover:bg-white/10 hover:text-white"
+                      }`}
                   >
                     {item.name}
                   </Link>
@@ -345,7 +341,7 @@ export default function Navbar() {
                 {/* FIXED BUTTON ERROR */}
 
                 <a
-                  href="https://m5seiikuxyzlci4v.public.blob.vercel-storage.com/app-debug.apk"
+                  href="https://m5seiikuxyzlci4v.public.blob.vercel-storage.com/Android%20Build/app-debug.apk"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 px-4 py-4 font-semibold text-white shadow-xl"
