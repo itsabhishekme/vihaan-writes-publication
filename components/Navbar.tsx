@@ -19,7 +19,10 @@ import {
   HiOutlineSparkles,
 } from "react-icons/hi2";
 
-import { FaGooglePlay } from "react-icons/fa";
+import {
+  FaGooglePlay,
+  FaApple,
+} from "react-icons/fa";
 
 import {
   motion,
@@ -57,10 +60,12 @@ export default function Navbar() {
   const [scrolled, setScrolled] =
     useState<boolean>(false);
 
-  /* FIXED SCANNER STATE */
+  /* SCANNER STATE */
 
   const [showScanner, setShowScanner] =
-    useState<boolean>(false);
+    useState<
+      "android" | "ios" | false
+    >(false);
 
   /* ================= SCROLL ================= */
 
@@ -98,20 +103,24 @@ export default function Navbar() {
     setOpen((prev) => !prev);
   };
 
-  /* ================= APK URL ================= */
+  /* ================= APP URLS ================= */
 
   const apkUrl =
     "https://m5seiikuxyzlci4v.public.blob.vercel-storage.com/Android%20Build/app-debug.apk";
+
+  const iosUrl =
+    "https://apps.apple.com/app/idxxxxxxxx";
 
   /* ================= UI ================= */
 
   return (
     <>
       <header
-        className={`fixed left-0 top-0 z-50 w-full transition-all duration-500 ${scrolled
+        className={`fixed left-0 top-0 z-50 w-full transition-all duration-500 ${
+          scrolled
             ? "border-b border-white/10 bg-black/70 shadow-[0_8px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
             : "bg-transparent"
-          }`}
+        }`}
       >
         {/* BACKGROUND */}
 
@@ -157,10 +166,11 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.url}
-                  className={`group relative overflow-hidden rounded-2xl px-5 py-3 text-sm font-medium transition-all duration-300 ${active
+                  className={`group relative overflow-hidden rounded-2xl px-5 py-3 text-sm font-medium transition-all duration-300 ${
+                    active
                       ? "bg-white text-black shadow-xl"
                       : "text-neutral-300 hover:text-white"
-                    }`}
+                  }`}
                 >
                   {!active && (
                     <span className="absolute inset-0 rounded-2xl bg-white/5 opacity-0 transition duration-300 group-hover:opacity-100" />
@@ -183,20 +193,31 @@ export default function Navbar() {
               href="/book"
               className="group hidden items-center gap-2 rounded-2xl bg-white px-6 py-3 font-semibold text-black shadow-2xl transition-all duration-300 hover:scale-105 md:inline-flex"
             >
-              <HiOutlineSparkles className="text-lg" />
+              <HiOutlineSparkles className="text-lg transition-transform duration-300 group-hover:rotate-12" />
 
               <span>Read Now</span>
             </Link>
 
-            {/* ANDROID APP */}
+            {/* ANDROID */}
 
             <button
               onClick={() =>
-                setShowScanner(true)
+                setShowScanner("android")
               }
               className="hidden h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 text-white shadow-xl transition-all duration-300 hover:scale-110 md:flex"
             >
               <FaGooglePlay className="text-xl" />
+            </button>
+
+            {/* IOS */}
+
+            <button
+              onClick={() =>
+                setShowScanner("ios")
+              }
+              className="hidden h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-zinc-700 to-black text-white shadow-xl transition-all duration-300 hover:scale-110 md:flex"
+            >
+              <FaApple className="text-xl" />
             </button>
 
             {/* MOBILE MENU BUTTON */}
@@ -272,10 +293,11 @@ export default function Navbar() {
                       key={item.name}
                       href={item.url}
                       onClick={closeMenu}
-                      className={`rounded-2xl px-5 py-4 transition-all duration-300 ${active
+                      className={`rounded-2xl px-5 py-4 transition-all duration-300 ${
+                        active
                           ? "bg-white font-semibold text-black shadow-xl"
                           : "bg-white/[0.03] text-neutral-300 hover:bg-white/10 hover:text-white"
-                        }`}
+                      }`}
                     >
                       {item.name}
                     </Link>
@@ -284,26 +306,45 @@ export default function Navbar() {
 
                 {/* MOBILE BUTTONS */}
 
-                <div className="mt-4 grid grid-cols-2 gap-3">
+                <div className="mt-5 grid grid-cols-2 gap-4">
+                  {/* READ */}
+
                   <Link
                     href="/book"
                     onClick={closeMenu}
-                    className="flex items-center justify-center gap-2 rounded-2xl bg-white px-4 py-4 font-semibold text-black"
+                    className="group flex items-center justify-center gap-2 rounded-2xl bg-white px-4 py-4 font-semibold text-black transition-all duration-300 hover:scale-105"
                   >
-                    <HiOutlineSparkles />
+                    <HiOutlineSparkles className="transition-transform duration-300 group-hover:rotate-12" />
 
                     Read Now
                   </Link>
 
+                  {/* ANDROID */}
+
                   <button
                     onClick={() =>
-                      setShowScanner(true)
+                      setShowScanner(
+                        "android"
+                      )
                     }
-                    className="flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-green-500 via-emerald-500 to-teal-600 px-4 py-4 font-semibold text-white shadow-xl"
+                    className="group flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-green-500 via-emerald-500 to-teal-600 px-4 py-4 font-semibold text-white shadow-xl transition-all duration-300 hover:scale-105"
                   >
-                    <FaGooglePlay />
+                    <FaGooglePlay className="transition-transform duration-300 group-hover:scale-125" />
 
                     Android
+                  </button>
+
+                  {/* IOS */}
+
+                  <button
+                    onClick={() =>
+                      setShowScanner("ios")
+                    }
+                    className="group col-span-2 flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-zinc-700 to-black px-4 py-4 font-semibold text-white shadow-xl transition-all duration-300 hover:scale-105"
+                  >
+                    <FaApple className="text-lg transition-transform duration-300 group-hover:scale-125" />
+
+                    Download for iPhone
                   </button>
                 </div>
               </nav>
@@ -312,7 +353,7 @@ export default function Navbar() {
         </AnimatePresence>
       </header>
 
-      {/* QR SCANNER MODAL */}
+      {/* QR MODAL */}
 
       <AnimatePresence>
         {showScanner && (
@@ -348,7 +389,7 @@ export default function Navbar() {
                 onClick={() =>
                   setShowScanner(false)
                 }
-                className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-red-500"
+                className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-red-500"
               >
                 ✕
               </button>
@@ -356,23 +397,41 @@ export default function Navbar() {
               {/* CONTENT */}
 
               <div className="flex flex-col items-center text-center">
-                <div className="mb-4 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 p-4 shadow-lg">
-                  <FaGooglePlay className="text-3xl text-white" />
+                <div
+                  className={`mb-5 rounded-full p-5 shadow-2xl ${
+                    showScanner ===
+                    "android"
+                      ? "bg-gradient-to-br from-green-400 to-emerald-600"
+                      : "bg-gradient-to-br from-zinc-700 to-black"
+                  }`}
+                >
+                  {showScanner ===
+                  "android" ? (
+                    <FaGooglePlay className="text-4xl text-white" />
+                  ) : (
+                    <FaApple className="text-4xl text-white" />
+                  )}
                 </div>
 
-                <h2 className="text-2xl font-bold text-white">
+                <h2 className="text-3xl font-bold text-white">
                   Scan To Download
                 </h2>
 
                 <p className="mt-2 text-sm text-white/70">
-                  Scan QR code with your phone
+                  Open camera and scan
+                  QR code
                 </p>
 
                 {/* QR */}
 
                 <div className="relative mt-8 overflow-hidden rounded-3xl border border-white/20 bg-white p-5 shadow-2xl">
                   <QRCodeSVG
-                    value={apkUrl}
+                    value={
+                      showScanner ===
+                      "android"
+                        ? apkUrl
+                        : iosUrl
+                    }
                     size={220}
                   />
 
@@ -384,19 +443,39 @@ export default function Navbar() {
                       duration: 2,
                       ease: "linear",
                     }}
-                    className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-green-500 to-transparent"
+                    className={`absolute left-0 top-0 h-1 w-full ${
+                      showScanner ===
+                      "android"
+                        ? "bg-gradient-to-r from-transparent via-green-500 to-transparent"
+                        : "bg-gradient-to-r from-transparent via-white to-transparent"
+                    }`}
                   />
                 </div>
 
                 {/* DOWNLOAD */}
 
                 <a
-                  href={apkUrl}
+                  href={
+                    showScanner ===
+                    "android"
+                      ? apkUrl
+                      : iosUrl
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-8 flex items-center gap-2 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105"
+                  className={`mt-8 flex items-center gap-3 rounded-2xl px-7 py-3 font-semibold text-white shadow-xl transition-all duration-300 hover:scale-105 ${
+                    showScanner ===
+                    "android"
+                      ? "bg-gradient-to-r from-green-500 to-emerald-600"
+                      : "bg-gradient-to-r from-zinc-700 to-black"
+                  }`}
                 >
-                  <FaGooglePlay />
+                  {showScanner ===
+                  "android" ? (
+                    <FaGooglePlay />
+                  ) : (
+                    <FaApple />
+                  )}
 
                   Direct Download
                 </a>
