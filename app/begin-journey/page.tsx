@@ -9,7 +9,6 @@ import {
 } from "framer-motion"
 
 import {
-  ArrowRight,
   Sparkles,
   BookOpen,
   Stars,
@@ -19,7 +18,6 @@ import {
   Feather,
   Quote,
   PlayCircle,
-  ChevronRight,
   Globe2,
   ScrollText,
   Wand2,
