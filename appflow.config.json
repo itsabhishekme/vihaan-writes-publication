@@ -1,6 +1,9 @@
 {
   "apps": [
     {
+      "appId": "com.vihaanwrites.app",
+      "root": ".",
+      "webDir": "out",
       "platform": "ios",
       "packageManager": "spm"
     }
