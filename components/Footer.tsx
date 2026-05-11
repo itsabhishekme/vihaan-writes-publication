@@ -674,7 +674,7 @@ export default function Footer() {
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-400">
 
               <Link
-                href="/privacy"
+                href="/privacy-policy"
                 className="group relative transition duration-300 hover:text-white"
               >
                 Privacy Policy
@@ -682,7 +682,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="/terms"
+                href="/terms-and-conditions"
                 className="group relative transition duration-300 hover:text-white"
               >
                 Terms & Conditions
