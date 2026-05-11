@@ -589,28 +589,32 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
       {/* BOTTOM */}
-      <div className="relative overflow-hidden border-t border-white/10 bg-gradient-to-b from-black/60 via-neutral-950 to-black backdrop-blur-xl">
+      <div className="relative overflow-hidden border-t border-white/10 bg-gradient-to-b from-black via-neutral-950 to-black backdrop-blur-2xl">
 
-        {/* Soft Glow Effects */}
-        <div className="absolute left-0 top-0 h-40 w-40 rounded-full bg-cyan-500/10 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-56 w-56 rounded-full bg-indigo-500/10 blur-3xl" />
+        {/* Animated Glow Effects */}
+        <div className="absolute -left-10 top-0 h-52 w-52 rounded-full bg-cyan-500/10 blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-indigo-500/10 blur-3xl animate-pulse" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_60%)]" />
 
-        <div className="container-main relative z-10 flex flex-col gap-10 py-10 md:flex-row md:items-center md:justify-between">
+        <div className="container-main relative z-10 flex flex-col gap-12 py-12 md:flex-row md:items-center md:justify-between">
 
           {/* Left Section */}
-          <div className="space-y-4 text-center md:text-left">
+          <div className="space-y-5 text-center md:text-left">
 
             {/* Brand */}
             <div>
-              <h3 className="bg-gradient-to-r from-white via-neutral-300 to-neutral-500 bg-clip-text text-2xl font-bold tracking-wide text-transparent">
+              <h3 className="bg-gradient-to-r from-white via-cyan-200 to-indigo-400 bg-clip-text text-3xl font-extrabold tracking-wide text-transparent">
                 Vihaan Writes
               </h3>
 
-              <p className="mt-2 max-w-md text-sm leading-relaxed text-neutral-400">
-                A universe of emotions, soulful storytelling,
-                poetic reflections, and timeless words crafted
-                to touch hearts deeply.
+              <div className="mt-3 h-[2px] w-24 rounded-full bg-gradient-to-r from-cyan-400 to-indigo-500 md:mx-0 mx-auto" />
+
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-neutral-400">
+                A celestial space of emotions, poetic reflections,
+                soulful storytelling, and timeless words woven
+                gently for hearts that still feel deeply.
               </p>
             </div>
 
@@ -626,17 +630,48 @@ export default function Footer() {
             </div>
 
             {/* Developer Credit */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-neutral-300 shadow-lg shadow-black/20 backdrop-blur-md">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-400" />
-              Developed by EchoSoul Developer
-            </div>
+            <a
+              href="https://echo-soul-developer.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 rounded-full border border-cyan-500/20 bg-white/5 px-5 py-2.5 text-xs font-medium text-neutral-300 shadow-lg shadow-cyan-500/5 backdrop-blur-md transition-all duration-500 hover:border-cyan-400/50 hover:bg-cyan-500/10 hover:text-white hover:shadow-cyan-500/20"
+            >
+              <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
+
+              <span className="tracking-wide">
+                Developed by{" "}
+                <span className="bg-gradient-to-r from-cyan-300 to-indigo-400 bg-clip-text font-semibold text-transparent">
+                  EchoSoul Developer
+                </span>
+              </span>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M14 3h7m0 0v7m0-7L10 14"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 5v14h14"
+                />
+              </svg>
+            </a>
           </div>
 
           {/* Right Section */}
-          <div className="flex flex-col items-center gap-6 md:items-end">
+          <div className="flex flex-col items-center gap-7 md:items-end">
 
             {/* Navigation */}
-            <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-neutral-400">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-400">
 
               <Link
                 href="/privacy"
@@ -666,7 +701,7 @@ export default function Footer() {
             {/* Back To Top */}
             <a
               href="#top"
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm text-neutral-300 backdrop-blur-md transition-all duration-500 hover:border-cyan-400/40 hover:bg-cyan-500/10 hover:text-white hover:shadow-lg hover:shadow-cyan-500/10"
+              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-white/10 bg-white/5 px-7 py-3 text-sm text-neutral-300 backdrop-blur-md transition-all duration-500 hover:border-cyan-400/40 hover:bg-cyan-500/10 hover:text-white hover:shadow-xl hover:shadow-cyan-500/10"
             >
               <span className="relative z-10">Back to Top</span>
 
@@ -678,15 +713,16 @@ export default function Footer() {
         </div>
 
         {/* Closing Bottom */}
-        <div className="relative border-t border-white/5 py-5">
+        <div className="relative border-t border-white/5 py-6">
 
-          <div className="absolute left-1/2 top-0 h-px w-40 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
+          {/* Decorative Glow Line */}
+          <div className="absolute left-1/2 top-0 h-px w-48 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
 
-          <p className="text-center text-[10px] uppercase tracking-[0.4em] text-neutral-600">
+          <p className="text-center text-[10px] uppercase tracking-[0.45em] text-neutral-600">
             Words that heal • Stories that stay • Souls that connect
           </p>
 
-          <div className="mx-auto mt-3 h-[2px] w-24 rounded-full bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
+          <div className="mx-auto mt-4 h-[3px] w-28 rounded-full bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
         </div>
       </div>
 
