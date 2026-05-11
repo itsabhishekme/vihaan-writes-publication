@@ -1,5 +1,8 @@
 {
-  "ios": {
-    "packageManager": "spm"
-  }
+  "apps": [
+    {
+      "platform": "ios",
+      "packageManager": "spm"
+    }
+  ]
 }
