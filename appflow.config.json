@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "appId": "com.vihaanwrites.app",
+      "appId": "23f47b61",
       "root": ".",
       "webDir": "out",
       "platform": "ios",
