@@ -4,37 +4,46 @@
     <!-- Base application theme -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
-        <!-- Primary colors -->
+        <!-- Brand Colors -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <!-- Full white app background -->
+        <!-- White Background -->
         <item name="android:windowBackground">@android:color/white</item>
+
+        <!-- Smooth transitions -->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Activity</item>
 
     </style>
 
-    <!-- Main app theme without action bar -->
+    <!-- Main App Theme -->
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
-        <!-- White background -->
+        <!-- White App Background -->
         <item name="android:windowBackground">@android:color/white</item>
+
+        <!-- Enable hardware acceleration -->
+        <item name="android:hardwareAccelerated">true</item>
 
     </style>
 
-    <!-- Splash screen theme -->
+    <!-- Splash Screen Theme -->
     <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
 
-        <!-- White splash background -->
+        <!-- Full White Splash Background -->
         <item name="windowSplashScreenBackground">@android:color/white</item>
 
-        <!-- Splash logo -->
-        <item name="windowSplashScreenAnimatedIcon">@drawable/splash</item>
+        <!-- Animated Splash Icon -->
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
 
-        <!-- After splash -->
+        <!-- Splash Animation Duration -->
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+
+        <!-- After Splash Theme -->
         <item name="postSplashScreenTheme">@style/AppTheme.NoActionBar</item>
 
     </style>
