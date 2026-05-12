@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState, type MouseEvent } from "react";
 import { usePathname } from "next/navigation";
+import { useEffect, useCallback, useState } from "react";
+
+import { motion, AnimatePresence } from "framer-motion";
 
 import { HiMenu, HiX } from "react-icons/hi";
 import { HiOutlineSparkles } from "react-icons/hi2";
-
-import { motion, AnimatePresence } from "framer-motion";
 
 /* ================= TYPES ================= */
 
@@ -33,23 +33,31 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const [open, setOpen] =
-    useState<boolean>(false);
+    useState(false);
 
   const [scrolled, setScrolled] =
-    useState<boolean>(false);
+    useState(false);
 
-  /* ================= SCROLL ================= */
+  /* ================= SCROLL EFFECT ================= */
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      const isScrolled =
+        window.scrollY > 10;
+
+      setScrolled((prev) =>
+        prev !== isScrolled
+          ? isScrolled
+          : prev
+      );
     };
 
     handleScroll();
 
     window.addEventListener(
       "scroll",
-      handleScroll
+      handleScroll,
+      { passive: true }
     );
 
     return () => {
@@ -60,37 +68,46 @@ export default function Navbar() {
     };
   }, []);
 
+  /* ================= BODY LOCK ================= */
+
+  useEffect(() => {
+    document.body.style.overflow =
+      open ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow =
+        "";
+    };
+  }, [open]);
+
   /* ================= HELPERS ================= */
 
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
     setOpen(false);
-  };
+  }, []);
 
-  const toggleMenu = (
-    e: MouseEvent<HTMLButtonElement>
-  ) => {
-    e.preventDefault();
-
+  const toggleMenu = () => {
     setOpen((prev) => !prev);
   };
 
-  /* ================= WEBSITE CHECK ================= */
+  /* ================= ACTIVE LINK ================= */
 
-  const isWebsite =
-    typeof window !== "undefined" &&
-    !("Capacitor" in window) &&
-    !window.matchMedia(
-      "(display-mode: standalone)"
-    ).matches;
+  const isActive = (url: string) => {
+    if (url === "/") {
+      return pathname === "/";
+    }
+
+    return pathname.startsWith(url);
+  };
 
   /* ================= UI ================= */
 
   return (
     <>
       <header
-        className={`fixed left-0 top-0 z-50 w-full transition-all duration-500 ${
+        className={`fixed left-0 top-0 z-[999] w-full transition-all duration-500 ${
           scrolled
-            ? "border-b border-white/10 bg-black/70 shadow-[0_8px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl"
+            ? "border-b border-white/10 bg-black/75 shadow-[0_8px_40px_rgba(0,0,0,0.55)] backdrop-blur-2xl"
             : "bg-transparent"
         }`}
       >
@@ -100,31 +117,31 @@ export default function Navbar() {
 
         {/* CONTAINER */}
 
-        <div className="container-main flex h-20 items-center justify-between">
+        <div className="container-main flex h-20 items-center justify-between px-4 sm:px-6">
 
           {/* LOGO */}
 
           <Link
             href="/"
-            className="group flex items-center gap-4"
             onClick={closeMenu}
+            className="group flex items-center gap-3"
           >
             <div className="relative">
 
               <div className="absolute inset-0 rounded-2xl bg-white/20 opacity-0 blur-xl transition duration-500 group-hover:opacity-100" />
 
-              <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-white to-neutral-300 text-xl font-black text-black shadow-2xl">
+              <div className="relative flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-white to-neutral-300 text-lg font-black text-black shadow-2xl md:h-12 md:w-12 md:text-xl">
                 V
               </div>
 
             </div>
 
-            <div>
-              <h1 className="text-lg font-black tracking-[0.25em] md:text-xl">
+            <div className="leading-none">
+              <h1 className="text-base font-black tracking-[0.25em] md:text-xl">
                 VIHAAN
               </h1>
 
-              <p className="mt-1 text-[10px] tracking-[0.4em] text-neutral-400 md:text-xs">
+              <p className="mt-1 text-[9px] tracking-[0.4em] text-neutral-400 md:text-xs">
                 WRITES
               </p>
             </div>
@@ -133,14 +150,16 @@ export default function Navbar() {
           {/* DESKTOP NAV */}
 
           <nav className="hidden items-center gap-2 lg:flex">
+
             {links.map((item) => {
               const active =
-                pathname === item.url;
+                isActive(item.url);
 
               return (
                 <Link
                   key={item.name}
                   href={item.url}
+                  onClick={closeMenu}
                   className={`group relative overflow-hidden rounded-2xl px-5 py-3 text-sm font-medium transition-all duration-300 ${
                     active
                       ? "bg-white text-black shadow-xl"
@@ -157,9 +176,10 @@ export default function Navbar() {
                 </Link>
               );
             })}
+
           </nav>
 
-          {/* RIGHT ACTIONS */}
+          {/* ACTIONS */}
 
           <div className="flex items-center gap-3">
 
@@ -167,18 +187,21 @@ export default function Navbar() {
 
             <Link
               href="/book"
-              className="group hidden items-center gap-2 rounded-2xl bg-white px-6 py-3 font-semibold text-black shadow-2xl transition-all duration-300 hover:scale-105 md:inline-flex"
+              onClick={closeMenu}
+              className="group hidden items-center gap-2 rounded-2xl bg-white px-5 py-3 font-semibold text-black shadow-2xl transition-all duration-300 hover:scale-105 md:inline-flex"
             >
               <HiOutlineSparkles className="text-lg transition-transform duration-300 group-hover:rotate-12" />
+
               <span>Read Now</span>
             </Link>
 
-            {/* MOBILE MENU BUTTON */}
+            {/* MOBILE BUTTON */}
 
             <button
               type="button"
+              aria-label="Toggle Menu"
               onClick={toggleMenu}
-              className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-2xl text-white backdrop-blur-xl lg:hidden"
+              className="relative flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-2xl text-white backdrop-blur-xl transition-all duration-300 hover:bg-white/10 lg:hidden"
             >
               <AnimatePresence mode="wait">
 
@@ -217,7 +240,7 @@ export default function Navbar() {
             <motion.div
               initial={{
                 opacity: 0,
-                y: -20,
+                y: -15,
               }}
               animate={{
                 opacity: 1,
@@ -225,27 +248,27 @@ export default function Navbar() {
               }}
               exit={{
                 opacity: 0,
-                y: -20,
+                y: -15,
               }}
               transition={{
-                duration: 0.3,
+                duration: 0.25,
               }}
               className="border-t border-white/10 bg-black/95 backdrop-blur-2xl lg:hidden"
             >
-              <nav className="container-main flex flex-col gap-3 py-6">
+              <nav className="container-main flex flex-col gap-3 px-4 py-6">
 
                 {links.map((item) => {
                   const active =
-                    pathname === item.url;
+                    isActive(item.url);
 
                   return (
                     <Link
                       key={item.name}
                       href={item.url}
                       onClick={closeMenu}
-                      className={`rounded-2xl px-5 py-4 transition-all duration-300 ${
+                      className={`rounded-2xl px-5 py-4 text-sm font-medium transition-all duration-300 ${
                         active
-                          ? "bg-white font-semibold text-black shadow-xl"
+                          ? "bg-white text-black shadow-xl"
                           : "bg-white/[0.03] text-neutral-300 hover:bg-white/10 hover:text-white"
                       }`}
                     >
@@ -254,27 +277,33 @@ export default function Navbar() {
                   );
                 })}
 
-                {/* WEBSITE ONLY */}
+                {/* MOBILE READ NOW */}
 
-                {isWebsite && (
-                  <div className="mt-5">
-                    <Link
-                      href="/book"
-                      onClick={closeMenu}
-                      className="group flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-4 py-4 font-semibold text-black transition-all duration-300 hover:scale-105"
-                    >
-                      <HiOutlineSparkles className="transition-transform duration-300 group-hover:rotate-12" />
-                      Read Now
-                    </Link>
-                  </div>
-                )}
+                <div className="mt-3">
+
+                  <Link
+                    href="/book"
+                    onClick={closeMenu}
+                    className="group flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-4 py-4 font-semibold text-black transition-all duration-300 hover:scale-[1.02]"
+                  >
+                    <HiOutlineSparkles className="transition-transform duration-300 group-hover:rotate-12" />
+
+                    Read Now
+                  </Link>
+
+                </div>
 
               </nav>
             </motion.div>
           )}
 
         </AnimatePresence>
+
       </header>
+
+      {/* SPACER */}
+
+      <div className="h-20 w-full" />
     </>
   );
 }
