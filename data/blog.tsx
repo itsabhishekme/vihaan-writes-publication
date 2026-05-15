@@ -1846,6 +1846,675 @@ export const blogPosts: BlogPost[] = [
       </div>
     ),
   },
+  /* ================= BLOG 10 ================= */
+
+  {
+    slug: "before-she-arrived-soul-connection-signs-dreams",
+    title:
+      "Before She Arrived: The Invisible Connection My Soul Felt First",
+    excerpt:
+      "A deeply emotional spiritual reflection on soulmate energy, dreams, intuition, destiny, and the invisible connection felt before meeting a future spouse.",
+    image: "/blog-before-she-arrived.jpg",
+    date: "2026-05-15",
+    time: "15 min read",
+    category: "Spiritual",
+    tags: [
+      "Soul Connection",
+      "Spiritual Love",
+      "Destiny",
+      "Dreams",
+      "Karmic Energy",
+      "Inner Healing",
+    ],
+    author: "Vihaan",
+    featured: true,
+    audio: "/audio/before-she-arrived.mp3",
+
+    content: (
+      <div className="space-y-14">
+
+        {/* HERO SECTION */}
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-purple-950/40 via-black to-indigo-950/40 p-10 md:p-14">
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(192,132,252,0.15),transparent_40%)]" />
+
+          <div className="relative z-10 space-y-8">
+
+            <p className="text-3xl md:text-5xl font-light leading-tight text-white">
+              Some people enter the soul before they enter life.
+            </p>
+
+            <p className="text-xl leading-relaxed text-neutral-300">
+              Long before reality introduces them, something within already feels their presence.
+            </p>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+
+              <p className="text-center text-2xl italic leading-relaxed text-neutral-100">
+                “The heart sometimes remembers souls the eyes have never seen.”
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* SECTION 1 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Feeling That Someone Was Coming
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            There was a season in my life when loneliness began feeling different.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Not painful.
+            Not empty.
+            Just incomplete in a way I could not explain.
+          </p>
+
+          <blockquote className="border-l-4 border-purple-500 pl-6 text-2xl italic text-neutral-100">
+            “Some souls arrive spiritually before they arrive physically.”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            I started noticing strange emotional patterns that felt impossible to ignore.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-2">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Synchronicities
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Repeating numbers, songs, and moments appearing constantly.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Emotional Pull
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                A deep connection toward someone unknown yet familiar.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 2 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Dreams That Stayed After Waking Up
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Most dreams disappear within minutes.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            But some dreams remain inside the soul long after waking.
+          </p>
+
+          <div className="rounded-3xl border border-indigo-500/20 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 p-10">
+
+            <p className="text-center text-2xl italic leading-relaxed text-white">
+              “Sometimes dreams are not imagination. Sometimes they are emotional memories from the soul.”
+            </p>
+
+          </div>
+
+          <p className="leading-relaxed text-neutral-300">
+            I could never fully remember her face.
+            But I always remembered how her presence felt.
+          </p>
+
+          <ul className="list-disc space-y-3 pl-6 text-neutral-300">
+            <li>Peace without explanation</li>
+            <li>Familiarity without history</li>
+            <li>Comfort without conversation</li>
+            <li>Longing without reason</li>
+          </ul>
+
+        </section>
+
+        {/* SECTION 3 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Signs Before Meeting a Soulmate
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Not every coincidence carries meaning.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            But some moments arrive carrying unusual emotional depth.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-3">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Intuition
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Feeling emotionally guided toward unknown change.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Healing
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Unexpected emotional growth before love arrives.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Destiny
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Life slowly redirecting itself toward alignment.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 4 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Soul Recognition Feels Different
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Attraction can happen instantly.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            But soul recognition feels ancient.
+          </p>
+
+          <blockquote className="border-l-4 border-pink-500 pl-6 text-2xl italic text-neutral-100">
+            “The soul recognizes frequencies the mind cannot explain.”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            These connections often transform people emotionally and spiritually.
+          </p>
+
+          <div className="rounded-3xl border border-pink-500/20 bg-gradient-to-r from-pink-500/10 to-purple-500/10 p-10">
+
+            <p className="text-center text-2xl italic leading-relaxed text-white">
+              “Some people do not enter your life to complete you. They enter to awaken you.”
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 5 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Maybe Love Begins Before the Meeting
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            One truth changed my understanding of relationships forever.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Not all connections begin physically.
+          </p>
+
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 p-8">
+
+            <p className="text-center text-xl italic leading-relaxed text-neutral-100">
+              “Before reality introduces two people, their souls may already be moving toward each other.”
+            </p>
+
+          </div>
+
+          <p className="leading-relaxed text-neutral-300">
+            And when the meeting finally happens, something inside quietly whispers:
+          </p>
+
+          <blockquote className="border-l-4 border-indigo-500 pl-6 text-2xl italic text-neutral-100">
+            “You feel familiar.”
+          </blockquote>
+
+        </section>
+
+        {/* FINAL REFLECTION */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Final Reflection
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Maybe destiny moves silently before it becomes visible.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Through dreams.
+            Through intuition.
+            Through emotional preparation.
+            Through invisible spiritual timing.
+          </p>
+
+          <div className="rounded-[32px] border border-indigo-500/20 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 p-12 text-center">
+
+            <p className="text-3xl italic leading-relaxed text-white">
+              “Perhaps some souls are never truly strangers.”
+            </p>
+
+          </div>
+
+          <p className="text-center text-lg leading-relaxed text-neutral-300">
+            Trust the timing.
+            Trust the feeling.
+            Trust the journey.
+          </p>
+
+        </section>
+
+        {/* CTA */}
+        <div className="rounded-3xl border border-white/10 bg-black/40 p-10 text-center">
+
+          <p className="mb-4 text-2xl text-white">
+            Explore More Spiritual Reflections
+          </p>
+
+          <p className="italic leading-relaxed text-neutral-400">
+            Discover writings about soul connection, karma, destiny, healing, and spiritual awakening.
+          </p>
+
+        </div>
+
+        {/* SIGNATURE */}
+        <p className="mt-12 text-right text-lg text-neutral-300">
+          — Vihaan
+        </p>
+
+      </div>
+    ),
+  },
+
+  /* ================= BLOG 11 ================= */
+
+  {
+    slug: "before-the-universe-introduced-us-soul-recognition",
+    title:
+      "Before the Universe Introduced Us: How My Soul Recognized Her First",
+    excerpt:
+      "A spiritual reflection on soulmate energy, intuition, dreams, destiny, and the invisible emotional connection felt before meeting true love.",
+    image: "/blog-universe-introduced-us.jpg",
+    date: "2026-05-15",
+    time: "16 min read",
+    category: "Spiritual",
+    tags: [
+      "Soulmate",
+      "Destiny",
+      "Spiritual Connection",
+      "Dreams",
+      "Intuition",
+      "Inner Healing",
+    ],
+    author: "Vihaan",
+    featured: true,
+    audio: "/audio/before-the-universe-introduced-us.mp3",
+
+    content: (
+      <div className="space-y-14">
+
+        {/* HERO SECTION */}
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-indigo-950/40 via-black to-purple-950/40 p-10 md:p-14">
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(129,140,248,0.15),transparent_40%)]" />
+
+          <div className="relative z-10 space-y-8">
+
+            <p className="text-3xl md:text-5xl font-light leading-tight text-white">
+              Some souls recognize each other long before life creates the meeting.
+            </p>
+
+            <p className="text-xl leading-relaxed text-neutral-300">
+              Not physically. Not visibly. But spiritually.
+            </p>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+
+              <p className="text-center text-2xl italic leading-relaxed text-neutral-100">
+                “Sometimes the heart remembers souls the eyes have never seen.”
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* SECTION 1 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            When Loneliness Began Feeling Different
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            There was a time when being alone stopped feeling empty.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Instead, it began feeling meaningful — almost as if life itself was emotionally preparing me for someone important.
+          </p>
+
+          <blockquote className="border-l-4 border-indigo-500 pl-6 text-2xl italic text-neutral-100">
+            “Some emotional changes begin before destiny arrives.”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            I started noticing quiet transformations within myself.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-3">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Introspection
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Becoming deeply reflective without understanding why.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Intuition
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Feeling emotionally guided toward unseen change.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Spiritual Depth
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Ordinary moments beginning to feel emotionally sacred.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 2 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Dreams I Could Never Forget
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Most dreams disappear quickly after waking.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            But certain dreams remain permanently inside the soul.
+          </p>
+
+          <div className="rounded-3xl border border-purple-500/20 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 p-10">
+
+            <p className="text-center text-2xl italic leading-relaxed text-white">
+              “Sometimes dreams carry emotions the soul already understands.”
+            </p>
+
+          </div>
+
+          <p className="leading-relaxed text-neutral-300">
+            I never fully remembered her face.
+            But I always remembered how her presence felt.
+          </p>
+
+          <ul className="list-disc space-y-3 pl-6 text-neutral-300">
+            <li>Peace beyond explanation</li>
+            <li>Comfort without conversation</li>
+            <li>Familiarity without history</li>
+            <li>Longing without visible reason</li>
+          </ul>
+
+        </section>
+
+        {/* SECTION 3 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Invisible Signs Before Love Arrives
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Not every coincidence is destiny.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            But some moments carry emotional alignment too powerful to ignore.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-2">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Synchronicities
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Repeating numbers, names, places, and emotional symbols.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Emotional Healing
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Unexpected inner growth before meeting someone important.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Deep Inner Knowing
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Quiet certainty that someone significant is approaching your life.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Spiritual Timing
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Life unexpectedly redirecting itself toward emotional alignment.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 4 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Soul Recognition Feels Ancient
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Attraction is easy to explain.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Soul recognition is not.
+          </p>
+
+          <blockquote className="border-l-4 border-pink-500 pl-6 text-2xl italic text-neutral-100">
+            “The soul recognizes energies the mind cannot logically define.”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            These connections often awaken deep transformation within people.
+          </p>
+
+          <div className="rounded-3xl border border-pink-500/20 bg-gradient-to-r from-pink-500/10 to-purple-500/10 p-10">
+
+            <p className="text-center text-2xl italic leading-relaxed text-white">
+              “Some relationships are not meant to complete life — they are meant to awaken it.”
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 5 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Maybe Some Souls Meet Twice
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Spiritually first.
+            Physically later.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Maybe dreams, intuition, healing, and emotional preparation are not random experiences at all.
+          </p>
+
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 p-8">
+
+            <p className="text-center text-xl italic leading-relaxed text-neutral-100">
+              “Perhaps destiny quietly aligns two souls long before they finally meet.”
+            </p>
+
+          </div>
+
+          <p className="leading-relaxed text-neutral-300">
+            And when the meeting finally happens, something inside softly whispers:
+          </p>
+
+          <blockquote className="border-l-4 border-indigo-500 pl-6 text-2xl italic text-neutral-100">
+            “I remember you.”
+          </blockquote>
+
+        </section>
+
+        {/* FINAL REFLECTION */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Final Reflection
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Perhaps destiny does not always arrive loudly.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Sometimes it appears quietly through dreams, emotional shifts, intuition, healing, and invisible spiritual timing.
+          </p>
+
+          <div className="rounded-[32px] border border-indigo-500/20 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 p-12 text-center">
+
+            <p className="text-3xl italic leading-relaxed text-white">
+              “Maybe love is not discovering someone new. Maybe it is recognizing someone the soul never forgot.”
+            </p>
+
+          </div>
+
+          <p className="text-center text-lg leading-relaxed text-neutral-300">
+            Trust the timing.
+            Trust the connection.
+            Trust the journey.
+          </p>
+
+        </section>
+
+        {/* CTA */}
+        <div className="rounded-3xl border border-white/10 bg-black/40 p-10 text-center">
+
+          <p className="mb-4 text-2xl text-white">
+            Explore More Spiritual Reflections
+          </p>
+
+          <p className="italic leading-relaxed text-neutral-400">
+            Discover writings about destiny, soul connection, karma, healing, and spiritual awakening.
+          </p>
+
+        </div>
+
+        {/* SIGNATURE */}
+        <p className="mt-12 text-right text-lg text-neutral-300">
+          — Vihaan
+        </p>
+
+      </div>
+    ),
+  },
 
 
 ];
