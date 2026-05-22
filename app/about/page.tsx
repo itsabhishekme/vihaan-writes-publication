@@ -14,240 +14,480 @@ import {
   HiOutlineStar,
   HiOutlineBookOpen,
   HiOutlineUserCircle,
+  HiOutlineMoon,
+  HiOutlineFire,
+  HiOutlinePencilSquare,
+  HiOutlineChatBubbleBottomCenterText,
 } from "react-icons/hi2";
 
 export default function AboutPage() {
   const [open, setOpen] = useState(false);
 
+  const philosophies = [
+    {
+      icon: HiOutlineHeart,
+      title: "Emotional Storytelling",
+      text: "Every line is designed to leave a silent emotional imprint on the reader.",
+    },
+    {
+      icon: HiOutlineSparkles,
+      title: "Soulful Writing",
+      text: "Stories inspired by karmic energy, destiny, intuition, and emotional memory.",
+    },
+    {
+      icon: HiOutlineGlobeAlt,
+      title: "Universal Emotions",
+      text: "Love, silence, longing, healing, and connection beyond language and geography.",
+    },
+  ];
+
+  const journey = [
+    {
+      title: "Awakening",
+      text: "The beginning of self-awareness through emotions, silence, and observation.",
+    },
+    {
+      title: "Expression",
+      text: "Turning deep feelings into words that emotionally resonate with readers.",
+    },
+    {
+      title: "Connection",
+      text: "Creating meaningful relationships between stories and human experiences.",
+    },
+  ];
+
+  const quotes = [
+    "Some souls are recognized before they are met.",
+    "Not every love story begins in this lifetime.",
+    "Silence often carries the deepest emotions.",
+    "Words can heal what conversations cannot.",
+    "The soul remembers what the mind forgets.",
+    "Certain connections transcend time and logic.",
+  ];
+
   return (
-    <main className="relative overflow-hidden text-white bg-black">
+    <>
+      {/* SEO */}
+      <head>
+        <title>
+          About Vihaan | Indian Author, Emotional & Spiritual Writer
+        </title>
 
-      {/* BACKGROUND ORBS */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 blur-[120px] rounded-full" />
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-pink-500/10 blur-[120px] rounded-full" />
-      <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-indigo-500/5 blur-[150px] -translate-x-1/2 -translate-y-1/2 rounded-full" />
+        <meta
+          name="description"
+          content="Discover Vihaan — the creative identity of Abhishek Shrivastava. Explore emotional storytelling, spiritual writing, soulful books, karmic themes, and deep human connection."
+        />
 
-      {/* BACKGROUND TEXTURE */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.06),transparent_30%)]" />
+        <meta
+          name="keywords"
+          content="Vihaan, Abhishek Shrivastava, Indian author, spiritual writer, emotional storytelling, karmic writing, soulful books, author website"
+        />
 
-      {/* HERO */}
-      <section className="container-main py-28 md:py-36 grid md:grid-cols-2 gap-16 items-center">
+        <meta name="author" content="Vihaan" />
 
-        <div>
-          <p className="uppercase tracking-[0.4em] text-sm text-neutral-500">
-            About The Author
-          </p>
+        <meta property="og:title" content="About Vihaan" />
 
-          <h1 className="mt-6 text-6xl md:text-8xl font-black leading-tight tracking-tight">
-            Vihaan
-          </h1>
+        <meta
+          property="og:description"
+          content="Explore the emotional and spiritual writing journey of Vihaan."
+        />
 
-          <p className="mt-8 text-xl text-neutral-300 leading-relaxed">
-            Vihaan is not just a name. It is a creative identity.
-          </p>
+        <meta property="og:type" content="website" />
 
-          <p className="mt-4 text-neutral-400">
-            The pen name of <span className="text-white">Abhishek Shrivastava</span>, 
-            an Indian author writing at the intersection of emotion, spirituality, 
-            and human connection.
-          </p>
+        <meta property="og:image" content="/author.jpg" />
 
-          <p className="mt-4 text-neutral-400">
-            The goal is simple: <span className="text-white">create words that stay inside people.</span>
-          </p>
+        <meta name="twitter:card" content="summary_large_image" />
+      </head>
 
-          <button
-            onClick={() => setOpen(!open)}
-            className="mt-8 inline-flex items-center gap-2 text-sm text-white hover:text-neutral-300 transition"
-          >
-            {open ? "Read Less" : "Read More"}
-            {open ? <HiOutlineChevronUp /> : <HiOutlineChevronDown />}
-          </button>
+      <main className="relative overflow-hidden bg-black text-white">
+        {/* BACKGROUND EFFECTS */}
+        <div className="absolute top-0 left-0 h-96 w-96 rounded-full bg-purple-500/10 blur-[140px]" />
+        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-pink-500/10 blur-[140px]" />
+        <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/10 blur-[180px]" />
 
-          <div className={`${open ? "max-h-[2000px] opacity-100 mt-8" : "max-h-0 opacity-0"} overflow-hidden transition-all duration-700`}>
-            <div className="space-y-6 text-neutral-400 leading-relaxed text-lg">
+        {/* GRID TEXTURE */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] opacity-30" />
 
-              <p>
-                Born in Bihar, India, Abhishek Shrivastava brings a deeply introspective 
-                and emotionally aware voice to modern storytelling.
+        {/* HERO SECTION */}
+        <section className="container mx-auto px-6 py-24 md:py-36 lg:px-12">
+          <div className="grid items-center gap-20 md:grid-cols-2">
+            {/* LEFT */}
+            <div className="relative z-10">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm uppercase tracking-[0.3em] text-neutral-300 backdrop-blur-xl">
+                <HiOutlineSparkles />
+                About The Author
+              </span>
+
+              <h1 className="mt-8 text-6xl font-black leading-none tracking-tight md:text-8xl lg:text-9xl">
+                Vihaan
+              </h1>
+
+              <div className="mt-8 h-1 w-32 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400" />
+
+              <p className="mt-10 max-w-2xl text-xl leading-relaxed text-neutral-300 md:text-2xl">
+                Vihaan is more than a name. It is a creative identity rooted in
+                emotion, silence, spirituality, and human connection.
               </p>
 
-              <p>
-                His work explores karmic connections, unseen bonds, emotional memory, 
-                and the silent language of the soul.
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-neutral-400">
+                The pen name of <span className="font-semibold text-white">Abhishek Shrivastava</span>,
+                an Indian author whose writing explores karmic bonds, emotional
+                memory, soulful relationships, and the invisible energies that
+                shape human experiences.
               </p>
 
-              <p>
-                <span className="text-white">Vihaan Writes</span> is not a brand. 
-                It is a personal space of expression.
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-neutral-400">
+                Every story is designed to make readers feel understood,
+                emotionally connected, and spiritually awakened.
               </p>
 
-              <div>
-                <h3 className="text-white font-semibold text-xl mb-3">
-                  What Defines His Writing
-                </h3>
-                <ul className="space-y-2">
-                  <li>• Emotional storytelling that lingers</li>
-                  <li>• Spiritual and karmic depth</li>
-                  <li>• Love beyond logic and timelines</li>
-                  <li>• Inner transformation</li>
-                  <li>• Silence between words</li>
-                </ul>
+              {/* BUTTONS */}
+              <div className="mt-10 flex flex-wrap gap-5">
+                <Link
+                  href="/book"
+                  className="group inline-flex items-center gap-3 rounded-2xl bg-white px-8 py-4 font-semibold text-black transition duration-300 hover:scale-105"
+                >
+                  Explore Books
+                  <HiOutlineArrowRight className="transition group-hover:translate-x-1" />
+                </Link>
+
+                <Link
+                  href="/blog"
+                  className="rounded-2xl border border-white/10 bg-white/5 px-8 py-4 font-semibold backdrop-blur-xl transition hover:border-white/30 hover:bg-white/10"
+                >
+                  Read Articles
+                </Link>
               </div>
 
-              <p className="italic text-white text-lg">
-                His words are meant for those who feel deeply—
-                and recognize something familiar within them.
-              </p>
+              {/* READ MORE */}
+              <button
+                onClick={() => setOpen(!open)}
+                className="mt-12 inline-flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-neutral-300 transition hover:text-white"
+              >
+                {open ? "Read Less" : "Read More"}
+                {open ? <HiOutlineChevronUp /> : <HiOutlineChevronDown />}
+              </button>
 
-              <p className="text-white">— Vihaan</p>
+              <div
+                className={`${
+                  open
+                    ? "max-h-[3000px] opacity-100"
+                    : "max-h-0 opacity-0"
+                } overflow-hidden transition-all duration-700`}
+              >
+                <div className="mt-10 space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-2xl">
+                  <p className="leading-relaxed text-neutral-300">
+                    Born in Bihar, India, Vihaan writes from a place of deep
+                    emotional awareness. His writing combines modern emotional
+                    storytelling with spirituality, introspection, and inner
+                    transformation.
+                  </p>
+
+                  <p className="leading-relaxed text-neutral-300">
+                    His words are inspired by silence, human emotions,
+                    destiny, soul recognition, and karmic relationships that
+                    transcend logic and time.
+                  </p>
+
+                  <p className="leading-relaxed text-neutral-300">
+                    Through books, blogs, and reflective writing, Vihaan creates
+                    experiences that feel deeply personal and emotionally real.
+                  </p>
+
+                  <div className="grid gap-5 md:grid-cols-2">
+                    <div className="rounded-2xl border border-white/10 bg-black/40 p-6">
+                      <HiOutlineMoon className="text-3xl text-purple-400" />
+                      <h3 className="mt-4 text-xl font-bold">
+                        Spiritual Connection
+                      </h3>
+                      <p className="mt-3 text-neutral-400">
+                        Soul connections, karmic bonds, emotional memory, and
+                        deeper human consciousness.
+                      </p>
+                    </div>
+
+                    <div className="rounded-2xl border border-white/10 bg-black/40 p-6">
+                      <HiOutlineFire className="text-3xl text-orange-400" />
+                      <h3 className="mt-4 text-xl font-bold">
+                        Emotional Intensity
+                      </h3>
+                      <p className="mt-3 text-neutral-400">
+                        Honest emotions expressed through poetic storytelling
+                        and reflective writing.
+                      </p>
+                    </div>
+                  </div>
+
+                  <blockquote className="border-l-4 border-white pl-6 text-xl italic text-white">
+                    “Some emotions are not meant to be explained. Only felt.”
+                  </blockquote>
+
+                  <p className="text-lg text-white">— Vihaan</p>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT IMAGE */}
+            <div className="relative">
+              <div className="absolute -inset-5 rounded-[40px] bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-orange-500/20 blur-3xl" />
+
+              <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-white/5 shadow-2xl backdrop-blur-2xl">
+                <Image
+                  src="/author.jpg"
+                  alt="Vihaan Author"
+                  width={700}
+                  height={900}
+                  priority
+                  className="h-full w-full object-cover transition duration-700 hover:scale-105"
+                />
+              </div>
             </div>
           </div>
+        </section>
 
-          <div className="mt-12 flex gap-4 flex-wrap">
-            <Link href="/book" className="px-7 py-3 bg-white text-black rounded-xl font-semibold hover:scale-105 transition">
-              Explore Books
-            </Link>
-            <Link href="/blog" className="px-7 py-3 border border-white/20 rounded-xl hover:bg-white/10 transition">
-              Read Blog
-            </Link>
+        {/* STATS */}
+        <section className="container mx-auto px-6 py-10 lg:px-12">
+          <div className="grid gap-6 md:grid-cols-4">
+            {[
+              ["1+", "Published Books"],
+              ["1000+", "Readers Inspired"],
+              ["∞", "Emotions Expressed"],
+              ["24/7", "Creative Energy"],
+            ].map(([number, label], index) => (
+              <div
+                key={index}
+                className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-2xl"
+              >
+                <h3 className="text-5xl font-black text-white">{number}</h3>
+                <p className="mt-3 text-neutral-400">{label}</p>
+              </div>
+            ))}
           </div>
-        </div>
+        </section>
 
-        {/* IMAGE */}
-        <div className="relative group">
-          <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-            <Image
-              src="/author.jpg"
-              alt="Vihaan Author"
-              width={500}
-              height={650}
-              className="w-full object-cover group-hover:scale-105 transition duration-700"
-            />
+        {/* JOURNEY */}
+        <section className="container mx-auto px-6 py-28 lg:px-12">
+          <div className="text-center">
+            <p className="uppercase tracking-[0.4em] text-neutral-500">
+              The Journey
+            </p>
+
+            <h2 className="mt-6 text-5xl font-black md:text-6xl">
+              From Feeling To Writing
+            </h2>
+
+            <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-neutral-400">
+              Writing did not begin as a profession. It began as a need to
+              express emotions that words could barely hold.
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* NEW: JOURNEY SECTION */}
-      <section className="container-main py-28 text-center">
-        <h2 className="text-5xl font-black">The Journey</h2>
-        <p className="mt-6 max-w-3xl mx-auto text-neutral-400 text-lg">
-          Writing did not begin as a profession. It began as a feeling—
-          something that needed to be expressed, even before it was understood.
-        </p>
+          <div className="mt-20 grid gap-8 md:grid-cols-3">
+            {journey.map((item, i) => (
+              <div
+                key={i}
+                className="group rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur-xl transition duration-500 hover:-translate-y-3 hover:border-white/30"
+              >
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 text-2xl font-black">
+                  {i + 1}
+                </div>
 
-        <div className="mt-12 grid md:grid-cols-3 gap-8">
-          {["Awakening", "Expression", "Connection"].map((item, i) => (
-            <div key={i} className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:scale-105 transition">
-              <h3 className="text-xl font-semibold">{item}</h3>
-              <p className="mt-3 text-neutral-400 text-sm">
-                A phase where writing evolves into something deeper than words.
-              </p>
+                <h3 className="mt-8 text-3xl font-bold">{item.title}</h3>
+
+                <p className="mt-5 leading-relaxed text-neutral-400">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* IDENTITY */}
+        <section className="container mx-auto px-6 py-28 text-center lg:px-12">
+          <div className="mx-auto flex h-28 w-28 items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-xl">
+            <HiOutlineUserCircle className="text-6xl text-white" />
+          </div>
+
+          <h2 className="mt-10 text-5xl font-black md:text-6xl">
+            The Identity
+          </h2>
+
+          <p className="mx-auto mt-8 max-w-4xl text-xl leading-relaxed text-neutral-400">
+            Vihaan is not just a writer. It is an emotional presence existing
+            between memory, silence, thought, and feeling.
+          </p>
+        </section>
+
+        {/* WRITING PURPOSE */}
+        <section className="container mx-auto px-6 py-28 lg:px-12">
+          <div className="rounded-[40px] border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.03] p-12 backdrop-blur-2xl md:p-20">
+            <div className="grid items-center gap-16 md:grid-cols-2">
+              <div>
+                <HiOutlineLightBulb className="text-6xl text-yellow-400" />
+
+                <h2 className="mt-8 text-5xl font-black leading-tight">
+                  Writing With Purpose
+                </h2>
+
+                <p className="mt-8 text-lg leading-relaxed text-neutral-400">
+                  Writing is not only about storytelling. It is about emotional
+                  connection, inner healing, and awakening forgotten emotions.
+                </p>
+
+                <p className="mt-6 text-lg leading-relaxed text-neutral-400">
+                  Every sentence is written with intention — to make readers
+                  pause, reflect, feel, and reconnect with themselves.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                {[
+                  "Emotional healing through words",
+                  "Spiritual awareness and soul connection",
+                  "Meaningful storytelling with depth",
+                  "Human emotions beyond surface reality",
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-4 rounded-2xl border border-white/10 bg-black/30 p-5"
+                  >
+                    <div className="h-3 w-3 rounded-full bg-pink-400" />
+                    <p className="text-lg text-neutral-300">{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* IDENTITY */}
-      <section className="container-main py-24 text-center">
-        <HiOutlineUserCircle className="mx-auto text-5xl text-neutral-400" />
-        <h2 className="mt-6 text-5xl font-black">The Identity</h2>
+        {/* THEMES */}
+        <section className="container mx-auto px-6 py-28 lg:px-12">
+          <div className="text-center">
+            <p className="uppercase tracking-[0.4em] text-neutral-500">
+              Core Themes
+            </p>
 
-        <p className="mt-6 max-w-3xl mx-auto text-neutral-400 text-lg">
-          Vihaan is not just a writer. It is an emotional presence—
-          a voice that exists between thought and feeling.
-        </p>
-      </section>
+            <h2 className="mt-6 text-5xl font-black md:text-6xl">
+              What Defines The Writing
+            </h2>
+          </div>
 
-      {/* PHILOSOPHY */}
-      <section className="container-main py-24 text-center">
-        <HiOutlineLightBulb className="mx-auto text-5xl text-neutral-400" />
-        <h2 className="mt-6 text-5xl font-black">Writing With Purpose</h2>
+          <div className="mt-20 grid gap-10 md:grid-cols-3">
+            {philosophies.map((item, i) => {
+              const Icon = item.icon;
 
-        <p className="mt-6 max-w-3xl mx-auto text-neutral-400 text-lg">
-          Writing is not expression—it is connection.
-        </p>
-      </section>
+              return (
+                <div
+                  key={i}
+                  className="group rounded-[32px] border border-white/10 bg-white/5 p-10 backdrop-blur-2xl transition duration-500 hover:-translate-y-4 hover:border-white/20"
+                >
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500">
+                    <Icon className="text-3xl text-white" />
+                  </div>
 
-      {/* THEMES */}
-      <section className="container-main py-24 grid md:grid-cols-3 gap-10">
-        {[
-          {
-            icon: HiOutlineHeart,
-            title: "Emotional Depth",
-            text: "Stories that stay within the reader long after reading.",
-          },
-          {
-            icon: HiOutlineSparkles,
-            title: "Spiritual Insight",
-            text: "Exploring unseen bonds and soul-level connections.",
-          },
-          {
-            icon: HiOutlineGlobeAlt,
-            title: "Universal Connection",
-            text: "Emotions beyond boundaries.",
-          },
-        ].map((item, i) => {
-          const Icon = item.icon;
-          return (
-            <div key={i} className="p-10 bg-neutral-900/70 backdrop-blur-xl rounded-3xl border border-white/10 hover:-translate-y-2 transition duration-300">
-              <Icon className="text-3xl text-white" />
-              <h3 className="mt-6 text-2xl font-bold">{item.title}</h3>
-              <p className="mt-4 text-neutral-400">{item.text}</p>
-            </div>
-          );
-        })}
-      </section>
+                  <h3 className="mt-8 text-3xl font-bold">{item.title}</h3>
 
-      {/* QUOTES */}
-      <section className="container-main py-28">
-        <h2 className="text-center text-5xl font-black mb-16">
-          Words That Stay
-        </h2>
+                  <p className="mt-5 leading-relaxed text-neutral-400">
+                    {item.text}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
 
-        <div className="grid md:grid-cols-3 gap-10">
-          {[
-            "Some people are not found. They are remembered.",
-            "The soul recognizes long before the mind understands.",
-            "Not every connection begins in this lifetime.",
-          ].map((quote, i) => (
-            <div key={i} className="p-10 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:scale-[1.03] transition">
-              <p className="text-xl italic text-neutral-200">“{quote}”</p>
-              <p className="mt-6 text-sm text-neutral-400">— Vihaan</p>
-            </div>
-          ))}
-        </div>
-      </section>
+        {/* QUOTES */}
+        <section className="container mx-auto px-6 py-28 lg:px-12">
+          <div className="text-center">
+            <p className="uppercase tracking-[0.4em] text-neutral-500">
+              Quotes
+            </p>
 
-      {/* BOOK */}
-      <section className="container-main py-24 text-center">
-        <HiOutlineBookOpen className="mx-auto text-5xl text-neutral-400" />
+            <h2 className="mt-6 text-5xl font-black md:text-6xl">
+              Words That Stay
+            </h2>
+          </div>
 
-        <h2 className="mt-6 text-5xl font-black">The Work</h2>
+          <div className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {quotes.map((quote, i) => (
+              <div
+                key={i}
+                className="rounded-[30px] border border-white/10 bg-white/5 p-10 backdrop-blur-2xl transition duration-500 hover:scale-[1.03]"
+              >
+                <HiOutlineChatBubbleBottomCenterText className="text-4xl text-pink-400" />
 
-        <div className="mt-10 flex justify-center gap-2 text-yellow-400">
-          {[1,2,3,4,5].map(i => <HiOutlineStar key={i} />)}
-        </div>
+                <p className="mt-8 text-2xl italic leading-relaxed text-neutral-200">
+                  “{quote}”
+                </p>
 
-        <Link href="/book" className="inline-flex mt-10 items-center gap-2 px-6 py-3 bg-white text-black rounded-xl hover:scale-105 transition">
-          View Book <HiOutlineArrowRight />
-        </Link>
-      </section>
+                <div className="mt-8 h-px w-full bg-white/10" />
 
-      {/* CTA */}
-      <section className="container-main pb-28 text-center">
-        <div className="bg-white text-black rounded-3xl p-14 shadow-2xl">
-          <h2 className="text-5xl font-black">Experience The Writing</h2>
+                <p className="mt-6 text-sm uppercase tracking-[0.3em] text-neutral-500">
+                  — Vihaan
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* BOOKS */}
+        <section className="container mx-auto px-6 py-28 text-center lg:px-12">
+          <HiOutlineBookOpen className="mx-auto text-6xl text-white" />
+
+          <h2 className="mt-10 text-5xl font-black md:text-6xl">
+            The Work
+          </h2>
+
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-neutral-400">
+            Explore writings centered around spirituality, emotional connection,
+            soul recognition, destiny, and human consciousness.
+          </p>
+
+          <div className="mt-10 flex justify-center gap-2 text-yellow-400">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <HiOutlineStar key={i} className="text-3xl" />
+            ))}
+          </div>
 
           <Link
             href="/book"
-            className="inline-block mt-8 px-8 py-4 bg-black text-white rounded-xl font-semibold hover:scale-105 transition"
+            className="group mt-12 inline-flex items-center gap-3 rounded-2xl bg-white px-8 py-4 font-semibold text-black transition duration-300 hover:scale-105"
           >
-            Start Reading
+            Explore The Books
+            <HiOutlineArrowRight className="transition group-hover:translate-x-1" />
           </Link>
-        </div>
-      </section>
+        </section>
 
-    </main>
+        {/* FINAL CTA */}
+        <section className="container mx-auto px-6 pb-32 lg:px-12">
+          <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-white text-black">
+            <div className="absolute -top-20 right-0 h-72 w-72 rounded-full bg-pink-300 blur-[120px]" />
+            <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-purple-300 blur-[120px]" />
+
+            <div className="relative z-10 p-14 text-center md:p-24">
+              <HiOutlinePencilSquare className="mx-auto text-6xl" />
+
+              <h2 className="mt-10 text-5xl font-black leading-tight md:text-7xl">
+                Experience The Writing
+              </h2>
+
+              <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-neutral-700">
+                Dive into stories and reflections that explore emotion,
+                spirituality, connection, and the invisible language of the
+                soul.
+              </p>
+
+              <Link
+                href="/book"
+                className="group mt-12 inline-flex items-center gap-3 rounded-2xl bg-black px-10 py-5 text-lg font-semibold text-white transition duration-300 hover:scale-105"
+              >
+                Start Reading
+                <HiOutlineArrowRight className="transition group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
