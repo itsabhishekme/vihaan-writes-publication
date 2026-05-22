@@ -17,9 +17,7 @@ export default function Hero() {
       className="relative overflow-hidden border-b border-white/5"
       aria-label="Vihaan Writes Official Hero Section"
     >
-      {/* =========================
-          SEO CONTENT
-      ========================== */}
+      {/* SEO */}
       <div className="sr-only">
         <h1>
           Vihaan Writes — Official Author Website of Modern Spiritual Writer
@@ -30,50 +28,37 @@ export default function Hero() {
           literature, dream writing, modern Indian author insights, and spiritual
           romance by Vihaan Writes.
         </p>
-
-        <p>
-          Featured Book: My Spouse Before I Met Her — Karmic Clues, Dreams, and
-          the Echoes of Her Soul.
-        </p>
       </div>
 
-      {/* =========================
-          BACKGROUND EFFECTS
-      ========================== */}
+      {/* BACKGROUND */}
       <div className="absolute inset-0 -z-20 bg-black" />
 
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.08),transparent_30%),radial-gradient(circle_at_center,rgba(255,255,255,0.04),transparent_40%)]" />
 
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-white/5 blur-[120px]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[700px] w-[700px] rounded-full bg-white/5 blur-[120px]" />
 
-      {/* Floating Glow */}
+      {/* FLOATING GLOW */}
       <motion.div
-        animate={{
-          y: [0, -20, 0],
-        }}
+        animate={{ y: [0, -20, 0] }}
         transition={{
           repeat: Infinity,
           duration: 8,
           ease: 'easeInOut',
         }}
-        className="absolute right-[-100px] top-[120px] w-[320px] h-[320px] rounded-full bg-neutral-400/10 blur-[100px]"
+        className="absolute right-[-100px] top-[120px] h-[320px] w-[320px] rounded-full bg-neutral-400/10 blur-[100px]"
       />
 
-      {/* =========================
-          MAIN CONTAINER
-      ========================== */}
-      <div className="container-main relative py-24 md:py-32 lg:py-40">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* =======================================================
-              LEFT CONTENT
-          ======================================================== */}
+      {/* MAIN */}
+      <div className="container-main relative py-16 md:py-20 lg:py-24">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          {/* LEFT */}
           <div className="relative z-10">
-            {/* TOP BADGE */}
+            {/* BADGE */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-5 py-2.5 text-sm text-neutral-200 shadow-xl"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm text-neutral-200 backdrop-blur-xl shadow-xl"
             >
               <HiOutlineSparkles className="text-lg text-white" />
 
@@ -87,9 +72,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.7 }}
-              className="mt-8"
+              className="mt-6"
             >
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.92] tracking-[-0.04em]">
+              <h1 className="text-5xl font-black leading-[0.9] tracking-[-0.04em] sm:text-6xl md:text-7xl lg:text-8xl">
                 <span className="block text-white">
                   Vihaan
                 </span>
@@ -105,25 +90,23 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
-              className="mt-8 max-w-2xl text-lg md:text-xl leading-relaxed text-neutral-300"
+              className="mt-6 max-w-2xl text-base leading-relaxed text-neutral-300 md:text-lg"
             >
               A world of soulful literature, karmic reflections, emotional
               storytelling, and timeless words written before destiny arrived.
-              Experience modern spiritual writing crafted for readers who seek
-              depth, love, healing, and meaning.
             </motion.p>
 
-            {/* CTA BUTTONS */}
+            {/* BUTTONS */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.7 }}
-              className="mt-10 flex flex-col sm:flex-row gap-5"
+              className="mt-8 flex flex-col gap-4 sm:flex-row"
             >
               <Link
                 href="/book"
                 title="Explore Vihaan Writes Book"
-                className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-white px-7 py-4 text-black font-semibold transition-all duration-300 hover:scale-[1.02] hover:bg-neutral-200 shadow-2xl shadow-white/10"
+                className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-white px-7 py-4 font-semibold text-black shadow-2xl shadow-white/10 transition-all duration-300 hover:scale-[1.02] hover:bg-neutral-200"
               >
                 Explore Book
 
@@ -133,21 +116,21 @@ export default function Hero() {
               <Link
                 href="/about"
                 title="About Vihaan Writes Author"
-                className="inline-flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl px-7 py-4 text-white transition-all duration-300 hover:bg-white/10 hover:border-white/20"
+                className="inline-flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-7 py-4 text-white backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/10"
               >
                 About Author
               </Link>
             </motion.div>
 
-            {/* FEATURE LIST */}
+            {/* FEATURES */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-5"
+              className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3"
             >
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl">
-                <div className="mb-4 inline-flex rounded-xl bg-white/10 p-3">
+                <div className="mb-3 inline-flex rounded-xl bg-white/10 p-3">
                   <HiOutlineBookOpen className="text-2xl text-white" />
                 </div>
 
@@ -156,13 +139,13 @@ export default function Hero() {
                 </h3>
 
                 <p className="mt-2 text-sm leading-relaxed text-neutral-400">
-                  Emotional stories inspired by destiny, dreams, and spiritual
+                  Emotional stories inspired by destiny and spiritual
                   connections.
                 </p>
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl">
-                <div className="mb-4 inline-flex rounded-xl bg-white/10 p-3">
+                <div className="mb-3 inline-flex rounded-xl bg-white/10 p-3">
                   <HiOutlineHeart className="text-2xl text-white" />
                 </div>
 
@@ -171,13 +154,12 @@ export default function Hero() {
                 </h3>
 
                 <p className="mt-2 text-sm leading-relaxed text-neutral-400">
-                  Writing that explores love, longing, healing, and unseen soul
-                  bonds.
+                  Writing that explores love, longing, healing, and soul bonds.
                 </p>
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl">
-                <div className="mb-4 inline-flex rounded-xl bg-white/10 p-3">
+                <div className="mb-3 inline-flex rounded-xl bg-white/10 p-3">
                   <HiOutlineMoon className="text-2xl text-white" />
                 </div>
 
@@ -186,18 +168,17 @@ export default function Hero() {
                 </h3>
 
                 <p className="mt-2 text-sm leading-relaxed text-neutral-400">
-                  Thoughtful reflections blending modern storytelling with inner
-                  awakening.
+                  Modern storytelling blended with inner awakening.
                 </p>
               </div>
             </motion.div>
 
-            {/* TRUSTED TEXT */}
+            {/* FOOTER TEXT */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="mt-12 flex flex-wrap items-center gap-5 text-sm text-neutral-500"
+              className="mt-8 flex flex-wrap items-center gap-4 text-sm text-neutral-500"
             >
               <span>Modern Spiritual Author</span>
 
@@ -211,84 +192,79 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* =======================================================
-              RIGHT SIDE
-          ======================================================== */}
+          {/* RIGHT */}
           <motion.div
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
             className="relative"
           >
-            {/* Outer Glow */}
-            <div className="absolute -inset-5 rounded-[3rem] bg-white/5 blur-3xl" />
+            <div className="absolute -inset-4 rounded-[3rem] bg-white/5 blur-3xl" />
 
-            {/* Main Card */}
-            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-800 p-8 md:p-10 shadow-[0_0_80px_rgba(255,255,255,0.06)] backdrop-blur-xl">
-              {/* Decorative Gradient */}
+            <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-800 p-6 md:p-8 shadow-[0_0_80px_rgba(255,255,255,0.06)] backdrop-blur-xl">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.10),transparent_35%)]" />
 
-              {/* Book Cover */}
-              <div className="relative mt-8 overflow-hidden rounded-3xl border border-white/10">
+              {/* BOOK IMAGE */}
+              <div className="relative overflow-hidden rounded-3xl border border-white/10">
                 <Image
                   src="/featured.jpg"
                   alt="My Spouse Before I Met Her Book Cover"
                   width={800}
                   height={1000}
                   priority
-                  className="h-[420px] w-full object-cover"
+                  className="h-[380px] w-full object-cover"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
               </div>
 
               {/* CONTENT */}
-              <div className="relative mt-8">
-                <h2 className="text-3xl md:text-4xl font-bold leading-tight text-white">
+              <div className="relative mt-6">
+                <h2 className="text-2xl font-bold leading-tight text-white md:text-3xl">
                   My Spouse Before I Met Her
                 </h2>
 
-                <p className="mt-5 text-base md:text-lg leading-relaxed text-neutral-300">
+                <p className="mt-4 text-sm leading-relaxed text-neutral-300 md:text-base">
                   A deeply emotional journey through karmic clues, dreams, soul
                   recognition, and the echoes of love written before fate united
                   two hearts.
                 </p>
 
                 {/* STATS */}
-                <div className="mt-8 grid grid-cols-3 gap-4">
+                <div className="mt-6 grid grid-cols-3 gap-3">
                   <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
-                    <h4 className="text-2xl font-bold text-white">
+                    <h4 className="text-xl font-bold text-white">
                       02
                     </h4>
 
-                    <p className="mt-1 text-xs uppercase tracking-wider text-neutral-500">
-                      Published Book
+                    <p className="mt-1 text-[10px] uppercase tracking-wider text-neutral-500">
+                      Published
                     </p>
                   </div>
 
                   <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
-                    <h4 className="text-2xl font-bold text-white">
+                    <h4 className="text-xl font-bold text-white">
                       Soul
                     </h4>
 
-                    <p className="mt-1 text-xs uppercase tracking-wider text-neutral-500">
+                    <p className="mt-1 text-[10px] uppercase tracking-wider text-neutral-500">
                       Inspired
                     </p>
                   </div>
 
                   <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 text-center">
-                    <h4 className="text-2xl font-bold text-white">
+                    <h4 className="text-xl font-bold text-white">
                       Modern
                     </h4>
 
-                    <p className="mt-1 text-xs uppercase tracking-wider text-neutral-500">
+                    <p className="mt-1 text-[10px] uppercase tracking-wider text-neutral-500">
                       Literature
                     </p>
                   </div>
                 </div>
 
                 {/* FOOTER */}
-                <div className="mt-10 flex items-center justify-between border-t border-white/10 pt-6">
+                <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-5">
                   <div>
                     <p className="text-sm text-neutral-500">
                       Written By
@@ -312,17 +288,15 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Floating Decorative Cards */}
+            {/* FLOATING CARD */}
             <motion.div
-              animate={{
-                y: [0, -10, 0],
-              }}
+              animate={{ y: [0, -10, 0] }}
               transition={{
                 repeat: Infinity,
                 duration: 5,
                 ease: 'easeInOut',
               }}
-              className="absolute -left-8 top-10 hidden lg:block rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-4 shadow-xl"
+              className="absolute -left-6 top-10 hidden rounded-2xl border border-white/10 bg-white/5 p-4 shadow-xl backdrop-blur-xl lg:block"
             >
               <p className="text-xs uppercase tracking-widest text-neutral-500">
                 Emotional Writing
@@ -331,20 +305,6 @@ export default function Hero() {
               <h4 className="mt-2 text-lg font-semibold text-white">
                 Spiritual Storytelling
               </h4>
-            </motion.div>
-
-            <motion.div
-              animate={{
-                y: [0, 12, 0],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 6,
-                ease: 'easeInOut',
-              }}
-              className="absolute -right-6 bottom-10 hidden lg:block rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-4 shadow-xl"
-            >
-
             </motion.div>
           </motion.div>
         </div>
