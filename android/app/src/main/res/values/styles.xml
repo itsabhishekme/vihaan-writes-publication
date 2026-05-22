@@ -1,51 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-
-        <!-- Brand Colors -->
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
-        <!-- White Background -->
-        <item name="android:windowBackground">@android:color/white</item>
-
-        <!-- Smooth transitions -->
-        <item name="android:windowAnimationStyle">@android:style/Animation.Activity</item>
-
     </style>
 
-    <!-- Main App Theme -->
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
-
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-
-        <!-- White App Background -->
-        <item name="android:windowBackground">@android:color/white</item>
-
-        <!-- Enable hardware acceleration -->
-        <item name="android:hardwareAccelerated">true</item>
-
+        <item name="android:background">@null</item>
     </style>
 
-    <!-- Splash Screen Theme -->
+
     <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
-
-        <!-- Full White Splash Background -->
-        <item name="windowSplashScreenBackground">@android:color/white</item>
-
-        <!-- Animated Splash Icon -->
-        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
-
-        <!-- Splash Animation Duration -->
-        <item name="windowSplashScreenAnimationDuration">1000</item>
-
-        <!-- After Splash Theme -->
-        <item name="postSplashScreenTheme">@style/AppTheme.NoActionBar</item>
-
+        <item name="android:background">@drawable/splash</item>
     </style>
-
 </resources>
