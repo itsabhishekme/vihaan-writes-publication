@@ -88,7 +88,7 @@ export default function Home() {
             {[
               { number: "10K+", label: "Readers Connected" },
               { number: "500+", label: "Stories Written" },
-              { number: "1", label: "Transformational Book" }
+              { number: "2", label: "Transformational Book" }
             ].map((item, i) => (
               <div
                 key={i}
