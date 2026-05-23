@@ -37,72 +37,125 @@ const withPWA =
 
         // HTML Pages
         {
-          urlPattern: ({ request }: { request: Request }) =>
-            request.destination === "document",
+          urlPattern: function (context: any) {
+
+            return (
+              context.request &&
+              context.request.destination ===
+                "document"
+            );
+          },
 
           handler: "NetworkFirst",
 
           options: {
+
             cacheName: "html-cache",
+
+            networkTimeoutSeconds: 10,
 
             expiration: {
               maxEntries: 50,
             },
 
-            networkTimeoutSeconds: 10,
+            cacheableResponse: {
+              statuses: [0, 200],
+            },
           },
         },
 
         // CSS + JS
         {
-          urlPattern: ({ request }: { request: Request }) =>
-            request.destination === "style" ||
-            request.destination === "script",
+          urlPattern: function (context: any) {
+
+            return (
+              context.request &&
+              (
+                context.request.destination ===
+                  "style" ||
+
+                context.request.destination ===
+                  "script"
+              )
+            );
+          },
 
           handler: "StaleWhileRevalidate",
 
           options: {
-            cacheName: "static-resources",
+
+            cacheName:
+              "static-resources",
 
             expiration: {
               maxEntries: 100,
+            },
+
+            cacheableResponse: {
+              statuses: [0, 200],
             },
           },
         },
 
         // Images
         {
-          urlPattern: ({ request }: { request: Request }) =>
-            request.destination === "image",
+          urlPattern: function (context: any) {
+
+            return (
+              context.request &&
+              context.request.destination ===
+                "image"
+            );
+          },
 
           handler: "CacheFirst",
 
           options: {
+
             cacheName: "image-cache",
 
             expiration: {
+
               maxEntries: 200,
 
               maxAgeSeconds:
-                60 * 60 * 24 * 30,
+                60 *
+                60 *
+                24 *
+                30,
+            },
+
+            cacheableResponse: {
+              statuses: [0, 200],
             },
           },
         },
 
         // Fonts
         {
-          urlPattern: /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
+          urlPattern:
+            /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
 
           handler: "CacheFirst",
 
           options: {
-            cacheName: "google-fonts",
+
+            cacheName:
+              "google-fonts",
 
             expiration: {
+
               maxEntries: 20,
 
               maxAgeSeconds:
-                60 * 60 * 24 * 365,
+                60 *
+                60 *
+                24 *
+                365,
+            },
+
+            cacheableResponse: {
+              statuses: [0, 200],
             },
           },
         },
@@ -116,15 +169,23 @@ const withPWA =
           method: "GET",
 
           options: {
+
             cacheName: "api-cache",
 
             networkTimeoutSeconds: 10,
 
             expiration: {
+
               maxEntries: 50,
 
               maxAgeSeconds:
-                60 * 60 * 24,
+                60 *
+                60 *
+                24,
+            },
+
+            cacheableResponse: {
+              statuses: [0, 200],
             },
           },
         },
@@ -133,13 +194,20 @@ const withPWA =
         {
           urlPattern: /^https?.*/i,
 
-          handler: "StaleWhileRevalidate",
+          handler:
+            "StaleWhileRevalidate",
 
           options: {
-            cacheName: "external-assets",
+
+            cacheName:
+              "external-assets",
 
             expiration: {
               maxEntries: 200,
+            },
+
+            cacheableResponse: {
+              statuses: [0, 200],
             },
           },
         },
@@ -159,82 +227,20 @@ const nextConfig = {
 
   compress: true,
 
-  generateEtags: true,
-
   images: {
     unoptimized: true,
   },
 
   experimental: {
-    optimizeCss: true,
 
     scrollRestoration: true,
   },
 
   compiler: {
+
     removeConsole:
       process.env.NODE_ENV ===
       "production",
-  },
-
-  headers: async () => {
-    return [
-      {
-        source: "/(.*)",
-
-        headers: [
-
-          {
-            key: "X-Content-Type-Options",
-            value: "nosniff",
-          },
-
-          {
-            key: "X-Frame-Options",
-            value: "DENY",
-          },
-
-          {
-            key: "Referrer-Policy",
-            value: "origin-when-cross-origin",
-          },
-
-          {
-            key: "Permissions-Policy",
-            value:
-              "camera=(), microphone=(), geolocation=()",
-          },
-        ],
-      },
-
-      {
-        source: "/sw.js",
-
-        headers: [
-          {
-            key: "Content-Type",
-            value: "application/javascript; charset=utf-8",
-          },
-
-          {
-            key: "Cache-Control",
-            value:
-              "no-cache, no-store, must-revalidate",
-          },
-        ],
-      },
-
-      {
-        source: "/manifest.json",
-
-        headers: [
-          {
-            key: "Content-Type",
-            value: "application/manifest+json",
-          },
-        ],
-      },
-    ];
   },
 };
 
