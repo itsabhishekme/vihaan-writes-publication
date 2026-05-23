@@ -12,17 +12,44 @@ const withPWA =
       process.env.NODE_ENV ===
       'development',
 
+    cacheOnFrontEndNav: true,
+
+    aggressiveFrontEndNavCaching: true,
+
+    reloadOnOnline: true,
+
     workboxOptions: {
-      disableDevLogs: true,
+      cleanupOutdatedCaches: true,
+
+      clientsClaim: true,
+
+      navigateFallback: '/',
+
+      runtimeCaching: [
+        {
+          urlPattern: /^https?.*/i,
+
+          handler: 'NetworkFirst',
+
+          options: {
+            cacheName:
+              'offlineCache',
+
+            expiration: {
+              maxEntries: 200,
+            },
+          },
+        },
+      ],
     },
   })
 
 const nextConfig = {
   output: 'export',
 
-  reactStrictMode: true,
-
   trailingSlash: true,
+
+  reactStrictMode: true,
 
   images: {
     unoptimized: true,

@@ -5,6 +5,7 @@ import type { ReactNode } from 'react'
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+
 import PWARegister from '@/components/PWARegister'
 
 import SpotifyPodcastWidget from '@/components/SpotifyPodcastWidget'
@@ -18,7 +19,9 @@ import { Inter } from 'next/font/google'
 
 import Script from 'next/script'
 
-/* 🔤 FONT CONFIGURATION */
+/* ======================================================
+   FONT CONFIGURATION
+====================================================== */
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,11 +29,13 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-/* 🌐 GLOBAL SEO + METADATA */
+/* ======================================================
+   GLOBAL SEO + METADATA
+====================================================== */
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    'https://vihaanwrites.in'
+    'https://vihaan-writes.vercel.app'
   ),
 
   title: {
@@ -65,7 +70,8 @@ export const metadata: Metadata = {
   authors: [
     {
       name: 'Vihaan Writes',
-      url: 'https://vihaanwrites.in',
+      url:
+        'https://vihaan-writes.vercel.app',
     },
   ],
 
@@ -78,13 +84,12 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical:
-      'https://vihaanwrites.in',
+      'https://vihaan-writes.vercel.app',
   },
 
   robots: {
     index: true,
     follow: true,
-    nocache: false,
 
     googleBot: {
       index: true,
@@ -97,11 +102,6 @@ export const metadata: Metadata = {
     },
   },
 
-  verification: {
-    google:
-      'weGpqdMpx3QRhD0siqAtXZHzFfEqiYZs4-XTp08WmqA',
-  },
-
   openGraph: {
     title: 'Vihaan Writes',
 
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
       'Explore soulful books, stories, reflections, emotions, and meaningful writing by Vihaan.',
 
     url:
-      'https://vihaanwrites.in',
+      'https://vihaan-writes.vercel.app',
 
     siteName:
       'Vihaan Writes',
@@ -141,18 +141,25 @@ export const metadata: Metadata = {
 
   icons: {
     icon: '/favicon.ico',
+
     shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+
+    apple:
+      '/apple-touch-icon.png',
   },
 }
 
-/* 📦 TYPES */
+/* ======================================================
+   TYPES
+====================================================== */
 
 type RootLayoutProps = {
   children: ReactNode
 }
 
-/* 🌍 ROOT LAYOUT */
+/* ======================================================
+   ROOT LAYOUT
+====================================================== */
 
 export default function RootLayout({
   children,
@@ -165,7 +172,9 @@ export default function RootLayout({
     >
       <head>
 
-        {/* ⚡ PERFORMANCE */}
+        {/* ======================================================
+            PERFORMANCE
+        ====================================================== */}
 
         <link
           rel="preconnect"
@@ -178,42 +187,91 @@ export default function RootLayout({
           crossOrigin=""
         />
 
-        {/* 🎨 THEME */}
+        {/* ======================================================
+            PWA CONFIG
+        ====================================================== */}
+
+        <link
+          rel="manifest"
+          href="/manifest.json"
+        />
+
+        <link
+          rel="apple-touch-icon"
+          href="/apple-touch-icon.png"
+        />
+
+        {/* ======================================================
+            MOBILE PWA SUPPORT
+        ====================================================== */}
+
+        <meta
+          name="mobile-web-app-capable"
+          content="yes"
+        />
+
+        <meta
+          name="apple-mobile-web-app-capable"
+          content="yes"
+        />
+
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+
+        <meta
+          name="apple-mobile-web-app-title"
+          content="Vihaan Writes"
+        />
+
+        {/* ======================================================
+            THEME COLOR
+        ====================================================== */}
 
         <meta
           name="theme-color"
-          content="#000000"
+          content="#14001f"
         />
 
-        {/* 📱 RESPONSIVE */}
+        {/* ======================================================
+            RESPONSIVE
+        ====================================================== */}
 
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"
         />
 
-        {/* 🖼️ FAVICON */}
+        {/* ======================================================
+            FAVICON
+        ====================================================== */}
 
         <link
           rel="icon"
           href="/favicon.ico"
         />
 
-        {/* 📊 GOOGLE ANALYTICS */}
+        {/* ======================================================
+            GOOGLE ANALYTICS
+        ====================================================== */}
 
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4S8ELNEWQZ"
           strategy="afterInteractive"
         />
 
-        {/* 📈 ANALYTICS SCRIPT */}
+        {/* ======================================================
+            ANALYTICS SCRIPT
+        ====================================================== */}
 
         <Script
           id="google-analytics"
           strategy="afterInteractive"
         >
           {`
-            window.dataLayer = window.dataLayer || [];
+            window.dataLayer =
+              window.dataLayer || [];
 
             function gtag() {
               dataLayer.push(arguments);
@@ -250,25 +308,39 @@ export default function RootLayout({
         `}
       >
 
-        {/* 🚀 LOADER PROVIDER */}
+        {/* ======================================================
+            PWA REGISTER
+        ====================================================== */}
+
         <PWARegister />
+
+        {/* ======================================================
+            LOADER PROVIDER
+        ====================================================== */}
+
         <LoaderProvider>
 
-          {/* 🌌 BACKGROUND EFFECTS */}
+          {/* ======================================================
+              BACKGROUND EFFECTS
+          ====================================================== */}
 
           <div className="fixed inset-0 -z-50 overflow-hidden">
 
-            <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-white/5 blur-3xl" />
+            <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-violet-500/5 blur-3xl" />
 
-            <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-zinc-500/5 blur-3xl" />
+            <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-violet-300/5 blur-3xl" />
 
           </div>
 
-          {/* 📦 APP WRAPPER */}
+          {/* ======================================================
+              APP WRAPPER
+          ====================================================== */}
 
           <div className="relative flex min-h-screen flex-col">
 
-            {/* 🔝 NAVBAR */}
+            {/* ======================================================
+                NAVBAR
+            ====================================================== */}
 
             <header className="sticky top-0 z-40">
 
@@ -276,7 +348,9 @@ export default function RootLayout({
 
             </header>
 
-            {/* 📄 MAIN CONTENT */}
+            {/* ======================================================
+                MAIN CONTENT
+            ====================================================== */}
 
             <main
               id="main-content"
@@ -285,21 +359,29 @@ export default function RootLayout({
               {children}
             </main>
 
-            {/* 🔚 FOOTER */}
+            {/* ======================================================
+                FOOTER
+            ====================================================== */}
 
             <Footer />
 
           </div>
 
-          {/* 💬 WHATSAPP */}
+          {/* ======================================================
+              WHATSAPP WIDGET
+          ====================================================== */}
 
           <WhatsAppChannelWidget />
 
-          {/* 🎧 SPOTIFY */}
+          {/* ======================================================
+              SPOTIFY PODCAST
+          ====================================================== */}
 
           <SpotifyPodcastWidget />
 
-          {/* 📊 ANALYTICS */}
+          {/* ======================================================
+              VERCEL ANALYTICS
+          ====================================================== */}
 
           <Analytics />
 
