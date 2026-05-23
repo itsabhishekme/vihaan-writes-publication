@@ -1,51 +1,25 @@
 {
-  "name": "Vihaan Writes - Soulful Books & Spiritual Storytelling",
+  "name": "Vihaan Writes",
   "short_name": "Vihaan",
-
-  "description": "Official website of Vihaan Writes. Explore soulful books, emotions, reflections, spiritual storytelling, karmic writing, and meaningful human experiences.",
-
+  "description": "Vihaan Writes Official App",
   "start_url": "/",
-  "scope": "/",
-
   "display": "standalone",
-
+  "background_color": "#14001f",
+  "theme_color": "#14001f",
   "orientation": "portrait",
-
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
-
+  "scope": "/",
   "lang": "en",
-  "dir": "ltr",
-
-  "categories": [
-    "books",
-    "literature",
-    "education",
-    "lifestyle"
-  ],
 
   "icons": [
     {
-      "src": "/icons/icon-192.png",
+      "src": "/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "/icons/icon-512.png",
+      "src": "/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ],
-
-  "screenshots": [
-    {
-      "src": "/screenshots/home.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Vihaan Writes Home"
+      "type": "image/png"
     }
   ],
 
@@ -53,14 +27,46 @@
     {
       "name": "Books",
       "short_name": "Books",
-      "url": "/books",
+      "url": "/book",
       "icons": [
         {
-          "src": "/icons/icon-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
+          "src": "/icon-192x192.png",
+          "sizes": "192x192"
         }
       ]
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "url": "/blog",
+      "icons": [
+        {
+          "src": "/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+
+  "share_target": {
+    "action": "/share",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+
+  "protocol_handlers": [
+    {
+      "protocol": "web+vihaan",
+      "url": "/?url=%s"
     }
   ],
 
@@ -68,7 +74,8 @@
     {
       "action": "/open-file",
       "accept": {
-        "text/plain": [".txt"]
+        "text/plain": [".txt"],
+        "application/pdf": [".pdf"]
       }
     }
   ]

@@ -5,6 +5,7 @@ import type { ReactNode } from 'react'
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import PWARegister from '@/components/PWARegister'
 
 import SpotifyPodcastWidget from '@/components/SpotifyPodcastWidget'
 import WhatsAppChannelWidget from '@/components/WhatsAppChannelWidget'
@@ -250,7 +251,7 @@ export default function RootLayout({
       >
 
         {/* 🚀 LOADER PROVIDER */}
-
+        <PWARegister />
         <LoaderProvider>
 
           {/* 🌌 BACKGROUND EFFECTS */}

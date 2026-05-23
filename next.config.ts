@@ -11,28 +11,22 @@ const withPWA =
     disable:
       process.env.NODE_ENV ===
       'development',
+
+    workboxOptions: {
+      disableDevLogs: true,
+    },
   })
 
-/* ======================================================
-   NEXT CONFIG
-====================================================== */
-
 const nextConfig = {
-  /* STATIC EXPORT */
-
   output: 'export',
 
-  /* IMAGE OPTIMIZATION */
+  reactStrictMode: true,
+
+  trailingSlash: true,
 
   images: {
     unoptimized: true,
   },
-
-  /* REACT */
-
-  reactStrictMode: true,
-
-  /* EXPERIMENTAL */
 
   experimental: {
     optimizePackageImports: [
@@ -40,35 +34,7 @@ const nextConfig = {
       'react-icons',
     ],
   },
-
-  /* COMPILER */
-
-  compiler: {
-    removeConsole:
-      process.env.NODE_ENV ===
-      'production',
-  },
-
-  /* ESLINT */
-
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-
-  /* TYPESCRIPT */
-
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-
-  /* TRAILING SLASH */
-
-  trailingSlash: true,
 }
-
-/* ======================================================
-   EXPORT CONFIG
-====================================================== */
 
 module.exports =
   withPWA(nextConfig)
