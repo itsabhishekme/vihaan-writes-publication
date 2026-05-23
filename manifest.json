@@ -3,9 +3,9 @@
 
   "name": "Vihaan Writes",
 
-  "short_name": "Vihaan writes",
+  "short_name": "Vihaan",
 
-  "description": "Official Progressive Web App of Vihaan Writes featuring soulful storytelling, books, blogs, emotions, and spiritual writing.",
+  "description": "Official Progressive Web App of Vihaan Writes featuring soulful storytelling, books, blogs, emotions, karmic reflections, and spiritual writing.",
 
   "start_url": "https://vihaan-writes.vercel.app/",
 
@@ -32,8 +32,8 @@
 
   "categories": [
     "books",
-    "lifestyle",
     "education",
+    "lifestyle",
     "entertainment",
     "productivity"
   ],
@@ -106,27 +106,59 @@
 
   "screenshots": [
     {
-      "src": "/screenshot-mobile.png",
-
-      "sizes": "720x1600",
-
+      "src": "/screenshots/desktop-home.png",
+      "sizes": "1792x1008",
       "type": "image/png",
-
-      "form_factor": "narrow",
-
-      "label": "Vihaan Writes Mobile Experience"
+      "form_factor": "wide",
+      "label": "Vihaan Writes Home Experience"
     },
 
     {
-      "src": "/screenshot-desktop.png",
-
-      "sizes": "1280x720",
-
+      "src": "/screenshots/desktop-about.png",
+      "sizes": "1792x1008",
       "type": "image/png",
-
       "form_factor": "wide",
+      "label": "About Vihaan"
+    },
 
-      "label": "Vihaan Writes Desktop Experience"
+    {
+      "src": "/screenshots/desktop-journey.png",
+      "sizes": "1792x1008",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Reading Journey"
+    },
+
+    {
+      "src": "/screenshots/desktop-writing.png",
+      "sizes": "1792x1008",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Beyond Traditional Writing"
+    },
+
+    {
+      "src": "/screenshots/mobile-home.png",
+      "sizes": "720x1600",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile Home Experience"
+    },
+
+    {
+      "src": "/screenshots/mobile-about.png",
+      "sizes": "720x1600",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile About Section"
+    },
+
+    {
+      "src": "/screenshots/mobile-book.png",
+      "sizes": "720x1600",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Book Showcase"
     }
   ],
 
@@ -143,9 +175,7 @@
       "icons": [
         {
           "src": "/icon-192x192.png",
-
           "sizes": "192x192",
-
           "type": "image/png"
         }
       ]
@@ -163,9 +193,7 @@
       "icons": [
         {
           "src": "/icon-192x192.png",
-
           "sizes": "192x192",
-
           "type": "image/png"
         }
       ]
@@ -176,16 +204,14 @@
 
       "short_name": "Journey",
 
-      "description": "Explore Vihaan journey",
+      "description": "Explore Vihaan emotional journey",
 
       "url": "https://vihaan-writes.vercel.app/journey",
 
       "icons": [
         {
           "src": "/icon-192x192.png",
-
           "sizes": "192x192",
-
           "type": "image/png"
         }
       ]
@@ -203,9 +229,7 @@
       "icons": [
         {
           "src": "/icon-192x192.png",
-
           "sizes": "192x192",
-
           "type": "image/png"
         }
       ]
