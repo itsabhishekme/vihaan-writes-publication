@@ -11,8 +11,11 @@ export default function PWARegister() {
         .register("/sw.js")
         .then(() => {
           console.log(
-            "Service Worker Registered"
+            "SW Registered"
           );
+        })
+        .catch((error) => {
+          console.log(error);
         });
     }
   }, []);
