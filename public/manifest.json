@@ -1,13 +1,20 @@
 {
-  "id": "/",
-  "name": "Vihaan Writes",
-  "short_name": "Vihaan writes",
-  "description": "Official Progressive Web App of Vihaan Writes featuring soulful storytelling, books, blogs, emotions, karmic reflections, and spiritual writing.",
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
 
-  "start_url": "/",
+  "id": "/",
+
+  "name": "Vihaan Writes",
+
+  "short_name": "Vihaan writes",
+
+  "description": "Official Progressive Web App of Vihaan Writes featuring soulful storytelling, karmic reflections, books, blogs, spiritual writing, emotions, healing journeys, and immersive literary experiences.",
+
+  "start_url": "/?source=pwa",
+
   "scope": "/",
 
   "display": "standalone",
+
   "display_override": [
     "window-controls-overlay",
     "standalone",
@@ -18,9 +25,11 @@
   "orientation": "portrait-primary",
 
   "theme_color": "#14001f",
+
   "background_color": "#14001f",
 
   "lang": "en-US",
+
   "dir": "ltr",
 
   "categories": [
@@ -28,15 +37,23 @@
     "education",
     "lifestyle",
     "entertainment",
-    "productivity"
+    "productivity",
+    "writing",
+    "spirituality",
+    "blogging"
   ],
+
+  "iarc_rating_id": "",
 
   "prefer_related_applications": false,
 
   "handle_links": "preferred",
 
   "launch_handler": {
-    "client_mode": "focus-existing"
+    "client_mode": [
+      "focus-existing",
+      "auto"
+    ]
   },
 
   "edge_side_panel": {
@@ -45,57 +62,65 @@
 
   "display_cutout": "auto",
 
+  "capture_links": "existing-client-navigate",
+
+  "scope_extensions": [
+    {
+      "origin": "https://vihaan-writes.vercel.app"
+    }
+  ],
+
   "icons": [
     {
-      "src": "/icon-72x72.png",
+      "src": "/icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icon-96x96.png",
+      "src": "/icons/icon-96x96.png",
       "sizes": "96x96",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icon-128x128.png",
+      "src": "/icons/icon-128x128.png",
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icon-144x144.png",
+      "src": "/icons/icon-144x144.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icon-152x152.png",
+      "src": "/icons/icon-152x152.png",
       "sizes": "152x152",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icon-192x192.png",
+      "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any maskable monochrome"
     },
     {
-      "src": "/icon-384x384.png",
+      "src": "/icons/icon-384x384.png",
       "sizes": "384x384",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icon-512x512.png",
+      "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any maskable monochrome"
     },
     {
-      "src": "/apple-touch-icon.png",
+      "src": "/icons/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
@@ -108,7 +133,14 @@
       "sizes": "1792x1008",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Vihaan Writes Home Experience"
+      "label": "Vihaan Writes Desktop Experience"
+    },
+    {
+      "src": "/screenshots/desktop-writing.png",
+      "sizes": "1792x1008",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Writing Experience"
     },
     {
       "src": "/screenshots/mobile-home.png",
@@ -116,6 +148,13 @@
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Mobile Home Experience"
+    },
+    {
+      "src": "/screenshots/mobile-book.png",
+      "sizes": "720x1600",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Book Showcase"
     }
   ],
 
@@ -127,7 +166,7 @@
       "url": "/book",
       "icons": [
         {
-          "src": "/icon-192x192.png",
+          "src": "/icons/icon-192x192.png",
           "sizes": "192x192",
           "type": "image/png"
         }
@@ -140,7 +179,7 @@
       "url": "/blog",
       "icons": [
         {
-          "src": "/icon-192x192.png",
+          "src": "/icons/icon-192x192.png",
           "sizes": "192x192",
           "type": "image/png"
         }
@@ -153,31 +192,24 @@
       "url": "/journey",
       "icons": [
         {
-          "src": "/icon-192x192.png",
+          "src": "/icons/icon-192x192.png",
           "sizes": "192x192",
           "type": "image/png"
         }
       ]
     },
     {
-      "name": "Contact",
-      "short_name": "Contact",
-      "description": "Connect with Vihaan",
-      "url": "/contact",
+      "name": "Quotes",
+      "short_name": "Quotes",
+      "description": "Daily soulful quotes",
+      "url": "/quotes",
       "icons": [
         {
-          "src": "/icon-192x192.png",
+          "src": "/icons/icon-192x192.png",
           "sizes": "192x192",
           "type": "image/png"
         }
       ]
-    }
-  ],
-
-  "protocol_handlers": [
-    {
-      "protocol": "web+vihaan",
-      "url": "/?url=%s"
     }
   ],
 
@@ -192,15 +224,43 @@
     }
   },
 
+  "protocol_handlers": [
+    {
+      "protocol": "web+vihaan",
+      "url": "/?url=%s"
+    }
+  ],
+
   "file_handlers": [
     {
       "action": "/open-file",
       "accept": {
-        "text/plain": [".txt"],
-        "application/pdf": [".pdf"],
-        "image/png": [".png"],
-        "image/jpeg": [".jpg", ".jpeg"]
+        "text/plain": [
+          ".txt"
+        ],
+        "application/pdf": [
+          ".pdf"
+        ],
+        "image/png": [
+          ".png"
+        ],
+        "image/jpeg": [
+          ".jpg",
+          ".jpeg"
+        ]
       }
+    }
+  ],
+
+  "widgets": [
+    {
+      "name": "Vihaan Quotes",
+      "short_name": "Quotes",
+      "description": "Daily emotional and spiritual quotes",
+      "tag": "quotes",
+      "template": "wide",
+      "ms_ac_template": "wide",
+      "data": "/api/widget-data.json"
     }
   ],
 
@@ -210,6 +270,6 @@
     "src": "/sw.js",
     "scope": "/",
     "type": "classic",
-    "use_cache": true
+    "update_via_cache": "none"
   }
 }
