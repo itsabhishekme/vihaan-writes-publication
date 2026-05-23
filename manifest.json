@@ -40,6 +40,22 @@
 
   "prefer_related_applications": false,
 
+  "handle_links": "preferred",
+
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+
+  "edge_side_panel": {
+    "preferred_width": 420
+  },
+
+  "display_cutout": "auto",
+
+  "background": {
+    "service_worker": "/sw.js"
+  },
+
   "icons": [
     {
       "src": "/icon-72x72.png",
@@ -107,57 +123,85 @@
   "screenshots": [
     {
       "src": "/screenshots/desktop-home.png",
+
       "sizes": "1792x1008",
+
       "type": "image/png",
+
       "form_factor": "wide",
+
       "label": "Vihaan Writes Home Experience"
     },
 
     {
       "src": "/screenshots/desktop-about.png",
+
       "sizes": "1792x1008",
+
       "type": "image/png",
+
       "form_factor": "wide",
+
       "label": "About Vihaan"
     },
 
     {
       "src": "/screenshots/desktop-journey.png",
+
       "sizes": "1792x1008",
+
       "type": "image/png",
+
       "form_factor": "wide",
+
       "label": "Reading Journey"
     },
 
     {
       "src": "/screenshots/desktop-writing.png",
+
       "sizes": "1792x1008",
+
       "type": "image/png",
+
       "form_factor": "wide",
+
       "label": "Beyond Traditional Writing"
     },
 
     {
       "src": "/screenshots/mobile-home.png",
+
       "sizes": "720x1600",
+
       "type": "image/png",
+
       "form_factor": "narrow",
+
       "label": "Mobile Home Experience"
     },
 
     {
       "src": "/screenshots/mobile-about.png",
+
       "sizes": "720x1600",
+
       "type": "image/png",
+
       "form_factor": "narrow",
+
       "label": "Mobile About Section"
     },
 
     {
       "src": "/screenshots/mobile-book.png",
+
       "sizes": "720x1600",
+
       "type": "image/png",
+
       "form_factor": "narrow",
+
       "label": "Book Showcase"
     }
   ],
@@ -175,7 +219,9 @@
       "icons": [
         {
           "src": "/icon-192x192.png",
+
           "sizes": "192x192",
+
           "type": "image/png"
         }
       ]
@@ -193,7 +239,9 @@
       "icons": [
         {
           "src": "/icon-192x192.png",
+
           "sizes": "192x192",
+
           "type": "image/png"
         }
       ]
@@ -211,7 +259,9 @@
       "icons": [
         {
           "src": "/icon-192x192.png",
+
           "sizes": "192x192",
+
           "type": "image/png"
         }
       ]
@@ -229,22 +279,14 @@
       "icons": [
         {
           "src": "/icon-192x192.png",
+
           "sizes": "192x192",
+
           "type": "image/png"
         }
       ]
     }
   ],
-
-  "launch_handler": {
-    "client_mode": "focus-existing"
-  },
-
-  "edge_side_panel": {
-    "preferred_width": 420
-  },
-
-  "handle_links": "preferred",
 
   "protocol_handlers": [
     {
@@ -275,14 +317,33 @@
       "action": "https://vihaan-writes.vercel.app/open-file",
 
       "accept": {
-        "text/plain": [".txt"],
+        "text/plain": [
+          ".txt"
+        ],
 
-        "application/pdf": [".pdf"],
+        "application/pdf": [
+          ".pdf"
+        ],
 
-        "image/png": [".png"],
+        "image/png": [
+          ".png"
+        ],
 
-        "image/jpeg": [".jpg", ".jpeg"]
+        "image/jpeg": [
+          ".jpg",
+          ".jpeg"
+        ]
       }
     }
-  ]
+  ],
+
+  "related_applications": [],
+
+  "serviceworker": {
+  "src": "/sw.js",
+  "scope": "/",
+  "type": "classic",
+  "use_cache": true
+}
+
 }
