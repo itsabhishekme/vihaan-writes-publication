@@ -1,4 +1,3 @@
-
 import './globals.css'
 
 import type { Metadata } from 'next'
@@ -10,6 +9,8 @@ import Footer from '@/components/Footer'
 import SpotifyPodcastWidget from '@/components/SpotifyPodcastWidget'
 import WhatsAppChannelWidget from '@/components/WhatsAppChannelWidget'
 
+import LoaderProvider from '@/providers/LoaderProvider'
+
 import { Analytics } from '@vercel/analytics/next'
 
 import { Inter } from 'next/font/google'
@@ -17,6 +18,7 @@ import { Inter } from 'next/font/google'
 import Script from 'next/script'
 
 /* 🔤 FONT CONFIGURATION */
+
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -24,12 +26,18 @@ const inter = Inter({
 })
 
 /* 🌐 GLOBAL SEO + METADATA */
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://vihaanwrites.in'),
+  metadataBase: new URL(
+    'https://vihaanwrites.in'
+  ),
 
   title: {
-    default: 'Vihaan Writes | Official Author Website',
-    template: '%s | Vihaan Writes',
+    default:
+      'Vihaan Writes | Official Author Website',
+
+    template:
+      '%s | Vihaan Writes',
   },
 
   description:
@@ -64,10 +72,12 @@ export const metadata: Metadata = {
 
   publisher: 'Vihaan Writes',
 
-  category: 'Books & Literature',
+  category:
+    'Books & Literature',
 
   alternates: {
-    canonical: 'https://vihaanwrites.in',
+    canonical:
+      'https://vihaanwrites.in',
   },
 
   robots: {
@@ -80,13 +90,15 @@ export const metadata: Metadata = {
       follow: true,
       noimageindex: false,
       'max-video-preview': -1,
-      'max-image-preview': 'large',
+      'max-image-preview':
+        'large',
       'max-snippet': -1,
     },
   },
 
   verification: {
-    google: 'weGpqdMpx3QRhD0siqAtXZHzFfEqiYZs4-XTp08WmqA',
+    google:
+      'weGpqdMpx3QRhD0siqAtXZHzFfEqiYZs4-XTp08WmqA',
   },
 
   openGraph: {
@@ -95,9 +107,11 @@ export const metadata: Metadata = {
     description:
       'Explore soulful books, stories, reflections, emotions, and meaningful writing by Vihaan.',
 
-    url: 'https://vihaanwrites.in',
+    url:
+      'https://vihaanwrites.in',
 
-    siteName: 'Vihaan Writes',
+    siteName:
+      'Vihaan Writes',
 
     locale: 'en_US',
 
@@ -132,11 +146,13 @@ export const metadata: Metadata = {
 }
 
 /* 📦 TYPES */
+
 type RootLayoutProps = {
   children: ReactNode
 }
 
 /* 🌍 ROOT LAYOUT */
+
 export default function RootLayout({
   children,
 }: RootLayoutProps) {
@@ -147,7 +163,9 @@ export default function RootLayout({
       className="scroll-smooth"
     >
       <head>
-        {/* ⚡ PERFORMANCE OPTIMIZATION */}
+
+        {/* ⚡ PERFORMANCE */}
+
         <link
           rel="preconnect"
           href="https://fonts.googleapis.com"
@@ -160,30 +178,35 @@ export default function RootLayout({
         />
 
         {/* 🎨 THEME */}
+
         <meta
           name="theme-color"
           content="#000000"
         />
 
         {/* 📱 RESPONSIVE */}
+
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"
         />
 
         {/* 🖼️ FAVICON */}
+
         <link
           rel="icon"
           href="/favicon.ico"
         />
 
-        {/* ✅ GOOGLE ANALYTICS */}
+        {/* 📊 GOOGLE ANALYTICS */}
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4S8ELNEWQZ"
           strategy="afterInteractive"
         />
 
-        {/* 📊 ANALYTICS SCRIPT */}
+        {/* 📈 ANALYTICS SCRIPT */}
+
         <Script
           id="google-analytics"
           strategy="afterInteractive"
@@ -199,11 +222,17 @@ export default function RootLayout({
 
             gtag('js', new Date());
 
-            gtag('config', 'G-4S8ELNEWQZ', {
-              page_path: window.location.pathname,
-            });
+            gtag(
+              'config',
+              'G-4S8ELNEWQZ',
+              {
+                page_path:
+                  window.location.pathname,
+              }
+            );
           `}
         </Script>
+
       </head>
 
       <body
@@ -219,41 +248,62 @@ export default function RootLayout({
           selection:text-black
         `}
       >
-        {/* 🌌 BACKGROUND EFFECTS */}
-        <div className="fixed inset-0 -z-50 overflow-hidden">
-          <div className="absolute top-0 left-0 h-[500px] w-[500px] rounded-full bg-white/5 blur-3xl" />
 
-          <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-zinc-500/5 blur-3xl" />
-        </div>
+        {/* 🚀 LOADER PROVIDER */}
 
-        {/* 📦 APP WRAPPER */}
-        <div className="relative flex min-h-screen flex-col">
+        <LoaderProvider>
 
-          {/* 🔝 NAVIGATION */}
-          <header className="sticky top-0 z-40">
-            <Navbar />
-          </header>
+          {/* 🌌 BACKGROUND EFFECTS */}
 
-          {/* 📄 MAIN CONTENT */}
-          <main
-            id="main-content"
-            className="relative flex-1"
-          >
-            {children}
-          </main>
+          <div className="fixed inset-0 -z-50 overflow-hidden">
 
-          {/* 🔚 FOOTER */}
-          <Footer />
-        </div>
+            <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-white/5 blur-3xl" />
 
-        {/* 💬 WHATSAPP CHANNEL WIDGET */}
-        <WhatsAppChannelWidget />
+            <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-zinc-500/5 blur-3xl" />
 
-        {/* 🎧 SPOTIFY PODCAST WIDGET */}
-        <SpotifyPodcastWidget />
+          </div>
 
-        {/* 📊 VERCEL ANALYTICS */}
-        <Analytics />
+          {/* 📦 APP WRAPPER */}
+
+          <div className="relative flex min-h-screen flex-col">
+
+            {/* 🔝 NAVBAR */}
+
+            <header className="sticky top-0 z-40">
+
+              <Navbar />
+
+            </header>
+
+            {/* 📄 MAIN CONTENT */}
+
+            <main
+              id="main-content"
+              className="relative flex-1"
+            >
+              {children}
+            </main>
+
+            {/* 🔚 FOOTER */}
+
+            <Footer />
+
+          </div>
+
+          {/* 💬 WHATSAPP */}
+
+          <WhatsAppChannelWidget />
+
+          {/* 🎧 SPOTIFY */}
+
+          <SpotifyPodcastWidget />
+
+          {/* 📊 ANALYTICS */}
+
+          <Analytics />
+
+        </LoaderProvider>
+
       </body>
     </html>
   )
