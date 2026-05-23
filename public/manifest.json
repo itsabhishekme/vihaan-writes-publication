@@ -1,18 +1,14 @@
 {
+"display_override": ["window-controls-overlay"], 
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "id": "/",
   "name": "Vihaan Writes",
+  "version": "0.1.0",
   "short_name": "Vihaan writes",
   "description": "Official Progressive Web App of Vihaan Writes featuring soulful storytelling, karmic reflections, books, blogs, spiritual writing, emotions, healing journeys, and immersive literary experiences.",
   "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
-  "display_override": [
-    "window-controls-overlay",
-    "standalone",
-    "minimal-ui",
-    "browser"
-  ],
   "orientation": "portrait-primary",
   "theme_color": "#14001f",
   "background_color": "#14001f",
@@ -28,7 +24,6 @@
     "spirituality",
     "blogging"
   ],
-  "iarc_rating_id": "",
   "prefer_related_applications": false,
   "handle_links": "preferred",
   "launch_handler": {
