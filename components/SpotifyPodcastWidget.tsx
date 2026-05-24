@@ -1,6 +1,10 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import React, {
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 
 export default function SpotifyPodcastWidget() {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,7 +17,11 @@ export default function SpotifyPodcastWidget() {
   })
 
   const dragging = useRef(false)
-  const offset = useRef({ x: 0, y: 0 })
+
+  const offset = useRef({
+    x: 0,
+    y: 0,
+  })
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,11 +33,16 @@ export default function SpotifyPodcastWidget() {
     window.addEventListener('resize', handleResize)
 
     return () => {
-      window.removeEventListener('resize', handleResize)
+      window.removeEventListener(
+        'resize',
+        handleResize
+      )
     }
   }, [])
 
-  const startDrag = (e: any) => {
+  const startDrag = (
+    e: React.MouseEvent<HTMLDivElement>
+  ) => {
     dragging.current = true
 
     offset.current = {
@@ -38,7 +51,7 @@ export default function SpotifyPodcastWidget() {
     }
   }
 
-  const onDrag = (e: any) => {
+  const onDrag = (e: MouseEvent) => {
     if (!dragging.current) return
 
     setPosition({
@@ -53,13 +66,21 @@ export default function SpotifyPodcastWidget() {
 
   useEffect(() => {
     window.addEventListener('mousemove', onDrag)
+
     window.addEventListener('mouseup', stopDrag)
 
     return () => {
-      window.removeEventListener('mousemove', onDrag)
-      window.removeEventListener('mouseup', stopDrag)
+      window.removeEventListener(
+        'mousemove',
+        onDrag
+      )
+
+      window.removeEventListener(
+        'mouseup',
+        stopDrag
+      )
     }
-  }, [position])
+  }, [])
 
   return (
     <>
@@ -84,7 +105,9 @@ export default function SpotifyPodcastWidget() {
             position: 'relative',
 
             opacity: isHovered ? 1 : 0,
-            visibility: isHovered ? 'visible' : 'hidden',
+            visibility: isHovered
+              ? 'visible'
+              : 'hidden',
 
             transform: isHovered
               ? 'translateX(0px) scale(1)'
@@ -96,10 +119,12 @@ export default function SpotifyPodcastWidget() {
             background:
               'linear-gradient(145deg, rgba(0,0,0,0.98), rgba(18,18,18,0.96))',
 
-            border: '1px solid rgba(255,255,255,0.08)',
+            border:
+              '1px solid rgba(255,255,255,0.08)',
 
             backdropFilter: 'blur(24px)',
-            WebkitBackdropFilter: 'blur(24px)',
+            WebkitBackdropFilter:
+              'blur(24px)',
 
             borderRadius: '24px',
 
@@ -123,7 +148,8 @@ export default function SpotifyPodcastWidget() {
               background:
                 'linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.06), transparent 70%)',
               transform: 'translateX(-100%)',
-              animation: 'shine 5s infinite',
+              animation:
+                'shine 5s infinite',
             }}
           />
 
@@ -148,7 +174,8 @@ export default function SpotifyPodcastWidget() {
             <div
               style={{
                 fontSize: '12px',
-                color: 'rgba(255,255,255,0.55)',
+                color:
+                  'rgba(255,255,255,0.55)',
               }}
             >
               Listen on Spotify
@@ -158,20 +185,31 @@ export default function SpotifyPodcastWidget() {
 
         {/* BUTTON */}
         <button
-          onClick={() => setIsOpen(!isOpen)}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onClick={() =>
+            setIsOpen(!isOpen)
+          }
+          onMouseEnter={() =>
+            setIsHovered(true)
+          }
+          onMouseLeave={() =>
+            setIsHovered(false)
+          }
           aria-label="Spotify Podcast"
           style={{
             position: 'relative',
 
-            /* SAME SIZE */
-            width: isMobile ? '64px' : '74px',
-            height: isMobile ? '64px' : '74px',
+            width: isMobile
+              ? '64px'
+              : '74px',
+
+            height: isMobile
+              ? '64px'
+              : '74px',
 
             borderRadius: '9999px',
 
-            border: '1px solid rgba(255,255,255,0.12)',
+            border:
+              '1px solid rgba(255,255,255,0.12)',
 
             background:
               'linear-gradient(145deg, #000000 0%, #111111 45%, #1d1d1d 100%)',
@@ -195,7 +233,8 @@ export default function SpotifyPodcastWidget() {
               ? '0 24px 60px rgba(255,255,255,0.12)'
               : '0 18px 45px rgba(0,0,0,0.75)',
 
-            animation: 'floating 4s ease-in-out infinite',
+            animation:
+              'floating 4s ease-in-out infinite',
           }}
         >
           {/* OUTER GLOW */}
@@ -230,8 +269,10 @@ export default function SpotifyPodcastWidget() {
               position: 'absolute',
               inset: 0,
               borderRadius: '9999px',
-              border: '1px solid rgba(255,255,255,0.12)',
-              animation: 'pulseRing 2.8s infinite',
+              border:
+                '1px solid rgba(255,255,255,0.12)',
+              animation:
+                'pulseRing 2.8s infinite',
             }}
           />
 
@@ -239,8 +280,12 @@ export default function SpotifyPodcastWidget() {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 496 512"
-            width={isMobile ? '30' : '36'}
-            height={isMobile ? '30' : '36'}
+            width={
+              isMobile ? '30' : '36'
+            }
+            height={
+              isMobile ? '30' : '36'
+            }
             fill="#ffffff"
             style={{
               position: 'relative',
@@ -251,29 +296,6 @@ export default function SpotifyPodcastWidget() {
           >
             <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm101.7 365.4c-4 6.5-12.5 8.5-19 4.5-52.3-32-118-39.2-195.3-21.5-7.3 1.7-14.5-2.9-16.2-10.2-1.7-7.3 2.9-14.5 10.2-16.2 84.3-19.3 156.7-11.1 215.7 25.1 6.5 4 8.5 12.5 4.6 18.3zm27.1-60.3c-5 8.2-15.7 10.8-23.9 5.8-59.9-36.8-151.2-47.5-222-26-9.2 2.8-18.9-2.4-21.7-11.6-2.8-9.2 2.4-18.9 11.6-21.7 81.2-24.6 182-12.7 250.3 30.1 8.1 5 10.7 15.7 5.7 23.4zm2.3-62.8C307.4 207.7 189 204.5 123.8 224c-11 3.3-22.6-2.9-25.9-13.9-3.3-11 2.9-22.6 13.9-25.9 74.8-22.3 206.1-18 286.7 35.3 9.5 6.3 12.1 19.1 5.8 28.6-6.1 9.4-18.9 12-28.2 5.8z" />
           </svg>
-
-          {/* LIVE DOT */}
-          <div
-            style={{
-              position: 'absolute',
-              top: '8px',
-              right: '8px',
-
-              width: '10px',
-              height: '10px',
-
-              borderRadius: '9999px',
-
-              background: '#ffffff',
-
-              boxShadow:
-                '0 0 14px rgba(255,255,255,0.95)',
-
-              animation: 'liveBlink 1.6s infinite',
-
-              zIndex: 10,
-            }}
-          />
         </button>
       </div>
 
@@ -282,7 +304,9 @@ export default function SpotifyPodcastWidget() {
         style={{
           position: 'fixed',
 
-          right: isMobile ? '14px' : '28px',
+          right: isMobile
+            ? '14px'
+            : '28px',
 
           bottom: isOpen
             ? isMobile
@@ -304,7 +328,9 @@ export default function SpotifyPodcastWidget() {
 
           opacity: isOpen ? 1 : 0,
 
-          visibility: isOpen ? 'visible' : 'hidden',
+          visibility: isOpen
+            ? 'visible'
+            : 'hidden',
 
           transform: isOpen
             ? 'translateY(0px) scale(1)'
@@ -316,10 +342,12 @@ export default function SpotifyPodcastWidget() {
           background:
             'linear-gradient(145deg, rgba(0,0,0,0.99), rgba(18,18,18,0.98))',
 
-          border: '1px solid rgba(255,255,255,0.08)',
+          border:
+            '1px solid rgba(255,255,255,0.08)',
 
           backdropFilter: 'blur(30px)',
-          WebkitBackdropFilter: 'blur(30px)',
+          WebkitBackdropFilter:
+            'blur(30px)',
 
           boxShadow:
             '0 45px 140px rgba(0,0,0,0.92)',
@@ -327,22 +355,6 @@ export default function SpotifyPodcastWidget() {
           padding: '20px',
         }}
       >
-        {/* TOP LIGHT */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            height: '120px',
-            background:
-              'linear-gradient(to bottom, rgba(255,255,255,0.04), transparent)',
-            zIndex: 1,
-            pointerEvents: 'none',
-          }}
-        />
-
-        {/* IFRAME WRAPPER */}
         <div
           style={{
             width: '100%',
@@ -351,13 +363,7 @@ export default function SpotifyPodcastWidget() {
             background: '#000',
             position: 'relative',
             zIndex: 2,
-
-            /* IMPORTANT FIX */
             minHeight: '372px',
-
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
           }}
         >
           <iframe
@@ -372,11 +378,7 @@ export default function SpotifyPodcastWidget() {
               border: 'none',
               display: 'block',
               width: '100%',
-              minHeight: '372px',
               background: '#000000',
-
-              /* IMPORTANT FIX */
-              overflow: 'hidden',
             }}
           />
         </div>
@@ -415,20 +417,6 @@ export default function SpotifyPodcastWidget() {
           }
         }
 
-        @keyframes liveBlink {
-          0% {
-            opacity: 1;
-          }
-
-          50% {
-            opacity: 0.35;
-          }
-
-          100% {
-            opacity: 1;
-          }
-        }
-
         @keyframes shine {
           0% {
             transform: translateX(-120%);
@@ -441,4 +429,4 @@ export default function SpotifyPodcastWidget() {
       `}</style>
     </>
   )
-}
+}4
