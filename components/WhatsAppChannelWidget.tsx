@@ -51,7 +51,7 @@ export default function WhatsAppChannelWidget() {
               'all 0.45s cubic-bezier(0.22, 1, 0.36, 1)',
 
             background:
-              'linear-gradient(135deg, rgba(16,16,16,0.88), rgba(6,6,6,0.76))',
+              'linear-gradient(145deg, rgba(0,0,0,0.96), rgba(16,16,16,0.94))',
 
             border:
               '1px solid rgba(255,255,255,0.08)',
@@ -68,29 +68,18 @@ export default function WhatsAppChannelWidget() {
             overflow: 'hidden',
 
             boxShadow:
-              '0 30px 80px rgba(0,0,0,0.48)',
+              '0 30px 90px rgba(0,0,0,0.75)',
 
             whiteSpace: 'nowrap',
           }}
         >
-          {/* GRADIENT LIGHT */}
+          {/* WHITE SHINE */}
           <div
             style={{
               position: 'absolute',
               inset: 0,
               background:
-                'linear-gradient(135deg, rgba(37,211,102,0.16), transparent, rgba(255,255,255,0.03))',
-              animation: 'gradientMove 6s linear infinite',
-            }}
-          />
-
-          {/* SHINE EFFECT */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background:
-                'linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.14), transparent 80%)',
+                'linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.08), transparent 80%)',
               transform: 'translateX(-100%)',
               animation: 'shineMove 5s infinite',
             }}
@@ -118,7 +107,7 @@ export default function WhatsAppChannelWidget() {
             <div
               style={{
                 fontSize: '12px',
-                color: 'rgba(255,255,255,0.66)',
+                color: 'rgba(255,255,255,0.65)',
                 letterSpacing: '0.2px',
                 lineHeight: 1.5,
               }}
@@ -128,7 +117,7 @@ export default function WhatsAppChannelWidget() {
           </div>
         </div>
 
-        {/* WHATSAPP BUTTON */}
+        {/* BUTTON */}
         <a
           href="https://whatsapp.com/channel/0029Vb7t18Z9cDDiPLC51900"
           target="_blank"
@@ -154,10 +143,10 @@ export default function WhatsAppChannelWidget() {
             textDecoration: 'none',
 
             background:
-              'linear-gradient(145deg, #25D366 0%, #1ebe5d 40%, #0f9f48 100%)',
+              'linear-gradient(145deg, #000000 0%, #111111 45%, #1d1d1d 100%)',
 
             border:
-              '1px solid rgba(255,255,255,0.14)',
+              '1px solid rgba(255,255,255,0.12)',
 
             transform: isHovered
               ? 'translateY(-5px) scale(1.03)'
@@ -167,20 +156,20 @@ export default function WhatsAppChannelWidget() {
               'all 0.45s cubic-bezier(0.22, 1, 0.36, 1)',
 
             boxShadow: isHovered
-              ? '0 28px 80px rgba(37,211,102,0.55)'
-              : '0 18px 48px rgba(37,211,102,0.38)',
+              ? '0 28px 80px rgba(255,255,255,0.12)'
+              : '0 18px 48px rgba(0,0,0,0.75)',
 
             animation: 'floatingButton 4s ease-in-out infinite',
           }}
         >
-          {/* OUTER GLOW */}
+          {/* OUTER WHITE GLOW */}
           <div
             style={{
               position: 'absolute',
               inset: '-8px',
               borderRadius: '9999px',
               background:
-                'radial-gradient(circle, rgba(37,211,102,0.35), transparent 72%)',
+                'radial-gradient(circle, rgba(255,255,255,0.10), transparent 72%)',
               filter: 'blur(18px)',
               zIndex: 0,
             }}
@@ -196,44 +185,44 @@ export default function WhatsAppChannelWidget() {
               height: '45%',
               borderRadius: '9999px',
               background:
-                'linear-gradient(to bottom, rgba(255,255,255,0.34), transparent)',
+                'linear-gradient(to bottom, rgba(255,255,255,0.18), transparent)',
             }}
           />
 
-          {/* PULSE RING 1 */}
+          {/* PULSE RING */}
           <div
             style={{
               position: 'absolute',
               inset: 0,
               borderRadius: '9999px',
               border:
-                '2px solid rgba(255,255,255,0.20)',
+                '1px solid rgba(255,255,255,0.14)',
               animation: 'pulsePrimary 2.8s infinite',
             }}
           />
 
-          {/* PULSE RING 2 */}
+          {/* SECOND RING */}
           <div
             style={{
               position: 'absolute',
               inset: '-5px',
               borderRadius: '9999px',
               border:
-                '1px solid rgba(255,255,255,0.10)',
+                '1px solid rgba(255,255,255,0.08)',
               animation: 'pulseSecondary 3.8s infinite',
             }}
           />
 
-          {/* ROTATING BORDER LIGHT */}
+          {/* ROTATING LIGHT */}
           <div
             style={{
               position: 'absolute',
               inset: '-30%',
               borderRadius: '50%',
               background:
-                'conic-gradient(from 0deg, transparent, rgba(255,255,255,0.35), transparent)',
+                'conic-gradient(from 0deg, transparent, rgba(255,255,255,0.20), transparent)',
               animation: 'rotateLight 6s linear infinite',
-              opacity: 0.6,
+              opacity: 0.5,
             }}
           />
 
@@ -252,7 +241,7 @@ export default function WhatsAppChannelWidget() {
               zIndex: 5,
 
               filter:
-                'drop-shadow(0 4px 10px rgba(0,0,0,0.25))',
+                'brightness(0) invert(1) drop-shadow(0 0 10px rgba(255,255,255,0.25))',
             }}
           />
 
@@ -263,15 +252,15 @@ export default function WhatsAppChannelWidget() {
               top: '8px',
               right: '8px',
 
-              width: '12px',
-              height: '12px',
+              width: '10px',
+              height: '10px',
 
               borderRadius: '9999px',
 
               background: '#ffffff',
 
               boxShadow:
-                '0 0 18px rgba(255,255,255,0.95)',
+                '0 0 16px rgba(255,255,255,0.95)',
 
               animation: 'livePulse 1.6s infinite',
 
@@ -286,16 +275,16 @@ export default function WhatsAppChannelWidget() {
         @keyframes pulsePrimary {
           0% {
             transform: scale(1);
-            opacity: 0.65;
+            opacity: 0.55;
           }
 
           70% {
-            transform: scale(1.5);
+            transform: scale(1.45);
             opacity: 0;
           }
 
           100% {
-            transform: scale(1.5);
+            transform: scale(1.45);
             opacity: 0;
           }
         }
@@ -303,11 +292,11 @@ export default function WhatsAppChannelWidget() {
         @keyframes pulseSecondary {
           0% {
             transform: scale(1);
-            opacity: 0.35;
+            opacity: 0.28;
           }
 
           100% {
-            transform: scale(1.8);
+            transform: scale(1.7);
             opacity: 0;
           }
         }
@@ -332,7 +321,7 @@ export default function WhatsAppChannelWidget() {
           }
 
           50% {
-            opacity: 0.4;
+            opacity: 0.35;
           }
 
           100% {
@@ -347,20 +336,6 @@ export default function WhatsAppChannelWidget() {
 
           100% {
             transform: translateX(120%);
-          }
-        }
-
-        @keyframes gradientMove {
-          0% {
-            transform: translateX(-10%);
-          }
-
-          50% {
-            transform: translateX(10%);
-          }
-
-          100% {
-            transform: translateX(-10%);
           }
         }
 
