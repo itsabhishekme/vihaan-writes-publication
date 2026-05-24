@@ -1,222 +1,168 @@
 /** @type {import('next').NextConfig} */
 
-const withPWA =
-  require("@ducanh2912/next-pwa").default({
+const withPWA = require("@ducanh2912/next-pwa").default({
+  dest: "public",
 
-    dest: "public",
+  register: true,
 
-    register: true,
+  skipWaiting: true,
+
+  disable: process.env.NODE_ENV === "development",
+
+  cacheOnFrontEndNav: true,
+
+  aggressiveFrontEndNavCaching: true,
+
+  reloadOnOnline: true,
+
+  sw: "sw.js",
+
+  fallbacks: {
+    document: "/offline.html",
+  },
+
+  workboxOptions: {
+    cleanupOutdatedCaches: true,
+
+    clientsClaim: true,
 
     skipWaiting: true,
 
-    disable:
-      process.env.NODE_ENV ===
-      "development",
+    navigateFallback: "/offline.html",
 
-    cacheOnFrontEndNav: true,
+    runtimeCaching: [
+      // HTML Pages
+      {
+        urlPattern: ({ request }: { request: Request }) =>
+          request.destination === "document",
 
-    aggressiveFrontEndNavCaching: true,
+        handler: "NetworkFirst",
 
-    reloadOnOnline: true,
+        options: {
+          cacheName: "html-cache",
 
-    sw: "sw.js",
+          networkTimeoutSeconds: 10,
 
-    fallbacks: {
-      document: "/offline.html",
-    },
-
-    workboxOptions: {
-
-      cleanupOutdatedCaches: true,
-
-      clientsClaim: true,
-
-      navigateFallback: "/offline.html",
-
-      runtimeCaching: [
-
-        // HTML Pages
-        {
-          urlPattern: function (context: any) {
-
-            return (
-              context.request &&
-              context.request.destination ===
-                "document"
-            );
+          expiration: {
+            maxEntries: 50,
           },
 
-          handler: "NetworkFirst",
-
-          options: {
-
-            cacheName: "html-cache",
-
-            networkTimeoutSeconds: 10,
-
-            expiration: {
-              maxEntries: 50,
-            },
-
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
+          cacheableResponse: {
+            statuses: [0, 200],
           },
         },
+      },
 
-        // CSS + JS
-        {
-          urlPattern: function (context: any) {
+      // CSS + JS
+      {
+        urlPattern: ({ request }: { request: Request }) =>
+          request.destination === "style" ||
+          request.destination === "script",
 
-            return (
-              context.request &&
-              (
-                context.request.destination ===
-                  "style" ||
+        handler: "StaleWhileRevalidate",
 
-                context.request.destination ===
-                  "script"
-              )
-            );
+        options: {
+          cacheName: "static-resources",
+
+          expiration: {
+            maxEntries: 100,
           },
 
-          handler: "StaleWhileRevalidate",
-
-          options: {
-
-            cacheName:
-              "static-resources",
-
-            expiration: {
-              maxEntries: 100,
-            },
-
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
+          cacheableResponse: {
+            statuses: [0, 200],
           },
         },
+      },
 
-        // Images
-        {
-          urlPattern: function (context: any) {
+      // Images
+      {
+        urlPattern: ({ request }: { request: Request }) =>
+          request.destination === "image",
 
-            return (
-              context.request &&
-              context.request.destination ===
-                "image"
-            );
+        handler: "CacheFirst",
+
+        options: {
+          cacheName: "image-cache",
+
+          expiration: {
+            maxEntries: 200,
+            maxAgeSeconds: 60 * 60 * 24 * 30,
           },
 
-          handler: "CacheFirst",
-
-          options: {
-
-            cacheName: "image-cache",
-
-            expiration: {
-
-              maxEntries: 200,
-
-              maxAgeSeconds:
-                60 *
-                60 *
-                24 *
-                30,
-            },
-
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
+          cacheableResponse: {
+            statuses: [0, 200],
           },
         },
+      },
 
-        // Fonts
-        {
-          urlPattern:
-            /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
+      // Fonts
+      {
+        urlPattern:
+          /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
 
-          handler: "CacheFirst",
+        handler: "CacheFirst",
 
-          options: {
+        options: {
+          cacheName: "google-fonts",
 
-            cacheName:
-              "google-fonts",
+          expiration: {
+            maxEntries: 20,
+            maxAgeSeconds: 60 * 60 * 24 * 365,
+          },
 
-            expiration: {
-
-              maxEntries: 20,
-
-              maxAgeSeconds:
-                60 *
-                60 *
-                24 *
-                365,
-            },
-
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
+          cacheableResponse: {
+            statuses: [0, 200],
           },
         },
+      },
 
-        // API Requests
-        {
-          urlPattern: /\/api\/.*$/,
+      // API Requests
+      {
+        urlPattern: /\/api\/.*$/,
 
-          handler: "NetworkFirst",
+        handler: "NetworkFirst",
 
-          method: "GET",
+        method: "GET",
 
-          options: {
+        options: {
+          cacheName: "api-cache",
 
-            cacheName: "api-cache",
+          networkTimeoutSeconds: 10,
 
-            networkTimeoutSeconds: 10,
+          expiration: {
+            maxEntries: 50,
+            maxAgeSeconds: 60 * 60 * 24,
+          },
 
-            expiration: {
-
-              maxEntries: 50,
-
-              maxAgeSeconds:
-                60 *
-                60 *
-                24,
-            },
-
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
+          cacheableResponse: {
+            statuses: [0, 200],
           },
         },
+      },
 
-        // External Assets
-        {
-          urlPattern: /^https?.*/i,
+      // External Assets
+      {
+        urlPattern: /^https?.*/i,
 
-          handler:
-            "StaleWhileRevalidate",
+        handler: "StaleWhileRevalidate",
 
-          options: {
+        options: {
+          cacheName: "external-assets",
 
-            cacheName:
-              "external-assets",
+          expiration: {
+            maxEntries: 200,
+          },
 
-            expiration: {
-              maxEntries: 200,
-            },
-
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
+          cacheableResponse: {
+            statuses: [0, 200],
           },
         },
-      ],
-    },
-  });
+      },
+    ],
+  },
+});
 
 const nextConfig = {
-
   output: "export",
 
   trailingSlash: true,
@@ -232,17 +178,13 @@ const nextConfig = {
   },
 
   experimental: {
-
     scrollRestoration: true,
   },
 
   compiler: {
-
     removeConsole:
-      process.env.NODE_ENV ===
-      "production",
+      process.env.NODE_ENV === "production",
   },
 };
 
-module.exports =
-  withPWA(nextConfig);
+module.exports = withPWA(nextConfig);

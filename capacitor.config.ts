@@ -3,12 +3,18 @@ import type { CapacitorConfig } from "@capacitor/cli";
 const config: CapacitorConfig = {
   appId: "com.vihaanwrites.app",
   appName: "Vihaan Writes",
+
   webDir: "out",
+
+  server: {
+    androidScheme: "http",
+    cleartext: true,
+  },
 
   plugins: {
     SplashScreen: {
-      launchShowDuration: 1800,
-      backgroundColor: "#083885ba",
+      launchShowDuration: 1500,
+      backgroundColor: "#083885",
       showSpinner: false,
       androidScaleType: "CENTER_CROP",
       splashFullScreen: true,
@@ -18,6 +24,7 @@ const config: CapacitorConfig = {
 
   android: {
     allowMixedContent: true,
+    webContentsDebuggingEnabled: true,
   },
 };
 
