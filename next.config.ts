@@ -6,7 +6,6 @@ const withPWA = withPWAInit({
 
   register: true,
 
-
   disable: process.env.NODE_ENV === "development",
 
   cacheOnFrontEndNav: true,
@@ -17,10 +16,6 @@ const withPWA = withPWAInit({
 
   sw: "sw.js",
 
-  fallbacks: {
-    document: "/offline",
-  },
-
   workboxOptions: {
     cleanupOutdatedCaches: true,
 
@@ -28,18 +23,25 @@ const withPWA = withPWAInit({
 
     skipWaiting: true,
 
-    navigateFallback: "/offline",
+    navigationPreload: true,
+
+    navigateFallbackDenylist: [
+      /^\/api\//,
+      /^\/_next\//,
+      /\/[^/?]+\.[^/]+$/,
+    ],
 
     runtimeCaching: [
-      // Pages
+      // HTML Pages / App Routes
       {
-        urlPattern: ({ request }: { request?: Request }) =>
-          request?.mode === "navigate",
+        urlPattern: ({ request }: { request?: Request }) => {
+          return request?.mode === "navigate";
+        },
 
         handler: "NetworkFirst",
 
         options: {
-          cacheName: "pages",
+          cacheName: "pages-cache",
 
           networkTimeoutSeconds: 5,
 
@@ -51,10 +53,14 @@ const withPWA = withPWAInit({
           cacheableResponse: {
             statuses: [0, 200],
           },
+
+          matchOptions: {
+            ignoreSearch: true,
+          },
         },
       },
 
-      // Static assets
+      // Next.js Static Assets
       {
         urlPattern: /^\/_next\/static\/.*/i,
 
@@ -74,11 +80,14 @@ const withPWA = withPWAInit({
         },
       },
 
-      // JS + CSS
+      // CSS + JS
       {
-        urlPattern: ({ request }: { request?: Request }) =>
-          request?.destination === "script" ||
-          request?.destination === "style",
+        urlPattern: ({ request }: { request?: Request }) => {
+          return (
+            request?.destination === "style" ||
+            request?.destination === "script"
+          );
+        },
 
         handler: "StaleWhileRevalidate",
 
@@ -89,13 +98,18 @@ const withPWA = withPWAInit({
             maxEntries: 300,
             maxAgeSeconds: 60 * 60 * 24 * 30,
           },
+
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
         },
       },
 
       // Images
       {
-        urlPattern: ({ request }: { request?: Request }) =>
-          request?.destination === "image",
+        urlPattern: ({ request }: { request?: Request }) => {
+          return request?.destination === "image";
+        },
 
         handler: "CacheFirst",
 
@@ -105,6 +119,10 @@ const withPWA = withPWAInit({
           expiration: {
             maxEntries: 500,
             maxAgeSeconds: 60 * 60 * 24 * 60,
+          },
+
+          cacheableResponse: {
+            statuses: [0, 200],
           },
         },
       },
@@ -122,6 +140,54 @@ const withPWA = withPWAInit({
           expiration: {
             maxEntries: 50,
             maxAgeSeconds: 60 * 60 * 24 * 365,
+          },
+
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+        },
+      },
+
+      // APIs
+      {
+        urlPattern: /\/api\/.*$/,
+
+        handler: "NetworkFirst",
+
+        method: "GET",
+
+        options: {
+          cacheName: "api-cache",
+
+          networkTimeoutSeconds: 5,
+
+          expiration: {
+            maxEntries: 100,
+            maxAgeSeconds: 60 * 60 * 24,
+          },
+
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+        },
+      },
+
+      // External Requests
+      {
+        urlPattern: /^https?.*/i,
+
+        handler: "StaleWhileRevalidate",
+
+        options: {
+          cacheName: "external-assets",
+
+          expiration: {
+            maxEntries: 300,
+            maxAgeSeconds: 60 * 60 * 24 * 30,
+          },
+
+          cacheableResponse: {
+            statuses: [0, 200],
           },
         },
       },
