@@ -6,12 +6,28 @@ type Props = {
   loading: boolean;
 };
 
-export default function AppLoader({ loading }: Props) {
+/* STABLE PARTICLES */
+
+const particles = Array.from(
+  { length: 20 },
+  (_, i) => ({
+    id: i,
+    left: `${(i * 5 + 7) % 100}%`,
+    duration: 4 + i * 0.2,
+    delay: i * 0.3,
+  })
+);
+
+export default function AppLoader({
+  loading,
+}: Props) {
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {loading && (
         <motion.div
-          initial={{ opacity: 1 }}
+          initial={{
+            opacity: 1,
+          }}
           exit={{
             opacity: 0,
             scale: 1.08,
@@ -45,7 +61,7 @@ export default function AppLoader({ loading }: Props) {
             "
           />
 
-          {/* GLOW ORBS */}
+          {/* TOP GLOW */}
 
           <motion.div
             animate={{
@@ -67,6 +83,8 @@ export default function AppLoader({ loading }: Props) {
             "
           />
 
+          {/* BOTTOM GLOW */}
+
           <motion.div
             animate={{
               x: [0, -60, 40, 0],
@@ -87,19 +105,19 @@ export default function AppLoader({ loading }: Props) {
             "
           />
 
-          {/* PARTICLES */}
+          {/* FLOATING PARTICLES */}
 
-          {[...Array(20)].map((_, i) => (
+          {particles.map((particle) => (
             <motion.div
-              key={i}
+              key={particle.id}
               animate={{
                 y: [-20, -120],
                 opacity: [0, 1, 0],
               }}
               transition={{
-                duration: 4 + i * 0.2,
+                duration: particle.duration,
                 repeat: Infinity,
-                delay: i * 0.3,
+                delay: particle.delay,
                 ease: "easeOut",
               }}
               className="
@@ -109,16 +127,18 @@ export default function AppLoader({ loading }: Props) {
                 bg-violet-300/60
               "
               style={{
-                left: `${Math.random() * 100}%`,
+                left: particle.left,
                 bottom: "-20px",
               }}
             />
           ))}
 
-          {/* ROTATING OUTER RINGS */}
+          {/* OUTER RING */}
 
           <motion.div
-            animate={{ rotate: 360 }}
+            animate={{
+              rotate: 360,
+            }}
             transition={{
               duration: 30,
               repeat: Infinity,
@@ -133,8 +153,12 @@ export default function AppLoader({ loading }: Props) {
             "
           />
 
+          {/* SECOND RING */}
+
           <motion.div
-            animate={{ rotate: -360 }}
+            animate={{
+              rotate: -360,
+            }}
             transition={{
               duration: 24,
               repeat: Infinity,
@@ -149,7 +173,7 @@ export default function AppLoader({ loading }: Props) {
             "
           />
 
-          {/* CENTER CONTAINER */}
+          {/* MAIN CONTAINER */}
 
           <motion.div
             initial={{
@@ -166,11 +190,14 @@ export default function AppLoader({ loading }: Props) {
               duration: 1.2,
               ease: "easeOut",
             }}
-            className="relative flex flex-col items-center"
+            className="
+              relative
+              flex flex-col items-center
+            "
           >
             {/* PULSE WAVES */}
 
-            {[...Array(3)].map((_, i) => (
+            {[0, 1, 2].map((i) => (
               <motion.div
                 key={i}
                 animate={{
@@ -192,7 +219,7 @@ export default function AppLoader({ loading }: Props) {
               />
             ))}
 
-            {/* MAIN GLOW */}
+            {/* CENTER GLOW */}
 
             <motion.div
               animate={{
@@ -204,15 +231,14 @@ export default function AppLoader({ loading }: Props) {
                 repeat: Infinity,
               }}
               className="
-                absolute
-                inset-0
+                absolute inset-0
                 rounded-full
                 bg-violet-500/30
                 blur-[100px]
               "
             />
 
-            {/* GLASS CONTAINER */}
+            {/* GLASS CARD */}
 
             <div
               className="
@@ -226,7 +252,7 @@ export default function AppLoader({ loading }: Props) {
                 shadow-[0_0_120px_rgba(139,92,246,0.25)]
               "
             >
-              {/* INNER RING */}
+              {/* SPINNING BORDER */}
 
               <motion.div
                 animate={{
@@ -290,16 +316,16 @@ export default function AppLoader({ loading }: Props) {
                 className="
                   absolute inset-0
                   skew-x-12
+                  rounded-full
                   bg-gradient-to-r
                   from-transparent
                   via-white/20
                   to-transparent
-                  rounded-full
                 "
               />
             </div>
 
-            {/* TEXT */}
+            {/* BRAND */}
 
             <motion.div
               initial={{
@@ -314,7 +340,10 @@ export default function AppLoader({ loading }: Props) {
                 delay: 0.5,
                 duration: 1,
               }}
-              className="mt-16 text-center"
+              className="
+                mt-16
+                text-center
+              "
             >
               <motion.h1
                 animate={{
@@ -388,7 +417,7 @@ export default function AppLoader({ loading }: Props) {
               />
             </div>
 
-            {/* LOADING TEXT */}
+            {/* TEXT */}
 
             <motion.p
               animate={{
@@ -403,6 +432,7 @@ export default function AppLoader({ loading }: Props) {
                 text-xs
                 tracking-[0.5em]
                 text-white/40
+                text-center
               "
             >
               AWAKENING THE WRITTEN UNIVERSE
