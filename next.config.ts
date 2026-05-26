@@ -25,26 +25,55 @@ const withPWA = withPWAInit({
 
     skipWaiting: true,
 
+    navigationPreload: true,
+
     navigateFallbackDenylist: [
       /^\/api\//,
       /^\/_next\//,
+      /\/[^/?]+\.[^/]+$/,
     ],
 
     runtimeCaching: [
-      // HTML Pages
+      // ALL HTML / ROUTES
       {
         urlPattern: ({ request }: { request?: Request }) => {
           return request?.mode === "navigate";
         },
 
-        handler: "StaleWhileRevalidate",
+        handler: "NetworkFirst",
 
         options: {
           cacheName: "pages-cache",
 
+          networkTimeoutSeconds: 5,
+
           expiration: {
-            maxEntries: 200,
+            maxEntries: 300,
             maxAgeSeconds: 60 * 60 * 24 * 30,
+          },
+
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+
+          matchOptions: {
+            ignoreSearch: true,
+          },
+        },
+      },
+
+      // NEXT STATIC FILES
+      {
+        urlPattern: /^\/_next\/static\/.*/i,
+
+        handler: "CacheFirst",
+
+        options: {
+          cacheName: "next-static",
+
+          expiration: {
+            maxEntries: 300,
+            maxAgeSeconds: 60 * 60 * 24 * 365,
           },
 
           cacheableResponse: {
@@ -53,7 +82,7 @@ const withPWA = withPWAInit({
         },
       },
 
-      // JS + CSS
+      // CSS + JS
       {
         urlPattern: ({ request }: { request?: Request }) => {
           return (
@@ -68,7 +97,7 @@ const withPWA = withPWAInit({
           cacheName: "static-resources",
 
           expiration: {
-            maxEntries: 200,
+            maxEntries: 300,
             maxAgeSeconds: 60 * 60 * 24 * 30,
           },
 
@@ -78,7 +107,7 @@ const withPWA = withPWAInit({
         },
       },
 
-      // Images
+      // IMAGES
       {
         urlPattern: ({ request }: { request?: Request }) => {
           return request?.destination === "image";
@@ -100,7 +129,7 @@ const withPWA = withPWAInit({
         },
       },
 
-      // Fonts
+      // FONTS
       {
         urlPattern:
           /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
@@ -145,7 +174,7 @@ const withPWA = withPWAInit({
         },
       },
 
-      // External Assets
+      // EXTERNAL
       {
         urlPattern: /^https?.*/i,
 
@@ -155,7 +184,7 @@ const withPWA = withPWAInit({
           cacheName: "external-assets",
 
           expiration: {
-            maxEntries: 200,
+            maxEntries: 300,
             maxAgeSeconds: 60 * 60 * 24 * 30,
           },
 
