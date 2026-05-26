@@ -1,11 +1,10 @@
-/** @type {import('next').NextConfig} */
+import withPWAInit from "@ducanh2912/next-pwa";
+import type { NextConfig } from "next";
 
-const withPWA = require("@ducanh2912/next-pwa").default({
+const withPWA = withPWAInit({
   dest: "public",
 
   register: true,
-
-  skipWaiting: true,
 
   disable: process.env.NODE_ENV === "development",
 
@@ -41,15 +40,11 @@ const withPWA = require("@ducanh2912/next-pwa").default({
       },
     ],
 
-    globPatterns: [
-      "**/*.{js,css,html,ico,png,svg,jpg,jpeg,json,woff,woff2}",
-    ],
-
     runtimeCaching: [
       // HTML Pages
       {
-        urlPattern: ({ request }: { request: { destination: string } }) =>
-          request.destination === "document",
+        urlPattern: ({ request }: { request?: Request }) =>
+          request?.destination === "document",
 
         handler: "CacheFirst",
 
@@ -68,9 +63,9 @@ const withPWA = require("@ducanh2912/next-pwa").default({
 
       // CSS + JS
       {
-        urlPattern: ({ request }: { request: { destination: string } }) =>
-          request.destination === "style" ||
-          request.destination === "script",
+        urlPattern: ({ request }: { request?: Request }) =>
+          request?.destination === "style" ||
+          request?.destination === "script",
 
         handler: "StaleWhileRevalidate",
 
@@ -89,8 +84,8 @@ const withPWA = require("@ducanh2912/next-pwa").default({
 
       // Images
       {
-        urlPattern: ({ request }: { request: { destination: string } }) =>
-          request.destination === "image",
+        urlPattern: ({ request }: { request?: Request }) =>
+          request?.destination === "image",
 
         handler: "CacheFirst",
 
@@ -175,7 +170,7 @@ const withPWA = require("@ducanh2912/next-pwa").default({
   },
 });
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   output: "export",
 
   trailingSlash: true,
@@ -200,4 +195,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPWA(nextConfig);
+export default withPWA(nextConfig);
