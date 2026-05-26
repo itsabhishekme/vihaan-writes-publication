@@ -6,6 +6,7 @@ const withPWA = withPWAInit({
 
   register: true,
 
+
   disable: process.env.NODE_ENV === "development",
 
   cacheOnFrontEndNav: true,
@@ -16,7 +17,9 @@ const withPWA = withPWAInit({
 
   sw: "sw.js",
 
-  extendDefaultRuntimeCaching: true,
+  fallbacks: {
+    document: "/offline",
+  },
 
   workboxOptions: {
     cleanupOutdatedCaches: true,
@@ -25,25 +28,18 @@ const withPWA = withPWAInit({
 
     skipWaiting: true,
 
-    navigationPreload: true,
-
-    navigateFallbackDenylist: [
-      /^\/api\//,
-      /^\/_next\//,
-      /\/[^/?]+\.[^/]+$/,
-    ],
+    navigateFallback: "/offline",
 
     runtimeCaching: [
-      // ALL HTML / ROUTES
+      // Pages
       {
-        urlPattern: ({ request }: { request?: Request }) => {
-          return request?.mode === "navigate";
-        },
+        urlPattern: ({ request }: { request?: Request }) =>
+          request?.mode === "navigate",
 
         handler: "NetworkFirst",
 
         options: {
-          cacheName: "pages-cache",
+          cacheName: "pages",
 
           networkTimeoutSeconds: 5,
 
@@ -55,14 +51,10 @@ const withPWA = withPWAInit({
           cacheableResponse: {
             statuses: [0, 200],
           },
-
-          matchOptions: {
-            ignoreSearch: true,
-          },
         },
       },
 
-      // NEXT STATIC FILES
+      // Static assets
       {
         urlPattern: /^\/_next\/static\/.*/i,
 
@@ -82,54 +74,42 @@ const withPWA = withPWAInit({
         },
       },
 
-      // CSS + JS
+      // JS + CSS
       {
-        urlPattern: ({ request }: { request?: Request }) => {
-          return (
-            request?.destination === "style" ||
-            request?.destination === "script"
-          );
-        },
+        urlPattern: ({ request }: { request?: Request }) =>
+          request?.destination === "script" ||
+          request?.destination === "style",
 
         handler: "StaleWhileRevalidate",
 
         options: {
-          cacheName: "static-resources",
+          cacheName: "static-assets",
 
           expiration: {
             maxEntries: 300,
             maxAgeSeconds: 60 * 60 * 24 * 30,
           },
-
-          cacheableResponse: {
-            statuses: [0, 200],
-          },
         },
       },
 
-      // IMAGES
+      // Images
       {
-        urlPattern: ({ request }: { request?: Request }) => {
-          return request?.destination === "image";
-        },
+        urlPattern: ({ request }: { request?: Request }) =>
+          request?.destination === "image",
 
         handler: "CacheFirst",
 
         options: {
-          cacheName: "image-cache",
+          cacheName: "images",
 
           expiration: {
             maxEntries: 500,
             maxAgeSeconds: 60 * 60 * 24 * 60,
           },
-
-          cacheableResponse: {
-            statuses: [0, 200],
-          },
         },
       },
 
-      // FONTS
+      // Fonts
       {
         urlPattern:
           /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
@@ -137,59 +117,11 @@ const withPWA = withPWAInit({
         handler: "CacheFirst",
 
         options: {
-          cacheName: "google-fonts",
+          cacheName: "fonts",
 
           expiration: {
             maxEntries: 50,
             maxAgeSeconds: 60 * 60 * 24 * 365,
-          },
-
-          cacheableResponse: {
-            statuses: [0, 200],
-          },
-        },
-      },
-
-      // APIs
-      {
-        urlPattern: /\/api\/.*$/,
-
-        handler: "NetworkFirst",
-
-        method: "GET",
-
-        options: {
-          cacheName: "api-cache",
-
-          networkTimeoutSeconds: 5,
-
-          expiration: {
-            maxEntries: 100,
-            maxAgeSeconds: 60 * 60 * 24,
-          },
-
-          cacheableResponse: {
-            statuses: [0, 200],
-          },
-        },
-      },
-
-      // EXTERNAL
-      {
-        urlPattern: /^https?.*/i,
-
-        handler: "StaleWhileRevalidate",
-
-        options: {
-          cacheName: "external-assets",
-
-          expiration: {
-            maxEntries: 300,
-            maxAgeSeconds: 60 * 60 * 24 * 30,
-          },
-
-          cacheableResponse: {
-            statuses: [0, 200],
           },
         },
       },
@@ -198,15 +130,13 @@ const withPWA = withPWAInit({
 });
 
 const nextConfig: NextConfig = {
-  output: "export",
-
-  trailingSlash: true,
-
   reactStrictMode: true,
 
   poweredByHeader: false,
 
   compress: true,
+
+  trailingSlash: false,
 
   images: {
     unoptimized: true,
