@@ -46,7 +46,7 @@ const withPWA = withPWAInit({
         urlPattern: ({ request }: { request?: Request }) =>
           request?.destination === "document",
 
-        handler: "CacheFirst",
+        handler: "NetworkFirst",
 
         options: {
           cacheName: "html-cache",
@@ -87,7 +87,7 @@ const withPWA = withPWAInit({
         urlPattern: ({ request }: { request?: Request }) =>
           request?.destination === "image",
 
-        handler: "CacheFirst",
+        handler: "NetworkFirst",
 
         options: {
           cacheName: "image-cache",
@@ -108,7 +108,7 @@ const withPWA = withPWAInit({
         urlPattern:
           /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
 
-        handler: "CacheFirst",
+        handler: "NetworkFirst",
 
         options: {
           cacheName: "google-fonts",
