@@ -16,10 +16,6 @@ const withPWA = withPWAInit({
 
   sw: "sw.js",
 
-  fallbacks: {
-    document: "/offline/",
-  },
-
   workboxOptions: {
     cleanupOutdatedCaches: true,
 
@@ -27,29 +23,19 @@ const withPWA = withPWAInit({
 
     skipWaiting: true,
 
-    navigateFallback: "/offline/",
-
-    additionalManifestEntries: [
-      {
-        url: "/",
-        revision: "1",
-      },
-      {
-        url: "/offline/",
-        revision: "1",
-      },
-    ],
-
     runtimeCaching: [
       // HTML Pages
       {
-        urlPattern: ({ request }: { request?: Request }) =>
-          request?.destination === "document",
+        urlPattern: ({ request }: { request?: Request }) => {
+          return request?.destination === "document";
+        },
 
         handler: "NetworkFirst",
 
         options: {
           cacheName: "html-cache",
+
+          networkTimeoutSeconds: 3,
 
           expiration: {
             maxEntries: 50,
@@ -63,9 +49,12 @@ const withPWA = withPWAInit({
 
       // CSS + JS
       {
-        urlPattern: ({ request }: { request?: Request }) =>
-          request?.destination === "style" ||
-          request?.destination === "script",
+        urlPattern: ({ request }: { request?: Request }) => {
+          return (
+            request?.destination === "style" ||
+            request?.destination === "script"
+          );
+        },
 
         handler: "StaleWhileRevalidate",
 
@@ -84,10 +73,11 @@ const withPWA = withPWAInit({
 
       // Images
       {
-        urlPattern: ({ request }: { request?: Request }) =>
-          request?.destination === "image",
+        urlPattern: ({ request }: { request?: Request }) => {
+          return request?.destination === "image";
+        },
 
-        handler: "NetworkFirst",
+        handler: "CacheFirst",
 
         options: {
           cacheName: "image-cache",
@@ -108,7 +98,7 @@ const withPWA = withPWAInit({
         urlPattern:
           /^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,
 
-        handler: "NetworkFirst",
+        handler: "CacheFirst",
 
         options: {
           cacheName: "google-fonts",
