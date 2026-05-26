@@ -1,115 +1,107 @@
 {
-"display_override": ["window-controls-overlay"], 
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+
   "id": "/",
+
   "name": "Vihaan Writes",
-  "version": "0.1.0",
-  "short_name": "Vihaan writes",
-  "description": "Official Progressive Web App of Vihaan Writes featuring soulful storytelling, karmic reflections, books, blogs, spiritual writing, emotions, healing journeys, and immersive literary experiences.",
-  "start_url": "/?source=pwa",
+
+  "short_name": "Vihaan",
+
+  "description": "Official Progressive Web App of Vihaan Writes featuring soulful storytelling, karmic reflections, books, blogs, emotions, healing journeys, and immersive literary experiences.",
+
+  "start_url": "/",
+
   "scope": "/",
+
   "display": "standalone",
+
   "orientation": "portrait-primary",
+
   "theme_color": "#14001f",
+
   "background_color": "#14001f",
+
   "lang": "en-US",
+
   "dir": "ltr",
+
   "categories": [
     "books",
     "education",
     "lifestyle",
     "entertainment",
-    "productivity",
     "writing",
     "spirituality",
     "blogging"
   ],
+
   "prefer_related_applications": false,
-  "handle_links": "preferred",
-  "launch_handler": {
-    "client_mode": [
-      "focus-existing",
-      "auto"
-    ]
-  },
-  "edge_side_panel": {
-    "preferred_width": 420
-  },
-  "display_cutout": "auto",
-  "capture_links": "existing-client-navigate",
-  "scope_extensions": [
-    {
-      "origin": "https://vihaan-writes.vercel.app"
-    }
+
+  "display_override": [
+    "window-controls-overlay",
+    "standalone"
   ],
+
   "icons": [
     {
-      "src": "public/icons/manifest-icon-192.maskable.png",
+      "src": "/icons/manifest-icon-192.maskable.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
-      "src": "public/icons/manifest-icon-192.maskable.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "public/icons/manifest-icon-512.maskable.png",
+      "src": "/icons/manifest-icon-512.maskable.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "public/icons/manifest-icon-512.maskable.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
       "src": "/icons/icon-72x72.png",
       "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     },
     {
       "src": "/icons/icon-96x96.png",
       "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     },
     {
       "src": "/icons/icon-128x128.png",
       "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     },
     {
       "src": "/icons/icon-144x144.png",
       "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     },
     {
       "src": "/icons/icon-152x152.png",
       "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
       "src": "/icons/icon-384x384.png",
       "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     },
     {
       "src": "/icons/apple-touch-icon.png",
       "sizes": "180x180",
-      "type": "image/png",
-      "purpose": "any"
+      "type": "image/png"
     }
   ],
+
   "screenshots": [
     {
       "src": "/screenshots/desktop-home.png",
@@ -119,27 +111,14 @@
       "label": "Vihaan Writes Desktop Experience"
     },
     {
-      "src": "/screenshots/desktop-writing.png",
-      "sizes": "1792x1008",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Writing Experience"
-    },
-    {
       "src": "/screenshots/mobile-home.png",
       "sizes": "720x1600",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Mobile Home Experience"
-    },
-    {
-      "src": "/screenshots/mobile-book.png",
-      "sizes": "720x1600",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Book Showcase"
+      "label": "Mobile Experience"
     }
   ],
+
   "shortcuts": [
     {
       "name": "Books",
@@ -166,34 +145,9 @@
           "type": "image/png"
         }
       ]
-    },
-    {
-      "name": "Journey",
-      "short_name": "Journey",
-      "description": "Explore emotional journey",
-      "url": "/journey",
-      "icons": [
-        {
-          "src": "/icons/icon-192x192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "Quotes",
-      "short_name": "Quotes",
-      "description": "Daily soulful quotes",
-      "url": "/quotes",
-      "icons": [
-        {
-          "src": "/icons/icon-192x192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
     }
   ],
+
   "share_target": {
     "action": "/share",
     "method": "GET",
@@ -204,48 +158,11 @@
       "url": "url"
     }
   },
+
   "protocol_handlers": [
     {
       "protocol": "web+vihaan",
       "url": "/?url=%s"
     }
-  ],
-  "file_handlers": [
-    {
-      "action": "/open-file",
-      "accept": {
-        "text/plain": [
-          ".txt"
-        ],
-        "application/pdf": [
-          ".pdf"
-        ],
-        "image/png": [
-          ".png"
-        ],
-        "image/jpeg": [
-          ".jpg",
-          ".jpeg"
-        ]
-      }
-    }
-  ],
-  "widgets": [
-    {
-      "name": "Vihaan Quotes",
-      "short_name": "Quotes",
-      "description": "Daily emotional and spiritual quotes",
-      "tag": "quotes",
-      "template": "wide",
-      "ms_ac_template": "wide",
-      "data": "/api/widget-data.json"
-    }
-  ],
-  "related_applications": [],
-  "serviceworker": {
-    "src": "/sw.js",
-    "scope": "/",
-    "type": "classic",
-    "update_via_cache": "none"
-  }
+  ]
 }

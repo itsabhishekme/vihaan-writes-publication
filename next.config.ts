@@ -18,7 +18,7 @@ const withPWA = require("@ducanh2912/next-pwa").default({
   sw: "sw.js",
 
   fallbacks: {
-    document: "/offline.html",
+    document: "/offline/",
   },
 
   workboxOptions: {
@@ -28,20 +28,33 @@ const withPWA = require("@ducanh2912/next-pwa").default({
 
     skipWaiting: true,
 
-    navigateFallback: "/offline.html",
+    navigateFallback: "/offline/",
+
+    additionalManifestEntries: [
+      {
+        url: "/",
+        revision: "1",
+      },
+      {
+        url: "/offline/",
+        revision: "1",
+      },
+    ],
+
+    globPatterns: [
+      "**/*.{js,css,html,ico,png,svg,jpg,jpeg,json,woff,woff2}",
+    ],
 
     runtimeCaching: [
       // HTML Pages
       {
-        urlPattern: ({ request }: { request: Request }) =>
+        urlPattern: ({ request }: { request: { destination: string } }) =>
           request.destination === "document",
 
-        handler: "NetworkFirst",
+        handler: "CacheFirst",
 
         options: {
           cacheName: "html-cache",
-
-          networkTimeoutSeconds: 10,
 
           expiration: {
             maxEntries: 50,
@@ -55,7 +68,7 @@ const withPWA = require("@ducanh2912/next-pwa").default({
 
       // CSS + JS
       {
-        urlPattern: ({ request }: { request: Request }) =>
+        urlPattern: ({ request }: { request: { destination: string } }) =>
           request.destination === "style" ||
           request.destination === "script",
 
@@ -76,7 +89,7 @@ const withPWA = require("@ducanh2912/next-pwa").default({
 
       // Images
       {
-        urlPattern: ({ request }: { request: Request }) =>
+        urlPattern: ({ request }: { request: { destination: string } }) =>
           request.destination === "image",
 
         handler: "CacheFirst",
@@ -127,7 +140,7 @@ const withPWA = require("@ducanh2912/next-pwa").default({
         options: {
           cacheName: "api-cache",
 
-          networkTimeoutSeconds: 10,
+          networkTimeoutSeconds: 5,
 
           expiration: {
             maxEntries: 50,
