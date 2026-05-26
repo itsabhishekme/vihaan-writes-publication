@@ -16,6 +16,8 @@ const withPWA = withPWAInit({
 
   sw: "sw.js",
 
+  extendDefaultRuntimeCaching: true,
+
   workboxOptions: {
     cleanupOutdatedCaches: true,
 
@@ -23,22 +25,26 @@ const withPWA = withPWAInit({
 
     skipWaiting: true,
 
+    navigateFallbackDenylist: [
+      /^\/api\//,
+      /^\/_next\//,
+    ],
+
     runtimeCaching: [
       // HTML Pages
       {
         urlPattern: ({ request }: { request?: Request }) => {
-          return request?.destination === "document";
+          return request?.mode === "navigate";
         },
 
-        handler: "NetworkFirst",
+        handler: "StaleWhileRevalidate",
 
         options: {
-          cacheName: "html-cache",
-
-          networkTimeoutSeconds: 3,
+          cacheName: "pages-cache",
 
           expiration: {
-            maxEntries: 50,
+            maxEntries: 200,
+            maxAgeSeconds: 60 * 60 * 24 * 30,
           },
 
           cacheableResponse: {
@@ -47,7 +53,7 @@ const withPWA = withPWAInit({
         },
       },
 
-      // CSS + JS
+      // JS + CSS
       {
         urlPattern: ({ request }: { request?: Request }) => {
           return (
@@ -62,7 +68,8 @@ const withPWA = withPWAInit({
           cacheName: "static-resources",
 
           expiration: {
-            maxEntries: 100,
+            maxEntries: 200,
+            maxAgeSeconds: 60 * 60 * 24 * 30,
           },
 
           cacheableResponse: {
@@ -83,8 +90,8 @@ const withPWA = withPWAInit({
           cacheName: "image-cache",
 
           expiration: {
-            maxEntries: 200,
-            maxAgeSeconds: 60 * 60 * 24 * 30,
+            maxEntries: 500,
+            maxAgeSeconds: 60 * 60 * 24 * 60,
           },
 
           cacheableResponse: {
@@ -104,7 +111,7 @@ const withPWA = withPWAInit({
           cacheName: "google-fonts",
 
           expiration: {
-            maxEntries: 20,
+            maxEntries: 50,
             maxAgeSeconds: 60 * 60 * 24 * 365,
           },
 
@@ -114,7 +121,7 @@ const withPWA = withPWAInit({
         },
       },
 
-      // API Requests
+      // APIs
       {
         urlPattern: /\/api\/.*$/,
 
@@ -128,7 +135,7 @@ const withPWA = withPWAInit({
           networkTimeoutSeconds: 5,
 
           expiration: {
-            maxEntries: 50,
+            maxEntries: 100,
             maxAgeSeconds: 60 * 60 * 24,
           },
 
@@ -149,6 +156,7 @@ const withPWA = withPWAInit({
 
           expiration: {
             maxEntries: 200,
+            maxAgeSeconds: 60 * 60 * 24 * 30,
           },
 
           cacheableResponse: {
