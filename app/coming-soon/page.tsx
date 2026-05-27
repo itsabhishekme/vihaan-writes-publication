@@ -1,7 +1,3 @@
-// ======================================================
-// FILE: app/coming-soon/page.tsx
-// EXTENDED CINEMATIC PREMIUM VERSION
-// ======================================================
 
 import type { Metadata } from 'next'
 import Link from 'next/link'

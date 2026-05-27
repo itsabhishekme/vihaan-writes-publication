@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useCallback, useState } from "react";
 
@@ -106,10 +107,11 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed left-0 top-0 z-[999] w-full transition-all duration-500 ${scrolled
+        className={`fixed left-0 top-0 z-[999] w-full transition-all duration-500 ${
+          scrolled
             ? "border-b border-white/10 bg-black/75 shadow-[0_8px_40px_rgba(0,0,0,0.55)] backdrop-blur-2xl"
             : "bg-transparent"
-          }`}
+        }`}
       >
         {/* BACKGROUND */}
 
@@ -130,9 +132,14 @@ export default function Navbar() {
 
               <div className="absolute inset-0 rounded-2xl bg-white/20 opacity-0 blur-xl transition duration-500 group-hover:opacity-100" />
 
-              <div className="relative flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-white to-neutral-300 text-lg font-black text-black shadow-2xl md:h-12 md:w-12 md:text-xl">
-                V
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Vihaan Writes Logo"
+                width={48}
+                height={48}
+                priority
+                className="relative h-11 w-11 rounded-2xl object-cover shadow-2xl md:h-12 md:w-12"
+              />
 
             </div>
 
@@ -160,10 +167,11 @@ export default function Navbar() {
                   key={item.name}
                   href={item.url}
                   onClick={closeMenu}
-                  className={`group relative overflow-hidden rounded-2xl px-5 py-3 text-sm font-medium transition-all duration-300 ${active
+                  className={`group relative overflow-hidden rounded-2xl px-5 py-3 text-sm font-medium transition-all duration-300 ${
+                    active
                       ? "bg-white text-black shadow-xl"
                       : "text-neutral-300 hover:text-white"
-                    }`}
+                  }`}
                 >
                   {!active && (
                     <span className="absolute inset-0 rounded-2xl bg-white/5 opacity-0 transition duration-300 group-hover:opacity-100" />
@@ -265,10 +273,11 @@ export default function Navbar() {
                       key={item.name}
                       href={item.url}
                       onClick={closeMenu}
-                      className={`rounded-2xl px-5 py-4 text-sm font-medium transition-all duration-300 ${active
+                      className={`rounded-2xl px-5 py-4 text-sm font-medium transition-all duration-300 ${
+                        active
                           ? "bg-white text-black shadow-xl"
                           : "bg-white/[0.03] text-neutral-300 hover:bg-white/10 hover:text-white"
-                        }`}
+                      }`}
                     >
                       {item.name}
                     </Link>

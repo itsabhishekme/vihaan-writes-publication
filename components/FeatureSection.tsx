@@ -38,7 +38,7 @@ const data: FeatureItem[] = [
   {
     title: "Identity",
     text:
-      "A premium author platform built around vision, originality, and timeless words.",
+      "Author platform built around vision, originality, and timeless words.",
     icon: HiOutlineSparkles,
   },
 ];

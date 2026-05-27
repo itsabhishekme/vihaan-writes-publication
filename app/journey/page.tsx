@@ -148,7 +148,7 @@ const features: Feature[] = [
       "Infinite Experience",
 
     description:
-      "Luxury storytelling blended with futuristic visual systems and immersive motion.",
+      "Storytelling blended with futuristic visual systems and immersive motion.",
   },
 
   {
@@ -185,10 +185,10 @@ const features: Feature[] = [
     icon: Shield,
 
     title:
-      "Premium Experience",
+      "Soulful Experience",
 
     description:
-      "Built with modern luxury interaction design and smooth performance.",
+      "Built with modern interaction design and smooth performance.",
   },
 
   {
@@ -200,16 +200,16 @@ const features: Feature[] = [
     description:
       "Powered by advanced frontend systems for fluid user experiences.",
   },
-
   {
     icon: Wand2,
 
     title:
-      "Luxury Aesthetics",
+      "Soulful Visual Experience",
 
     description:
-      "Glassmorphism, gradients, cinematic lighting, and immersive transitions.",
+      "Elegant emotional storytelling aesthetics with immersive design, soft lighting, smooth transitions, and poetic visual harmony.",
   },
+
 ];
 
 const steps: Step[] = [
@@ -584,7 +584,7 @@ export default function JourneyPage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-neutral-400">
-            Designed as a luxury
+            Designed as a
             storytelling ecosystem
             blending cinematic visuals,
             emotional depth, futuristic

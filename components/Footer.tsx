@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 import type { IconType } from "react-icons";
 
 import {
@@ -15,11 +15,19 @@ import {
   HiOutlineHeart,
   HiOutlineGlobeAlt,
   HiOutlineMoon,
-  HiOutlineDevicePhoneMobile,
   HiOutlineStar,
-  HiOutlineBolt,
-  HiOutlineFire,
   HiOutlineRocketLaunch,
+  HiOutlineEnvelope,
+  HiOutlineComputerDesktop,
+  HiOutlineDevicePhoneMobile,
+  HiOutlinePaintBrush,
+  HiOutlineLightBulb,
+  HiOutlinePencilSquare,
+  HiOutlineMusicalNote,
+  HiOutlineCpuChip,
+  HiOutlineCloud,
+  HiOutlineShieldCheck,
+  HiOutlineFire,
 } from "react-icons/hi2";
 
 import {
@@ -32,6 +40,7 @@ import {
   FaApple,
   FaSpotify,
   FaMedium,
+  FaWindows,
 } from "react-icons/fa6";
 
 /* ================= TYPES ================= */
@@ -48,10 +57,17 @@ type ExploreItem = {
   href: string;
 };
 
-type ExperienceItem = {
+type FeatureItem = {
   icon: IconType;
   title: string;
   desc: string;
+};
+
+type AppItem = {
+  icon: IconType;
+  title: string;
+  desc: string;
+  badge: string;
 };
 
 type StatItem = {
@@ -66,26 +82,27 @@ const stats: StatItem[] = [
   {
     icon: HiOutlineHeart,
     title: "Soulful Stories",
-    desc: "Emotion-driven writing experience",
+    desc: "Emotion-first storytelling crafted deeply",
   },
 
   {
     icon: HiOutlineGlobeAlt,
-    title: "Global Readers",
-    desc: "Connecting hearts worldwide",
+    title: "Worldwide Readers",
+    desc: "Connecting hearts across the world",
   },
 
   {
     icon: HiOutlineMoon,
-    title: "Healing Reflections",
-    desc: "Words crafted for emotional connection",
+    title: "Healing Emotions",
+    desc: "Words created for peace and reflection",
   },
 
   {
     icon: HiOutlineStar,
-    title: "Premium Experience",
-    desc: "Luxury storytelling design",
+    title: "Timeless Emotions",
+    desc: "Meaningful stories and soulful reflections created for hearts that feel deeply.",
   },
+
 ];
 
 const socials: SocialItem[] = [
@@ -130,49 +147,78 @@ const exploreItems: ExploreItem[] = [
   {
     icon: HiOutlineBookOpen,
     title: "Books",
-    desc: "Emotional storytelling collection",
+    desc: "Timeless emotional storytelling collections",
     href: "/book",
   },
 
   {
     icon: HiOutlineUserCircle,
     title: "About",
-    desc: "Know the creator behind the vision",
+    desc: "Discover the soul behind Vihaan Writes",
     href: "/about",
   },
 
   {
     icon: HiOutlineNewspaper,
     title: "Blog",
-    desc: "Soulful reflections and thoughts",
+    desc: "Thoughts, reflections & poetic emotions",
     href: "/blog",
   },
 
   {
     icon: HiOutlineChatBubbleLeftRight,
     title: "Contact",
-    desc: "Meaningful conversations",
+    desc: "Meaningful conversations and connections",
     href: "/contact",
   },
 ];
 
-const experienceItems: ExperienceItem[] = [
+const features: FeatureItem[] = [
   {
-    icon: HiOutlineBolt,
-    title: "Fast Performance",
-    desc: "Smooth premium user experience",
+    icon: HiOutlinePaintBrush,
+    title: "Soulful Storytelling",
+    desc: "Emotion-driven writing crafted for readers who feel deeply and connect through meaningful words.",
   },
 
   {
-    icon: HiOutlineFire,
-    title: "Creative Design",
-    desc: "Luxury visual storytelling interface",
+    icon: HiOutlineLightBulb,
+    title: "Timeless Reflections",
+    desc: "Inspirational thoughts, emotional insights, and healing reflections designed to touch the soul.",
   },
 
   {
-    icon: HiOutlineSparkles,
-    title: "Immersive Reading",
-    desc: "Designed for emotional connection",
+    icon: HiOutlinePencilSquare,
+    title: "Poetry & Expressions",
+    desc: "Beautiful poetic writings and heartfelt expressions inspired by love, emotions, and human connection.",
+  },
+
+  {
+    icon: HiOutlineMusicalNote,
+    title: "Emotional Atmosphere",
+    desc: "A calm artistic environment filled with peaceful storytelling, emotions, and soulful creativity.",
+  },
+];
+
+const apps: AppItem[] = [
+  {
+    icon: FaGooglePlay,
+    title: "Google Play",
+    desc: "Android reading experience available now.",
+    badge: "ANDROID",
+  },
+
+  {
+    icon: FaApple,
+    title: "Apple Store",
+    desc: "iOS emotional storytelling app.",
+    badge: "IOS",
+  },
+
+  {
+    icon: FaWindows,
+    title: "Desktop App",
+    desc: "Immersive desktop reading experience.",
+    badge: "DESKTOP",
   },
 ];
 
@@ -199,7 +245,7 @@ export default function Footer() {
 
     if (!email.trim()) {
       setMessage(
-        "Please enter your email"
+        "Please enter your email address"
       );
 
       return;
@@ -214,7 +260,7 @@ export default function Footer() {
       );
 
       setMessage(
-        "✨ Welcome to the Vihaan Writes universe"
+        "✨ Welcome to the Vihaan Writes Universe"
       );
 
       setEmail("");
@@ -229,67 +275,73 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-black text-white">
+
       {/* BACKGROUND */}
 
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.12),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(236,72,153,0.10),transparent_30%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(168,85,247,0.15),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(236,72,153,0.12),transparent_30%)]" />
 
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] bg-[size:70px_70px] opacity-[0.04]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:70px_70px]" />
 
-      <div className="absolute left-1/2 top-0 -z-10 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-purple-500/20 blur-3xl" />
+      <div className="absolute left-1/2 top-0 -z-10 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-purple-500/20 blur-3xl" />
 
-      <div className="absolute bottom-0 right-0 -z-10 h-[400px] w-[400px] rounded-full bg-pink-500/10 blur-3xl" />
+      <div className="absolute bottom-0 right-0 -z-10 h-[500px] w-[500px] rounded-full bg-pink-500/10 blur-3xl" />
 
       {/* HERO */}
 
-      <div className="container-main relative pb-20 pt-24 text-center">
+      <div className="container-main relative pb-24 pt-28 text-center">
+
         <div className="flex justify-center">
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-6 py-3 backdrop-blur-xl">
+          <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.05] px-7 py-3 backdrop-blur-xl">
+
             <HiOutlineSparkles className="text-purple-400" />
 
-            <span className="text-sm uppercase tracking-[0.2em] text-neutral-300">
-              Premium Emotional
-              Storytelling Platform
+            <span className="text-sm uppercase tracking-[0.25em] text-neutral-300">
+              Emotional Storytelling Universe
             </span>
+
           </div>
         </div>
 
         <h2 className="mx-auto mt-10 max-w-6xl text-5xl font-black leading-tight md:text-7xl">
+
           Stories Written
 
           <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-white bg-clip-text text-transparent">
             {" "}
-            Before Fate{" "}
+            Before Destiny{" "}
           </span>
 
           Arrived
+
         </h2>
 
         <p className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-neutral-400 md:text-lg">
-          Vihaan Writes is a premium
-          digital sanctuary for dreamers,
-          lovers, emotional thinkers, and
-          soulful readers seeking meaningful
-          reflections, timeless stories,
-          healing emotions, and deep human
-          connection.
+          Vihaan Writes is a soulful digital sanctuary for
+          dreamers, writers, emotional thinkers, lovers, and readers
+          seeking timeless reflections, healing emotions, poetic
+          storytelling, meaningful human connection, and artistic
+          self-expression.
         </p>
 
         {/* STATS */}
 
-        <div className="mt-16 grid gap-5 md:grid-cols-4">
+        <div className="mt-16 grid gap-6 md:grid-cols-4">
+
           {stats.map((item) => {
             const Icon = item.icon;
 
             return (
               <div
                 key={item.title}
-                className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:bg-white/[0.06]"
+                className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl transition duration-500 hover:-translate-y-3 hover:bg-white/[0.06]"
               >
+
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 opacity-0 transition duration-500 group-hover:opacity-100" />
 
                 <div className="relative">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 text-white shadow-2xl">
-                    <Icon className="text-3xl" />
+
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 shadow-2xl">
+                    <Icon className="text-3xl text-white" />
                   </div>
 
                   <h4 className="mt-6 text-xl font-bold">
@@ -299,6 +351,7 @@ export default function Footer() {
                   <p className="mt-3 text-sm leading-relaxed text-neutral-400">
                     {item.desc}
                   </p>
+
                 </div>
               </div>
             );
@@ -309,59 +362,72 @@ export default function Footer() {
       {/* NEWSLETTER */}
 
       <div className="container-main pb-24">
+
         <div className="relative overflow-hidden rounded-[3rem] border border-white/10 bg-white/[0.05] p-10 backdrop-blur-2xl md:p-16">
+
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-pink-500/10" />
 
-          <div className="absolute -left-10 top-0 h-48 w-48 rounded-full bg-purple-500/20 blur-3xl" />
-
-          <div className="absolute -right-10 bottom-0 h-48 w-48 rounded-full bg-pink-500/20 blur-3xl" />
-
           <div className="relative z-10">
+
             <div className="flex justify-center">
-              <div className="flex h-24 w-24 items-center justify-center rounded-[2rem] border border-white/10 bg-gradient-to-br from-purple-500/20 to-pink-500/20 shadow-2xl">
+
+              <div className="flex h-24 w-24 items-center justify-center rounded-[2rem] bg-gradient-to-br from-purple-500/20 to-pink-500/20 shadow-2xl">
+
                 <HiOutlineRocketLaunch className="text-5xl text-white" />
+
               </div>
             </div>
 
             <div className="mt-10 text-center">
+
               <h3 className="text-4xl font-black md:text-6xl">
-                Stay Connected
+                Join The Journey
               </h3>
 
               <p className="mx-auto mt-6 max-w-3xl leading-relaxed text-neutral-400 md:text-lg">
-                Join the Vihaan Writes
-                journey and receive exclusive
-                emotional reflections, soulful
-                writings, healing thoughts,
-                upcoming books, and timeless
-                storytelling directly inside
-                your inbox.
+                Receive soulful reflections, emotional stories,
+                poetic writings, updates, healing words,
+                upcoming books, and meaningful thoughts directly
+                inside your inbox.
               </p>
+
             </div>
+
+            {/* FORM */}
 
             <form
               onSubmit={handleSubmit}
               className="mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center gap-5"
             >
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                value={email}
-                onChange={(e) =>
-                  setEmail(e.target.value)
-                }
-                className="h-16 w-full rounded-2xl border border-white/10 bg-white/[0.05] px-6 text-white outline-none transition duration-300 focus:border-purple-500/40 focus:bg-white/[0.08] md:w-[450px]"
-              />
+
+              <div className="relative w-full md:w-[450px]">
+
+                <HiOutlineEnvelope className="absolute left-5 top-1/2 -translate-y-1/2 text-xl text-neutral-500" />
+
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  value={email}
+                  onChange={(e) =>
+                    setEmail(e.target.value)
+                  }
+                  className="h-16 w-full rounded-2xl border border-white/10 bg-white/[0.05] pl-14 pr-6 text-white outline-none transition duration-300 focus:border-purple-500/40 focus:bg-white/[0.08]"
+                />
+
+              </div>
 
               <button
                 type="submit"
                 disabled={loading}
                 className="h-16 rounded-2xl bg-white px-10 font-black text-black transition duration-300 hover:scale-105 active:scale-95 disabled:opacity-60"
               >
+
                 {loading
                   ? "Joining..."
-                  : "Join Journey"}
+                  : "Join Now"}
+
               </button>
+
             </form>
 
             {message && (
@@ -369,28 +435,41 @@ export default function Footer() {
                 {message}
               </p>
             )}
+
           </div>
         </div>
       </div>
 
       {/* MAIN GRID */}
 
-      <div className="container-main grid gap-10 pb-24 md:grid-cols-4">
+      <div className="container-main grid gap-12 pb-24 md:grid-cols-4">
+
         {/* BRAND */}
 
         <div>
+
           <div className="flex items-center gap-4">
-            <div className="relative">
+
+            <div className="relative h-20 w-20">
+
               <div className="absolute inset-0 rounded-[2rem] bg-purple-500/40 blur-xl" />
 
-              <div className="relative flex h-20 w-20 items-center justify-center rounded-[2rem] bg-white text-black shadow-2xl">
-                <span className="text-3xl font-black">
-                  V
-                </span>
+              <div className="relative h-20 w-20 overflow-hidden rounded-[2rem] bg-white shadow-2xl">
+
+                <Image
+                  src="/logo.png"
+                  alt="Vihaan Writes Logo"
+                  fill
+                  priority
+                  sizes="80px"
+                  className="object-contain p-2"
+                />
+
               </div>
             </div>
 
             <div>
+
               <h3 className="text-3xl font-black tracking-[0.25em]">
                 VIHAAN
               </h3>
@@ -398,21 +477,21 @@ export default function Footer() {
               <p className="text-xs tracking-[0.4em] text-neutral-500">
                 WRITES
               </p>
+
             </div>
           </div>
 
           <p className="mt-8 max-w-sm leading-relaxed text-neutral-400">
-            A luxury emotional storytelling
-            experience crafted for readers
-            who feel deeply, dream endlessly,
-            and seek meaningful connection
-            through timeless words and
-            soulful reflections.
+            Vihaan Writes is a soulful digital sanctuary for
+            emotional storytelling, dedicated to poetry, soulful reflections,
+            timeless emotions, healing words, artistic expression,
+            and meaningful human connection.
           </p>
 
           {/* SOCIALS */}
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
+
             {socials.map((item) => {
               const Icon = item.icon;
 
@@ -424,9 +503,11 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="group relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] text-neutral-400 transition duration-500 hover:-translate-y-2 hover:text-white hover:shadow-[0_20px_50px_rgba(168,85,247,0.18)]"
                 >
+
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 opacity-0 transition duration-500 group-hover:opacity-100" />
 
                   <Icon className="relative text-xl" />
+
                 </a>
               );
             })}
@@ -436,11 +517,13 @@ export default function Footer() {
         {/* EXPLORE */}
 
         <div>
+
           <h4 className="mb-8 text-2xl font-black">
             Explore
           </h4>
 
           <div className="space-y-5">
+
             {exploreItems.map((item) => {
               const Icon = item.icon;
 
@@ -450,11 +533,13 @@ export default function Footer() {
                   href={item.href}
                   className="group flex items-center gap-4 rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 transition duration-500 hover:-translate-y-2 hover:bg-white/[0.06]"
                 >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 text-white shadow-2xl">
-                    <Icon className="text-3xl" />
+
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 shadow-2xl">
+                    <Icon className="text-3xl text-white" />
                   </div>
 
                   <div>
+
                     <h5 className="text-lg font-bold">
                       {item.title}
                     </h5>
@@ -462,31 +547,38 @@ export default function Footer() {
                     <p className="mt-1 text-sm text-neutral-500">
                       {item.desc}
                     </p>
+
                   </div>
+
                 </Link>
               );
             })}
           </div>
         </div>
 
-        {/* EXPERIENCE */}
+        {/* FEATURES */}
 
         <div>
+
           <h4 className="mb-8 text-2xl font-black">
-            Experience
+            Creative Universe
           </h4>
 
           <div className="space-y-5">
-            {experienceItems.map((item) => {
+
+            {features.map((item) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={item.title}
-                  className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6"
+                  className="group rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 transition duration-500 hover:-translate-y-2 hover:bg-white/[0.06]"
                 >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 text-white shadow-2xl">
-                    <Icon className="text-3xl" />
+
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 shadow-2xl">
+
+                    <Icon className="text-3xl text-white" />
+
                   </div>
 
                   <h5 className="mt-5 text-xl font-bold">
@@ -496,115 +588,81 @@ export default function Footer() {
                   <p className="mt-3 text-sm leading-relaxed text-neutral-500">
                     {item.desc}
                   </p>
+
                 </div>
               );
             })}
           </div>
         </div>
 
-        {/* MOBILE APP */}
+        {/* APPS */}
 
         <div>
+
           <h4 className="mb-8 text-2xl font-black">
-            Mobile App
+            Available Apps
           </h4>
 
           <div className="space-y-5">
-            {/* GOOGLE PLAY */}
 
-            <a
-              href="#"
-              className="group block overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 transition duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(168,85,247,0.18)]"
-            >
-              <div className="flex items-center gap-5">
-                <div className="flex h-20 w-20 items-center justify-center rounded-[2rem] bg-white text-black shadow-2xl">
-                  <FaGooglePlay className="text-4xl" />
-                </div>
+            {apps.map((item) => {
+              const Icon = item.icon;
 
-                <div>
-                  <p className="text-xs uppercase tracking-[0.35em] text-neutral-500">
-                    Download On
-                  </p>
+              return (
+                <div
+                  key={item.title}
+                  className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 transition duration-500 hover:-translate-y-2 hover:bg-white/[0.06]"
+                >
 
-                  <h5 className="mt-2 text-2xl font-black">
-                    Google Play
+                  <div className="absolute right-4 top-4 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] tracking-[0.25em] text-neutral-400">
+                    {item.badge}
+                  </div>
+
+                  <div className="flex h-20 w-20 items-center justify-center rounded-[2rem] bg-white text-black shadow-2xl">
+
+                    <Icon className="text-4xl" />
+
+                  </div>
+
+                  <h5 className="mt-5 text-2xl font-black">
+                    {item.title}
                   </h5>
 
-                  <p className="mt-1 text-sm text-neutral-500">
-                    Android experience
-                    coming soon
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            {/* APPLE */}
-
-            <a
-              href="#"
-              className="group block overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 transition duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(255,255,255,0.10)]"
-            >
-              <div className="flex items-center gap-5">
-                <div className="flex h-20 w-20 items-center justify-center rounded-[2rem] bg-white text-black shadow-2xl">
-                  <FaApple className="text-5xl" />
-                </div>
-
-                <div>
-                  <p className="text-xs uppercase tracking-[0.35em] text-neutral-500">
-                    Available On
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-400">
+                    {item.desc}
                   </p>
 
-                  <h5 className="mt-2 text-2xl font-black">
-                    Apple Store
-                  </h5>
+                  <div className="mt-5 inline-flex items-center gap-2 text-sm text-purple-300">
 
-                  <p className="mt-1 text-sm text-neutral-500">
-                    iOS experience launching
-                    soon
-                  </p>
+                    <HiOutlineShieldCheck className="text-lg" />
+
+                    Official Vihaan Writes Platform
+
+                  </div>
+
                 </div>
-              </div>
-            </a>
-
-            {/* EXTRA */}
-
-            <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-purple-500/10 to-pink-500/10 p-6">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-black shadow-2xl">
-                <HiOutlineDevicePhoneMobile className="text-4xl" />
-              </div>
-
-              <h5 className="mt-5 text-2xl font-black">
-                Premium Reading App
-              </h5>
-
-              <p className="mt-3 text-sm leading-relaxed text-neutral-400">
-                Experience immersive
-                emotional storytelling with a
-                beautifully crafted
-                mobile-first reading
-                experience designed for modern
-                readers.
-              </p>
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>
 
       {/* BOTTOM */}
-      <div className="relative overflow-hidden border-t border-white/10 bg-gradient-to-b from-black via-neutral-950 to-black backdrop-blur-2xl">
 
-        {/* Animated Glow Effects */}
-        <div className="absolute -left-10 top-0 h-52 w-52 rounded-full bg-cyan-500/10 blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-indigo-500/10 blur-3xl animate-pulse" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_60%)]" />
+      <div className="relative overflow-hidden border-t border-white/10 bg-gradient-to-b from-black via-neutral-950 to-black">
+
+        <div className="absolute -left-10 top-0 h-52 w-52 rounded-full bg-cyan-500/10 blur-3xl" />
+
+        <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-indigo-500/10 blur-3xl" />
 
         <div className="container-main relative z-10 flex flex-col gap-12 py-12 md:flex-row md:items-center md:justify-between">
 
-          {/* Left Section */}
+          {/* LEFT */}
+
           <div className="space-y-5 text-center md:text-left">
 
-            {/* Brand */}
             <div>
+
               <h3 className="bg-gradient-to-r from-white via-cyan-200 to-indigo-400 bg-clip-text text-3xl font-extrabold tracking-wide text-transparent">
                 Vihaan Writes
               </h3>
@@ -612,120 +670,79 @@ export default function Footer() {
               <div className="mt-3 h-[2px] w-24 rounded-full bg-gradient-to-r from-cyan-400 to-indigo-500 md:mx-0 mx-auto" />
 
               <p className="mt-4 max-w-md text-sm leading-relaxed text-neutral-400">
-                A celestial space of emotions, poetic reflections,
-                soulful storytelling, and timeless words woven
-                gently for hearts that still feel deeply.
+                Stories that heal. Words that stay.
+                Emotions that connect deeply forever.
               </p>
+
             </div>
 
-            {/* Copyright */}
             <div className="space-y-1">
+
               <p className="text-sm text-neutral-500">
                 © {year} Vihaan Writes. All rights reserved.
               </p>
 
               <p className="text-xs tracking-wide text-neutral-600">
-                Crafted with emotion, soul, and timeless storytelling.
+                Crafted with emotion, creativity, and soulful storytelling.
               </p>
+
             </div>
-
-            {/* Developer Credit */}
-            <a
-              href="https://echo-soul-developer.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 rounded-full border border-cyan-500/20 bg-white/5 px-5 py-2.5 text-xs font-medium text-neutral-300 shadow-lg shadow-cyan-500/5 backdrop-blur-md transition-all duration-500 hover:border-cyan-400/50 hover:bg-cyan-500/10 hover:text-white hover:shadow-cyan-500/20"
-            >
-              <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse" />
-
-              <span className="tracking-wide">
-                Developed by{" "}
-                <span className="bg-gradient-to-r from-cyan-300 to-indigo-400 bg-clip-text font-semibold text-transparent">
-                  EchoSoul Developer
-                </span>
-              </span>
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M14 3h7m0 0v7m0-7L10 14"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5 5v14h14"
-                />
-              </svg>
-            </a>
           </div>
 
-          {/* Right Section */}
+          {/* RIGHT */}
+
           <div className="flex flex-col items-center gap-7 md:items-end">
 
-            {/* Navigation */}
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-400">
 
               <Link
                 href="/privacy-policy"
-                className="group relative transition duration-300 hover:text-white"
+                className="transition duration-300 hover:text-white"
               >
                 Privacy Policy
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full" />
               </Link>
 
               <Link
                 href="/terms-and-conditions"
-                className="group relative transition duration-300 hover:text-white"
+                className="transition duration-300 hover:text-white"
               >
                 Terms & Conditions
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full" />
               </Link>
 
               <Link
                 href="/contact"
-                className="group relative transition duration-300 hover:text-white"
+                className="transition duration-300 hover:text-white"
               >
                 Contact
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full" />
               </Link>
+
             </div>
 
-            {/* Back To Top */}
+            {/* TOP */}
+
             <a
               href="#top"
-              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full border border-white/10 bg-white/5 px-7 py-3 text-sm text-neutral-300 backdrop-blur-md transition-all duration-500 hover:border-cyan-400/40 hover:bg-cyan-500/10 hover:text-white hover:shadow-xl hover:shadow-cyan-500/10"
+              className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-7 py-3 text-sm text-neutral-300 backdrop-blur-md transition-all duration-500 hover:border-cyan-400/40 hover:bg-cyan-500/10 hover:text-white"
             >
-              <span className="relative z-10">Back to Top</span>
 
-              <HiOutlineArrowUp className="relative z-10 transition-transform duration-500 group-hover:-translate-y-1" />
+              Back To Top
 
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              <HiOutlineArrowUp className="transition-transform duration-500 group-hover:-translate-y-1" />
+
             </a>
           </div>
         </div>
 
-        {/* Closing Bottom */}
-        <div className="relative border-t border-white/5 py-6">
+        {/* LAST */}
 
-          {/* Decorative Glow Line */}
-          <div className="absolute left-1/2 top-0 h-px w-48 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
+        <div className="border-t border-white/5 py-6">
 
           <p className="text-center text-[10px] uppercase tracking-[0.45em] text-neutral-600">
-            Words that heal • Stories that stay • Souls that connect
+            Stories • Emotions • Poetry • Reflections • Healing • Love
           </p>
 
-          <div className="mx-auto mt-4 h-[3px] w-28 rounded-full bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
         </div>
       </div>
-
     </footer>
   );
 }
