@@ -565,7 +565,7 @@ export default function ComingSoonPage() {
               <div className="mt-12 flex flex-wrap justify-center gap-5">
 
                 <Link
-                  href="/books"
+                  href="/book"
                   className="inline-flex items-center gap-3 px-8 py-5 rounded-2xl bg-black text-white font-bold hover:scale-105 transition duration-300"
                 >
                   Explore Books
