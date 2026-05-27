@@ -82,7 +82,9 @@ export const metadata: Metadata = {
 const books = [
   {
     id: 'spouse',
-    badge: 'Soulmate Journey',
+
+    badge: 'Before I Knew You',
+
     title: 'My Spouse Before I Met Her',
     subtitle:
       'Karmic clues, dreams, and the echoes of her soul.',
@@ -107,6 +109,7 @@ const books = [
 
   {
     id: 'destiny',
+
     badge: 'Destiny Trilogy',
 
     title: 'She Came, She Healed, She Left',
@@ -133,7 +136,7 @@ const books = [
   },
 
   {
-    id: 'storm',
+    id: 'destiny',
 
     badge: 'Destiny Trilogy • Upcoming Release',
 
