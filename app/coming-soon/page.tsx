@@ -227,7 +227,7 @@ export default function ComingSoonPage() {
               <div className="mt-12 flex flex-wrap gap-5">
 
                 <Link
-                  href="/books"
+                  href="/book"
                   className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-white text-black font-bold hover:scale-105 transition duration-300"
                 >
                   Explore Books
