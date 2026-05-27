@@ -185,7 +185,7 @@ export default function Navbar() {
             {/* READ NOW */}
 
             <Link
-              href="/book"
+              href="/read-now"
               onClick={closeMenu}
               className="group hidden items-center gap-2 rounded-2xl bg-white px-5 py-3 font-semibold text-black shadow-2xl transition-all duration-300 hover:scale-105 md:inline-flex"
             >
