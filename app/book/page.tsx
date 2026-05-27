@@ -131,6 +131,34 @@ const books = [
       'Transformation Journey',
     ],
   },
+
+  {
+    id: 'storm',
+
+    badge: 'Destiny Trilogy • Upcoming Release',
+
+    title: 'She Came After the Storm',
+
+    subtitle:
+      'The Three Women Who Broke Me — and the One Destiny Sent to Heal What Remained',
+
+    desc:
+      'A deeply emotional journey through heartbreak, silence, healing, and destiny. After surviving the storms created by love, loss, and emotional destruction, one man enters the quiet aftermath where life no longer feels familiar. But sometimes destiny waits until everything breaks before sending the soul meant to heal what remained.',
+
+    link: '/coming-soon',
+
+    quote:
+      'Some people enter your life as storms. Others arrive after the destruction — carrying the peace you thought no longer existed.',
+
+    image: '/books/book3.png',
+
+    features: [
+      'Emotional Healing',
+      'Heartbreak & Recovery',
+      'Destiny & Soul Connection',
+      'Transformation After Pain',
+    ],
+  },
 ]
 
 export default function BookPage() {
