@@ -4,10 +4,11 @@ const config: CapacitorConfig = {
   appId: "com.vihaanwrites.app",
   appName: "Vihaan Writes",
 
+  // Next.js static export folder
   webDir: "out",
 
   server: {
-    androidScheme: "http",
+    androidScheme: "https",
     cleartext: true,
   },
 

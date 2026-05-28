@@ -1,12 +1,14 @@
 import withPWAInit from "@ducanh2912/next-pwa";
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV === "development";
+
 const withPWA = withPWAInit({
   dest: "public",
 
   register: true,
 
-  disable: process.env.NODE_ENV === "development",
+  disable: isDev,
 
   cacheOnFrontEndNav: true,
 
@@ -34,9 +36,8 @@ const withPWA = withPWAInit({
     runtimeCaching: [
       // HTML Pages / App Routes
       {
-        urlPattern: ({ request }: { request?: Request }) => {
-          return request?.mode === "navigate";
-        },
+        urlPattern: ({ request }) =>
+          request?.mode === "navigate",
 
         handler: "NetworkFirst",
 
@@ -82,12 +83,9 @@ const withPWA = withPWAInit({
 
       // CSS + JS
       {
-        urlPattern: ({ request }: { request?: Request }) => {
-          return (
-            request?.destination === "style" ||
-            request?.destination === "script"
-          );
-        },
+        urlPattern: ({ request }) =>
+          request?.destination === "style" ||
+          request?.destination === "script",
 
         handler: "StaleWhileRevalidate",
 
@@ -107,9 +105,8 @@ const withPWA = withPWAInit({
 
       // Images
       {
-        urlPattern: ({ request }: { request?: Request }) => {
-          return request?.destination === "image";
-        },
+        urlPattern: ({ request }) =>
+          request?.destination === "image",
 
         handler: "CacheFirst",
 
@@ -202,7 +199,10 @@ const nextConfig: NextConfig = {
 
   compress: true,
 
-  trailingSlash: false,
+  // IMPORTANT for Capacitor + static export
+  output: "export",
+
+  trailingSlash: true,
 
   images: {
     unoptimized: true,
@@ -213,8 +213,7 @@ const nextConfig: NextConfig = {
   },
 
   compiler: {
-    removeConsole:
-      process.env.NODE_ENV === "production",
+    removeConsole: process.env.NODE_ENV === "production",
   },
 };
 
