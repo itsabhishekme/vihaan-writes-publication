@@ -249,7 +249,7 @@ export default function AboutPage() {
         <section className="container mx-auto px-6 py-10 lg:px-12">
           <div className="grid gap-6 md:grid-cols-4">
             {[
-              ["1+", "Published Books"],
+              ["2+", "Published Books"],
               ["1000+", "Readers Inspired"],
               ["∞", "Emotions Expressed"],
               ["24/7", "Creative Energy"],
