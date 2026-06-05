@@ -23,6 +23,7 @@ const links: NavItem[] = [
   { name: "Home", url: "/" },
   { name: "About", url: "/about" },
   { name: "Book", url: "/book" },
+  { name: "Projects", url: "/projects" },
   { name: "Stories", url: "/stories" },
   { name: "Blog", url: "/blog" },
   { name: "Journey", url: "/journey" },
