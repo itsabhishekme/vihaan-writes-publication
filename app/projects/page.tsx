@@ -87,33 +87,294 @@ export default function ProjectsPage() {
       <div className="max-w-7xl mx-auto px-6 py-24">
         {/* HERO */}
 
-        <section className="min-h-[80vh] flex items-center justify-center">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+          {/* Background Effects */}
+
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-black" />
+
+            ```
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1400px] h-[1400px] rounded-full bg-amber-500/10 blur-[220px]" />
+
+            <div className="absolute bottom-0 right-0 w-[800px] h-[800px] rounded-full bg-orange-500/10 blur-[180px]" />
+
+            <div className="absolute left-0 top-1/3 w-[600px] h-[600px] rounded-full bg-white/[0.03] blur-[150px]" />
+            ```
+
+          </div>
+
+          {/* Grid Overlay */}
+
+          <div
+            className="
+      absolute
+      inset-0
+      opacity-[0.03]
+      [background-image:linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
+      [background-size:80px_80px]
+    "
+          />
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-center max-w-6xl mx-auto"
+            transition={{ duration: 1 }}
+            className="relative z-10 text-center max-w-7xl mx-auto px-6"
+
           >
-            <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-white/10 bg-white/[0.03] mb-10">
+
+            {/* Badge */}
+            
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.2,
+              }}
+              className="
+    inline-flex
+    items-center
+    gap-3
+    px-6
+    py-3
+    rounded-full
+    border
+    border-white/10
+    bg-white/[0.03]
+    backdrop-blur-xl
+    mb-10
+  "
+            >
               <Stars className="w-4 h-4 text-amber-400" />
-              <span className="text-zinc-300">
+
+              <span className="text-zinc-300 tracking-wide">
                 Vihaan Writes Originals
               </span>
-            </div>
+            </motion.div>
 
-            <h1 className="text-6xl md:text-8xl xl:text-[10rem] font-black tracking-tight leading-[0.85] mb-10">
-              Projects
-            </h1>
+            {/* Heading */}
 
-            <p className="max-w-4xl mx-auto text-xl md:text-2xl text-zinc-400 leading-relaxed">
-              Beyond books and blogs, these are
-              long-term storytelling projects built
-              to preserve memories, explore destiny,
-              document human experiences, and create
-              a lasting archive of stories that
-              deserve to survive.
-            </p>
+            <motion.h1
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.3,
+              }}
+              className="
+    text-6xl
+    md:text-8xl
+    xl:text-[11rem]
+    font-black
+    tracking-tight
+    leading-[0.82]
+    mb-10
+  "
+            >
+              Stories
+              <br />
+
+              <span className="text-amber-300">
+                Beyond Books
+              </span>
+            </motion.h1>
+
+            {/* Subtitle */}
+
+            <motion.p
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.5,
+              }}
+              className="
+    max-w-4xl
+    mx-auto
+    text-xl
+    md:text-2xl
+    text-zinc-400
+    leading-relaxed
+    mb-14
+  "
+            >
+              Vihaan Writes is more than a book,
+              blog, or website. It is a growing
+              universe of long-form storytelling
+              projects dedicated to memory,
+              destiny, human experiences, and the
+              stories that continue long after the
+              final page is turned.
+            </motion.p>
+
+            {/* Stats */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.7,
+              }}
+              className="
+    grid
+    grid-cols-2
+    md:grid-cols-4
+    gap-6
+    max-w-5xl
+    mx-auto
+    mb-16
+  "
+            >
+              {[
+                {
+                  number: "02",
+                  label: "Flagship Projects",
+                },
+                {
+                  number: "01",
+                  label: "Published Book",
+                },
+                {
+                  number: "∞",
+                  label: "Stories Ahead",
+                },
+                {
+                  number: "2026",
+                  label: "Current Vision",
+                },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="
+        rounded-3xl
+        border
+        border-white/10
+        bg-white/[0.03]
+        backdrop-blur-xl
+        p-6
+      "
+                >
+                  <div className="text-4xl font-black text-amber-300 mb-2">
+                    {item.number}
+                  </div>
+
+                  <div className="text-zinc-500 text-sm">
+                    {item.label}
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* CTA */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.9,
+              }}
+              className="
+    flex
+    flex-col
+    sm:flex-row
+    justify-center
+    gap-5
+  "
+            >
+              <Link
+                href="https://the-human-archive-beta.vercel.app/"
+                target="_blank"
+                className="
+      inline-flex
+      items-center
+      gap-3
+      px-8
+      py-4
+      rounded-2xl
+      bg-amber-400
+      text-black
+      font-semibold
+      hover:scale-105
+      transition-all
+    "
+              >
+                Explore Projects
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+
+              <Link
+                href="/contact"
+                className="
+      inline-flex
+      items-center
+      gap-3
+      px-8
+      py-4
+      rounded-2xl
+      border
+      border-white/10
+      bg-white/[0.03]
+      backdrop-blur-xl
+      hover:border-amber-400/20
+      transition-all
+    "
+              >
+                Connect With Vihaan
+              </Link>
+            </motion.div>
+
+            {/* Bottom Text */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
+              transition={{
+                delay: 1.2,
+              }}
+              className="mt-20"
+            >
+              <p className="text-zinc-600 tracking-[0.3em] uppercase text-sm">
+                The Human Archive • Before Her Name Existed
+              </p>
+            </motion.div>
+            ```
+
           </motion.div>
+
         </section>
+
 
         {/* FEATURED PROJECTS */}
 
@@ -258,59 +519,157 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        {/* TIMELINE */}
+        {/* JOURNEY TIMELINE */}
 
-        <section className="py-32">
-          <div className="text-center mb-20">
-            <Clock3 className="w-14 h-14 text-amber-400 mx-auto mb-6" />
+        <section className="py-40 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-amber-500/[0.02] to-transparent" />
 
-            <h2 className="text-5xl md:text-7xl font-black">
-              The Journey
-            </h2>
-          </div>
-
-          <div className="max-w-4xl mx-auto space-y-12">
-            {[
-              {
-                year: "2024",
-                title: "The Book",
-                text: "Publishing the first deeply personal work.",
-              },
-              {
-                year: "2025",
-                title: "Vihaan Writes",
-                text: "Building a creative identity around storytelling.",
-              },
-              {
-                year: "2026",
-                title: "Before Her Name Existed",
-                text: "Documenting a story before its destination existed.",
-              },
-              {
-                year: "2026",
-                title: "The Human Archive",
-                text: "Creating a home for untold human stories.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-[28px] border border-white/10 bg-white/[0.03] p-10"
-              >
-                <p className="text-amber-300 mb-4">
-                  {item.year}
-                </p>
-
-                <h3 className="text-3xl font-bold mb-4">
-                  {item.title}
-                </h3>
-
-                <p className="text-zinc-400">
-                  {item.text}
-                </p>
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="text-center mb-28">
+              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-white/10 bg-white/[0.03] mb-8">
+                <Clock3 className="w-4 h-4 text-amber-400" />
+                <span className="text-zinc-300">
+                  Timeline of Creation
+                </span>
               </div>
-            ))}
+
+              ```
+              <h2 className="text-5xl md:text-7xl xl:text-8xl font-black tracking-tight leading-none mb-8">
+                The Journey
+              </h2>
+
+              <p className="max-w-3xl mx-auto text-zinc-400 text-xl leading-relaxed">
+                Every project began as an idea,
+                became a vision, and slowly evolved
+                into a living story.
+              </p>
+            </div>
+
+            <div className="relative max-w-5xl mx-auto">
+
+              {/* Center Line */}
+
+              <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-amber-400/30 to-transparent" />
+
+              {[
+                {
+                  year: "2024",
+                  title: "The Book",
+                  icon: BookOpen,
+                  text:
+                    "The beginning of a deeply personal creative journey. A book written not simply to tell a story, but to preserve emotions, questions, and reflections that might otherwise disappear with time.",
+                },
+
+                {
+                  year: "2025",
+                  title: "Vihaan Writes",
+                  icon: Feather,
+                  text:
+                    "A creative identity emerged. Vihaan Writes became a home for ideas, stories, reflections, and projects built around memory, humanity, destiny, and storytelling.",
+                },
+
+                {
+                  year: "2026",
+                  title: "Before Her Name Existed",
+                  icon: Heart,
+                  text:
+                    "A documentary-style storytelling project exploring the extraordinary concept of writing to someone before meeting them. A journey through imagination, destiny, longing, and faith.",
+                },
+
+                {
+                  year: "2026",
+                  title: "The Human Archive",
+                  icon: Archive,
+                  text:
+                    "A living archive dedicated to preserving untold human stories, forgotten memories, unsent letters, regrets, lessons, and life-changing moments from around the world.",
+                },
+
+                {
+                  year: "Future",
+                  title: "The Next Chapter",
+                  icon: Sparkles,
+                  text:
+                    "New projects, books, archives, documentaries, and creative explorations are waiting beyond the horizon. The story of Vihaan Writes is still being written.",
+                },
+              ].map((item, index) => {
+                const Icon = item.icon;
+
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{
+                      opacity: 0,
+                      y: 60,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    viewport={{
+                      once: true,
+                    }}
+                    transition={{
+                      duration: 0.7,
+                      delay: index * 0.15,
+                    }}
+                    className="relative pl-24 mb-16"
+                  >
+                    {/* Timeline Dot */}
+
+                    <div className="absolute left-0 top-4">
+                      <div className="relative">
+                        <div className="w-16 h-16 rounded-3xl border border-amber-400/20 bg-amber-400/10 backdrop-blur-xl flex items-center justify-center">
+                          <Icon className="w-7 h-7 text-amber-400" />
+                        </div>
+
+                        <div className="absolute inset-0 rounded-3xl bg-amber-400/20 blur-xl" />
+                      </div>
+                    </div>
+
+                    {/* Card */}
+
+                    <div className="group rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-xl p-10 md:p-12 transition-all hover:border-amber-400/20 hover:bg-white/[0.04]">
+                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+                        <span className="text-amber-300 font-semibold tracking-[0.25em] uppercase">
+                          {item.year}
+                        </span>
+
+                        <div className="h-px flex-1 bg-gradient-to-r from-amber-400/20 to-transparent hidden md:block" />
+                      </div>
+
+                      <h3 className="text-3xl md:text-4xl font-black mb-6">
+                        {item.title}
+                      </h3>
+
+                      <p className="text-zinc-400 text-lg leading-relaxed">
+                        {item.text}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+
+            {/* Bottom Quote */}
+
+            <div className="max-w-4xl mx-auto text-center mt-24">
+              <Quote className="w-12 h-12 text-amber-400 mx-auto mb-8" />
+
+              <p className="text-2xl md:text-3xl leading-relaxed text-zinc-300">
+                Every project begins as a question.
+                Every story becomes a path.
+                Every path becomes part of a larger journey.
+              </p>
+
+              <p className="text-zinc-500 mt-8">
+                — Vihaan
+              </p>
+            </div>
+            ```
+
           </div>
         </section>
+
 
         {/* CTA */}
 
