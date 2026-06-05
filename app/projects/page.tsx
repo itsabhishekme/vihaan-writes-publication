@@ -9,9 +9,7 @@ import {
   Archive,
   Heart,
   Sparkles,
-  Globe,
   Clock3,
-  PenTool,
   Feather,
   Quote,
   Stars,
@@ -99,7 +97,6 @@ export default function ProjectsPage() {
             <div className="absolute bottom-0 right-0 w-[800px] h-[800px] rounded-full bg-orange-500/10 blur-[180px]" />
 
             <div className="absolute left-0 top-1/3 w-[600px] h-[600px] rounded-full bg-white/[0.03] blur-[150px]" />
-            ```
 
           </div>
 
@@ -369,12 +366,10 @@ export default function ProjectsPage() {
                 The Human Archive • Before Her Name Existed
               </p>
             </motion.div>
-            ```
 
           </motion.div>
 
         </section>
-
 
         {/* FEATURED PROJECTS */}
 
@@ -533,7 +528,6 @@ export default function ProjectsPage() {
                 </span>
               </div>
 
-              ```
               <h2 className="text-5xl md:text-7xl xl:text-8xl font-black tracking-tight leading-none mb-8">
                 The Journey
               </h2>
@@ -665,7 +659,6 @@ export default function ProjectsPage() {
                 — Vihaan
               </p>
             </div>
-            ```
 
           </div>
         </section>
