@@ -121,7 +121,7 @@ export default function ProjectsPage() {
           >
 
             {/* Badge */}
-            
+
             <motion.div
               initial={{
                 opacity: 0,
@@ -372,88 +372,241 @@ export default function ProjectsPage() {
         </section>
 
         {/* FEATURED PROJECTS */}
+        <section className="relative py-40 overflow-hidden">
 
-        <section className="py-20">
-          <div className="mb-16 text-center">
-            <p className="uppercase tracking-[0.4em] text-zinc-500 mb-6">
-              Featured Projects
-            </p>
-
-            <h2 className="text-5xl md:text-7xl font-black">
-              Storytelling Universes
-            </h2>
+          {/* Background Effects */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-0 w-[500px] h-[500px] bg-amber-500/10 blur-[150px]" />
+            <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-orange-500/10 blur-[180px]" />
           </div>
 
-          <div className="grid xl:grid-cols-2 gap-10">
-            {projects.map((project, index) => {
-              const Icon = project.icon;
+          <div className="relative z-10 max-w-7xl mx-auto px-6">
 
-              return (
-                <motion.div
-                  key={project.title}
-                  initial={{
-                    opacity: 0,
-                    y: 40,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: index * 0.2,
-                  }}
-                  whileHover={{
-                    y: -10,
-                  }}
-                  className="
-                    relative
-                    overflow-hidden
-                    rounded-[32px]
-                    border
-                    border-white/10
-                    bg-white/[0.03]
-                    backdrop-blur-xl
-                  "
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-orange-500/10" />
+            {/* Header */}
+            <div className="text-center mb-24">
 
-                  <div className="relative z-10 p-12">
-                    <div className="flex justify-between items-center mb-10">
-                      <div className="w-20 h-20 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center">
-                        <Icon className="w-10 h-10 text-amber-400" />
+              <span className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-white/10 bg-white/[0.03] mb-8">
+                <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                <span className="uppercase tracking-[0.4em] text-xs text-zinc-400">
+                  Featured Projects
+                </span>
+              </span>
+
+              <h2 className="text-6xl md:text-8xl font-black leading-none mb-8">
+                Storytelling
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-400 to-amber-200">
+                  Universes
+                </span>
+              </h2>
+
+              <p className="max-w-3xl mx-auto text-zinc-400 text-xl leading-relaxed">
+                Every project is a living archive of human experiences,
+                memories, emotions, and untold narratives.
+              </p>
+            </div>
+
+            {/* Projects */}
+            <div className="space-y-14">
+
+              {projects.map((project, index) => {
+                const Icon = project.icon;
+
+                return (
+                  <motion.div
+                    key={project.title}
+                    initial={{
+                      opacity: 0,
+                      y: 60,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.8,
+                      delay: index * 0.15,
+                    }}
+                    whileHover={{
+                      y: -12,
+                    }}
+                    className="group relative"
+                  >
+                    <div
+                      className="
+                absolute
+                inset-0
+                rounded-[40px]
+                bg-gradient-to-r
+                from-amber-500/20
+                via-orange-500/10
+                to-transparent
+                opacity-0
+                group-hover:opacity-100
+                transition-all
+                duration-700
+                blur-xl
+              "
+                    />
+
+                    <div
+                      className="
+                relative
+                overflow-hidden
+                rounded-[40px]
+                border
+                border-white/10
+                bg-white/[0.03]
+                backdrop-blur-xl
+              "
+                    >
+
+                      {/* Floating Gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-orange-500/10" />
+
+                      {/* Top Line */}
+                      <div className="absolute top-0 left-0 h-[2px] w-0 bg-gradient-to-r from-amber-400 to-orange-400 group-hover:w-full transition-all duration-700" />
+
+                      <div className="relative z-10 p-10 md:p-16">
+
+                        <div className="grid lg:grid-cols-[140px_1fr] gap-10">
+
+                          {/* Left Timeline */}
+                          <div>
+
+                            <div className="w-24 h-24 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center mb-8">
+                              <Icon className="w-12 h-12 text-amber-400" />
+                            </div>
+
+                            <span className="text-zinc-500 text-sm tracking-[0.25em] uppercase">
+                              {project.year}
+                            </span>
+
+                            <div className="mt-8 h-32 w-px bg-gradient-to-b from-amber-400 to-transparent" />
+                          </div>
+
+                          {/* Right Content */}
+                          <div>
+
+                            <div className="flex flex-wrap gap-3 mb-8">
+
+                              <span className="px-4 py-2 rounded-full border border-amber-500/20 bg-amber-500/10 text-amber-300 text-sm">
+                                Human Stories
+                              </span>
+
+                              <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-sm">
+                                Documentary
+                              </span>
+
+                              <span className="px-4 py-2 rounded-full border border-white/10 bg-white/5 text-zinc-300 text-sm">
+                                Archive
+                              </span>
+
+                            </div>
+
+                            <h3
+                              className="
+                        text-5xl
+                        md:text-7xl
+                        font-black
+                        mb-8
+                        leading-none
+                        group-hover:text-amber-300
+                        transition-colors
+                      "
+                            >
+                              {project.title}
+                            </h3>
+
+                            <p className="text-amber-300 text-2xl leading-relaxed mb-8">
+                              {project.tagline}
+                            </p>
+
+                            <p className="text-zinc-400 text-lg leading-loose max-w-4xl mb-10">
+                              {project.description}
+                            </p>
+
+                            {/* Stats */}
+                            <div className="grid grid-cols-3 gap-8 mb-12">
+
+                              <div>
+                                <div className="text-3xl font-black text-white mb-2">
+                                  100+
+                                </div>
+                                <div className="text-zinc-500 text-sm">
+                                  Stories
+                                </div>
+                              </div>
+
+                              <div>
+                                <div className="text-3xl font-black text-white mb-2">
+                                  ∞
+                                </div>
+                                <div className="text-zinc-500 text-sm">
+                                  Possibilities
+                                </div>
+                              </div>
+
+                              <div>
+                                <div className="text-3xl font-black text-white mb-2">
+                                  24/7
+                                </div>
+                                <div className="text-zinc-500 text-sm">
+                                  Growing Archive
+                                </div>
+                              </div>
+
+                            </div>
+
+                            {/* CTA */}
+                            <a
+                              href={project.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="
+                        inline-flex
+                        items-center
+                        gap-4
+                        px-8
+                        py-5
+                        rounded-2xl
+                        bg-gradient-to-r
+                        from-amber-400
+                        to-orange-400
+                        text-black
+                        font-bold
+                        group-hover:scale-105
+                        transition-all
+                        duration-300
+                      "
+                            >
+                              Explore Universe
+
+                              <ArrowUpRight
+                                className="
+                          w-5
+                          h-5
+                          group-hover:translate-x-1
+                          group-hover:-translate-y-1
+                          transition-all
+                        "
+                              />
+                            </a>
+
+                          </div>
+
+                        </div>
+
                       </div>
 
-                      <span className="text-zinc-500">
-                        {project.year}
-                      </span>
                     </div>
+                  </motion.div>
+                );
+              })}
 
-                    <h3 className="text-4xl md:text-5xl font-black mb-6">
-                      {project.title}
-                    </h3>
+            </div>
 
-                    <p className="text-amber-300 text-xl mb-8 leading-relaxed">
-                      {project.tagline}
-                    </p>
-
-                    <p className="text-zinc-400 text-lg leading-relaxed mb-10">
-                      {project.description}
-                    </p>
-
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-amber-400 text-black font-semibold"
-                    >
-                      Explore Project
-                      <ArrowUpRight className="w-5 h-5" />
-                    </a>
-                  </div>
-                </motion.div>
-              );
-            })}
           </div>
         </section>
 
