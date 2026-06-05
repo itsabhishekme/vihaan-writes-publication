@@ -86,27 +86,21 @@ export default function ProjectsPage() {
         {/* HERO */}
 
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          {/* Background Effects */}
-
+          {/* Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-black" />
 
-            ```
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1400px] h-[1400px] rounded-full bg-amber-500/10 blur-[220px]" />
 
             <div className="absolute bottom-0 right-0 w-[800px] h-[800px] rounded-full bg-orange-500/10 blur-[180px]" />
 
             <div className="absolute left-0 top-1/3 w-[600px] h-[600px] rounded-full bg-white/[0.03] blur-[150px]" />
-
           </div>
 
           {/* Grid Overlay */}
-
           <div
             className="
-      absolute
-      inset-0
-      opacity-[0.03]
+      absolute inset-0 opacity-[0.03]
       [background-image:linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
       [background-size:80px_80px]
     "
@@ -116,168 +110,117 @@ export default function ProjectsPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            className="relative z-10 text-center max-w-7xl mx-auto px-6"
-
+            className="relative z-10 max-w-6xl mx-auto px-6 text-center"
           >
-
             {/* Badge */}
-
             <motion.div
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                delay: 0.2,
-              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
               className="
-    inline-flex
-    items-center
-    gap-3
-    px-6
-    py-3
-    rounded-full
-    border
-    border-white/10
-    bg-white/[0.03]
-    backdrop-blur-xl
-    mb-10
-  "
+        inline-flex items-center gap-3
+        px-5 py-2.5
+        rounded-full
+        border border-white/10
+        bg-white/[0.03]
+        backdrop-blur-xl
+        mb-12
+      "
             >
-              <Stars className="w-4 h-4 text-amber-400" />
+              <Stars className="w-3.5 h-3.5 text-amber-400" />
 
-              <span className="text-zinc-300 tracking-wide">
+              <span className="text-xs uppercase tracking-[0.35em] text-zinc-300">
                 Vihaan Writes Originals
               </span>
             </motion.div>
 
             {/* Heading */}
-
             <motion.h1
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                delay: 0.3,
-              }}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
               className="
-    text-6xl
-    md:text-8xl
-    xl:text-[11rem]
-    font-black
-    tracking-tight
-    leading-[0.82]
-    mb-10
-  "
+        text-5xl
+        md:text-7xl
+        xl:text-[8rem]
+        font-black
+        tracking-[-0.05em]
+        leading-[0.88]
+        mb-10
+      "
             >
               Stories
               <br />
 
-              <span className="text-amber-300">
+              <span className="bg-gradient-to-r from-amber-200 via-amber-300 to-orange-300 bg-clip-text text-transparent">
                 Beyond Books
               </span>
             </motion.h1>
 
-            {/* Subtitle */}
+            {/* Divider */}
+            <div className="w-24 h-px bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mb-10" />
 
+            {/* Subtitle */}
             <motion.p
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                delay: 0.5,
-              }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
               className="
-    max-w-4xl
-    mx-auto
-    text-xl
-    md:text-2xl
-    text-zinc-400
-    leading-relaxed
-    mb-14
-  "
+        max-w-3xl
+        mx-auto
+        text-base
+        md:text-lg
+        lg:text-xl
+        text-zinc-400
+        leading-loose
+        mb-16
+      "
             >
-              Vihaan Writes is more than a book,
-              blog, or website. It is a growing
-              universe of long-form storytelling
-              projects dedicated to memory,
-              destiny, human experiences, and the
-              stories that continue long after the
-              final page is turned.
+              Vihaan Writes is a living archive of stories,
+              reflections, memories, and human experiences.
+              Each project explores the unseen threads between
+              destiny, identity, love, loss, and the moments
+              that quietly shape our lives.
             </motion.p>
 
             {/* Stats */}
-
             <motion.div
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                delay: 0.7,
-              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
               className="
-    grid
-    grid-cols-2
-    md:grid-cols-4
-    gap-6
-    max-w-5xl
-    mx-auto
-    mb-16
-  "
+        grid
+        grid-cols-2
+        md:grid-cols-4
+        gap-5
+        max-w-4xl
+        mx-auto
+        mb-20
+      "
             >
               {[
-                {
-                  number: "02",
-                  label: "Flagship Projects",
-                },
-                {
-                  number: "01",
-                  label: "Published Book",
-                },
-                {
-                  number: "∞",
-                  label: "Stories Ahead",
-                },
-                {
-                  number: "2026",
-                  label: "Current Vision",
-                },
+                { number: "02", label: "Flagship Projects" },
+                { number: "01", label: "Published Book" },
+                { number: "∞", label: "Stories Ahead" },
+                { number: "2026", label: "Current Vision" },
               ].map((item) => (
                 <div
                   key={item.label}
                   className="
-        rounded-3xl
-        border
-        border-white/10
-        bg-white/[0.03]
-        backdrop-blur-xl
-        p-6
-      "
+            rounded-3xl
+            border border-white/10
+            bg-white/[0.03]
+            backdrop-blur-xl
+            p-6
+            hover:border-amber-400/20
+            transition-all duration-500
+          "
                 >
-                  <div className="text-4xl font-black text-amber-300 mb-2">
+                  <div className="text-3xl md:text-4xl font-black text-amber-300 mb-2">
                     {item.number}
                   </div>
 
-                  <div className="text-zinc-500 text-sm">
+                  <div className="text-xs uppercase tracking-[0.2em] text-zinc-500">
                     {item.label}
                   </div>
                 </div>
@@ -285,91 +228,65 @@ export default function ProjectsPage() {
             </motion.div>
 
             {/* CTA */}
-
             <motion.div
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                delay: 0.9,
-              }}
-              className="
-    flex
-    flex-col
-    sm:flex-row
-    justify-center
-    gap-5
-  "
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 }}
+              className="flex flex-col sm:flex-row justify-center gap-5"
             >
               <Link
                 href="https://the-human-archive-beta.vercel.app/"
                 target="_blank"
                 className="
-      inline-flex
-      items-center
-      gap-3
-      px-8
-      py-4
-      rounded-2xl
-      bg-amber-400
-      text-black
-      font-semibold
-      hover:scale-105
-      transition-all
-    "
+          inline-flex items-center gap-3
+          px-8 py-4
+          rounded-2xl
+          bg-amber-400
+          text-black
+          font-medium
+          hover:scale-105
+          transition-all duration-300
+        "
               >
                 Explore Projects
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
 
               <Link
                 href="/contact"
                 className="
-      inline-flex
-      items-center
-      gap-3
-      px-8
-      py-4
-      rounded-2xl
-      border
-      border-white/10
-      bg-white/[0.03]
-      backdrop-blur-xl
-      hover:border-amber-400/20
-      transition-all
-    "
+          inline-flex items-center gap-3
+          px-8 py-4
+          rounded-2xl
+          border border-white/10
+          bg-white/[0.03]
+          backdrop-blur-xl
+          hover:border-amber-400/20
+          transition-all duration-300
+        "
               >
                 Connect With Vihaan
               </Link>
             </motion.div>
-
-            {/* Bottom Text */}
-
-            <motion.div
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              transition={{
-                delay: 1.2,
-              }}
-              className="mt-20"
-            >
-              <p className="text-zinc-600 tracking-[0.3em] uppercase text-sm">
-                The Human Archive • Before Her Name Existed
-              </p>
-            </motion.div>
-
           </motion.div>
-
         </section>
+
+        {/* Bottom Text */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            delay: 1.2,
+          }}
+          className="mt-20"
+        >
+
+        </motion.div>
 
         {/* FEATURED PROJECTS */}
         <section className="relative py-40 overflow-hidden">
@@ -383,27 +300,39 @@ export default function ProjectsPage() {
           <div className="relative z-10 max-w-7xl mx-auto px-6">
 
             {/* Header */}
-            <div className="text-center mb-24">
+            <div className="text-center mb-28 max-w-5xl mx-auto">
 
-              <span className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-white/10 bg-white/[0.03] mb-8">
-                <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                <span className="uppercase tracking-[0.4em] text-xs text-zinc-400">
+              <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-xl mb-10">
+                <div className="relative">
+                  <div className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                  <div className="absolute inset-0 w-2 h-2 rounded-full bg-amber-400 blur-md opacity-60" />
+                </div>
+
+                <span className="uppercase tracking-[0.45em] text-[10px] md:text-xs font-medium text-zinc-500">
                   Featured Projects
                 </span>
-              </span>
+              </div>
 
-              <h2 className="text-6xl md:text-8xl font-black leading-none mb-8">
-                Storytelling
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-400 to-amber-200">
+              <h2 className="font-black leading-[0.9] mb-8">
+                <span className="block text-4xl md:text-6xl lg:text-7xl text-white">
+                  Storytelling
+                </span>
+
+                <span className="block mt-2 text-5xl md:text-7xl lg:text-8xl text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-orange-400 to-amber-100">
                   Universes
                 </span>
               </h2>
 
-              <p className="max-w-3xl mx-auto text-zinc-400 text-xl leading-relaxed">
-                Every project is a living archive of human experiences,
-                memories, emotions, and untold narratives.
+              <div className="flex justify-center mb-8">
+                <div className="w-24 h-px bg-gradient-to-r from-transparent via-amber-400/70 to-transparent" />
+              </div>
+
+              <p className="max-w-2xl mx-auto text-sm md:text-base text-zinc-400 leading-8 tracking-wide">
+                Every project becomes a living archive of human experiences,
+                forgotten memories, emotions, dreams, and the untold stories
+                that quietly shape our lives across generations.
               </p>
+
             </div>
 
             {/* Projects */}
