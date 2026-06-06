@@ -3,18 +3,9 @@ import Link from "next/link";
 import {
   ArrowRight,
   BookOpen,
-  Feather,
   Heart,
   Sparkles,
-  Stars,
-  Quote,
-  MoonStar,
   Clock3,
-  PenSquare,
-  WandSparkles,
-  Orbit,
-  Flame,
-  Gem,
   ChevronRight,
   Crown,
   Sunset,
@@ -179,54 +170,6 @@ const stories: Story[] = [
   },
 ];
 
-const emotionalQuotes = [
-  "Some souls meet long before their eyes ever do.",
-  "Not every love story begins with a hello.",
-  "The deepest emotions are always written quietly.",
-  "Some people arrive like destiny remembering your name.",
-];
-
-const categories = [
-  {
-    title: "Soul Letters",
-    icon: Feather,
-    text: "Letters written from emotions the heart could never silence.",
-  },
-  {
-    title: "Destiny Stories",
-    icon: Orbit,
-    text: "Stories shaped by timing, fate, healing, and spiritual connection.",
-  },
-  {
-    title: "Emotional Reflections",
-    icon: Heart,
-    text: "Thoughts born from heartbreak, healing, silence, and longing.",
-  },
-  {
-    title: "Poetic Journeys",
-    icon: WandSparkles,
-    text: "Words that feel more like memories than sentences.",
-  },
-];
-
-const soulMoments = [
-  {
-    title: "Love",
-    icon: Heart,
-  },
-  {
-    title: "Healing",
-    icon: Flame,
-  },
-  {
-    title: "Destiny",
-    icon: Stars,
-  },
-  {
-    title: "Memories",
-    icon: Gem,
-  },
-];
 
 const features = [
   {
