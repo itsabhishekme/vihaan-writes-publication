@@ -322,9 +322,9 @@ export default function EchoesOfDestinyPage() {
           <HiOutlineGlobeAlt className="mx-auto text-7xl text-yellow-300 mb-10" />
 
           <blockquote className="text-5xl md:text-7xl font-black leading-tight">
-            "Some coincidences arrive
+            &ldquo;Some coincidences arrive
             <span className="block mt-3">
-              too perfectly to ignore."
+              too perfectly to ignore.&rdquo;
             </span>
           </blockquote>
 
