@@ -28,6 +28,10 @@ import {
   HiOutlineCloud,
   HiOutlineShieldCheck,
   HiOutlineFire,
+  HiOutlineDocumentText,
+  HiOutlineFilm,
+  HiOutlineUsers,
+  HiOutlineArchiveBox,
 } from "react-icons/hi2";
 
 import {
@@ -146,79 +150,79 @@ const socials: SocialItem[] = [
 const exploreItems: ExploreItem[] = [
   {
     icon: HiOutlineBookOpen,
-    title: "Books",
-    desc: "Timeless emotional storytelling collections",
-    href: "/book",
+    title: "The Human Archive",
+    desc: "Humanity's stories, memories, lessons, and moments preserved forever.",
+    href: "/the-human-archive",
   },
 
   {
-    icon: HiOutlineUserCircle,
-    title: "About",
-    desc: "Discover the soul behind Vihaan Writes",
-    href: "/about",
+    icon: HiOutlineSparkles,
+    title: "Before Her Name Existed",
+    desc: "A journey into destiny, love, timing, and the story before the character arrived.",
+    href: "/before-her-name-existed",
   },
 
   {
-    icon: HiOutlineNewspaper,
-    title: "Blog",
-    desc: "Thoughts, reflections & poetic emotions",
-    href: "/blog",
+    icon: HiOutlineEnvelope,
+    title: "Letters Never Sent",
+    desc: "Unspoken words, unfinished conversations, reflection, healing, and closure.",
+    href: "/letters-never-sent",
   },
 
   {
-    icon: HiOutlineChatBubbleLeftRight,
-    title: "Contact",
-    desc: "Meaningful conversations and connections",
-    href: "/contact",
+    icon: HiOutlineGlobeAlt,
+    title: "Echoes of Destiny",
+    desc: "Synchronicities, life patterns, divine timing, and the unseen threads of fate.",
+    href: "/echoes-of-destiny",
   },
 ];
 
 const features: FeatureItem[] = [
   {
-    icon: HiOutlinePaintBrush,
-    title: "Soulful Storytelling",
-    desc: "Emotion-driven writing crafted for readers who feel deeply and connect through meaningful words.",
+    icon: HiOutlineDocumentText,
+    title: "Human Stories",
+    desc: "Real experiences, memories, transformations, and untold journeys collected from everyday lives.",
   },
 
   {
-    icon: HiOutlineLightBulb,
-    title: "Timeless Reflections",
-    desc: "Inspirational thoughts, emotional insights, and healing reflections designed to touch the soul.",
+    icon: HiOutlineHeart,
+    title: "Reflection & Healing",
+    desc: "Letters, reflections, emotional growth, and stories that help readers reconnect with themselves.",
   },
 
   {
-    icon: HiOutlinePencilSquare,
-    title: "Poetry & Expressions",
-    desc: "Beautiful poetic writings and heartfelt expressions inspired by love, emotions, and human connection.",
+    icon: HiOutlineSparkles,
+    title: "Destiny & Synchronicity",
+    desc: "Exploring karmic timing, meaningful coincidences, spiritual experiences, and life patterns.",
   },
 
   {
-    icon: HiOutlineMusicalNote,
-    title: "Emotional Atmosphere",
-    desc: "A calm artistic environment filled with peaceful storytelling, emotions, and soulful creativity.",
+    icon: HiOutlineFilm,
+    title: "Documentary Storytelling",
+    desc: "Stories presented as living documentaries that preserve emotions, memories, and human journeys.",
   },
 ];
 
 const apps: AppItem[] = [
   {
-    icon: FaGooglePlay,
-    title: "Google Play",
-    desc: "Android reading experience available now.",
-    badge: "ANDROID",
+    icon: HiOutlineArchiveBox,
+    title: "Memory Archive",
+    desc: "A growing collection of preserved human stories and life experiences.",
+    badge: "ARCHIVE",
   },
 
   {
-    icon: FaApple,
-    title: "Apple Store",
-    desc: "iOS emotional storytelling app.",
-    badge: "IOS",
+    icon: HiOutlineUsers,
+    title: "Story Community",
+    desc: "Readers, writers, dreamers, and storytellers connected through meaningful narratives.",
+    badge: "COMMUNITY",
   },
 
   {
-    icon: FaWindows,
-    title: "Desktop App",
-    desc: "Immersive desktop reading experience.",
-    badge: "DESKTOP",
+    icon: HiOutlineNewspaper,
+    title: "Newsletter Universe",
+    desc: "Follow newsletters exploring humanity, destiny, healing, identity, and purpose.",
+    badge: "NEWSLETTERS",
   },
 ];
 
@@ -600,7 +604,7 @@ export default function Footer() {
         <div>
 
           <h4 className="mb-8 text-2xl font-black">
-            Available Apps
+            The Living Archive
           </h4>
 
           <div className="space-y-5">
@@ -631,14 +635,6 @@ export default function Footer() {
                   <p className="mt-3 text-sm leading-relaxed text-neutral-400">
                     {item.desc}
                   </p>
-
-                  <div className="mt-5 inline-flex items-center gap-2 text-sm text-purple-300">
-
-                    <HiOutlineShieldCheck className="text-lg" />
-
-                    Official Vihaan Writes Platform
-
-                  </div>
 
                 </div>
               );
