@@ -200,7 +200,7 @@ export default function ProjectsPage() {
             >
               {[
                 { number: "02", label: "Flagship Projects" },
-                { number: "01", label: "Published Book" },
+                { number: "02", label: "Published Book" },
                 { number: "∞", label: "Stories Ahead" },
                 { number: "2026", label: "Current Vision" },
               ].map((item) => (
