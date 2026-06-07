@@ -136,28 +136,28 @@ const exploreItems: ExploreItem[] = [
   {
     icon: HiOutlineBookOpen,
     title: "The Human Archive",
-    desc: "Humanity's stories, memories, lessons, and moments preserved forever.",
+    desc: "A living collection of humanity's stories, memories, reflections, lessons, turning points, and defining moments. Every story becomes a preserved piece of collective human history, documenting how ordinary lives create extraordinary meaning.",
     href: "/the-human-archive",
   },
 
   {
     icon: HiOutlineSparkles,
     title: "Before Her Name Existed",
-    desc: "A journey into destiny, love, timing, and the story before the character arrived.",
+    desc: "An exploration of destiny before arrival. A journey through intuition, timing, dreams, synchronicities, unanswered questions, and the invisible chapters that existed before a person became part of the story.",
     href: "/before-her-name-existed",
   },
 
   {
     icon: HiOutlineEnvelope,
     title: "Letters Never Sent",
-    desc: "Unspoken words, unfinished conversations, reflection, healing, and closure.",
+    desc: "A collection of unspoken emotions, unfinished conversations, untold truths, and words that remained trapped between memory and silence. Letters written for healing, reflection, forgiveness, closure, and understanding.",
     href: "/letters-never-sent",
   },
 
   {
     icon: HiOutlineGlobeAlt,
     title: "Echoes of Destiny",
-    desc: "Synchronicities, life patterns, divine timing, and the unseen threads of fate.",
+    desc: "Stories of synchronicity, divine timing, recurring patterns, meaningful coincidences, karmic encounters, and life's mysterious connections that quietly shape the path of every human journey.",
     href: "/echoes-of-destiny",
   },
 ];
@@ -166,25 +166,37 @@ const features: FeatureItem[] = [
   {
     icon: HiOutlineDocumentText,
     title: "Human Stories",
-    desc: "Real experiences, memories, transformations, and untold journeys collected from everyday lives.",
+    desc: "Authentic experiences from real lives. Stories of transformation, resilience, heartbreak, hope, identity, purpose, growth, and the countless moments that shape who we become.",
   },
 
   {
     icon: HiOutlineHeart,
     title: "Reflection & Healing",
-    desc: "Letters, reflections, emotional growth, and stories that help readers reconnect with themselves.",
+    desc: "Thoughtful writing designed to encourage self-discovery, emotional healing, inner reflection, personal growth, forgiveness, acceptance, and deeper understanding of life's experiences.",
   },
 
   {
     icon: HiOutlineSparkles,
     title: "Destiny & Synchronicity",
-    desc: "Exploring karmic timing, meaningful coincidences, spiritual experiences, and life patterns.",
+    desc: "Exploring the invisible threads that connect people, moments, opportunities, and life events. A space dedicated to meaningful coincidences, spiritual insights, and the mystery of timing.",
   },
 
   {
     icon: HiOutlineFilm,
     title: "Documentary Storytelling",
-    desc: "Stories presented as living documentaries that preserve emotions, memories, and human journeys.",
+    desc: "Stories presented as cinematic experiences. Every narrative is preserved like a documentary, capturing emotions, memories, context, and human truth across generations.",
+  },
+
+  {
+    icon: HiOutlineArchiveBox,
+    title: "Preserving Human Legacy",
+    desc: "Building a timeless archive where experiences, wisdom, memories, and lessons can live beyond a single lifetime, creating a digital record of humanity's collective journey.",
+  },
+
+  {
+    icon: HiOutlineUsers,
+    title: "Shared Human Connection",
+    desc: "Connecting readers through universal emotions and experiences. Every story reveals how individual lives are connected through common hopes, fears, dreams, and struggles.",
   },
 ];
 
@@ -192,22 +204,43 @@ const apps: AppItem[] = [
   {
     icon: HiOutlineArchiveBox,
     title: "Memory Archive",
-    desc: "A growing collection of preserved human stories and life experiences.",
+    desc: "An ever-expanding archive dedicated to preserving personal stories, memories, reflections, lessons, milestones, and defining moments from lives around the world.",
     badge: "ARCHIVE",
   },
 
   {
     icon: HiOutlineUsers,
     title: "Story Community",
-    desc: "Readers, writers, dreamers, and storytellers connected through meaningful narratives.",
+    desc: "A growing ecosystem of readers, writers, thinkers, dreamers, creators, and storytellers united by meaningful narratives and authentic human experiences.",
     badge: "COMMUNITY",
   },
 
   {
     icon: HiOutlineNewspaper,
     title: "Newsletter Universe",
-    desc: "Follow newsletters exploring humanity, destiny, healing, identity, and purpose.",
+    desc: "Thought-provoking newsletters exploring humanity, destiny, storytelling, emotional growth, identity, memory, purpose, relationships, and life's unanswered questions.",
     badge: "NEWSLETTERS",
+  },
+
+  {
+    icon: HiOutlineSparkles,
+    title: "Soul Narratives",
+    desc: "Curated collections focused on intuition, destiny, dreams, synchronicities, personal transformation, and the deeper stories hidden beneath everyday life.",
+    badge: "JOURNEYS",
+  },
+
+  {
+    icon: HiOutlineGlobeAlt,
+    title: "Global Voices",
+    desc: "Perspectives, stories, reflections, and experiences gathered from different cultures, generations, and walks of life, creating a richer understanding of humanity.",
+    badge: "VOICES",
+  },
+
+  {
+    icon: HiOutlineBookOpen,
+    title: "Living Library",
+    desc: "A growing library of essays, letters, reflections, archives, documentaries, and storytelling projects designed to be revisited across time.",
+    badge: "LIBRARY",
   },
 ];
 
