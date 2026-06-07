@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   HiOutlineSparkles,
   HiOutlineGlobeAlt,
@@ -14,99 +15,101 @@ import {
 export const metadata = {
   title: "Echoes of Destiny | Vihaan Writes",
   description:
-    "Exploring synchronicity, life patterns, intuition, destiny, spiritual experiences, dreams, and the invisible forces that quietly shape human journeys.",
+    "Exploring synchronicity, dreams, intuition, destiny, life patterns, and the invisible forces shaping human journeys.",
 };
+
+const reflections = [
+  {
+    title: "The Coincidence That Changed Everything",
+    image: "/echoes/coincidence.jpg",
+    category: "Synchronicity",
+  },
+  {
+    title: "Why Certain Dreams Refuse To Leave",
+    image: "/echoes/dreams.jpg",
+    category: "Dreams",
+  },
+  {
+    title: "The Universe Repeats The Message",
+    image: "/echoes/patterns.jpg",
+    category: "Patterns",
+  },
+  {
+    title: "Recognizing Invisible Threads",
+    image: "/echoes/destiny.jpg",
+    category: "Destiny",
+  },
+  {
+    title: "The Language Of Intuition",
+    image: "/echoes/intuition.jpg",
+    category: "Intuition",
+  },
+  {
+    title: "Life's Hidden Architecture",
+    image: "/echoes/reflection.jpg",
+    category: "Reflection",
+  },
+];
 
 const pillars = [
   {
     icon: HiOutlineSparkles,
     title: "Synchronicity",
     description:
-      "The meaningful coincidences that appear unexpectedly and challenge ordinary explanations.",
+      "Meaningful coincidences that appear unexpectedly and seem impossible to ignore.",
   },
   {
     icon: HiOutlineMoon,
-    title: "Dreams & Symbols",
+    title: "Dreams",
     description:
-      "Messages, symbols, recurring dreams, and experiences that seem to reveal deeper layers of reality.",
+      "Recurring symbols, emotions, and stories emerging through the subconscious.",
   },
   {
     icon: HiOutlineEye,
     title: "Intuition",
     description:
-      "The quiet inner knowing that often arrives before evidence, logic, or certainty.",
+      "The silent inner knowing that often arrives before logic catches up.",
   },
   {
     icon: HiOutlineClock,
     title: "Divine Timing",
     description:
-      "Life unfolds according to rhythms and timing that often become clear only in hindsight.",
-  },
-];
-
-const echoes = [
-  {
-    title: "The Coincidence That Changed Everything",
-    category: "Synchronicity",
-  },
-  {
-    title: "Why Certain Dreams Refuse To Leave",
-    category: "Dreams",
-  },
-  {
-    title: "When The Universe Repeats The Same Message",
-    category: "Patterns",
-  },
-  {
-    title: "Recognizing The Invisible Threads",
-    category: "Destiny",
-  },
-  {
-    title: "The Power Of Intuitive Knowing",
-    category: "Intuition",
-  },
-  {
-    title: "Life's Hidden Architecture",
-    category: "Reflection",
-  },
-];
-
-const timeline = [
-  {
-    title: "The First Sign",
-    text: "A moment so ordinary it could have been ignored, yet unforgettable enough to stay.",
-  },
-  {
-    title: "Patterns Emerge",
-    text: "Repeated experiences begin forming a narrative beyond coincidence.",
-  },
-  {
-    title: "Questions Deepen",
-    text: "The search moves beyond what happened toward why it happened.",
-  },
-  {
-    title: "The Echo Continues",
-    text: "Every chapter reveals another layer of meaning waiting to be understood.",
+      "Events unfolding according to rhythms we rarely understand in the moment.",
   },
 ];
 
 export default function EchoesOfDestinyPage() {
   return (
-    <main className="relative overflow-hidden bg-black text-white">
-      {/* BACKGROUND */}
+    <main className="relative bg-black text-white overflow-hidden">
+
+      {/* BACKGROUND GLOW */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-1/2 h-[900px] w-[900px] -translate-x-1/2 rounded-full bg-yellow-500/10 blur-[180px]" />
-        <div className="absolute bottom-0 left-0 h-[600px] w-[600px] rounded-full bg-indigo-600/10 blur-[180px]" />
-        <div className="absolute top-0 right-0 h-[500px] w-[500px] rounded-full bg-purple-500/10 blur-[160px]" />
+        <div className="absolute top-0 left-1/2 h-[1000px] w-[1000px] -translate-x-1/2 rounded-full bg-yellow-500/10 blur-[200px]" />
+        <div className="absolute bottom-0 left-0 h-[700px] w-[700px] rounded-full bg-purple-600/10 blur-[180px]" />
+        <div className="absolute top-20 right-0 h-[600px] w-[600px] rounded-full bg-blue-600/10 blur-[180px]" />
       </div>
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto px-6 w-full">
+
+        <div className="absolute inset-0">
+          <Image
+            src="/echoes/hero.jpg"
+            alt="Echoes of Destiny"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-5xl">
+
             <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-yellow-500/20 bg-yellow-500/5 mb-8">
               <HiOutlineSparkles className="text-yellow-400" />
-              <span className="uppercase tracking-[0.35em] text-sm text-zinc-400">
+              <span className="uppercase tracking-[0.35em] text-xs text-zinc-400">
                 Vihaan Writes Project
               </span>
             </div>
@@ -118,13 +121,13 @@ export default function EchoesOfDestinyPage() {
               </span>
             </h1>
 
-            <p className="mt-10 max-w-3xl text-xl text-zinc-400 leading-relaxed">
-              Exploring synchronicity, intuition, dreams, timing,
-              spiritual experiences, and the invisible patterns that
-              quietly guide human lives through unexpected paths.
+            <p className="mt-10 text-xl text-zinc-300 max-w-3xl leading-relaxed">
+              Exploring synchronicity, intuition, dreams, destiny,
+              spiritual experiences, and the invisible patterns
+              that quietly shape human lives.
             </p>
 
-            <div className="flex flex-wrap gap-5 mt-12">
+            <div className="mt-12 flex flex-wrap gap-5">
               <Link
                 href="/blog"
                 className="px-8 py-4 rounded-2xl bg-white text-black font-semibold"
@@ -144,92 +147,97 @@ export default function EchoesOfDestinyPage() {
       </section>
 
       {/* INTRO */}
-      <section className="relative py-32">
+      <section className="py-32 relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+
             <div>
               <span className="uppercase tracking-[0.4em] text-zinc-500 text-sm">
-                About The Project
+                About The Journey
               </span>
 
-              <h2 className="text-5xl font-bold mt-6 mb-8">
-                Life Often Speaks In Patterns
+              <h2 className="text-5xl font-black mt-6 mb-8">
+                Life Speaks Through Patterns
               </h2>
 
               <p className="text-zinc-400 text-lg leading-relaxed mb-6">
-                Some experiences arrive quietly. A repeated number.
-                A recurring dream. A stranger who changes everything.
-                A moment that feels strangely familiar.
+                Some moments feel ordinary at first. Yet years later
+                they reveal themselves as turning points.
               </p>
 
               <p className="text-zinc-400 text-lg leading-relaxed">
-                Echoes of Destiny explores these moments—not as answers,
-                but as invitations to reflect on the possibility that
-                life may be communicating through patterns we rarely
-                notice until much later.
+                A recurring dream. A repeated number. A chance meeting.
+                A strange intuition that refuses to leave. Echoes of
+                Destiny explores these experiences as reflections rather
+                than conclusions.
               </p>
             </div>
 
-            <div className="rounded-[40px] border border-white/10 bg-white/[0.03] p-10">
-              <div className="grid grid-cols-2 gap-8">
-                <div>
-                  <div className="text-5xl font-black text-yellow-300">
-                    ∞
-                  </div>
-                  <p className="mt-3 text-zinc-500">
-                    Possibilities
-                  </p>
-                </div>
-
-                <div>
-                  <div className="text-5xl font-black text-purple-300">
-                    100+
-                  </div>
-                  <p className="mt-3 text-zinc-500">
-                    Reflections
-                  </p>
-                </div>
-
-                <div>
-                  <div className="text-5xl font-black text-blue-300">
-                    1
-                  </div>
-                  <p className="mt-3 text-zinc-500">
-                    Journey
-                  </p>
-                </div>
-
-                <div>
-                  <div className="text-5xl font-black text-white">
-                    Many
-                  </div>
-                  <p className="mt-3 text-zinc-500">
-                    Questions
-                  </p>
-                </div>
-              </div>
+            <div className="relative h-[500px] rounded-[40px] overflow-hidden border border-white/10">
+              <Image
+                src="/echoes/feature.jpg"
+                alt="Journey"
+                fill
+                className="object-cover"
+              />
             </div>
+
           </div>
+
+        </div>
+      </section>
+
+      {/* STATS */}
+      <section className="py-24 border-y border-white/10">
+        <div className="max-w-7xl mx-auto px-6">
+
+          <div className="grid md:grid-cols-4 gap-10 text-center">
+
+            <div>
+              <h3 className="text-6xl font-black text-yellow-300">100+</h3>
+              <p className="text-zinc-500 mt-3">Reflections</p>
+            </div>
+
+            <div>
+              <h3 className="text-6xl font-black text-purple-300">50+</h3>
+              <p className="text-zinc-500 mt-3">Stories</p>
+            </div>
+
+            <div>
+              <h3 className="text-6xl font-black text-blue-300">∞</h3>
+              <p className="text-zinc-500 mt-3">Possibilities</p>
+            </div>
+
+            <div>
+              <h3 className="text-6xl font-black text-white">1</h3>
+              <p className="text-zinc-500 mt-3">Journey</p>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
       {/* PILLARS */}
       <section className="py-32">
         <div className="max-w-7xl mx-auto px-6">
+
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold">
+            <h2 className="text-5xl font-black">
               Exploring The Invisible
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+
             {pillars.map((item, index) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={index}
-                  className="group rounded-3xl border border-white/10 bg-white/[0.03] p-8 hover:bg-white/[0.06] transition-all"
+                  className="rounded-3xl border border-white/10 bg-white/[0.03] p-8"
                 >
                   <Icon className="text-5xl text-yellow-300 mb-6" />
 
@@ -243,65 +251,42 @@ export default function EchoesOfDestinyPage() {
                 </div>
               );
             })}
+
           </div>
         </div>
       </section>
 
-      {/* DESTINY TIMELINE */}
-      <section className="py-32 border-y border-white/10">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-24">
-            <h2 className="text-5xl font-bold">
-              The Journey Of An Echo
-            </h2>
-          </div>
-
-          <div className="space-y-8">
-            {timeline.map((item, index) => (
-              <div
-                key={index}
-                className="rounded-3xl border border-white/10 bg-white/[0.03] p-10"
-              >
-                <h3 className="text-3xl font-bold mb-4">
-                  {item.title}
-                </h3>
-
-                <p className="text-zinc-400 text-lg leading-relaxed">
-                  {item.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* STORY COLLECTION */}
+      {/* REFLECTIONS */}
       <section className="py-32">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16">
-            <span className="uppercase tracking-[0.4em] text-zinc-500">
-              Collection
-            </span>
 
-            <h2 className="text-5xl font-bold mt-4">
-              Echoes & Reflections
-            </h2>
-          </div>
+          <h2 className="text-5xl font-black mb-16">
+            Echoes & Reflections
+          </h2>
 
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {echoes.map((story, index) => (
+
+            {reflections.map((story, index) => (
               <div
                 key={index}
-                className="group rounded-3xl border border-white/10 bg-white/[0.03] overflow-hidden"
+                className="group rounded-3xl overflow-hidden border border-white/10 bg-white/[0.03]"
               >
-                <div className="h-52 bg-gradient-to-br from-yellow-900/20 via-black to-purple-900/30" />
+
+                <div className="relative h-72 overflow-hidden">
+                  <Image
+                    src={story.image}
+                    alt={story.title}
+                    fill
+                    className="object-cover transition duration-700 group-hover:scale-110"
+                  />
+                </div>
 
                 <div className="p-8">
                   <span className="uppercase text-xs tracking-[0.3em] text-zinc-500">
                     {story.category}
                   </span>
 
-                  <h3 className="text-2xl font-semibold mt-4 mb-6">
+                  <h3 className="text-2xl font-bold mt-4 mb-5">
                     {story.title}
                   </h3>
 
@@ -310,34 +295,40 @@ export default function EchoesOfDestinyPage() {
                     <HiOutlineArrowRight />
                   </button>
                 </div>
+
               </div>
             ))}
+
           </div>
         </div>
       </section>
 
-      {/* COSMIC QUOTE */}
+      {/* QUOTE */}
       <section className="py-40">
         <div className="max-w-5xl mx-auto px-6 text-center">
+
           <HiOutlineGlobeAlt className="mx-auto text-7xl text-yellow-300 mb-10" />
 
           <blockquote className="text-5xl md:text-7xl font-black leading-tight">
-            &ldquo;Some coincidences arrive
-            <span className="block mt-3">
-              too perfectly to ignore.&rdquo;
+            “Some coincidences arrive
+            <span className="block mt-4">
+              too perfectly to ignore.”
             </span>
           </blockquote>
 
-          <p className="mt-10 uppercase tracking-[0.4em] text-zinc-500">
+          <p className="uppercase tracking-[0.4em] text-zinc-500 mt-10">
             Echoes Of Destiny
           </p>
+
         </div>
       </section>
 
       {/* SYMBOLS */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
+
           <div className="grid md:grid-cols-4 gap-8">
+
             <div className="rounded-3xl border border-white/10 p-10 text-center">
               <HiOutlineMoon className="mx-auto text-5xl text-purple-300" />
               <h3 className="mt-5 text-xl font-semibold">Dreams</h3>
@@ -357,6 +348,7 @@ export default function EchoesOfDestinyPage() {
               <HiOutlineEye className="mx-auto text-5xl text-green-300" />
               <h3 className="mt-5 text-xl font-semibold">Intuition</h3>
             </div>
+
           </div>
         </div>
       </section>
@@ -364,20 +356,22 @@ export default function EchoesOfDestinyPage() {
       {/* CTA */}
       <section className="py-32">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="rounded-[40px] border border-white/10 bg-gradient-to-br from-white/[0.05] to-white/[0.02] p-16 text-center">
+
+          <div className="rounded-[40px] border border-white/10 bg-white/[0.03] p-16 text-center">
+
             <HiOutlineBookOpen className="mx-auto text-6xl text-yellow-300 mb-8" />
 
-            <h2 className="text-5xl font-bold mb-6">
+            <h2 className="text-5xl font-black mb-6">
               Follow The Echoes
             </h2>
 
-            <p className="max-w-3xl mx-auto text-xl text-zinc-400 leading-relaxed">
-              Explore reflections, stories, synchronicities,
-              dreams, intuition, and the invisible patterns that
-              shape our lives.
+            <p className="max-w-3xl mx-auto text-xl text-zinc-400">
+              Explore reflections, stories, synchronicities, dreams,
+              intuition and the invisible patterns shaping human life.
             </p>
 
             <div className="flex justify-center gap-5 mt-12 flex-wrap">
+
               <Link
                 href="/newsletters"
                 className="px-8 py-4 rounded-2xl bg-white text-black font-semibold"
@@ -391,10 +385,14 @@ export default function EchoesOfDestinyPage() {
               >
                 Explore Articles
               </Link>
+
             </div>
+
           </div>
+
         </div>
       </section>
+
     </main>
   );
 }
