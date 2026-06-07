@@ -128,7 +128,7 @@ export default function HumanArchivePage() {
             <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 mb-8">
               <HiOutlineArchiveBox className="text-cyan-300" />
               <span className="uppercase tracking-[0.35em] text-sm text-zinc-400">
-                Humanity's Stories
+                Humanity&apos;s Stories
               </span>
             </div>
 
@@ -189,7 +189,7 @@ export default function HumanArchivePage() {
                 </p>
 
                 <h2 className="text-5xl md:text-7xl font-black">
-                  Humanity's Stories Deserve To Survive Time
+                  Humanity&apos;s Stories Deserve To Survive Time
                 </h2>
               </div>
 
