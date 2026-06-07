@@ -3,7 +3,6 @@ import {
   HiOutlineEnvelope,
   HiOutlineArrowRight,
   HiOutlineSparkles,
-  HiOutlineBookOpen,
   HiOutlineHeart,
   HiOutlineGlobeAlt,
   HiOutlineUserCircle,
