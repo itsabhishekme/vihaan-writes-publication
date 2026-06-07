@@ -101,7 +101,7 @@ export default function SubmitStoryPage() {
                 <div>
                   <h2 className="text-3xl font-bold">Submit Your Story</h2>
                   <p className="text-zinc-400">
-                    Your words may inspire someone you've never met.
+                    Your words may inspire someone you&apos;ve never met.
                   </p>
                 </div>
               </div>
@@ -399,7 +399,7 @@ export default function SubmitStoryPage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-xl text-zinc-400">
-            Somewhere in the world, someone needs to hear what you've lived.
+            Somewhere in the world, someone needs to hear what you&apos;ve lived.
           </p>
 
           <button className="mt-10 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 px-10 py-5 text-lg font-semibold">
@@ -413,7 +413,7 @@ export default function SubmitStoryPage() {
         <div className="flex items-center justify-center gap-3">
           <Clock className="h-5 w-5 text-purple-400" />
           <span className="text-zinc-400">
-            The Human Archive • Preserving Humanity's Stories
+          The Human Archive • Preserving Humanity&apos;s Stories
           </span>
         </div>
       </footer>
