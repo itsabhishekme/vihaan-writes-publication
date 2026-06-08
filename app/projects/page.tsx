@@ -25,7 +25,7 @@ const projects = [
       "Preserving the stories people never thought anyone would read.",
     description:
       "A living archive dedicated to memories, regrets, transformations, lessons, turning points, forgotten letters, unfinished conversations, and human experiences from around the world.",
-    url: "https://the-human-archive-beta.vercel.app/",
+    url: "https://thehumanarchive.vercel.app/",
     image: "/images/the-human-archive-banner.jpg",
     year: "2026",
     stats: [
