@@ -421,6 +421,310 @@ export default function ReadNowPage() {
           </div>
         </div>
       </section>
+
+
+      {/* =========================
+            STORY CATEGORIES
+        ========================= */}
+
+      <section className="relative overflow-hidden py-32">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/[0.02] to-transparent" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="text-center">
+            <span className="text-sm uppercase tracking-[0.4em] text-amber-300">
+              Explore By Emotion
+            </span>
+
+            <h2 className="mt-6 text-5xl font-bold md:text-7xl">
+              Stories For Every
+              <span className="block text-gray-500">
+                Chapter Of Your Soul
+              </span>
+            </h2>
+          </div>
+
+          <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+
+            {[
+              {
+                title: "Soul Letters",
+                count: "12 Stories",
+                icon: Heart,
+                text: "Letters written for people destiny had not yet introduced.",
+              },
+              {
+                title: "Healing Journeys",
+                count: "10 Stories",
+                icon: Sparkles,
+                text: "Stories about recovery, transformation and emotional rebirth.",
+              },
+              {
+                title: "Destiny Reflections",
+                count: "8 Stories",
+                icon: Crown,
+                text: "Moments when fate quietly changed everything.",
+              },
+              {
+                title: "Unspoken Memories",
+                count: "15 Stories",
+                icon: Library,
+                text: "Forgotten moments that still live inside the heart.",
+              },
+            ].map((item, i) => {
+              const Icon = item.icon;
+
+              return (
+                <div
+                  key={i}
+                  className="group rounded-[40px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-amber-400/30"
+                >
+                  <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-white/5">
+                    <Icon className="h-7 w-7 text-amber-300" />
+                  </div>
+
+                  <h3 className="mt-8 text-2xl font-semibold">
+                    {item.title}
+                  </h3>
+
+                  <div className="mt-3 text-sm uppercase tracking-[0.25em] text-amber-300">
+                    {item.count}
+                  </div>
+
+                  <p className="mt-5 leading-8 text-gray-400">
+                    {item.text}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================
+      QUOTE SECTION
+        ========================= */}
+
+      <section className="relative overflow-hidden border-y border-white/10 py-40">
+
+        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-500/10 blur-[180px]" />
+
+        <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+          <div className="text-8xl text-amber-300 opacity-30">
+            "
+          </div>
+
+          <h2 className="mt-6 text-4xl font-bold leading-relaxed md:text-6xl">
+            Some stories are not read.
+            <span className="block text-gray-500">
+              They are remembered.
+            </span>
+          </h2>
+
+          <p className="mx-auto mt-10 max-w-3xl text-xl leading-10 text-gray-400">
+            Every page carries echoes of forgotten emotions, unfinished
+            conversations, healing memories, silent prayers, and the
+            moments that shaped who we became.
+          </p>
+
+          <div className="mt-10 text-sm uppercase tracking-[0.35em] text-amber-300">
+            — Vihaan
+          </div>
+        </div>
+      </section>
+
+      {/* =========================
+      TIMELINE SECTION
+       ========================= */}
+
+      <section className="relative py-32">
+
+        <div className="mx-auto max-w-6xl px-6 lg:px-10">
+
+          <div className="text-center">
+            <span className="text-sm uppercase tracking-[0.4em] text-amber-300">
+              Emotional Journey
+            </span>
+
+            <h2 className="mt-6 text-5xl font-bold md:text-7xl">
+              How Every Story
+              <span className="block text-gray-500">
+                Comes To Life
+              </span>
+            </h2>
+          </div>
+
+          <div className="relative mt-24">
+
+            <div className="absolute left-1/2 top-0 hidden h-full w-px bg-white/10 lg:block" />
+
+            {[
+              {
+                step: "01",
+                title: "Emotion",
+                text: "Every story begins with an emotion deeply felt.",
+              },
+              {
+                step: "02",
+                title: "Reflection",
+                text: "The feeling transforms into thoughts and memories.",
+              },
+              {
+                step: "03",
+                title: "Writing",
+                text: "Words are chosen carefully to preserve the emotion.",
+              },
+              {
+                step: "04",
+                title: "Connection",
+                text: "The story finds someone who needed it.",
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className={`relative mb-20 flex ${i % 2 === 0
+                  ? "justify-start"
+                  : "justify-end"
+                  }`}
+              >
+                <div className="w-full rounded-[40px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl lg:w-[45%]">
+                  <div className="text-sm tracking-[0.3em] text-amber-300">
+                    {item.step}
+                  </div>
+
+                  <h3 className="mt-5 text-3xl font-semibold">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-5 leading-8 text-gray-400">
+                    {item.text}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================
+      READER EXPERIENCE
+       ========================= */}
+
+      <section className="relative overflow-hidden bg-white/[0.02] py-32">
+
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+
+          <div className="grid items-center gap-20 lg:grid-cols-2">
+
+            <div>
+              <span className="text-sm uppercase tracking-[0.4em] text-amber-300">
+                Reader Experience
+              </span>
+
+              <h2 className="mt-6 text-5xl font-bold leading-tight md:text-7xl">
+                More Than
+                <span className="block text-gray-500">
+                  Reading Stories
+                </span>
+              </h2>
+
+              <p className="mt-8 text-lg leading-9 text-gray-400">
+                Vihaan Writes is a collection of reflections, dreams, unanswered questions,
+                quiet transformations, and meaningful moments from Vihaan's journey—
+                where personal experiences become timeless stories that invite readers
+                to discover pieces of their own lives within the pages.
+              </p>
+
+              <div className="mt-12 space-y-8">
+
+                {[
+                  "Spiritual journeys and inner awakenings",
+                  "Dreams, signs, and unseen connections",
+                  "Echoes of memories that never fade",
+                  "Destiny woven through every story",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-4"
+                  >
+                    <div className="h-3 w-3 rounded-full bg-amber-300" />
+
+                    <span className="text-lg text-gray-300">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative">
+
+              <div className="absolute inset-0 rounded-[50px] bg-gradient-to-br from-amber-500/20 to-orange-500/5 blur-3xl" />
+
+              <div className="relative overflow-hidden rounded-[50px] border border-white/10">
+                <Image
+                  src="/read-now/reader-experience.jpg"
+                  alt="Reader Experience"
+                  width={1200}
+                  height={1400}
+                  className="h-[700px] w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================
+      FINAL CTA
+          ========================= */}
+
+      <section className="relative overflow-hidden py-40">
+
+        <div className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-500/10 blur-[220px]" />
+
+        <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+
+          <span className="text-sm uppercase tracking-[0.4em] text-amber-300">
+            Begin Reading
+          </span>
+
+          <h2 className="mt-8 text-5xl font-bold leading-tight md:text-8xl">
+            Somewhere Inside
+            <span className="block bg-gradient-to-r from-amber-200 via-yellow-300 to-orange-400 bg-clip-text text-transparent">
+              These Stories
+            </span>
+            <span className="block">
+              Is A Piece Of You
+            </span>
+          </h2>
+
+          <p className="mx-auto mt-10 max-w-3xl text-xl leading-10 text-gray-400">
+            Discover stories about destiny, healing, love, silence,
+            transformation, memories, and the emotions we carry long
+            after life moves forward.
+          </p>
+
+          <div className="mt-16 flex flex-wrap justify-center gap-6">
+
+            <Link
+              href="/stories"
+              className="group inline-flex items-center gap-3 rounded-full bg-white px-10 py-5 font-semibold text-black transition hover:scale-105"
+            >
+              Start Reading
+
+              <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />
+            </Link>
+
+            <Link
+              href="/books"
+              className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-10 py-5 font-semibold backdrop-blur-xl hover:bg-white/10"
+            >
+              Explore Books
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
