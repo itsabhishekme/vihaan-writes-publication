@@ -10,6 +10,7 @@ import {
   HiOutlineEye,
   HiOutlineGlobeAlt,
   HiOutlineStar,
+  HiOutlineArrowTopRightOnSquare,
 } from "react-icons/hi2";
 
 export const metadata = {
@@ -156,270 +157,271 @@ export default function BeforeHerNameExistedPage() {
               they officially meet.
             </p>
 
-            <div className="flex flex-wrap gap-5 mt-12">
+            <div className="flex flex-wrap items-center gap-5 mt-12">
               <Link
-                href="/blog"
-                className="group px-8 py-4 rounded-2xl bg-white text-black font-semibold flex items-center gap-3"
+                href="https://before-her-name-existed.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-white text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
               >
-                Explore Stories
-                <HiOutlineArrowRight className="group-hover:translate-x-1 transition" />
+                Begin the Journey
+                <HiOutlineArrowTopRightOnSquare className="text-lg transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>
 
               <Link
                 href="/newsletters"
-                className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm text-white font-medium hover:bg-white/10 hover:border-white/20 transition-all duration-300"
               >
                 Join Newsletter
               </Link>
             </div>
-
           </div>
         </div>
       </section>
 
       {/* FEATURE IMAGE */}
-      <section className="py-32 relative">
-        <div className="max-w-7xl mx-auto px-6">
+          <section className="py-32 relative">
+            <div className="max-w-7xl mx-auto px-6">
 
-          <div className="relative overflow-hidden rounded-[40px] border border-white/10">
-            <div className="relative h-[700px]">
+              <div className="relative overflow-hidden rounded-[40px] border border-white/10">
+                <div className="relative h-[700px]">
 
-              <Image
-                src="/project/Before Her Name Existed.png"
-                alt=""
-                fill
-                className="object-cover"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-
-              <div className="absolute bottom-12 left-12 max-w-3xl">
-                <p className="uppercase tracking-[0.4em] text-zinc-300 mb-4">
-                  Featured Story
-                </p>
-
-                <h2 className="text-5xl md:text-7xl font-black">
-                  A Story That Began Before The Introduction
-                </h2>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* STATS */}
-      <section className="py-32 border-y border-white/10">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="grid md:grid-cols-4 gap-8">
-
-            <div className="rounded-3xl border border-white/10 p-10">
-              <HiOutlineBookOpen className="text-4xl mb-4 text-purple-300" />
-              <div className="text-6xl font-black">100+</div>
-              <p className="text-zinc-500 mt-3">Reflections</p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 p-10">
-              <HiOutlineEye className="text-4xl mb-4 text-purple-300" />
-              <div className="text-6xl font-black">∞</div>
-              <p className="text-zinc-500 mt-3">Questions</p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 p-10">
-              <HiOutlineHeart className="text-4xl mb-4 text-purple-300" />
-              <div className="text-6xl font-black">1</div>
-              <p className="text-zinc-500 mt-3">Soul Story</p>
-            </div>
-
-            <div className="rounded-3xl border border-white/10 p-10">
-              <HiOutlineGlobeAlt className="text-4xl mb-4 text-purple-300" />
-              <div className="text-6xl font-black">Life</div>
-              <p className="text-zinc-500 mt-3">Journey</p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* THEMES */}
-      <section className="py-32">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="text-center mb-24">
-            <h2 className="text-5xl md:text-6xl font-black">
-              Exploring The Unseen Narrative
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
-            {pillars.map((item, i) => {
-              const Icon = item.icon;
-
-              return (
-                <div
-                  key={i}
-                  className="rounded-3xl border border-white/10 bg-white/[0.03] p-8"
-                >
-                  <Icon className="text-5xl text-purple-300 mb-6" />
-                  <h3 className="text-2xl font-bold mb-4">
-                    {item.title}
-                  </h3>
-                  <p className="text-zinc-400 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* TIMELINE */}
-      <section className="py-32 border-y border-white/10">
-        <div className="max-w-6xl mx-auto px-6">
-
-          <div className="text-center mb-24">
-            <h2 className="text-6xl font-black">
-              Journey Through Time
-            </h2>
-          </div>
-
-          <div className="space-y-8">
-            {timeline.map((item, i) => (
-              <div
-                key={i}
-                className="rounded-3xl border border-white/10 p-10 bg-white/[0.03]"
-              >
-                <div className="text-purple-300 text-2xl font-bold mb-4">
-                  {item.year}
-                </div>
-
-                <h3 className="text-3xl font-bold mb-4">
-                  {item.title}
-                </h3>
-
-                <p className="text-zinc-400 text-lg">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* ARTICLES */}
-      <section className="py-32">
-        <div className="max-w-7xl mx-auto px-6">
-
-          <h2 className="text-5xl font-black mb-16">
-            Featured Reflections
-          </h2>
-
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {articles.map((article, i) => (
-              <div
-                key={i}
-                className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]"
-              >
-                <div className="relative h-64">
                   <Image
-                    src={article.image}
-                    alt={article.title}
+                    src="/project/Before Her Name Existed.png"
+                    alt=""
                     fill
                     className="object-cover"
                   />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+
+                  <div className="absolute bottom-12 left-12 max-w-3xl">
+                    <p className="uppercase tracking-[0.4em] text-zinc-300 mb-4">
+                      Featured Story
+                    </p>
+
+                    <h2 className="text-5xl md:text-7xl font-black">
+                      A Story That Began Before The Introduction
+                    </h2>
+                  </div>
+
                 </div>
-
-                <div className="p-8">
-                  <span className="uppercase tracking-[0.3em] text-xs text-zinc-500">
-                    {article.category}
-                  </span>
-
-                  <h3 className="text-2xl font-bold mt-4 mb-4">
-                    {article.title}
-                  </h3>
-
-                  <button className="flex items-center gap-2 text-purple-300">
-                    Read Story
-                    <HiOutlineArrowRight />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-      {/* QUOTE BANNER */}
-      <section className="py-40">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-
-          <HiOutlineStar className="mx-auto text-6xl text-purple-300 mb-10" />
-
-          <blockquote className="text-5xl md:text-7xl font-black leading-tight">
-            “I loved the story before I knew the character.”
-          </blockquote>
-
-          <p className="mt-8 uppercase tracking-[0.4em] text-zinc-500">
-            — Vihaan
-          </p>
-
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="pb-32">
-        <div className="max-w-6xl mx-auto px-6">
-
-          <div className="relative overflow-hidden rounded-[40px] border border-white/10">
-
-            <Image
-              src="/project/Before Her Name Existed.png"
-              alt=""
-              fill
-              className="object-cover opacity-20"
-            />
-
-            <div className="relative z-10 p-20 text-center">
-
-              <h2 className="text-6xl font-black mb-8">
-                Continue The Journey
-              </h2>
-
-              <p className="max-w-3xl mx-auto text-xl text-zinc-300">
-                Follow the reflections, dreams, discoveries,
-                and emotional chapters that continue to shape
-                this evolving narrative.
-              </p>
-
-              <div className="flex justify-center gap-5 mt-12 flex-wrap">
-                <Link
-                  href="/newsletters"
-                  className="px-8 py-4 rounded-2xl bg-white text-black font-semibold"
-                >
-                  Subscribe
-                </Link>
-
-                <Link
-                  href="/blog"
-                  className="px-8 py-4 rounded-2xl border border-white/10"
-                >
-                  Explore Articles
-                </Link>
               </div>
 
             </div>
+          </section>
 
-          </div>
+          {/* STATS */}
+          <section className="py-32 border-y border-white/10">
+            <div className="max-w-7xl mx-auto px-6">
 
-        </div>
-      </section>
+              <div className="grid md:grid-cols-4 gap-8">
 
-    </main>
-  );
+                <div className="rounded-3xl border border-white/10 p-10">
+                  <HiOutlineBookOpen className="text-4xl mb-4 text-purple-300" />
+                  <div className="text-6xl font-black">100+</div>
+                  <p className="text-zinc-500 mt-3">Reflections</p>
+                </div>
+
+                <div className="rounded-3xl border border-white/10 p-10">
+                  <HiOutlineEye className="text-4xl mb-4 text-purple-300" />
+                  <div className="text-6xl font-black">∞</div>
+                  <p className="text-zinc-500 mt-3">Questions</p>
+                </div>
+
+                <div className="rounded-3xl border border-white/10 p-10">
+                  <HiOutlineHeart className="text-4xl mb-4 text-purple-300" />
+                  <div className="text-6xl font-black">1</div>
+                  <p className="text-zinc-500 mt-3">Soul Story</p>
+                </div>
+
+                <div className="rounded-3xl border border-white/10 p-10">
+                  <HiOutlineGlobeAlt className="text-4xl mb-4 text-purple-300" />
+                  <div className="text-6xl font-black">Life</div>
+                  <p className="text-zinc-500 mt-3">Journey</p>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          {/* THEMES */}
+          <section className="py-32">
+            <div className="max-w-7xl mx-auto px-6">
+
+              <div className="text-center mb-24">
+                <h2 className="text-5xl md:text-6xl font-black">
+                  Exploring The Unseen Narrative
+                </h2>
+              </div>
+
+              <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+                {pillars.map((item, i) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <div
+                      key={i}
+                      className="rounded-3xl border border-white/10 bg-white/[0.03] p-8"
+                    >
+                      <Icon className="text-5xl text-purple-300 mb-6" />
+                      <h3 className="text-2xl font-bold mb-4">
+                        {item.title}
+                      </h3>
+                      <p className="text-zinc-400 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+
+            </div>
+          </section>
+
+          {/* TIMELINE */}
+          <section className="py-32 border-y border-white/10">
+            <div className="max-w-6xl mx-auto px-6">
+
+              <div className="text-center mb-24">
+                <h2 className="text-6xl font-black">
+                  Journey Through Time
+                </h2>
+              </div>
+
+              <div className="space-y-8">
+                {timeline.map((item, i) => (
+                  <div
+                    key={i}
+                    className="rounded-3xl border border-white/10 p-10 bg-white/[0.03]"
+                  >
+                    <div className="text-purple-300 text-2xl font-bold mb-4">
+                      {item.year}
+                    </div>
+
+                    <h3 className="text-3xl font-bold mb-4">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-zinc-400 text-lg">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          </section>
+
+          {/* ARTICLES */}
+          <section className="py-32">
+            <div className="max-w-7xl mx-auto px-6">
+
+              <h2 className="text-5xl font-black mb-16">
+                Featured Reflections
+              </h2>
+
+              <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+                {articles.map((article, i) => (
+                  <div
+                    key={i}
+                    className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]"
+                  >
+                    <div className="relative h-64">
+                      <Image
+                        src={article.image}
+                        alt={article.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    <div className="p-8">
+                      <span className="uppercase tracking-[0.3em] text-xs text-zinc-500">
+                        {article.category}
+                      </span>
+
+                      <h3 className="text-2xl font-bold mt-4 mb-4">
+                        {article.title}
+                      </h3>
+
+                      <button className="flex items-center gap-2 text-purple-300">
+                        Read Story
+                        <HiOutlineArrowRight />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+          </section>
+
+          {/* QUOTE BANNER */}
+          <section className="py-40">
+            <div className="max-w-5xl mx-auto px-6 text-center">
+
+              <HiOutlineStar className="mx-auto text-6xl text-purple-300 mb-10" />
+
+              <blockquote className="text-5xl md:text-7xl font-black leading-tight">
+                “I loved the story before I knew the character.”
+              </blockquote>
+
+              <p className="mt-8 uppercase tracking-[0.4em] text-zinc-500">
+                — Vihaan
+              </p>
+
+            </div>
+          </section>
+
+          {/* CTA */}
+          <section className="pb-32">
+            <div className="max-w-6xl mx-auto px-6">
+
+              <div className="relative overflow-hidden rounded-[40px] border border-white/10">
+
+                <Image
+                  src="/project/Before Her Name Existed.png"
+                  alt=""
+                  fill
+                  className="object-cover opacity-20"
+                />
+
+                <div className="relative z-10 p-20 text-center">
+
+                  <h2 className="text-6xl font-black mb-8">
+                    Continue The Journey
+                  </h2>
+
+                  <p className="max-w-3xl mx-auto text-xl text-zinc-300">
+                    Follow the reflections, dreams, discoveries,
+                    and emotional chapters that continue to shape
+                    this evolving narrative.
+                  </p>
+
+                  <div className="flex justify-center gap-5 mt-12 flex-wrap">
+                    <Link
+                      href="/newsletters"
+                      className="px-8 py-4 rounded-2xl bg-white text-black font-semibold"
+                    >
+                      Subscribe
+                    </Link>
+
+                    <Link
+                      href="/blog"
+                      className="px-8 py-4 rounded-2xl border border-white/10"
+                    >
+                      Explore Articles
+                    </Link>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </section>
+
+        </main >
+        );
 }

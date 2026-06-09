@@ -13,6 +13,7 @@ import {
   HiOutlinePaperAirplane,
   HiOutlineStar,
 } from "react-icons/hi2";
+import { ExternalLink } from "lucide-react";
 
 export const metadata = {
   title: "Letters Never Sent | Vihaan Writes",
@@ -83,7 +84,6 @@ const letters = [
 export default function LettersNeverSentPage() {
   return (
     <main className="relative overflow-hidden bg-black text-white">
-
       {/* BACKGROUND */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/2 h-[1000px] w-[1000px] -translate-x-1/2 rounded-full bg-rose-500/10 blur-[220px]" />
@@ -92,7 +92,6 @@ export default function LettersNeverSentPage() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center">
-
         <div className="absolute inset-0">
           <Image
             src="/project/Letters Never Sent.png"
@@ -106,11 +105,9 @@ export default function LettersNeverSentPage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-
           <div className="max-w-5xl">
-
             <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-rose-500/20 bg-rose-500/5 mb-8">
-              <HiOutlineEnvelope className="text-rose-300" />
+              <HiOutlineEnvelope className="text-rose-300 text-lg" />
               <span className="uppercase tracking-[0.35em] text-sm text-zinc-400">
                 Vihaan Writes Project
               </span>
@@ -130,26 +127,27 @@ export default function LettersNeverSentPage() {
               Reflections that quietly transformed into healing.
             </p>
 
+            {/* ACTION BUTTONS */}
             <div className="flex flex-wrap gap-5 mt-12">
-              <Link
-                href="/blog"
-                className="px-8 py-4 rounded-2xl bg-white text-black font-semibold"
+              <a
+                href="https://lettersneversent.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-white text-black font-semibold transition-all duration-300 hover:scale-105"
               >
-                Read Letters
-              </Link>
+                Read the Letters
+                <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
 
               <Link
                 href="/newsletters"
-                className="px-8 py-4 rounded-2xl border border-white/10 bg-white/5"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-2xl border border-white/10 bg-white/5 transition-all duration-300 hover:bg-white/10"
               >
                 Subscribe
               </Link>
             </div>
-
           </div>
-
         </div>
-
       </section>
 
       {/* FEATURE IMAGE */}

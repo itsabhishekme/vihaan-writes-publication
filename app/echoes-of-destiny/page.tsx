@@ -11,6 +11,7 @@ import {
   HiOutlineClock,
   HiOutlineStar,
 } from "react-icons/hi2";
+import { ExternalLink } from "lucide-react";
 
 export const metadata = {
   title: "Echoes of Destiny | Vihaan Writes",
@@ -153,10 +154,13 @@ export default function EchoesOfDestinyPage() {
 
             <div className="mt-12 flex flex-wrap gap-5">
               <Link
-                href="/blog"
-                className="px-8 py-4 rounded-2xl bg-white text-black font-semibold"
+                href="https://echoes-of-destiny.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white text-black font-semibold transition-all duration-300 hover:scale-105"
               >
                 Explore Stories
+                <ExternalLink className="w-4 h-4" />
               </Link>
 
               <Link

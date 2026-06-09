@@ -16,6 +16,7 @@ import {
   HiOutlineEye,
   HiOutlineStar,
   HiOutlineShieldCheck,
+  HiOutlineArrowTopRightOnSquare
 } from "react-icons/hi2";
 
 export const metadata = {
@@ -147,10 +148,13 @@ export default function HumanArchivePage() {
 
             <div className="flex flex-wrap gap-5 mt-12">
               <Link
-                href="/stories"
-                className="px-8 py-4 rounded-2xl bg-white text-black font-semibold"
+                href="https://thehumanarchive.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-white text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
               >
-                Explore Stories
+                Enter the Archive
+                <HiOutlineArrowTopRightOnSquare className="text-lg transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>
 
               <Link
