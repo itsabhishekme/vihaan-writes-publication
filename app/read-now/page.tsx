@@ -717,7 +717,7 @@ export default function ReadNowPage() {
             </Link>
 
             <Link
-              href="/books"
+              href="/book"
               className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-10 py-5 font-semibold backdrop-blur-xl hover:bg-white/10"
             >
               Explore Books
