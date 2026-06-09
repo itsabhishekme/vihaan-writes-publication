@@ -244,7 +244,7 @@ export default function ProjectsPage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-300 to-orange-300 px-8 py-4 text-black font-bold transition hover:scale-105"
                     >
-                      Explore Project
+                      The Archive of Echoes
                       <ArrowUpRight className="w-5 h-5" />
                     </a>
                   </div>
