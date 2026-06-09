@@ -147,7 +147,7 @@ const books = [
   {
     id: 3,
 
-    title: "Vihaan Before Her Name Existed",
+    title: "Before Her Name Existed",
 
     subtitle:
       "A Journey Through Memory, Love, Fate, and the Stories We Carry Before We Become Who We Are",
