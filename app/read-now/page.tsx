@@ -422,10 +422,9 @@ export default function ReadNowPage() {
         </div>
       </section>
 
-
       {/* =========================
-            STORY CATEGORIES
-        ========================= */}
+    STORY CATEGORIES
+========================= */}
 
       <section className="relative overflow-hidden py-32">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/[0.02] to-transparent" />
@@ -445,7 +444,6 @@ export default function ReadNowPage() {
           </div>
 
           <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-
             {[
               {
                 title: "Soul Letters",
@@ -502,16 +500,15 @@ export default function ReadNowPage() {
       </section>
 
       {/* =========================
-      QUOTE SECTION
-        ========================= */}
+QUOTE SECTION
+========================= */}
 
       <section className="relative overflow-hidden border-y border-white/10 py-40">
-
         <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-500/10 blur-[180px]" />
 
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
           <div className="text-8xl text-amber-300 opacity-30">
-            "
+            &ldquo;
           </div>
 
           <h2 className="mt-6 text-4xl font-bold leading-relaxed md:text-6xl">
@@ -534,13 +531,11 @@ export default function ReadNowPage() {
       </section>
 
       {/* =========================
-      TIMELINE SECTION
-       ========================= */}
+TIMELINE SECTION
+========================= */}
 
       <section className="relative py-32">
-
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
-
           <div className="text-center">
             <span className="text-sm uppercase tracking-[0.4em] text-amber-300">
               Emotional Journey
@@ -555,7 +550,6 @@ export default function ReadNowPage() {
           </div>
 
           <div className="relative mt-24">
-
             <div className="absolute left-1/2 top-0 hidden h-full w-px bg-white/10 lg:block" />
 
             {[
@@ -582,9 +576,7 @@ export default function ReadNowPage() {
             ].map((item, i) => (
               <div
                 key={i}
-                className={`relative mb-20 flex ${i % 2 === 0
-                  ? "justify-start"
-                  : "justify-end"
+                className={`relative mb-20 flex ${i % 2 === 0 ? "justify-start" : "justify-end"
                   }`}
               >
                 <div className="w-full rounded-[40px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl lg:w-[45%]">
@@ -607,15 +599,12 @@ export default function ReadNowPage() {
       </section>
 
       {/* =========================
-      READER EXPERIENCE
-       ========================= */}
+READER EXPERIENCE
+========================= */}
 
       <section className="relative overflow-hidden bg-white/[0.02] py-32">
-
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-
           <div className="grid items-center gap-20 lg:grid-cols-2">
-
             <div>
               <span className="text-sm uppercase tracking-[0.4em] text-amber-300">
                 Reader Experience
@@ -629,14 +618,14 @@ export default function ReadNowPage() {
               </h2>
 
               <p className="mt-8 text-lg leading-9 text-gray-400">
-                Vihaan Writes is a collection of reflections, dreams, unanswered questions,
-                quiet transformations, and meaningful moments from Vihaan's journey—
-                where personal experiences become timeless stories that invite readers
-                to discover pieces of their own lives within the pages.
+                Vihaan Writes is a collection of reflections, dreams, unanswered
+                questions, quiet transformations, and meaningful moments from
+                Vihaan&apos;s journey—where personal experiences become timeless
+                stories that invite readers to discover pieces of their own lives
+                within the pages.
               </p>
 
               <div className="mt-12 space-y-8">
-
                 {[
                   "Spiritual journeys and inner awakenings",
                   "Dreams, signs, and unseen connections",
@@ -658,7 +647,6 @@ export default function ReadNowPage() {
             </div>
 
             <div className="relative">
-
               <div className="absolute inset-0 rounded-[50px] bg-gradient-to-br from-amber-500/20 to-orange-500/5 blur-3xl" />
 
               <div className="relative overflow-hidden rounded-[50px] border border-white/10">
@@ -676,15 +664,13 @@ export default function ReadNowPage() {
       </section>
 
       {/* =========================
-      FINAL CTA
-          ========================= */}
+FINAL CTA
+========================= */}
 
       <section className="relative overflow-hidden py-40">
-
         <div className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-500/10 blur-[220px]" />
 
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
-
           <span className="text-sm uppercase tracking-[0.4em] text-amber-300">
             Begin Reading
           </span>
@@ -706,13 +692,11 @@ export default function ReadNowPage() {
           </p>
 
           <div className="mt-16 flex flex-wrap justify-center gap-6">
-
             <Link
               href="/stories"
               className="group inline-flex items-center gap-3 rounded-full bg-white px-10 py-5 font-semibold text-black transition hover:scale-105"
             >
               Start Reading
-
               <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />
             </Link>
 
