@@ -143,6 +143,85 @@ const books = [
       but preparation for destiny.
     `,
   },
+
+  {
+    id: 3,
+
+    title: "Vihaan Before Her Name Existed",
+
+    subtitle:
+      "A Journey Through Memory, Love, Fate, and the Stories We Carry Before We Become Who We Are",
+
+    badge: "Memory, Destiny & Human Experience",
+
+    image: "/stories/book-three.jpg",
+
+    amazon: "https://www.amazon.in/dp/B0GXWK6X69",
+
+    accent:
+      "from-amber-500 via-orange-500 to-rose-500",
+
+    glow:
+      "shadow-orange-500/30 border-orange-500/20",
+
+    quote:
+      "Before every meeting, there is preparation. Before every story, there is becoming.",
+
+    short:
+      "A reflective exploration of memory, destiny, identity, love, and the invisible threads that shape human lives.",
+
+    full: `
+    Vihaan Before Her Name Existed invites readers into a deeply
+    reflective journey through memory, destiny, love, identity,
+    and the unseen forces that quietly shape our lives.
+
+    Blending personal reflection, philosophical insight,
+    emotional letters, and spiritual contemplation, the book
+    explores what Vihaan calls The Human Archive — the collection
+    of memories, experiences, lessons, hopes, and echoes carried
+    within every person.
+
+    Through twenty-five thought-provoking chapters, readers
+    travel across forgotten memories, unseen preparations,
+    waiting years, karmic encounters, untaken paths, and the
+    timeless influence of human connection.
+
+    The book asks a profound question:
+
+    What if the most important chapters of our lives began long
+    before we recognized them?
+
+    Inside these pages, readers explore:
+
+    • the hidden ways memory shapes identity
+    • why certain people leave permanent traces in our lives
+    • the meaning behind coincidences and synchronicities
+    • how solitude becomes a season of preparation
+    • the relationship between destiny and free will
+    • lessons contained within failed dreams and untaken roads
+    • why every life contributes to a larger Human Archive
+    • how love, memory, and meaning continue beyond time
+
+    This is not a traditional memoir.
+
+    It is a conversation about the stories we inherit,
+    the stories we create, and the stories that continue
+    living long after a moment has passed.
+
+    For readers interested in reflective nonfiction,
+    life philosophy, personal transformation, spiritual growth,
+    mindfulness, and meaningful explorations of the human
+    experience, this book offers a thoughtful journey into
+    the echoes that shape who we are.
+
+    Because before every answer, there is a question.
+
+    Before every story, there is becoming.
+
+    And before her name existed, there was a journey.
+  `,
+  },
+
 ];
 
 const features = [
@@ -283,11 +362,10 @@ export default function StoriesPage() {
                 <div className="relative grid lg:grid-cols-2 gap-12 p-8 lg:p-14">
                   {/* IMAGE SIDE */}
                   <div
-                    className={`${
-                      index % 2 === 1
+                    className={`${index % 2 === 1
                         ? "lg:order-2"
                         : ""
-                    }`}
+                      }`}
                   >
                     <div className="relative overflow-hidden rounded-[35px] border border-white/10">
                       <Image
@@ -321,11 +399,10 @@ export default function StoriesPage() {
 
                   {/* CONTENT SIDE */}
                   <div
-                    className={`flex flex-col justify-center ${
-                      index % 2 === 1
+                    className={`flex flex-col justify-center ${index % 2 === 1
                         ? "lg:order-1"
                         : ""
-                    }`}
+                      }`}
                   >
                     <div className="inline-flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-gray-400">
                       <Clock3 className="h-4 w-4" />
