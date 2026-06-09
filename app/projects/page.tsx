@@ -34,6 +34,7 @@ const projects = [
       { label: "Growth", value: "24/7" },
     ],
   },
+
   {
     title: "Before Her Name Existed",
     tagline:
@@ -46,6 +47,37 @@ const projects = [
     stats: [
       { label: "Chapters", value: "∞" },
       { label: "Journey", value: "Soul" },
+      { label: "Theme", value: "Destiny" },
+    ],
+  },
+
+  {
+    title: "Letters Never Sent",
+    tagline: "For Every Feeling Left Unspoken",
+    description:
+      "A sanctuary for unfinished conversations, forgotten memories, personal reflections, quiet heartbreaks, untold stories, and letters that never found their destination. Every page exists for emotions that were felt deeply but never fully spoken.",
+    url: "https://lettersneversent.vercel.app/",
+    image: "/images/letters-never-sent-banner.jpg",
+    year: "2026",
+    stats: [
+      { label: "Letters", value: "∞" },
+      { label: "Emotion", value: "Unspoken" },
+      { label: "Purpose", value: "Healing" },
+    ],
+  },
+
+  {
+    title: "Echoes of Destiny",
+    tagline:
+      "Where memories linger and destiny whispers through every page.",
+    description:
+      "A place where memories linger, letters remain unsent, dreams refuse to fade, and destiny whispers through every page written from the heart.",
+    url: "https://echoes-of-destiny.vercel.app/",
+    image: "/images/echoes-of-destiny-banner.jpg",
+    year: "2026",
+    stats: [
+      { label: "Dreams", value: "Endless" },
+      { label: "Echoes", value: "Timeless" },
       { label: "Theme", value: "Destiny" },
     ],
   },
@@ -130,10 +162,10 @@ export default function ProjectsPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-20 max-w-5xl mx-auto">
             {[
-              ["2", "Active Projects"],
-              ["100+", "Stories"],
-              ["∞", "Possibilities"],
-              ["2026", "Vision Year"],
+              ["04", "Creative Universes"],
+              ["250+", "Pages Written"],
+              ["Global", "Readers Reached"],
+              ["∞", "Stories Ahead"],
             ].map(([value, label]) => (
               <div
                 key={label}
