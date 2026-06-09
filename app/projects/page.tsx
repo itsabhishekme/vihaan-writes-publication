@@ -16,6 +16,7 @@ import {
   Quote,
   ScrollText,
   Layers3,
+  Mail,
 } from "lucide-react";
 
 const projects = [
@@ -103,6 +104,37 @@ const features = [
     icon: Feather,
     title: "Creative Exploration",
     text: "Storytelling beyond traditional books and publishing formats.",
+  },
+];
+
+const pillars = [
+  {
+    icon: Heart,
+    title: "Love",
+    description: "Stories that explore connection, vulnerability, and the depths of human affection.",
+    border: "border-white/10",
+    gradient: "from-rose-500/20 to-transparent",
+  },
+  {
+    icon: Globe,
+    title: "Humanity",
+    description: "Reflections on what it means to be human, shared across cultures and experiences.",
+    border: "border-white/10",
+    gradient: "from-blue-500/20 to-transparent",
+  },
+  {
+    icon: Sparkles,
+    title: "Emotion",
+    description: "Raw, unfiltered expressions of feelings that shape our lives and define our journeys.",
+    border: "border-white/10",
+    gradient: "from-amber-500/20 to-transparent",
+  },
+  {
+    icon: Stars,
+    title: "Destiny",
+    description: "Explorations of fate, purpose, and the paths we're meant to discover and create.",
+    border: "border-white/10",
+    gradient: "from-purple-500/20 to-transparent",
   },
 ];
 
@@ -364,6 +396,167 @@ export default function ProjectsPage() {
             Connect With Vihaan
             <ArrowRight className="w-5 h-5" />
           </Link>
+        </div>
+      </section>
+  
+      {/* =========================
+    FOUR PILLARS SECTION
+========================== */}
+      <section className="relative overflow-hidden py-32 bg-black">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_60%)]" />
+
+        <div className="absolute top-0 left-1/2 h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-white/10 to-transparent" />
+
+        <div className="absolute inset-0">
+          <div className="absolute left-1/4 top-20 h-72 w-72 rounded-full bg-rose-500/10 blur-[120px]" />
+          <div className="absolute right-1/4 bottom-20 h-72 w-72 rounded-full bg-violet-500/10 blur-[120px]" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-6">
+          {/* Header */}
+          <div className="mx-auto mb-24 max-w-4xl text-center">
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 backdrop-blur-md">
+              <span className="h-2 w-2 rounded-full bg-white animate-pulse" />
+              <span className="text-xs uppercase tracking-[0.4em] text-white/60">
+                Vihaan Writes
+              </span>
+            </div>
+
+            <h2 className="mt-8 text-5xl font-extralight tracking-tight text-white md:text-7xl">
+              The Four
+              <span className="block bg-gradient-to-r from-white via-white to-white/40 bg-clip-text text-transparent">
+                Pillars
+              </span>
+            </h2>
+
+            <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-white/60">
+              Every story within Vihaan Writes belongs to one of four
+              interconnected worlds — love waiting to arrive, memories
+              worth preserving, emotions left unsaid, and the invisible
+              forces shaping destiny.
+            </p>
+          </div>
+
+          {/* Pillars */}
+          <div className="grid gap-8 lg:grid-cols-2 xl:grid-cols-4">
+
+            {/* Before Her Name Existed */}
+            <div className="group relative overflow-hidden rounded-[32px] border border-rose-500/20 bg-gradient-to-b from-rose-500/10 to-transparent p-8 backdrop-blur-xl transition-all duration-700 hover:-translate-y-3 hover:border-rose-400/40">
+
+              <div className="absolute right-6 top-6 text-7xl font-thin text-white/10">
+                01
+              </div>
+
+              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-rose-500/15">
+                <Heart className="h-8 w-8 text-rose-300" />
+              </div>
+
+              <h3 className="mb-4 text-3xl font-light text-white">
+                Before Her Name Existed
+              </h3>
+
+              <p className="leading-relaxed text-white/60">
+                A journey of faith before the meeting. Dreams, longing,
+                signs, letters, and reflections written for a future
+                spouse whose presence was felt before her name was known.
+              </p>
+
+              <div className="mt-8 text-sm uppercase tracking-[0.3em] text-rose-300">
+                Future • Faith • Love
+              </div>
+            </div>
+
+            {/* Human Archive */}
+            <div className="group relative overflow-hidden rounded-[32px] border border-amber-500/20 bg-gradient-to-b from-amber-500/10 to-transparent p-8 backdrop-blur-xl transition-all duration-700 hover:-translate-y-3 hover:border-amber-400/40">
+
+              <div className="absolute right-6 top-6 text-7xl font-thin text-white/10">
+                02
+              </div>
+
+              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-amber-500/15">
+                <BookOpen className="h-8 w-8 text-amber-300" />
+              </div>
+
+              <h3 className="mb-4 text-3xl font-light text-white">
+                The Human Archive
+              </h3>
+
+              <p className="leading-relaxed text-white/60">
+                A collection of memories, stories, observations,
+                experiences, and fragments of humanity preserved through
+                writing for future generations.
+              </p>
+
+              <div className="mt-8 text-sm uppercase tracking-[0.3em] text-amber-300">
+                Stories • Memory • Humanity
+              </div>
+            </div>
+
+            {/* Letters Never Sent */}
+            <div className="group relative overflow-hidden rounded-[32px] border border-sky-500/20 bg-gradient-to-b from-sky-500/10 to-transparent p-8 backdrop-blur-xl transition-all duration-700 hover:-translate-y-3 hover:border-sky-400/40">
+
+              <div className="absolute right-6 top-6 text-7xl font-thin text-white/10">
+                03
+              </div>
+
+              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-sky-500/15">
+                <Mail className="h-8 w-8 text-sky-300" />
+              </div>
+
+              <h3 className="mb-4 text-3xl font-light text-white">
+                Letters Never Sent
+              </h3>
+
+              <p className="leading-relaxed text-white/60">
+                Words that remained unspoken. Emotions carried silently.
+                Messages written for healing, understanding, and the
+                conversations that never found their destination.
+              </p>
+
+              <div className="mt-8 text-sm uppercase tracking-[0.3em] text-sky-300">
+                Emotion • Reflection • Healing
+              </div>
+            </div>
+
+            {/* Echoes of Destiny */}
+            <div className="group relative overflow-hidden rounded-[32px] border border-violet-500/20 bg-gradient-to-b from-violet-500/10 to-transparent p-8 backdrop-blur-xl transition-all duration-700 hover:-translate-y-3 hover:border-violet-400/40">
+
+              <div className="absolute right-6 top-6 text-7xl font-thin text-white/10">
+                04
+              </div>
+
+              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-violet-500/15">
+                <Sparkles className="h-8 w-8 text-violet-300" />
+              </div>
+
+              <h3 className="mb-4 text-3xl font-light text-white">
+                Echoes of Destiny
+              </h3>
+
+              <p className="leading-relaxed text-white/60">
+                Exploring karma, synchronicity, purpose, spiritual
+                connections, and the hidden patterns that quietly guide
+                every life journey.
+              </p>
+
+              <div className="mt-8 text-sm uppercase tracking-[0.3em] text-violet-300">
+                Karma • Purpose • Destiny
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom Statement */}
+          <div className="mx-auto mt-24 max-w-4xl text-center">
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+            <p className="mt-10 text-xl font-light leading-relaxed text-white/70">
+              Together, these four pillars form the foundation of
+              <span className="mx-2 text-white">Vihaan Writes</span>
+              — a home for stories, memories, emotions, and destiny.
+            </p>
+          </div>
         </div>
       </section>
     </main>
