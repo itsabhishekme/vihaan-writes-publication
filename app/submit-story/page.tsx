@@ -135,7 +135,7 @@ export default function SubmitStoryPage() {
                       Tell Your Story
                     </h3>
                     <p className="mt-1 text-zinc-400">
-                      Your words may become someone's inspiration.
+                      Your words may become someone&apos;s inspiration.
                     </p>
                   </div>
                 </div>
@@ -396,15 +396,15 @@ export default function SubmitStoryPage() {
                       className="absolute left-0 top-0 h-full rounded-full bg-gradient-to-r from-purple-600 via-fuchsia-500 to-pink-500 transition-all duration-700"
                       style={{
                         width: `${(
-                            [
-                              title,
-                              author,
-                              email,
-                              category,
-                              story,
-                            ].filter(Boolean).length /
-                            5
-                          ) *
+                          [
+                            title,
+                            author,
+                            email,
+                            category,
+                            story,
+                          ].filter(Boolean).length /
+                          5
+                        ) *
                           100
                           }%`,
                       }}
@@ -446,14 +446,14 @@ export default function SubmitStoryPage() {
                     <div
                       key={step.label}
                       className={`flex items-center gap-4 rounded-2xl border p-4 transition-all duration-300 ${step.value
-                          ? "border-emerald-500/20 bg-emerald-500/10"
-                          : "border-white/10 bg-white/[0.03]"
+                        ? "border-emerald-500/20 bg-emerald-500/10"
+                        : "border-white/10 bg-white/[0.03]"
                         }`}
                     >
                       <div
                         className={`flex h-12 w-12 items-center justify-center rounded-2xl text-xl ${step.value
-                            ? "bg-emerald-500/20"
-                            : "bg-white/5"
+                          ? "bg-emerald-500/20"
+                          : "bg-white/5"
                           }`}
                       >
                         {step.value ? "✓" : step.icon}
@@ -539,8 +539,8 @@ export default function SubmitStoryPage() {
 
                       <h5
                         className={`mt-2 text-lg font-bold ${story.length > 300
-                            ? "text-emerald-400"
-                            : "text-yellow-400"
+                          ? "text-emerald-400"
+                          : "text-yellow-400"
                           }`}
                       >
                         {story.length > 300
@@ -654,243 +654,243 @@ export default function SubmitStoryPage() {
         </div>
       </section>
 
-      {/* Featured Stories */ }
-  <section className="relative z-10 px-6 py-24">
-    <div className="mx-auto max-w-7xl">
-      <div className="mb-16 text-center">
-        <h2 className="text-5xl font-bold">Featured Stories</h2>
+      {/* Featured Stories */}
+      <section className="relative z-10 px-6 py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16 text-center">
+            <h2 className="text-5xl font-bold">Featured Stories</h2>
 
-        <p className="mt-4 text-zinc-400">
-          Voices from around the world.
-        </p>
-      </div>
-
-      <div className="grid gap-8 md:grid-cols-3">
-        {[
-          {
-            title: "The Letter I Never Sent",
-            icon: FileText,
-          },
-          {
-            title: "A Stranger Changed My Life",
-            icon: MessageSquare,
-          },
-          {
-            title: "The Day Everything Changed",
-            icon: Star,
-          },
-        ].map((story, index) => (
-          <div
-            key={index}
-            className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all hover:-translate-y-2"
-          >
-            <story.icon className="mb-5 h-10 w-10 text-purple-400" />
-
-            <h3 className="mb-4 text-2xl font-bold">{story.title}</h3>
-
-            <p className="text-zinc-400">
-              A powerful human story that touched thousands of readers and
-              became part of our growing archive.
+            <p className="mt-4 text-zinc-400">
+              Voices from around the world.
             </p>
-
-            <button className="mt-6 flex items-center gap-2 text-purple-400">
-              Read Story
-              <ArrowRight className="h-4 w-4" />
-            </button>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  {/* Enhanced FAQ Section */ }
-  <section className="relative z-10 overflow-hidden px-6 py-28">
-    {/* Background Glow */}
-    <div className="absolute inset-0 -z-10">
-      <div className="absolute left-1/4 top-0 h-72 w-72 rounded-full bg-purple-500/10 blur-[120px]" />
-      <div className="absolute right-1/4 bottom-0 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]" />
-    </div>
-
-    <div className="mx-auto max-w-6xl">
-      {/* Heading */}
-      <div className="mb-20 text-center">
-        <span className="mb-4 inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm font-medium text-zinc-300 backdrop-blur-md">
-          Frequently Asked Questions
-        </span>
-
-        <h2 className="mb-6 bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-5xl font-extrabold text-transparent md:text-6xl">
-          Everything You Need To Know
-        </h2>
-
-        <p className="mx-auto max-w-2xl text-lg text-zinc-400">
-          Find answers to common questions about story submissions,
-          publishing, privacy, and community participation.
-        </p>
-      </div>
-
-      {/* FAQ Grid */}
-      <div className="grid gap-8 md:grid-cols-2">
-        {[
-          {
-            q: "Can I submit anonymously?",
-            a: "Yes. You may share your story without revealing your identity. We respect your privacy and allow anonymous submissions whenever requested.",
-          },
-          {
-            q: "Will my story be edited?",
-            a: "Only light editorial adjustments may be made to improve grammar, readability, and formatting while preserving your original message and emotions.",
-          },
-          {
-            q: "How long should my story be?",
-            a: "There is no strict limit. We generally recommend 300–2000 words, but powerful stories can be much shorter or longer.",
-          },
-          {
-            q: "Can I submit multiple stories?",
-            a: "Absolutely. We encourage contributors to share multiple experiences, reflections, or chapters of their journey.",
-          },
-          {
-            q: "Will I receive credit as an author?",
-            a: "Yes. If you choose to include your name, your contribution can be published with full author credit.",
-          },
-          {
-            q: "How long does review take?",
-            a: "Most submissions are reviewed within a few business days. Processing time may vary depending on volume.",
-          },
-          {
-            q: "Can I update my submission later?",
-            a: "Yes. Contact us with your updated version and we will help revise the published content whenever possible.",
-          },
-          {
-            q: "What kind of stories are accepted?",
-            a: "We welcome authentic personal experiences, life lessons, inspirational journeys, reflections, and meaningful narratives from all backgrounds.",
-          },
-        ].map((faq, index) => (
-          <div
-            key={index}
-            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-white/[0.07]"
-          >
-            {/* Hover Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-            {/* Number Badge */}
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-lg font-bold text-white">
-              {String(index + 1).padStart(2, "0")}
-            </div>
-
-            {/* Question */}
-            <h3 className="mb-4 text-2xl font-bold text-white transition-colors duration-300 group-hover:text-cyan-300">
-              {faq.q}
-            </h3>
-
-            {/* Answer */}
-            <p className="leading-relaxed text-zinc-400 transition-colors duration-300 group-hover:text-zinc-300">
-              {faq.a}
-            </p>
-
-            {/* Decorative Line */}
-            <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  {/* Final CTA */ }
-  <section className="relative z-10 overflow-hidden px-6 py-36">
-    {/* Background Effects */}
-    <div className="absolute inset-0 -z-10">
-      <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-purple-600/15 blur-[180px]" />
-      <div className="absolute bottom-0 left-1/4 h-80 w-80 rounded-full bg-pink-500/10 blur-[140px]" />
-      <div className="absolute right-1/4 top-1/3 h-80 w-80 rounded-full bg-cyan-500/10 blur-[140px]" />
-    </div>
-
-    <div className="mx-auto max-w-6xl">
-      <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-white/[0.04] px-8 py-20 backdrop-blur-2xl md:px-20">
-
-        {/* Decorative Gradient Border */}
-        <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-purple-500/10 via-transparent to-pink-500/10" />
-
-        {/* Floating Elements */}
-        <div className="absolute -left-12 top-12 h-32 w-32 rounded-full border border-white/10 bg-white/5 blur-md" />
-        <div className="absolute -right-12 bottom-12 h-40 w-40 rounded-full border border-white/10 bg-white/5 blur-md" />
-
-        <div className="relative text-center">
-
-          {/* Icon */}
-          <div className="mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-3xl border border-purple-500/20 bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl">
-            <Tag className="h-12 w-12 text-purple-300" />
           </div>
 
-          {/* Badge */}
-          <div className="mb-8 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-zinc-300 backdrop-blur-md">
-            ✨ Share • Inspire • Connect
+          <div className="grid gap-8 md:grid-cols-3">
+            {[
+              {
+                title: "The Letter I Never Sent",
+                icon: FileText,
+              },
+              {
+                title: "A Stranger Changed My Life",
+                icon: MessageSquare,
+              },
+              {
+                title: "The Day Everything Changed",
+                icon: Star,
+              },
+            ].map((story, index) => (
+              <div
+                key={index}
+                className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all hover:-translate-y-2"
+              >
+                <story.icon className="mb-5 h-10 w-10 text-purple-400" />
+
+                <h3 className="mb-4 text-2xl font-bold">{story.title}</h3>
+
+                <p className="text-zinc-400">
+                  A powerful human story that touched thousands of readers and
+                  became part of our growing archive.
+                </p>
+
+                <button className="mt-6 flex items-center gap-2 text-purple-400">
+                  Read Story
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            ))}
           </div>
-
-          {/* Heading */}
-          <h2 className="mx-auto max-w-4xl bg-gradient-to-r from-white via-zinc-100 to-zinc-400 bg-clip-text text-5xl font-extrabold leading-tight text-transparent md:text-7xl">
-            Your Story Has The Power
-            <br />
-            To Change Someone's Life
-          </h2>
-
-          {/* Description */}
-          <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-zinc-400 md:text-2xl">
-            Every experience carries wisdom. Every challenge carries a lesson.
-            Somewhere in the world, someone is waiting to read the words only
-            you can write.
-          </p>
-
-          {/* Stats */}
-          <div className="mt-14 flex flex-wrap items-center justify-center gap-10">
-            <div>
-              <h3 className="text-3xl font-bold text-white">100%</h3>
-              <p className="mt-1 text-sm text-zinc-500">
-                Authentic Stories
-              </p>
-            </div>
-
-            <div className="h-12 w-px bg-white/10" />
-
-            <div>
-              <h3 className="text-3xl font-bold text-white">∞</h3>
-              <p className="mt-1 text-sm text-zinc-500">
-                Possibilities
-              </p>
-            </div>
-
-            <div className="h-12 w-px bg-white/10" />
-
-            <div>
-              <h3 className="text-3xl font-bold text-white">1</h3>
-              <p className="mt-1 text-sm text-zinc-500">
-                Story Can Inspire Many
-              </p>
-            </div>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="mt-14 flex flex-col items-center justify-center gap-5 sm:flex-row">
-            <button className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 px-10 py-5 text-lg font-semibold text-white shadow-2xl transition-all duration-500 hover:scale-105">
-              <span className="relative z-10">
-                Start Writing Today
-              </span>
-
-              <div className="absolute inset-0 translate-y-full bg-white/10 transition-transform duration-500 group-hover:translate-y-0" />
-            </button>
-
-            <button className="rounded-2xl border border-white/10 bg-white/5 px-10 py-5 text-lg font-medium text-zinc-300 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/10 hover:text-white">
-              Explore Stories
-            </button>
-          </div>
-
-          {/* Bottom Text */}
-          <p className="mt-8 text-sm tracking-wide text-zinc-500">
-            Join a growing community of storytellers sharing experiences,
-            lessons, memories, and inspiration.
-          </p>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
+
+      {/* Enhanced FAQ Section */}
+      <section className="relative z-10 overflow-hidden px-6 py-28">
+        {/* Background Glow */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute left-1/4 top-0 h-72 w-72 rounded-full bg-purple-500/10 blur-[120px]" />
+          <div className="absolute right-1/4 bottom-0 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]" />
+        </div>
+
+        <div className="mx-auto max-w-6xl">
+          {/* Heading */}
+          <div className="mb-20 text-center">
+            <span className="mb-4 inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm font-medium text-zinc-300 backdrop-blur-md">
+              Frequently Asked Questions
+            </span>
+
+            <h2 className="mb-6 bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-5xl font-extrabold text-transparent md:text-6xl">
+              Everything You Need To Know
+            </h2>
+
+            <p className="mx-auto max-w-2xl text-lg text-zinc-400">
+              Find answers to common questions about story submissions,
+              publishing, privacy, and community participation.
+            </p>
+          </div>
+
+          {/* FAQ Grid */}
+          <div className="grid gap-8 md:grid-cols-2">
+            {[
+              {
+                q: "Can I submit anonymously?",
+                a: "Yes. You may share your story without revealing your identity. We respect your privacy and allow anonymous submissions whenever requested.",
+              },
+              {
+                q: "Will my story be edited?",
+                a: "Only light editorial adjustments may be made to improve grammar, readability, and formatting while preserving your original message and emotions.",
+              },
+              {
+                q: "How long should my story be?",
+                a: "There is no strict limit. We generally recommend 300–2000 words, but powerful stories can be much shorter or longer.",
+              },
+              {
+                q: "Can I submit multiple stories?",
+                a: "Absolutely. We encourage contributors to share multiple experiences, reflections, or chapters of their journey.",
+              },
+              {
+                q: "Will I receive credit as an author?",
+                a: "Yes. If you choose to include your name, your contribution can be published with full author credit.",
+              },
+              {
+                q: "How long does review take?",
+                a: "Most submissions are reviewed within a few business days. Processing time may vary depending on volume.",
+              },
+              {
+                q: "Can I update my submission later?",
+                a: "Yes. Contact us with your updated version and we will help revise the published content whenever possible.",
+              },
+              {
+                q: "What kind of stories are accepted?",
+                a: "We welcome authentic personal experiences, life lessons, inspirational journeys, reflections, and meaningful narratives from all backgrounds.",
+              },
+            ].map((faq, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:bg-white/[0.07]"
+              >
+                {/* Hover Glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                {/* Number Badge */}
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-lg font-bold text-white">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                {/* Question */}
+                <h3 className="mb-4 text-2xl font-bold text-white transition-colors duration-300 group-hover:text-cyan-300">
+                  {faq.q}
+                </h3>
+
+                {/* Answer */}
+                <p className="leading-relaxed text-zinc-400 transition-colors duration-300 group-hover:text-zinc-300">
+                  {faq.a}
+                </p>
+
+                {/* Decorative Line */}
+                <div className="mt-6 h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="relative z-10 overflow-hidden px-6 py-36">
+        {/* Background Effects */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-purple-600/15 blur-[180px]" />
+          <div className="absolute bottom-0 left-1/4 h-80 w-80 rounded-full bg-pink-500/10 blur-[140px]" />
+          <div className="absolute right-1/4 top-1/3 h-80 w-80 rounded-full bg-cyan-500/10 blur-[140px]" />
+        </div>
+
+        <div className="mx-auto max-w-6xl">
+          <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-white/[0.04] px-8 py-20 backdrop-blur-2xl md:px-20">
+
+            {/* Decorative Gradient Border */}
+            <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-purple-500/10 via-transparent to-pink-500/10" />
+
+            {/* Floating Elements */}
+            <div className="absolute -left-12 top-12 h-32 w-32 rounded-full border border-white/10 bg-white/5 blur-md" />
+            <div className="absolute -right-12 bottom-12 h-40 w-40 rounded-full border border-white/10 bg-white/5 blur-md" />
+
+            <div className="relative text-center">
+
+              {/* Icon */}
+              <div className="mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-3xl border border-purple-500/20 bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl">
+                <Tag className="h-12 w-12 text-purple-300" />
+              </div>
+
+              {/* Badge */}
+              <div className="mb-8 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-zinc-300 backdrop-blur-md">
+                ✨ Share • Inspire • Connect
+              </div>
+
+              {/* Heading */}
+              <h2 className="mx-auto max-w-4xl bg-gradient-to-r from-white via-zinc-100 to-zinc-400 bg-clip-text text-5xl font-extrabold leading-tight text-transparent md:text-7xl">
+                Your Story Has The Power
+                <br />
+                To Change Someone&apos;s Life
+              </h2>
+
+              {/* Description */}
+              <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-zinc-400 md:text-2xl">
+                Every experience carries wisdom. Every challenge carries a lesson.
+                Somewhere in the world, someone is waiting to read the words only
+                you can write.
+              </p>
+
+              {/* Stats */}
+              <div className="mt-14 flex flex-wrap items-center justify-center gap-10">
+                <div>
+                  <h3 className="text-3xl font-bold text-white">100%</h3>
+                  <p className="mt-1 text-sm text-zinc-500">
+                    Authentic Stories
+                  </p>
+                </div>
+
+                <div className="h-12 w-px bg-white/10" />
+
+                <div>
+                  <h3 className="text-3xl font-bold text-white">∞</h3>
+                  <p className="mt-1 text-sm text-zinc-500">
+                    Possibilities
+                  </p>
+                </div>
+
+                <div className="h-12 w-px bg-white/10" />
+
+                <div>
+                  <h3 className="text-3xl font-bold text-white">1</h3>
+                  <p className="mt-1 text-sm text-zinc-500">
+                    Story Can Inspire Many
+                  </p>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="mt-14 flex flex-col items-center justify-center gap-5 sm:flex-row">
+                <button className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-purple-600 via-fuchsia-600 to-pink-600 px-10 py-5 text-lg font-semibold text-white shadow-2xl transition-all duration-500 hover:scale-105">
+                  <span className="relative z-10">
+                    Start Writing Today
+                  </span>
+
+                  <div className="absolute inset-0 translate-y-full bg-white/10 transition-transform duration-500 group-hover:translate-y-0" />
+                </button>
+
+                <button className="rounded-2xl border border-white/10 bg-white/5 px-10 py-5 text-lg font-medium text-zinc-300 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/10 hover:text-white">
+                  Explore Stories
+                </button>
+              </div>
+
+              {/* Bottom Text */}
+              <p className="mt-8 text-sm tracking-wide text-zinc-500">
+                Join a growing community of storytellers sharing experiences,
+                lessons, memories, and inspiration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main >
   );
 }
