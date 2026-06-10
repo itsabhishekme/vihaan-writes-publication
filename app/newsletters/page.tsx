@@ -306,33 +306,95 @@ export default function NewslettersPage() {
 
       {/* =========================
     TESTIMONIALS
-     ========================= */}
-      <section className="relative py-32">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-16 text-center">
-            <h2 className="text-5xl font-bold">
+========================= */}
+      <section className="relative overflow-hidden py-32">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
+          <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-white/[0.03] blur-3xl" />
+          <div className="absolute right-0 top-20 h-72 w-72 rounded-full bg-white/[0.03] blur-3xl" />
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-6">
+          {/* Header */}
+          <div className="mx-auto mb-20 max-w-3xl text-center">
+            <span className="inline-flex rounded-full border border-white/10 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/50">
+              Community Voices
+            </span>
+
+            <h2 className="mt-6 text-5xl font-bold leading-tight md:text-6xl">
               Reader Reflections
             </h2>
+
+            <p className="mt-6 text-lg leading-relaxed text-white/60">
+              Words from readers who receive the newsletter and journey
+              through stories, reflections, and thoughtful letters.
+            </p>
           </div>
 
+          {/* Testimonials */}
           <div className="grid gap-8 lg:grid-cols-3">
             {[
-              "Every issue feels like a personal letter.",
-              "A rare place on the internet where stories still matter.",
-              "The writing stays with you long after reading.",
-            ].map((quote) => (
+              {
+                quote:
+                  "Every issue feels like a handwritten letter arriving at exactly the right moment.",
+                name: "A Newsletter Reader",
+              },
+              {
+                quote:
+                  "A rare corner of the internet where thoughtful storytelling still feels timeless.",
+                name: "Weekly Subscriber",
+              },
+              {
+                quote:
+                  "The writing lingers in the mind long after the final sentence has been read.",
+                name: "Long-Time Reader",
+              },
+            ].map((item) => (
               <div
-                key={quote}
-                className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8"
+                key={item.quote}
+                className="group relative overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-10 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-white/20"
               >
-                <HiOutlineStar className="h-8 w-8" />
+                {/* Quote Mark */}
+                <div className="absolute right-6 top-4 text-8xl font-serif text-white/5">
+                  ”
+                </div>
 
-                <p className="mt-6 text-lg leading-relaxed text-white/70">
-                  "{quote}"
-                </p>
+                {/* Stars */}
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <HiOutlineStar
+                      key={i}
+                      className="h-5 w-5 text-white/70"
+                    />
+                  ))}
+                </div>
 
-                <div className="mt-6 text-sm text-white/40">
-                  Newsletter Reader
+                {/* Quote */}
+                <blockquote className="mt-8 text-xl leading-relaxed text-white/85">
+                  {item.quote}
+                </blockquote>
+
+                {/* Divider */}
+                <div className="my-8 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+                {/* Author */}
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-sm font-semibold">
+                    {item.name.charAt(0)}
+                  </div>
+
+                  <div>
+                    <p className="font-medium text-white">{item.name}</p>
+                    <p className="text-sm text-white/40">
+                      Vihaan Writes Newsletter
+                    </p>
+                  </div>
+                </div>
+
+                {/* Hover Glow */}
+                <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  <div className="absolute inset-0 rounded-[36px] bg-gradient-to-br from-white/[0.06] via-transparent to-transparent" />
                 </div>
               </div>
             ))}
