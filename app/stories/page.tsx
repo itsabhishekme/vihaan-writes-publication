@@ -234,7 +234,7 @@ const books = [
 
     image: "/stories/book-four.jpg",
 
-    amazon: "#",
+    amazon: "/upcoming",
 
     accent:
       "from-slate-700 via-gray-800 to-black",
