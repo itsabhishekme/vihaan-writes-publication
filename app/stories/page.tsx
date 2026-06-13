@@ -222,6 +222,127 @@ const books = [
   `,
   },
 
+  {
+    id: 4,
+
+    title: "The Side No One Ever Saw",
+
+    subtitle:
+      "The Hidden Pain, Family Wounds, Emotional Struggles, and My Search for Who I Am",
+
+    badge: "Healing, Identity & Emotional Resilience",
+
+    image: "/stories/book-four.jpg",
+
+    amazon: "#",
+
+    accent:
+      "from-slate-700 via-gray-800 to-black",
+
+    glow:
+      "shadow-slate-500/30 border-slate-500/20",
+
+    quote:
+      "Some battles leave no scars on the skin, yet shape an entire life.",
+
+    short:
+      "A deeply personal exploration of childhood wounds, family expectations, emotional pain, loneliness, self-discovery, and the unseen struggles carried behind a silent smile.",
+
+    seo: {
+      title:
+        "The Side No One Ever Saw | Vihaan | Emotional Healing, Family Wounds & Self-Discovery",
+
+      description:
+        "Discover The Side No One Ever Saw by Vihaan, a powerful and deeply reflective journey through childhood pain, family wounds, emotional struggles, identity, healing, resilience, and the search for self-understanding.",
+
+      keywords: [
+        "The Side No One Ever Saw",
+        "Vihaan",
+        "emotional healing",
+        "family wounds",
+        "childhood trauma",
+        "self discovery",
+        "mental health",
+        "personal growth",
+        "healing journey",
+        "identity",
+        "life lessons",
+        "resilience",
+        "emotional struggles",
+        "reflective nonfiction",
+        "human experience"
+      ]
+    },
+
+    full: `
+    The Side No One Ever Saw is Vihaan's most vulnerable and
+    emotionally revealing work to date.
+
+    It is a journey through the hidden rooms of a life rarely
+    discussed openly — the quiet struggles, invisible wounds,
+    family expectations, emotional burdens, loneliness,
+    disappointments, and unanswered questions that shaped
+    the person behind the smile.
+
+    Through deeply personal storytelling, reflection,
+    emotional honesty, and philosophical insight,
+    Vihaan explores the experiences many people carry
+    silently for years but rarely find words to express.
+
+    This book is not about blame.
+
+    It is about understanding.
+
+    It is about looking back at the moments that shaped us,
+    the pain we learned to hide, the fears we carried alone,
+    and the long journey toward accepting ourselves.
+
+    Across its chapters, readers walk through:
+
+    • childhood experiences that left lasting emotional marks
+    • family expectations and the weight they can create
+    • loneliness hidden behind outward strength
+    • moments of rejection, misunderstanding, and silence
+    • the struggle to find identity beneath other people's opinions
+    • emotional battles fought without witnesses
+    • the search for belonging and self-worth
+    • lessons discovered through pain and resilience
+    • healing old wounds without denying their existence
+    • finding meaning in life's most difficult seasons
+
+    The Side No One Ever Saw speaks to anyone who has ever felt
+    unseen, unheard, misunderstood, or emotionally alone.
+
+    It reminds readers that behind every person exists a story
+    that few people truly know.
+
+    A story of survival.
+
+    A story of becoming.
+
+    A story that deserves to be acknowledged.
+
+    This is not simply a memoir.
+
+    It is a reflection on pain, healing, identity,
+    emotional resilience, and the courage required
+    to face the truth about ourselves.
+
+    For readers interested in emotional healing,
+    self-discovery, personal transformation,
+    reflective nonfiction, psychology, resilience,
+    and meaningful explorations of the human experience,
+    this book offers an honest conversation about
+    the side of life most people never see.
+
+    Because some of the most important battles
+    are fought in silence.
+
+    And some of the strongest people are those
+    whose struggles were never visible to the world.
+  `,
+  },
+
 ];
 
 const features = [
@@ -363,8 +484,8 @@ export default function StoriesPage() {
                   {/* IMAGE SIDE */}
                   <div
                     className={`${index % 2 === 1
-                        ? "lg:order-2"
-                        : ""
+                      ? "lg:order-2"
+                      : ""
                       }`}
                   >
                     <div className="relative overflow-hidden rounded-[35px] border border-white/10">
@@ -400,8 +521,8 @@ export default function StoriesPage() {
                   {/* CONTENT SIDE */}
                   <div
                     className={`flex flex-col justify-center ${index % 2 === 1
-                        ? "lg:order-1"
-                        : ""
+                      ? "lg:order-1"
+                      : ""
                       }`}
                   >
                     <div className="inline-flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-gray-400">
