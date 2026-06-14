@@ -3,7 +3,7 @@
 /* -------------------------------------------------------------------------- */
 
 export const SITE_URL =
-  "https://vihaanwrites.in";
+  "https://vihaan-writes.vercel.app/";
 
 export const SITE_NAME =
   "Vihaan Writes";
@@ -21,9 +21,19 @@ export const DEFAULT_OG_IMAGE =
 /*                              BASE SCHEMA TYPE                              */
 /* -------------------------------------------------------------------------- */
 
-export interface SchemaObject {
-  [key: string]: any;
+export type JsonValue =
+  | string
+  | number
+  | boolean
+  | null
+  | JsonObject
+  | JsonValue[]
+
+export interface JsonObject {
+  [key: string]: JsonValue
 }
+
+export type SchemaObject = JsonObject
 
 /* -------------------------------------------------------------------------- */
 /*                           ORGANIZATION SCHEMA                              */
@@ -356,13 +366,13 @@ export function faqSchema(
             faq.question,
 
           acceptedAnswer:
-            {
-              "@type":
-                "Answer",
+          {
+            "@type":
+              "Answer",
 
-              text:
-                faq.answer,
-            },
+            text:
+              faq.answer,
+          },
         })
       ),
   };

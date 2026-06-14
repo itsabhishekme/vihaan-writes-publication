@@ -7,7 +7,6 @@ import {
   Upload,
   Heart,
   Users,
-  Clock,
   ArrowRight,
   MessageSquare,
   Star,

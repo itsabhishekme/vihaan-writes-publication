@@ -38,62 +38,171 @@ const inter = Inter({
   display: 'swap',
   variable: '--font-inter',
 })
-
 /* =========================================================
    FALLBACK SEO VALUES
-   Prevents runtime/type errors if some fields
-   are missing from your metadata configuration.
+   Fully Typed Version (No ESLint no-explicit-any Errors)
+========================================================= */
+
+interface SiteMetadataShape {
+  title?: string
+  description?: string
+  author?: string
+  keywords?: string | string[]
+  ogImage?: string
+  twitter?: string
+}
+
+/**
+ * Safely normalize imported metadata.
+ * This prevents:
+ * - no-explicit-any
+ * - undefined access
+ * - runtime crashes
+ */
+
+const metadataConfig: SiteMetadataShape =
+  typeof siteMetadata === 'object' &&
+    siteMetadata !== null
+    ? (siteMetadata as SiteMetadataShape)
+    : {}
+
+/* =========================================================
+   SITE URL
 ========================================================= */
 
 const SITE_URL =
   'https://vihaan-writes.vercel.app'
 
-const SITE_NAME =
-  typeof (siteMetadata as any)?.title ===
-  'string'
-    ? (siteMetadata as any).title
+/* =========================================================
+   SITE NAME
+========================================================= */
+
+const SITE_NAME: string =
+  typeof metadataConfig.title === 'string'
+    ? metadataConfig.title.trim()
     : 'Vihaan Writes'
+    
+/* =========================================================
+   SITE DESCRIPTION
+========================================================= */
 
-const SITE_DESCRIPTION =
-  typeof (siteMetadata as any)?.description ===
-  'string'
-    ? (siteMetadata as any).description
-    : 'Official website of Vihaan Writes. Explore books, blogs, podcasts, storytelling, reflections, spirituality, and meaningful human experiences.'
-
-const SITE_AUTHOR =
-  typeof (siteMetadata as any)?.author ===
-  'string'
-    ? (siteMetadata as any).author
-    : 'Vihaan Writes'
-
-const SITE_KEYWORDS =
-  Array.isArray(
-    (siteMetadata as any)?.keywords
-  )
-    ? (siteMetadata as any).keywords
+const SITE_DESCRIPTION: string =
+  typeof metadataConfig.description === 'string' &&
+  metadataConfig.description.trim().length > 0
+    ? metadataConfig.description.trim()
     : [
-        'Vihaan Writes',
-        'Author',
-        'Books',
-        'Blog',
-        'Podcast',
-        'Storytelling',
-        'Writer',
-        'Spiritual Writing',
-        'Personal Growth',
-      ]
+        'Official website of Vihaan Writes.',
+        'Explore books, blogs, podcasts, storytelling, reflections, spirituality, meaningful human experiences,',
+        'personal growth, creative writing, memoirs, life lessons, self-discovery,',
+        'literary reflections, inspirational stories, and thoughtful conversations.',
+      ].join(' ')
 
-const SITE_OG_IMAGE =
-  typeof (siteMetadata as any)?.ogImage ===
-  'string'
-    ? (siteMetadata as any).ogImage
+/* =========================================================
+   SITE AUTHOR
+========================================================= */
+
+const SITE_AUTHOR: string =
+  typeof metadataConfig.author === 'string'
+    ? metadataConfig.author.trim()
+    : 'Vihaan Writes'
+
+/* =========================================================
+   SITE KEYWORDS
+========================================================= */
+
+const DEFAULT_KEYWORDS: string[] = [
+  'Vihaan Writes',
+  'Author',
+  'Books',
+  'Writer',
+  'Storytelling',
+  'Podcast',
+  'Blog',
+  'Personal Growth',
+  'Spiritual Writing',
+  'Self Discovery',
+  'Human Experience',
+  'Creative Writing',
+  'Inspirational Stories',
+  'Reflections',
+  'Life Lessons',
+]
+
+const SITE_KEYWORDS: string[] =
+  typeof metadataConfig.keywords === 'string'
+    ? metadataConfig.keywords.split(',').map((k) => k.trim()).filter((k): k is string => !!k)
+    : Array.isArray(metadataConfig.keywords) &&
+        metadataConfig.keywords.length > 0
+        ? metadataConfig.keywords.filter(
+          (
+            keyword
+      ): keyword is string =>
+        typeof keyword === 'string' &&
+        keyword.trim().length > 0
+    )
+    : DEFAULT_KEYWORDS
+
+/* =========================================================
+   OPEN GRAPH IMAGE
+========================================================= */
+
+const SITE_OG_IMAGE: string =
+  typeof metadataConfig.ogImage === 'string'
+    ? metadataConfig.ogImage.trim()
     : `${SITE_URL}/og-image.png`
 
-const SITE_TWITTER =
-  typeof (siteMetadata as any)?.twitter ===
-  'string'
-    ? (siteMetadata as any).twitter
+/* =========================================================
+   TWITTER HANDLE
+========================================================= */
+
+const SITE_TWITTER: string =
+  typeof metadataConfig.twitter === 'string'
+    ? metadataConfig.twitter.trim()
     : '@vihaanwrites'
+
+/* =========================================================
+   ADDITIONAL OPTIONAL HELPERS
+========================================================= */
+
+const SITE_LANGUAGE = 'en'
+
+const SITE_LOCALE = 'en_US'
+
+const SITE_THEME_COLOR = '#14001f'
+
+const SITE_APPLICATION_NAME =
+  'Vihaan Writes'
+
+const SITE_CATEGORY =
+  'Books & Literature'
+
+const SITE_PUBLISHER =
+  SITE_AUTHOR
+
+const SITE_CREATOR =
+  SITE_AUTHOR
+
+/* =========================================================
+   EXPORTABLE SEO CONSTANTS
+   (Optional future use)
+========================================================= */
+
+export const seoDefaults = {
+  SITE_URL,
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  SITE_AUTHOR,
+  SITE_KEYWORDS,
+  SITE_OG_IMAGE,
+  SITE_TWITTER,
+  SITE_LANGUAGE,
+  SITE_LOCALE,
+  SITE_THEME_COLOR,
+  SITE_APPLICATION_NAME,
+  SITE_CATEGORY,
+  SITE_PUBLISHER,
+  SITE_CREATOR,
+} as const
 
 /* =========================================================
    GLOBAL SEO METADATA
@@ -225,9 +334,10 @@ export default function RootLayout({
       className="scroll-smooth"
     >
       <head>
+
         {/* =====================================================
-            PERFORMANCE
-        ===================================================== */}
+    PERFORMANCE
+===================================================== */}
 
         <link
           rel="preconnect"
