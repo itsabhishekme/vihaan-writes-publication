@@ -19,9 +19,19 @@ import { Inter } from 'next/font/google'
 
 import Script from 'next/script'
 
-/* ======================================================
+/* =========================================================
+   SEO IMPORTS
+========================================================= */
+
+import {
+  siteMetadata,
+  websiteSchema,
+  authorSchema,
+} from '@/lib/seo'
+
+/* =========================================================
    FONT CONFIGURATION
-====================================================== */
+========================================================= */
 
 const inter = Inter({
   subsets: ['latin'],
@@ -29,62 +39,97 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-/* ======================================================
-   GLOBAL SEO + METADATA
-====================================================== */
+/* =========================================================
+   FALLBACK SEO VALUES
+   Prevents runtime/type errors if some fields
+   are missing from your metadata configuration.
+========================================================= */
+
+const SITE_URL =
+  'https://vihaan-writes.vercel.app'
+
+const SITE_NAME =
+  typeof (siteMetadata as any)?.title ===
+  'string'
+    ? (siteMetadata as any).title
+    : 'Vihaan Writes'
+
+const SITE_DESCRIPTION =
+  typeof (siteMetadata as any)?.description ===
+  'string'
+    ? (siteMetadata as any).description
+    : 'Official website of Vihaan Writes. Explore books, blogs, podcasts, storytelling, reflections, spirituality, and meaningful human experiences.'
+
+const SITE_AUTHOR =
+  typeof (siteMetadata as any)?.author ===
+  'string'
+    ? (siteMetadata as any).author
+    : 'Vihaan Writes'
+
+const SITE_KEYWORDS =
+  Array.isArray(
+    (siteMetadata as any)?.keywords
+  )
+    ? (siteMetadata as any).keywords
+    : [
+        'Vihaan Writes',
+        'Author',
+        'Books',
+        'Blog',
+        'Podcast',
+        'Storytelling',
+        'Writer',
+        'Spiritual Writing',
+        'Personal Growth',
+      ]
+
+const SITE_OG_IMAGE =
+  typeof (siteMetadata as any)?.ogImage ===
+  'string'
+    ? (siteMetadata as any).ogImage
+    : `${SITE_URL}/og-image.png`
+
+const SITE_TWITTER =
+  typeof (siteMetadata as any)?.twitter ===
+  'string'
+    ? (siteMetadata as any).twitter
+    : '@vihaanwrites'
+
+/* =========================================================
+   GLOBAL SEO METADATA
+========================================================= */
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    'https://vihaan-writes.vercel.app'
-  ),
+  metadataBase: new URL(SITE_URL),
 
   title: {
-    default:
-      'Vihaan Writes | Official Author Website',
-
-    template:
-      '%s | Vihaan Writes',
+    default: SITE_NAME,
+    template: `%s | ${SITE_AUTHOR}`,
   },
 
-  description:
-    'Official website of Vihaan Writes. Explore soulful books, emotions, reflections, spiritual storytelling, karmic writing, and meaningful human experiences.',
+  description: SITE_DESCRIPTION,
 
-  keywords: [
-    'Vihaan Writes',
-    'Vihaan',
-    'author website',
-    'writer',
-    'books',
-    'storytelling',
-    'podcast',
-    'blog',
-    'karmic writing',
-    'spiritual author',
-    'soulful writing',
-    'personal growth',
-    'love stories',
-    'destiny',
-    'creative writing',
-  ],
+  keywords: SITE_KEYWORDS,
 
   authors: [
     {
-      name: 'Vihaan Writes',
-      url:
-        'https://vihaan-writes.vercel.app',
+      name: SITE_AUTHOR,
+      url: SITE_URL,
     },
   ],
 
-  creator: 'Vihaan Writes',
+  creator: SITE_AUTHOR,
 
-  publisher: 'Vihaan Writes',
+  publisher: SITE_AUTHOR,
 
-  category:
-    'Books & Literature',
+  category: 'Books & Literature',
+
+  applicationName: 'Vihaan Writes',
+
+  referrer: 'origin-when-cross-origin',
 
   alternates: {
-    canonical:
-      'https://vihaan-writes.vercel.app',
+    canonical: SITE_URL,
   },
 
   robots: {
@@ -94,25 +139,25 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+
       noimageindex: false,
+
       'max-video-preview': -1,
-      'max-image-preview':
-        'large',
+
+      'max-image-preview': 'large',
+
       'max-snippet': -1,
     },
   },
 
   openGraph: {
-    title: 'Vihaan Writes',
+    title: SITE_NAME,
 
-    description:
-      'Explore soulful books, stories, reflections, emotions, and meaningful writing by Vihaan.',
+    description: SITE_DESCRIPTION,
 
-    url:
-      'https://vihaan-writes.vercel.app',
+    url: SITE_URL,
 
-    siteName:
-      'Vihaan Writes',
+    siteName: SITE_NAME,
 
     locale: 'en_US',
 
@@ -120,10 +165,13 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: '/og-image.png',
+        url: SITE_OG_IMAGE,
+
         width: 1200,
+
         height: 630,
-        alt: 'Vihaan Writes Official Website',
+
+        alt: SITE_NAME,
       },
     ],
   },
@@ -131,12 +179,13 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
 
-    title: 'Vihaan Writes',
+    title: SITE_NAME,
 
-    description:
-      'Stories written before destiny unfolds.',
+    description: SITE_DESCRIPTION,
 
-    images: ['/og-image.png'],
+    creator: SITE_TWITTER,
+
+    images: [SITE_OG_IMAGE],
   },
 
   icons: {
@@ -144,22 +193,27 @@ export const metadata: Metadata = {
 
     shortcut: '/favicon.ico',
 
-    apple:
-      '/apple-touch-icon.png',
+    apple: '/apple-touch-icon.png',
+  },
+
+  verification: {},
+
+  other: {
+    'theme-color': '#14001f',
   },
 }
 
-/* ======================================================
+/* =========================================================
    TYPES
-====================================================== */
+========================================================= */
 
 type RootLayoutProps = {
   children: ReactNode
 }
 
-/* ======================================================
+/* =========================================================
    ROOT LAYOUT
-====================================================== */
+========================================================= */
 
 export default function RootLayout({
   children,
@@ -171,10 +225,9 @@ export default function RootLayout({
       className="scroll-smooth"
     >
       <head>
-
-        {/* ======================================================
+        {/* =====================================================
             PERFORMANCE
-        ====================================================== */}
+        ===================================================== */}
 
         <link
           rel="preconnect"
@@ -187,9 +240,19 @@ export default function RootLayout({
           crossOrigin=""
         />
 
-        {/* ======================================================
-            PWA CONFIG
-        ====================================================== */}
+        <link
+          rel="dns-prefetch"
+          href="https://fonts.googleapis.com"
+        />
+
+        <link
+          rel="dns-prefetch"
+          href="https://fonts.gstatic.com"
+        />
+
+        {/* =====================================================
+            PWA
+        ===================================================== */}
 
         <link
           rel="manifest"
@@ -221,32 +284,51 @@ export default function RootLayout({
           content="Vihaan Writes"
         />
 
-        <link
-          rel="apple-touch-icon"
-          href="/apple-touch-icon.png"
+        <meta
+          name="format-detection"
+          content="telephone=no"
         />
-
-        {/* ======================================================
-            RESPONSIVE
-        ====================================================== */}
 
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1"
         />
 
-        {/* ======================================================
-            FAVICON
-        ====================================================== */}
+        <link
+          rel="apple-touch-icon"
+          href="/apple-touch-icon.png"
+        />
 
         <link
           rel="icon"
           href="/favicon.ico"
         />
 
-        {/* ======================================================
+        {/* =====================================================
+            STRUCTURED DATA
+        ===================================================== */}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              websiteSchema
+            ),
+          }}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              authorSchema
+            ),
+          }}
+        />
+
+        {/* =====================================================
             GOOGLE ANALYTICS
-        ====================================================== */}
+        ===================================================== */}
 
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4S8ELNEWQZ"
@@ -279,7 +361,6 @@ export default function RootLayout({
             );
           `}
         </Script>
-
       </head>
 
       <body
@@ -295,50 +376,43 @@ export default function RootLayout({
           selection:text-black
         `}
       >
-
-        {/* ======================================================
+        {/* =====================================================
             PWA REGISTER
-        ====================================================== */}
+        ===================================================== */}
 
         <PWARegister />
 
-        {/* ======================================================
-            LOADER PROVIDER
-        ====================================================== */}
+        {/* =====================================================
+            APP PROVIDERS
+        ===================================================== */}
 
         <LoaderProvider>
-
-          {/* ======================================================
-              BACKGROUND EFFECTS
-          ====================================================== */}
+          {/* =================================================
+              GLOBAL BACKGROUND EFFECTS
+          ================================================= */}
 
           <div className="fixed inset-0 -z-50 overflow-hidden">
-
             <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-violet-500/5 blur-3xl" />
 
             <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-violet-300/5 blur-3xl" />
-
           </div>
 
-          {/* ======================================================
-              APP WRAPPER
-          ====================================================== */}
+          {/* =================================================
+              APPLICATION WRAPPER
+          ================================================= */}
 
           <div className="relative flex min-h-screen flex-col">
-
-            {/* ======================================================
-                NAVBAR
-            ====================================================== */}
+            {/* =============================================
+                HEADER
+            ============================================= */}
 
             <header className="sticky top-0 z-40">
-
               <Navbar />
-
             </header>
 
-            {/* ======================================================
+            {/* =============================================
                 MAIN CONTENT
-            ====================================================== */}
+            ============================================= */}
 
             <main
               id="main-content"
@@ -347,34 +421,27 @@ export default function RootLayout({
               {children}
             </main>
 
-            {/* ======================================================
+            {/* =============================================
                 FOOTER
-            ====================================================== */}
+            ============================================= */}
 
             <Footer />
-
           </div>
 
-          {/* ======================================================
-              WHATSAPP WIDGET
-          ====================================================== */}
+          {/* =============================================
+              FLOATING WIDGETS
+          ============================================= */}
 
           <WhatsAppChannelWidget />
 
-          {/* ======================================================
-              SPOTIFY PODCAST
-          ====================================================== */}
-
           <SpotifyPodcastWidget />
 
-          {/* ======================================================
-              VERCEL ANALYTICS
-          ====================================================== */}
+          {/* =============================================
+              ANALYTICS
+          ============================================= */}
 
           <Analytics />
-
         </LoaderProvider>
-
       </body>
     </html>
   )
