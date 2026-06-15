@@ -152,7 +152,7 @@ export default async function UpcomingBookPage({
                 </h2>
 
                 <blockquote className="mt-10 border-l-4 border-white/30 pl-6 text-lg italic text-white/70 md:text-xl">
-                  &ldquo;The story was already written&rdquo;
+                  &ldquo;The story was already written, and I was becoming the person meant to live it.&rdquo;
                 </blockquote>
 
                 <div className="mt-10 flex flex-wrap gap-4">
