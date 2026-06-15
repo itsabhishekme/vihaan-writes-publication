@@ -343,6 +343,152 @@ const books = [
   `,
   },
 
+  {
+    id: 5,
+
+    title: "The Story Was Already Written",
+
+    subtitle:
+      "My Past Life, My Destiny, and the Journey Back to Myself",
+
+    badge: "Destiny, Karma & Spiritual Awakening",
+
+    image: "/stories/book-five.jpg",
+
+    amazon: "/upcoming/the-story-was-already-written",
+
+    accent:
+      "from-indigo-700 via-purple-800 to-black",
+
+    glow:
+      "shadow-purple-500/30 border-purple-500/20",
+
+    quote:
+      "I was not searching for the world. I was searching for the person I was always meant to become.",
+
+    short:
+      "A deeply reflective journey through destiny, karma, spiritual awakening, past-life echoes, soul connections, personal transformation, and the search for meaning behind life's most profound experiences.",
+
+    seo: {
+      title:
+        "The Story Was Already Written | Vihaan | Destiny, Karma, Spiritual Awakening & Self-Discovery",
+
+      description:
+        "Discover The Story Was Already Written by Vihaan, a powerful spiritual memoir exploring destiny, karma, past lives, soul connections, personal transformation, spiritual awakening, life purpose, inner peace, and the journey back to oneself.",
+
+      keywords: [
+        "The Story Was Already Written",
+        "Vihaan",
+        "destiny",
+        "karma",
+        "past lives",
+        "reincarnation",
+        "spiritual awakening",
+        "self discovery",
+        "soul connection",
+        "soulmate",
+        "life purpose",
+        "personal transformation",
+        "inner peace",
+        "spiritual memoir",
+        "conscious living",
+        "healing journey",
+        "meaning of life",
+        "personal growth",
+        "spiritual growth",
+        "human experience"
+      ]
+    },
+
+    full: `
+    The Story Was Already Written is a deeply personal
+    and spiritual journey through destiny, karma,
+    self-discovery, love, purpose, and awakening.
+
+    Through heartfelt storytelling, reflection,
+    and life experiences, Vihaan explores the
+    possibility that some chapters of our lives
+    begin long before we are aware of them.
+
+    This book follows a search that started in childhood.
+
+    A search for answers.
+
+    A search for meaning.
+
+    A search for understanding.
+
+    Along the way come questions about destiny,
+    recurring life patterns, loneliness, loss,
+    transformation, relationships, spiritual growth,
+    and the invisible forces that appear to shape
+    our journeys.
+
+    Through fifteen reflective chapters, readers
+    travel alongside the author as he examines:
+
+    • childhood signs that sparked a lifelong search
+    • the feeling of being different from others
+    • questions no one could answer
+    • karmic patterns that repeat throughout life
+    • unfinished lessons and personal growth
+    • the invisible hand of destiny
+    • loneliness and inner battles
+    • loss, healing, and transformation
+    • finding meaning through pain
+    • dreams of a future spouse
+    • soul connections and karmic relationships
+    • the lessons hidden within waiting
+    • discovering purpose through experience
+    • finding inner peace
+    • spiritual awakening and self-realization
+
+    This is not a book of absolute answers.
+
+    It is a book of exploration.
+
+    A reflection on the mysteries of life,
+    the wisdom hidden within challenges,
+    and the possibility that every experience
+    carries a deeper purpose.
+
+    The Story Was Already Written speaks to
+    seekers, dreamers, spiritual explorers,
+    and anyone who has ever questioned why
+    life unfolds the way it does.
+
+    It reminds readers that growth often comes
+    through uncertainty, wisdom emerges through
+    experience, and meaning can be found even
+    in life's most difficult chapters.
+
+    More than a memoir, this book is an invitation
+    to look at your own journey through a new lens.
+
+    A lens of awareness.
+
+    A lens of purpose.
+
+    A lens of transformation.
+
+    For readers interested in spirituality,
+    destiny, karma, reincarnation, soul connections,
+    personal growth, mindfulness, self-discovery,
+    healing, and conscious living, this book offers
+    a thoughtful exploration of the journey inward.
+
+    Because perhaps the story was never about
+    finding something outside ourselves.
+
+    Perhaps it was always about remembering
+    who we truly are.
+
+    The story was already written.
+
+    And every chapter was leading us home.
+  `,
+  },
+
 ];
 
 const features = [
