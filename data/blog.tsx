@@ -2515,6 +2515,1648 @@ export const blogPosts: BlogPost[] = [
       </div>
     ),
   },
+  /* ================= BLOG 12 ================= */
 
+  {
+    slug: "the-side-no-one-ever-saw-hidden-pain-self-discovery",
+    title:
+      "The Side No One Ever Saw: Hidden Pain, Family Wounds, and the Search for Myself",
+    excerpt:
+      "A deeply personal reflection on emotional healing, family wounds, identity struggles, self-discovery, and the journey toward inner peace.",
+    image: "/blog-side-no-one-ever-saw.jpg",
+    date: "2026-06-15",
+    time: "18 min read",
+    category: "Personal Growth",
+    tags: [
+      "Self Discovery",
+      "Emotional Healing",
+      "Family Wounds",
+      "Identity",
+      "Inner Peace",
+      "Personal Growth",
+    ],
+    author: "Vihaan",
+    featured: true,
+    audio: "/audio/the-side-no-one-ever-saw.mp3",
+
+    content: (
+      <div className="space-y-14">
+
+        {/* HERO SECTION */}
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-slate-950 via-black to-neutral-950 p-10 md:p-14">
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_40%)]" />
+
+          <div className="relative z-10 space-y-8">
+
+            <p className="text-3xl md:text-5xl font-light leading-tight text-white">
+              The hardest journey of my life was not finding success.
+            </p>
+
+            <p className="text-3xl md:text-5xl font-light leading-tight text-white">
+              It was finding myself.
+            </p>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+
+              <p className="text-center text-2xl italic leading-relaxed text-neutral-100">
+                “The side no one ever saw was the side carrying the entire story.”
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* SECTION 1 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Story Hidden Behind the Smile
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Most people only see what appears on the surface.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            They see accomplishments, responsibilities, confidence, and smiles.
+            What they rarely see are the invisible battles taking place underneath.
+          </p>
+
+          <blockquote className="border-l-4 border-indigo-500 pl-6 text-2xl italic text-neutral-100">
+            “Some people spend years surviving struggles nobody knows exist.”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            For years, I became skilled at appearing strong while quietly carrying
+            anxiety, self-doubt, loneliness, and unanswered questions.
+          </p>
+
+        </section>
+
+        {/* SECTION 2 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Family Wounds Nobody Talks About
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Family can be a source of love, strength, and belonging.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Yet family can also create emotional wounds that remain hidden for years.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-3">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Expectations
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                The pressure to become who others expected.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Silence
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Feelings that remained unspoken for years.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Distance
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Emotional gaps created by misunderstanding.
+              </p>
+
+            </div>
+
+          </div>
+
+          <p className="leading-relaxed text-neutral-300">
+            Healing began when I stopped searching for blame and started searching
+            for understanding.
+          </p>
+
+        </section>
+
+        {/* SECTION 3 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Identity Crisis Nobody Could See
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            There came a point where achievements stopped answering my questions.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            I had goals, responsibilities, and ambitions.
+            Yet one question continued following me:
+          </p>
+
+          <div className="rounded-3xl border border-indigo-500/20 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 p-10">
+
+            <p className="text-center text-3xl italic leading-relaxed text-white">
+              “Who am I beneath everything I have become?”
+            </p>
+
+          </div>
+
+          <p className="leading-relaxed text-neutral-300">
+            That question became the beginning of self-discovery.
+          </p>
+
+        </section>
+
+        {/* SECTION 4 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Writing Became My Healing
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            When words remained trapped inside, the pain grew heavier.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Writing became a safe place where emotions could finally breathe.
+          </p>
+
+          <blockquote className="border-l-4 border-purple-500 pl-6 text-2xl italic text-neutral-100">
+            “The page listened when I did not know how to speak.”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            Every sentence became a step toward understanding myself.
+          </p>
+
+        </section>
+
+        {/* SECTION 5 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            What Pain Eventually Taught Me
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Pain changed me.
+            Not because suffering is beautiful.
+            But because suffering forced me to grow.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-2">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Resilience
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Learning how to continue despite setbacks.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Compassion
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Understanding invisible struggles in others.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Awareness
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Seeing life beyond appearances.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Acceptance
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Embracing every chapter of my story.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 6 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Search Was Never for the World
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            For years I searched through success, relationships, spirituality,
+            dreams, and achievement.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Eventually I discovered the truth:
+          </p>
+
+          <div className="rounded-[32px] border border-indigo-500/20 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 p-12 text-center">
+
+            <p className="text-3xl italic leading-relaxed text-white">
+              “The search was never for the world. It was for myself.”
+            </p>
+
+          </div>
+
+          <p className="leading-relaxed text-neutral-300">
+            Everything I experienced—every wound, every lesson, every question—
+            was guiding me back toward who I truly was.
+          </p>
+
+        </section>
+
+        {/* SEO SECTION */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Self-Discovery, Emotional Healing, and Finding Inner Peace
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Emotional healing begins with honesty.
+            Self-discovery begins with awareness.
+            Inner peace begins when we stop running from ourselves.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Whether you are navigating family wounds, identity struggles,
+            loneliness, anxiety, personal growth, spiritual awakening,
+            self-reflection, emotional healing, or the search for purpose,
+            remember that your journey matters.
+          </p>
+
+        </section>
+
+        {/* FINAL REFLECTION */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Final Reflection
+          </h2>
+
+          <div className="rounded-[32px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black p-12">
+
+            <p className="text-center text-3xl italic leading-relaxed text-white">
+              “The person I spent my entire life searching for was the person staring back at me in the mirror.”
+            </p>
+
+          </div>
+
+          <p className="text-center text-lg leading-relaxed text-neutral-300">
+            Healing is not becoming someone new.
+            Healing is remembering who you have always been.
+          </p>
+
+        </section>
+
+        {/* CTA */}
+        <div className="rounded-3xl border border-white/10 bg-black/40 p-10 text-center">
+
+          <p className="mb-4 text-2xl text-white">
+            Explore More Personal Growth & Self-Discovery Articles
+          </p>
+
+          <p className="italic leading-relaxed text-neutral-400">
+            Read reflections on emotional healing, identity, family relationships,
+            spirituality, purpose, resilience, and inner peace.
+          </p>
+
+        </div>
+
+        {/* SIGNATURE */}
+        <p className="mt-12 text-right text-lg text-neutral-300">
+          — Vihaan
+        </p>
+
+      </div>
+    ),
+  },
+
+  /* ================= BLOG 13 ================= */
+
+  {
+    slug: "the-day-i-stopped-running-from-myself",
+    title:
+      "The Day I Stopped Running from Myself: The Beginning of Real Healing",
+    excerpt:
+      "A personal reflection on self-discovery, emotional healing, acceptance, inner growth, and the life-changing moment when I finally faced myself honestly.",
+    image: "/blog-stopped-running-from-myself.jpg",
+    date: "2026-06-22",
+    time: "15 min read",
+    category: "Personal Growth",
+    tags: [
+      "Self Discovery",
+      "Healing",
+      "Inner Growth",
+      "Acceptance",
+      "Mental Wellness",
+      "Life Lessons",
+    ],
+    author: "Vihaan",
+    featured: true,
+    audio: "/audio/the-day-i-stopped-running-from-myself.mp3",
+
+    content: (
+      <div className="space-y-14">
+
+        {/* HERO */}
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-slate-950 via-black to-indigo-950/40 p-10 md:p-14">
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.15),transparent_40%)]" />
+
+          <div className="relative z-10 space-y-8">
+
+            <p className="text-3xl md:text-5xl font-light leading-tight text-white">
+              Healing began the moment I stopped running.
+            </p>
+
+            <p className="text-xl leading-relaxed text-neutral-300">
+              Not from the world. Not from people.
+              From myself.
+            </p>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+
+              <p className="text-center text-2xl italic leading-relaxed text-neutral-100">
+                “The hardest person to face is often the one in the mirror.”
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* SECTION 1 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Art of Avoidance
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            For years, I stayed busy.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Goals, responsibilities, ambitions, plans, distractions—
+            all of them kept me moving.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            What I didn't realize was that movement can become a form of escape.
+          </p>
+
+          <blockquote className="border-l-4 border-indigo-500 pl-6 text-2xl italic text-neutral-100">
+            “Sometimes we stay busy because silence reveals what we are avoiding.”
+          </blockquote>
+
+        </section>
+
+        {/* SECTION 2 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            When Success Could No Longer Distract Me
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            There came a moment when achievements stopped filling the emptiness.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            The goals remained.
+            The responsibilities remained.
+            But the deeper questions refused to stay quiet.
+          </p>
+
+          <div className="rounded-3xl border border-indigo-500/20 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 p-10">
+
+            <p className="text-center text-2xl italic leading-relaxed text-white">
+              “What if the problem isn't what you're missing?
+              What if it's what you're avoiding?”
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 3 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Meeting My Hidden Self
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Beneath the achievements was fear.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Beneath the confidence was uncertainty.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Beneath the smile was a person carrying years of unanswered questions.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-3">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Fear
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Fear of not being enough.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Doubt
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Doubting my worth beyond achievement.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Longing
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                A desire to finally understand myself.
+              </p>
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 4 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Acceptance Changed Everything
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Healing did not begin when I found answers.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Healing began when I stopped fighting myself.
+          </p>
+
+          <blockquote className="border-l-4 border-purple-500 pl-6 text-2xl italic text-neutral-100">
+            “Self-acceptance is the doorway to inner peace.”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            I stopped demanding perfection.
+            I stopped carrying impossible expectations.
+            I stopped measuring my worth through outcomes.
+          </p>
+
+        </section>
+
+        {/* SECTION 5 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Beginning of Real Healing
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Healing was never about becoming someone else.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            It was about reconnecting with who I already was beneath fear,
+            pain, expectations, and survival.
+          </p>
+
+          <div className="rounded-[32px] border border-indigo-500/20 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 p-12 text-center">
+
+            <p className="text-3xl italic leading-relaxed text-white">
+              “The moment I stopped running from myself, I started finding myself.”
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* SEO SECTION */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Self-Discovery, Emotional Healing and Personal Growth
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Self-discovery begins when we become honest about our emotional
+            struggles, family wounds, identity challenges, anxiety, loneliness,
+            self-worth, purpose, and inner healing.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Personal growth is not about becoming perfect.
+            It is about becoming authentic.
+          </p>
+
+        </section>
+
+        {/* FINAL REFLECTION */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Final Reflection
+          </h2>
+
+          <div className="rounded-[32px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black p-12">
+
+            <p className="text-center text-3xl italic leading-relaxed text-white">
+              “The journey that changed my life was not across cities, careers, or achievements. It was the journey inward.”
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* CTA */}
+        <div className="rounded-3xl border border-white/10 bg-black/40 p-10 text-center">
+
+          <p className="mb-4 text-2xl text-white">
+            Explore More Self-Discovery Articles
+          </p>
+
+          <p className="italic leading-relaxed text-neutral-400">
+            Read reflections on healing, purpose, identity, resilience,
+            emotional growth, and inner peace.
+          </p>
+
+        </div>
+
+        {/* SIGNATURE */}
+        <p className="mt-12 text-right text-lg text-neutral-300">
+          — Vihaan
+        </p>
+
+      </div>
+    ),
+  },
+
+  /* ================= BLOG 14 ================= */
+
+  {
+    slug: "why-some-wounds-take-years-to-heal",
+    title:
+      "Why Some Wounds Take Years to Heal: The Hidden Journey of Emotional Recovery",
+    excerpt:
+      "A reflection on emotional healing, unresolved pain, family wounds, personal growth, self-acceptance, and why true healing often takes longer than expected.",
+    image: "/blog-why-wounds-take-years-to-heal.jpg",
+    date: "2026-07-01",
+    time: "17 min read",
+    category: "Healing",
+    tags: [
+      "Emotional Healing",
+      "Self Acceptance",
+      "Mental Wellness",
+      "Personal Growth",
+      "Family Wounds",
+      "Healing Journey",
+    ],
+    author: "Vihaan",
+    featured: true,
+    audio: "/audio/why-some-wounds-take-years-to-heal.mp3",
+
+    content: (
+      <div className="space-y-14">
+
+        {/* HERO */}
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-rose-950/30 via-black to-indigo-950/30 p-10 md:p-14">
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(244,114,182,0.12),transparent_40%)]" />
+
+          <div className="relative z-10 space-y-8">
+
+            <p className="text-3xl md:text-5xl font-light leading-tight text-white">
+              Some wounds do not heal because time passes.
+            </p>
+
+            <p className="text-3xl md:text-5xl font-light leading-tight text-white">
+              They heal because understanding arrives.
+            </p>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+
+              <p className="text-center text-2xl italic leading-relaxed text-neutral-100">
+                “Time changes the calendar. Healing changes the heart.”
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* SECTION 1 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Myth That Time Heals Everything
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            One of the most common beliefs is that time heals all wounds.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Yet many people carry emotional pain for years, sometimes decades,
+            despite the passing of time.
+          </p>
+
+          <blockquote className="border-l-4 border-pink-500 pl-6 text-2xl italic text-neutral-100">
+            “Healing does not happen because time moves forward. Healing happens because we do.”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            Unaddressed pain often remains hidden beneath daily life,
+            waiting for acknowledgment.
+          </p>
+
+        </section>
+
+        {/* SECTION 2 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Wounds We Learn to Carry
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Some wounds become so familiar that they start feeling normal.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-2">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Childhood Rejection
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Feeling unseen, unheard, or misunderstood.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Family Expectations
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Carrying pressure that quietly shapes identity.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Emotional Neglect
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Learning to suppress feelings instead of expressing them.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Unresolved Loss
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Carrying grief that never found a voice.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 3 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Why We Avoid Our Pain
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Most people do not avoid healing because they enjoy suffering.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            They avoid healing because facing pain feels frightening.
+          </p>
+
+          <div className="rounded-3xl border border-indigo-500/20 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 p-10">
+
+            <p className="text-center text-2xl italic leading-relaxed text-white">
+              “Avoidance offers temporary comfort but delays lasting healing.”
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 4 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Turning Point
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Real healing began when I stopped asking:
+          </p>
+
+          <blockquote className="border-l-4 border-indigo-500 pl-6 text-2xl italic text-neutral-100">
+            “Why did this happen to me?”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            And started asking:
+          </p>
+
+          <blockquote className="border-l-4 border-purple-500 pl-6 text-2xl italic text-neutral-100">
+            “What is this experience trying to teach me?”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            That single shift transformed pain into a source of growth.
+          </p>
+
+        </section>
+
+        {/* SECTION 5 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Healing Is Not Forgetting
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Healing does not erase memories.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Healing changes the relationship we have with those memories.
+          </p>
+
+          <div className="rounded-[32px] border border-pink-500/20 bg-gradient-to-r from-pink-500/10 to-rose-500/10 p-12 text-center">
+
+            <p className="text-3xl italic leading-relaxed text-white">
+              “A healed wound may leave a scar, but it no longer controls your life.”
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 6 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            What Healing Actually Looks Like
+          </h2>
+
+          <div className="grid gap-5 md:grid-cols-3">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Awareness
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Recognizing the wound without judgment.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Acceptance
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Acknowledging the truth of your experience.
+              </p>
+
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+
+              <p className="mb-3 text-lg font-medium text-white">
+                Growth
+              </p>
+
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Choosing wisdom instead of bitterness.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* SEO SECTION */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Emotional Healing, Personal Growth and Self-Acceptance
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Emotional healing is a journey of self-discovery, self-acceptance,
+            mental wellness, personal growth, family healing, resilience,
+            emotional intelligence, and inner peace.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Understanding emotional wounds is often the first step toward
+            transformation and long-term healing.
+          </p>
+
+        </section>
+
+        {/* FINAL REFLECTION */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Final Reflection
+          </h2>
+
+          <div className="rounded-[32px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black p-12">
+
+            <p className="text-center text-3xl italic leading-relaxed text-white">
+              “The wound that taught you the most may become the chapter that transforms your life.”
+            </p>
+
+          </div>
+
+          <p className="text-center text-lg leading-relaxed text-neutral-300">
+            Healing is not about becoming who you were before the pain.
+            It is about becoming who you are because of it.
+          </p>
+
+        </section>
+
+        {/* CTA */}
+        <div className="rounded-3xl border border-white/10 bg-black/40 p-10 text-center">
+
+          <p className="mb-4 text-2xl text-white">
+            Explore More Healing & Self-Growth Articles
+          </p>
+
+          <p className="italic leading-relaxed text-neutral-400">
+            Discover reflections on emotional healing, resilience,
+            self-discovery, purpose, family relationships, and inner peace.
+          </p>
+
+        </div>
+
+        {/* SIGNATURE */}
+        <p className="mt-12 text-right text-lg text-neutral-300">
+          — Vihaan
+        </p>
+
+      </div>
+    ),
+  },
+
+  /* ================= BLOG 15 ================= */
+
+  {
+    slug: "the-peace-i-found-after-stopping-the-fight",
+    title:
+      "The Peace I Found After Stopping the Fight Within",
+    excerpt:
+      "A reflection on inner peace, self-acceptance, emotional healing, forgiveness, personal growth, and the freedom that comes from ending the war with yourself.",
+    image: "/blog-peace-after-stopping-the-fight.jpg",
+    date: "2026-07-15",
+    time: "16 min read",
+    category: "Inner Peace",
+    tags: [
+      "Inner Peace",
+      "Self Acceptance",
+      "Emotional Healing",
+      "Forgiveness",
+      "Personal Growth",
+      "Mindfulness",
+    ],
+    author: "Vihaan",
+    featured: true,
+    audio: "/audio/the-peace-i-found-after-stopping-the-fight.mp3",
+
+    content: (
+      <div className="space-y-14">
+
+        {/* HERO */}
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-blue-950/30 via-black to-indigo-950/30 p-10 md:p-14">
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(96,165,250,0.12),transparent_40%)]" />
+
+          <div className="relative z-10 space-y-8">
+
+            <p className="text-3xl md:text-5xl font-light leading-tight text-white">
+              Peace arrived when I stopped trying to defeat myself.
+            </p>
+
+            <p className="text-xl leading-relaxed text-neutral-300">
+              Not when life became easier.
+              Not when every problem disappeared.
+              But when the inner battle finally ended.
+            </p>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8">
+
+              <p className="text-center text-2xl italic leading-relaxed text-neutral-100">
+                “The longest war of my life was the one I fought against myself.”
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* SECTION 1 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Invisible Battle
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            For years, I carried an invisible conflict inside me.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            I fought my past.
+            I fought my mistakes.
+            I fought my fears.
+            I fought my emotions.
+          </p>
+
+          <blockquote className="border-l-4 border-blue-500 pl-6 text-2xl italic text-neutral-100">
+            “The mind can become a battlefield when acceptance is missing.”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            Every disappointment became evidence against myself.
+            Every failure became another reason to feel inadequate.
+          </p>
+
+        </section>
+
+        {/* SECTION 2 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Why We Become Our Own Harshest Critics
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Many of us speak to ourselves in ways we would never speak to another person.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-2">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Perfectionism
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Believing mistakes make us unworthy.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Comparison
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Measuring our worth against others.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Regret
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Living inside decisions that cannot be changed.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Fear
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Fear of not being enough.
+              </p>
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 3 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Turning Point
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Everything changed when I stopped asking:
+          </p>
+
+          <blockquote className="border-l-4 border-indigo-500 pl-6 text-2xl italic text-neutral-100">
+            “What's wrong with me?”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            And started asking:
+          </p>
+
+          <blockquote className="border-l-4 border-cyan-500 pl-6 text-2xl italic text-neutral-100">
+            “What part of me needs understanding?”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            That question transformed judgment into compassion.
+          </p>
+
+        </section>
+
+        {/* SECTION 4 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Forgiveness Changed Everything
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Forgiveness is often misunderstood.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            It is not approval.
+            It is not denial.
+            It is not forgetting.
+          </p>
+
+          <div className="rounded-3xl border border-cyan-500/20 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 p-10">
+
+            <p className="text-center text-2xl italic leading-relaxed text-white">
+              “Forgiveness is choosing peace over permanent punishment.”
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 5 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            What Peace Actually Feels Like
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Peace is not excitement.
+            Peace is not constant happiness.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Peace is the quiet confidence that you no longer need to fight reality.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-3">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Acceptance
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Accepting what cannot be changed.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Presence
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Living fully in the current moment.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Freedom
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Releasing emotional burdens from the past.
+              </p>
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 6 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Gift Hidden Inside the Struggle
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Looking back, I would not choose every painful experience again.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            But I am grateful for the person those experiences helped create.
+          </p>
+
+          <div className="rounded-[32px] border border-blue-500/20 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 p-12 text-center">
+
+            <p className="text-3xl italic leading-relaxed text-white">
+              “The struggle that almost broke me became the lesson that transformed me.”
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* SEO SECTION */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Inner Peace, Self-Acceptance and Emotional Healing
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Inner peace is closely connected to self-acceptance, emotional healing,
+            mindfulness, mental wellness, resilience, forgiveness, personal growth,
+            emotional intelligence, and spiritual awareness.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            When we stop fighting ourselves, we create space for healing,
+            happiness, clarity, purpose, and authentic living.
+          </p>
+
+        </section>
+
+        {/* FINAL REFLECTION */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Final Reflection
+          </h2>
+
+          <div className="rounded-[32px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black p-12">
+
+            <p className="text-center text-3xl italic leading-relaxed text-white">
+              “Peace did not arrive because life became perfect. Peace arrived because I stopped demanding perfection from myself.”
+            </p>
+
+          </div>
+
+          <p className="text-center text-lg leading-relaxed text-neutral-300">
+            Sometimes the greatest victory is not winning the battle.
+            It is ending it.
+          </p>
+
+        </section>
+
+        {/* CTA */}
+        <div className="rounded-3xl border border-white/10 bg-black/40 p-10 text-center">
+
+          <p className="mb-4 text-2xl text-white">
+            Explore More Inner Peace & Healing Articles
+          </p>
+
+          <p className="italic leading-relaxed text-neutral-400">
+            Discover reflections on emotional healing, self-discovery,
+            forgiveness, purpose, resilience, and personal growth.
+          </p>
+
+        </div>
+
+        {/* SIGNATURE */}
+        <p className="mt-12 text-right text-lg text-neutral-300">
+          — Vihaan
+        </p>
+
+      </div>
+    ),
+  },
+
+  /* ================= BLOG 16 ================= */
+
+  {
+    slug: "the-search-for-who-i-am-finally-led-me-home",
+    title:
+      "The Search for Who I Am Finally Led Me Home",
+    excerpt:
+      "A personal reflection on identity, purpose, self-discovery, emotional healing, inner peace, and the realization that the answers were within all along.",
+    image: "/blog-search-for-who-i-am.jpg",
+    date: "2026-08-01",
+    time: "18 min read",
+    category: "Self Discovery",
+    tags: [
+      "Identity",
+      "Purpose",
+      "Self Discovery",
+      "Inner Peace",
+      "Personal Growth",
+      "Healing",
+    ],
+    author: "Vihaan",
+    featured: true,
+    audio: "/audio/the-search-for-who-i-am-finally-led-me-home.mp3",
+
+    content: (
+      <div className="space-y-14">
+
+        {/* HERO */}
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-indigo-950/40 via-black to-purple-950/40 p-10 md:p-14">
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.12),transparent_40%)]" />
+
+          <div className="relative z-10 space-y-8">
+
+            <p className="text-3xl md:text-5xl font-light leading-tight text-white">
+              After years of searching for answers,
+            </p>
+
+            <p className="text-3xl md:text-5xl font-light leading-tight text-white">
+              I discovered I was searching for myself.
+            </p>
+
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+
+              <p className="text-center text-2xl italic leading-relaxed text-neutral-100">
+                “The longest journey of my life ended where it began—within.”
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* SECTION 1 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Search That Never Stopped
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Since childhood, I felt as though something was missing.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            I could never explain it completely.
+            It wasn't a person.
+            It wasn't success.
+            It wasn't a destination.
+          </p>
+
+          <blockquote className="border-l-4 border-indigo-500 pl-6 text-2xl italic text-neutral-100">
+            “Some searches begin long before we understand what we're looking for.”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            Looking back now, I realize the search itself was guiding me.
+          </p>
+
+        </section>
+
+        {/* SECTION 2 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Chasing Answers in the Outside World
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Like many people, I believed the answer existed somewhere outside me.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-4">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Success
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Hoping achievement would create fulfillment.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Recognition
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Looking for validation from others.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Relationships
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Hoping someone else could complete the journey.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Purpose
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Searching for meaning beyond achievement.
+              </p>
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 3 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Identity Beneath the Roles
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            For years, I defined myself through roles.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Son.
+            Student.
+            Professional.
+            Writer.
+            Dreamer.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Yet beneath every role existed a deeper identity.
+          </p>
+
+          <div className="rounded-3xl border border-purple-500/20 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 p-10">
+
+            <p className="text-center text-2xl italic leading-relaxed text-white">
+              “You are not the roles you play. You are the awareness behind them.”
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 4 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            The Lessons Hidden in Every Wound
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Every difficult chapter taught something valuable.
+          </p>
+
+          <div className="grid gap-5 md:grid-cols-2">
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Loneliness
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Taught me self-reflection.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Disappointment
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Taught me resilience.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Anxiety
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Taught me awareness.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+              <p className="mb-3 text-lg font-medium text-white">
+                Healing
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-400">
+                Taught me compassion.
+              </p>
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* SECTION 5 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Coming Home to Myself
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            The breakthrough came quietly.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            I stopped searching for a different life and started understanding my own.
+          </p>
+
+          <blockquote className="border-l-4 border-pink-500 pl-6 text-2xl italic text-neutral-100">
+            “Home was never a place. It was a relationship with myself.”
+          </blockquote>
+
+          <p className="leading-relaxed text-neutral-300">
+            The answers I spent years chasing had been growing inside me all along.
+          </p>
+
+        </section>
+
+        {/* SECTION 6 */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            What Inner Peace Really Means
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Peace is not the absence of problems.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Peace is the ability to remain connected to yourself despite them.
+          </p>
+
+          <div className="rounded-[32px] border border-indigo-500/20 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 p-12 text-center">
+
+            <p className="text-3xl italic leading-relaxed text-white">
+              “I found peace when I stopped searching for another version of myself.”
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* SEO SECTION */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Identity, Purpose, Self-Discovery and Inner Peace
+          </h2>
+
+          <p className="leading-relaxed text-neutral-300">
+            Self-discovery is a lifelong journey involving identity, purpose,
+            emotional healing, personal growth, mindfulness, self-awareness,
+            resilience, spiritual growth, and inner peace.
+          </p>
+
+          <p className="leading-relaxed text-neutral-300">
+            Understanding who you are beyond expectations can transform every area
+            of life, from relationships and career to happiness and fulfillment.
+          </p>
+
+        </section>
+
+        {/* FINAL REFLECTION */}
+        <section className="space-y-8">
+
+          <h2 className="text-3xl font-semibold text-white">
+            Final Reflection
+          </h2>
+
+          <div className="rounded-[32px] border border-white/10 bg-gradient-to-br from-neutral-900 to-black p-12">
+
+            <p className="text-center text-3xl italic leading-relaxed text-white">
+              “The person I spent years trying to find was patiently waiting for me to stop looking everywhere else.”
+            </p>
+
+          </div>
+
+          <p className="text-center text-lg leading-relaxed text-neutral-300">
+            Sometimes the greatest discovery is realizing you were never lost.
+          </p>
+
+        </section>
+
+        {/* CTA */}
+        <div className="rounded-3xl border border-white/10 bg-black/40 p-10 text-center">
+
+          <p className="mb-4 text-2xl text-white">
+            Explore More Self-Discovery & Purpose Articles
+          </p>
+
+          <p className="italic leading-relaxed text-neutral-400">
+            Discover reflections on identity, emotional healing, purpose,
+            spirituality, resilience, personal growth, and inner peace.
+          </p>
+
+        </div>
+
+        {/* SIGNATURE */}
+        <p className="mt-12 text-right text-lg text-neutral-300">
+          — Vihaan
+        </p>
+
+      </div>
+    ),
+  },
 
 ];
