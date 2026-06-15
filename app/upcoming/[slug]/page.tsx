@@ -11,8 +11,8 @@ type Props = {
   }>;
 };
 
-export async function generateStaticParams() {
-  return books.map((book: { slug: any; }) => ({
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  return books.map((book) => ({
     slug: book.slug,
   }));
 }
@@ -152,7 +152,7 @@ export default async function UpcomingBookPage({
                 </h2>
 
                 <blockquote className="mt-10 border-l-4 border-white/30 pl-6 text-lg italic text-white/70 md:text-xl">
-                  "{book.quote}"
+                  &ldquo;The story was already written&rdquo;
                 </blockquote>
 
                 <div className="mt-10 flex flex-wrap gap-4">

@@ -81,21 +81,21 @@ const SITE_NAME: string =
   typeof metadataConfig.title === 'string'
     ? metadataConfig.title.trim()
     : 'Vihaan Writes'
-    
+
 /* =========================================================
    SITE DESCRIPTION
 ========================================================= */
 
 const SITE_DESCRIPTION: string =
   typeof metadataConfig.description === 'string' &&
-  metadataConfig.description.trim().length > 0
+    metadataConfig.description.trim().length > 0
     ? metadataConfig.description.trim()
     : [
-        'Official website of Vihaan Writes.',
-        'Explore books, blogs, podcasts, storytelling, reflections, spirituality, meaningful human experiences,',
-        'personal growth, creative writing, memoirs, life lessons, self-discovery,',
-        'literary reflections, inspirational stories, and thoughtful conversations.',
-      ].join(' ')
+      'Official website of Vihaan Writes.',
+      'Explore books, blogs, podcasts, storytelling, reflections, spirituality, meaningful human experiences,',
+      'personal growth, creative writing, memoirs, life lessons, self-discovery,',
+      'literary reflections, inspirational stories, and thoughtful conversations.',
+    ].join(' ')
 
 /* =========================================================
    SITE AUTHOR
@@ -132,15 +132,15 @@ const SITE_KEYWORDS: string[] =
   typeof metadataConfig.keywords === 'string'
     ? metadataConfig.keywords.split(',').map((k) => k.trim()).filter((k): k is string => !!k)
     : Array.isArray(metadataConfig.keywords) &&
-        metadataConfig.keywords.length > 0
-        ? metadataConfig.keywords.filter(
-          (
-            keyword
-      ): keyword is string =>
-        typeof keyword === 'string' &&
-        keyword.trim().length > 0
-    )
-    : DEFAULT_KEYWORDS
+      metadataConfig.keywords.length > 0
+      ? metadataConfig.keywords.filter(
+        (
+          keyword
+        ): keyword is string =>
+          typeof keyword === 'string' &&
+          keyword.trim().length > 0
+      )
+      : DEFAULT_KEYWORDS
 
 /* =========================================================
    OPEN GRAPH IMAGE
@@ -350,9 +350,15 @@ export default function RootLayout({
           crossOrigin=""
         />
 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
-          rel="dns-prefetch"
-          href="https://fonts.googleapis.com"
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
         />
 
         <link

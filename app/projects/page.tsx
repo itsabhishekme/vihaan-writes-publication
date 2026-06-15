@@ -107,37 +107,6 @@ const features = [
   },
 ];
 
-const pillars = [
-  {
-    icon: Heart,
-    title: "Love",
-    description: "Stories that explore connection, vulnerability, and the depths of human affection.",
-    border: "border-white/10",
-    gradient: "from-rose-500/20 to-transparent",
-  },
-  {
-    icon: Globe,
-    title: "Humanity",
-    description: "Reflections on what it means to be human, shared across cultures and experiences.",
-    border: "border-white/10",
-    gradient: "from-blue-500/20 to-transparent",
-  },
-  {
-    icon: Sparkles,
-    title: "Emotion",
-    description: "Raw, unfiltered expressions of feelings that shape our lives and define our journeys.",
-    border: "border-white/10",
-    gradient: "from-amber-500/20 to-transparent",
-  },
-  {
-    icon: Stars,
-    title: "Destiny",
-    description: "Explorations of fate, purpose, and the paths we're meant to discover and create.",
-    border: "border-white/10",
-    gradient: "from-purple-500/20 to-transparent",
-  },
-];
-
 export default function ProjectsPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-black text-white">
@@ -398,7 +367,7 @@ export default function ProjectsPage() {
           </Link>
         </div>
       </section>
-  
+
       {/* =========================
     FOUR PILLARS SECTION
 ========================== */}
