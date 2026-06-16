@@ -368,6 +368,75 @@ export default function ProjectsPage() {
         </div>
       </section>
 
+      <section className="relative min-h-screen bg-black text-white overflow-hidden">
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source
+            src="https://m5seiikuxyzlci4v.public.blob.vercel-storage.com/Before%20Her%20Name%20Existed/Before%20HerName%20Existed.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+
+        {/* Cinematic Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/80" />
+
+        {/* Content */}
+        <div className="relative z-10 flex min-h-screen items-center justify-center px-6">
+          <div className="max-w-5xl text-center">
+            <p className="mb-4 text-xs md:text-sm tracking-[0.5em] uppercase text-zinc-400">
+              Documentary Trailer • 2026
+            </p>
+
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-none">
+              Before Her Name Existed
+            </h1>
+
+            <div className="mx-auto my-8 h-px w-32 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
+
+            <p className="mx-auto max-w-3xl text-lg md:text-2xl text-zinc-300 leading-relaxed font-light">
+              A story written before the person it was written for entered my life.
+            </p>
+
+            <div className="mt-12 flex flex-col items-center gap-6">
+              <span className="rounded-full border border-white/20 px-6 py-2 text-xs tracking-[0.3em] uppercase text-zinc-400">
+                Coming 2026
+              </span>
+
+              <button
+                onClick={() => {
+                  const video = document.querySelector("video");
+                  if (video) {
+                    video.muted = false;
+                    video.play();
+                  }
+                }}
+                className="group flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-8 py-4 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/40"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30">
+                  ▶
+                </div>
+                <span className="tracking-widest uppercase text-sm">
+                  Watch Trailer
+                </span>
+              </button>
+            </div>
+
+            <div className="mt-20 text-zinc-500 text-xs tracking-[0.4em] uppercase">
+              A Documentary About Fate, Timing & Unwritten Love
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* =========================
     FOUR PILLARS SECTION
 ========================== */}
@@ -435,6 +504,7 @@ export default function ProjectsPage() {
                 Future • Faith • Love
               </div>
             </div>
+
 
             {/* Human Archive */}
             <div className="group relative overflow-hidden rounded-[32px] border border-amber-500/20 bg-gradient-to-b from-amber-500/10 to-transparent p-8 backdrop-blur-xl transition-all duration-700 hover:-translate-y-3 hover:border-amber-400/40">
