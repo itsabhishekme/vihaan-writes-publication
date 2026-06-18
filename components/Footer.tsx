@@ -160,6 +160,14 @@ const exploreItems: ExploreItem[] = [
     desc: "Stories of synchronicity, divine timing, recurring patterns, meaningful coincidences, karmic encounters, and life's mysterious connections that quietly shape the path of every human journey.",
     href: "/echoes-of-destiny",
   },
+
+  {
+    icon: HiOutlineFilm,
+    title: "Soulfire Chronicles Production",
+    desc: "Soulfire Chronicles Production was founded on the belief that stories possess the power to transform lives. Through documentaries, films, interviews, and cinematic storytelling, we explore themes of destiny, spirituality, human connection, personal growth, and extraordinary experiences.",
+    href: "/soulfire-chronicles-production",
+  },
+
 ];
 
 const features: FeatureItem[] = [
