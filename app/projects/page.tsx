@@ -210,9 +210,9 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* =========================
-    FOUR PILLARS CONNECTED ECOSYSTEM
-========================== */}
+        {/* =========================
+         FOUR PILLARS CONNECTED ECOSYSTEM
+        ========================== */}
       <section className="relative overflow-hidden bg-black py-32">
         {/* Background Effects */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_60%)]" />
@@ -249,8 +249,8 @@ export default function ProjectsPage() {
           </div>
 
           {/* ================================
-    Soulfire Central Nexus
-================================ */}
+             Soulfire Central Nexus
+           ================================ */}
           <div className="relative mb-40 hidden xl:flex items-center justify-center overflow-visible py-20">
 
             {/* Cosmic Background Glow */}
