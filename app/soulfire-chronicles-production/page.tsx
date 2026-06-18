@@ -241,170 +241,288 @@ export default function SoulfireChroniclesProductionPage() {
             </section>
 
             {/* Trailer Section */}
-
             <section className="border-y border-white/10 bg-gradient-to-b from-zinc-950 via-black to-zinc-950">
                 <div className="mx-auto max-w-7xl px-6 py-28 lg:px-8">
-                    <div className="mb-16 text-center">
-                        <span className="rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm text-amber-300">
+                    {/* Heading */}
+                    <div className="mx-auto mb-20 max-w-4xl text-center">
+                        <span className="rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm tracking-widest text-amber-300 uppercase">
                             Official Trailer
                         </span>
 
-
-                        <h2 className="mt-8 text-5xl font-bold md:text-6xl">
+                        <h2 className="mt-8 text-5xl font-bold md:text-6xl lg:text-7xl">
                             Before Her Name Existed
                         </h2>
 
-                        <p className="mt-4 text-xl italic text-gray-400">
-                            &ldquo;I fell in love with the story long before I ever knew the character.&rdquo;
+                        <p className="mt-6 text-2xl italic text-gray-400">
+                            “I fell in love with the story long before I ever knew the
+                            character.”
                         </p>
 
-                        <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
-                            {/* Video */}
-                            <div>
-                                <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl">
-                                    <video
-                                        controls
-                                        preload="metadata"
-                                        poster="/images/before-her-name-existed-poster.jpg"
-                                        className="aspect-video w-full"
-                                    >
-                                        <source
-                                            src="https://m5seiikuxyzlci4v.public.blob.vercel-storage.com/Before%20Her%20Name%20Existed/Stories%20That%20Illuminate%20Minds%20And%20Awaken%20Souls.mp4"
-                                            type="video/mp4"
-                                        />
-                                    </video>
-                                </div>
+                        <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-gray-300">
+                            A cinematic exploration of destiny, intuition, synchronicity,
+                            and the mysterious moments that seem to guide two lives toward
+                            one another long before they ever meet.
+                        </p>
+                    </div>
+
+                    {/* Main Content */}
+                    <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+                        {/* Video */}
+                        <div>
+                            <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl">
+                                <video
+                                    controls
+                                    preload="metadata"
+                                    poster="/images/before-her-name-existed-poster.jpg"
+                                    className="aspect-video w-full"
+                                >
+                                    <source
+                                        src="https://m5seiikuxyzlci4v.public.blob.vercel-storage.com/Before%20Her%20Name%20Existed/Stories%20That%20Illuminate%20Minds%20And%20Awaken%20Souls.mp4"
+                                        type="video/mp4"
+                                    />
+                                </video>
                             </div>
 
-                            {/* Content */}
-                            <div>
-                                <span className="text-sm uppercase tracking-[0.3em] text-amber-400">
-                                    Documentary Trailer
-                                </span>
-
-                                <h3 className="mt-4 text-4xl font-bold">
-                                    What If Love Starts Before Introductions?
-                                </h3>
-
-                                <p className="mt-6 leading-relaxed text-gray-300">
-                                    Before Her Name Existed is a thought-provoking
-                                    documentary exploring one of humanity&#39;s most fascinating
-                                    questions:
-                                </p>
-
-                                <blockquote className="mt-6 border-l-4 border-amber-400 pl-6 text-2xl font-semibold italic text-white">
-                                    Can love begin before two people meet?
-                                </blockquote>
-
-                                <p className="mt-6 leading-relaxed text-gray-400">
-                                    Across cultures, generations, and spiritual traditions,
-                                    countless people describe dreams, intuition,
-                                    synchronicities, unexplained familiarity, and
-                                    life-changing signs that appeared before they met the
-                                    person who would later become their spouse or life
-                                    partner.
-                                </p>
-
-                                <p className="mt-6 leading-relaxed text-gray-400">
-                                    Through compelling stories, emotional reflections,
-                                    expert perspectives, and cinematic storytelling, this
-                                    documentary explores mysterious connections that seem
-                                    to transcend time, distance, and coincidence.
-                                </p>
-
-                                <div className="mt-10 grid gap-4 sm:grid-cols-2">
-                                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-                                        <h4 className="font-semibold text-amber-400">
-                                            Love & Destiny
-                                        </h4>
+                            {/* Trailer Stats */}
+                            <div className="mt-8 grid grid-cols-3 gap-4">
+                                <div className="rounded-xl border border-white/10 bg-white/5 p-5 text-center">
+                                    <div className="text-3xl font-bold text-amber-400">
+                                        60+
                                     </div>
-
-                                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-                                        <h4 className="font-semibold text-amber-400">
-                                            Soul Connections
-                                        </h4>
+                                    <div className="mt-2 text-sm text-gray-400">
+                                        Interviews
                                     </div>
+                                </div>
 
-                                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-                                        <h4 className="font-semibold text-amber-400">
-                                            Synchronicity
-                                        </h4>
+                                <div className="rounded-xl border border-white/10 bg-white/5 p-5 text-center">
+                                    <div className="text-3xl font-bold text-amber-400">
+                                        12
                                     </div>
-
-                                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-                                        <h4 className="font-semibold text-amber-400">
-                                            Intuition & Dreams
-                                        </h4>
+                                    <div className="mt-2 text-sm text-gray-400">
+                                        Countries
                                     </div>
+                                </div>
 
-                                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-                                        <h4 className="font-semibold text-amber-400">
-                                            Human Connection
-                                        </h4>
+                                <div className="rounded-xl border border-white/10 bg-white/5 p-5 text-center">
+                                    <div className="text-3xl font-bold text-amber-400">
+                                        1
                                     </div>
-
-                                    <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-                                        <h4 className="font-semibold text-amber-400">
-                                            Fate vs Free Will
-                                        </h4>
+                                    <div className="mt-2 text-sm text-gray-400">
+                                        Universal Question
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Extended Description */}
-                        <div className="mx-auto mt-24 max-w-5xl">
-                            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-10 backdrop-blur">
-                                <h3 className="mb-8 text-center text-4xl font-bold">
-                                    About The Documentary
-                                </h3>
-
-                                <div className="space-y-6 text-lg leading-relaxed text-gray-300">
-                                    <p>
-                                        From recurring dreams and chance encounters to moments
-                                        of profound recognition, Before Her Name Existed
-                                        invites audiences to consider a possibility that is
-                                        both timeless and deeply personal.
-                                    </p>
-
-                                    <p>
-                                        Whether viewed through psychology, spirituality,
-                                        destiny, or personal experience, these stories
-                                        challenge what we believe about love, fate, and
-                                        human connection.
-                                    </p>
-
-                                    <p>
-                                        This film is for anyone who has ever wondered whether
-                                        certain people are destined to cross our paths—and
-                                        whether the heart sometimes recognizes a story before
-                                        it knows the character.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Production Note */}
-                        <div className="mx-auto mt-20 max-w-4xl text-center">
-                            <h3 className="text-3xl font-bold">
-                                Produced By Soulfire Chronicles
+                        {/* Documentary Content */}
+                        <div>
+                            <h3 className="text-4xl font-bold">
+                                What If Love Starts Before Introductions?
                             </h3>
 
+                            <p className="mt-6 leading-relaxed text-gray-300">
+                                Before Her Name Existed explores one of the most profound
+                                questions ever asked about human connection:
+                            </p>
+
+                            <blockquote className="mt-8 border-l-4 border-amber-400 pl-6 text-2xl font-semibold italic text-white">
+                                Can love begin before two people meet?
+                            </blockquote>
+
+                            <p className="mt-8 leading-relaxed text-gray-400">
+                                Around the world, people describe extraordinary experiences
+                                that seem impossible to explain. Dreams of unfamiliar faces,
+                                recurring signs, inexplicable feelings of certainty,
+                                strange coincidences, and moments of intuition that later
+                                reveal astonishing meaning.
+                            </p>
+
                             <p className="mt-6 leading-relaxed text-gray-400">
-                                Soulfire Chronicles Production creates meaningful
-                                documentaries, inspiring stories, and cinematic explorations
-                                of the human experience. Through films, interviews, and
-                                visual storytelling, we explore spirituality, relationships,
-                                consciousness, personal transformation, and extraordinary
-                                true stories that illuminate minds and awaken souls.
+                                These experiences often occur months or even years before
+                                they encounter the person who will become their life
+                                partner. Are these events merely coincidence—or something
+                                deeper woven into the fabric of human experience?
+                            </p>
+
+                            <p className="mt-6 leading-relaxed text-gray-400">
+                                Through compelling real-life stories, expert commentary,
+                                psychological insights, and spiritual perspectives, the
+                                documentary invites audiences to examine the possibility
+                                that some connections begin long before names are known.
                             </p>
                         </div>
+                    </div>
+
+                    {/* Themes */}
+                    <div className="mt-24">
+                        <h3 className="mb-10 text-center text-4xl font-bold">
+                            Themes Explored
+                        </h3>
+
+                        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                            {[
+                                "Love & Destiny",
+                                "Soul Connections",
+                                "Synchronicity",
+                                "Intuition & Dreams",
+                                "Human Connection",
+                                "Fate vs Free Will",
+                                "Spiritual Experiences",
+                                "The Psychology of Attraction",
+                                "Life-Changing Coincidences",
+                            ].map((theme) => (
+                                <div
+                                    key={theme}
+                                    className="rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-amber-400/30 hover:bg-white/10"
+                                >
+                                    <h4 className="text-lg font-semibold text-amber-400">
+                                        {theme}
+                                    </h4>
+
+                                    <p className="mt-3 text-sm leading-relaxed text-gray-400">
+                                        Discover how this theme influences relationships,
+                                        identity, personal growth, and the mysterious paths
+                                        that connect human lives.
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Documentary Synopsis */}
+                    <div className="mt-24 rounded-3xl border border-white/10 bg-white/5 p-10 md:p-14">
+                        <h3 className="text-4xl font-bold">Synopsis</h3>
+
+                        <p className="mt-6 text-lg leading-relaxed text-gray-300">
+                            Before Her Name Existed follows an emotional journey through
+                            stories of people who experienced meaningful signs before
+                            meeting their future partners. The film combines deeply
+                            personal testimonies with expert perspectives to explore
+                            whether human connection extends beyond ordinary perception.
+                        </p>
+
+                        <p className="mt-6 text-lg leading-relaxed text-gray-400">
+                            Moving between science, spirituality, memory, and emotion,
+                            the documentary challenges audiences to reconsider how
+                            relationships begin and what unseen forces may shape our lives.
+                        </p>
+                    </div>
+
+                    {/* Quote */}
+                    <div className="mt-24 text-center">
+                        <blockquote className="mx-auto max-w-4xl text-3xl font-light italic leading-relaxed text-white md:text-5xl">
+                            “Some people enter our story long before they enter our lives.”
+                        </blockquote>
+
+                        <p className="mt-6 text-gray-500">
+                            — Before Her Name Existed
+                        </p>
+                    </div>
+
+                    {/* Audience Takeaway */}
+                    <div className="mt-24 grid gap-8 md:grid-cols-3">
+                        <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
+                            <h4 className="text-xl font-bold text-amber-400">
+                                Reflect
+                            </h4>
+
+                            <p className="mt-4 text-gray-400">
+                                Revisit moments from your own life that may have carried
+                                meaning you did not recognize at the time.
+                            </p>
+                        </div>
+
+                        <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
+                            <h4 className="text-xl font-bold text-amber-400">
+                                Question
+                            </h4>
+
+                            <p className="mt-4 text-gray-400">
+                                Explore whether coincidence alone can explain some of
+                                life's most extraordinary experiences.
+                            </p>
+                        </div>
+
+                        <div className="rounded-2xl border border-white/10 bg-white/5 p-8">
+                            <h4 className="text-xl font-bold text-amber-400">
+                                Connect
+                            </h4>
+
+                            <p className="mt-4 text-gray-400">
+                                Discover a deeper appreciation for the invisible threads
+                                that connect human lives across time and distance.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* CTA */}
+                    <div className="mt-24 rounded-3xl border border-amber-400/20 bg-gradient-to-r from-amber-500/10 via-transparent to-amber-500/10 p-12 text-center">
+                        <h3 className="text-4xl font-bold">
+                            Watch the Journey Begin
+                        </h3>
+
+                        <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-300">
+                            Experience a documentary that explores love, destiny,
+                            intuition, and the timeless mystery of human connection.
+                        </p>
+
+                        <button className="mt-8 rounded-full bg-amber-400 px-8 py-4 font-semibold text-black transition hover:bg-amber-300">
+                            Watch Trailer
+                        </button>
                     </div>
                 </div>
             </section>
 
-            {/* Production Types */}
-            <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+            {/* Extended Description */}
+            <div className="mx-auto mt-24 max-w-5xl">
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-10 backdrop-blur">
+                    <h3 className="mb-8 text-center text-4xl font-bold">
+                        About The Documentary
+                    </h3>
+
+                    <div className="space-y-6 text-lg leading-relaxed text-gray-300">
+                        <p>
+                            From recurring dreams and chance encounters to moments
+                            of profound recognition, Before Her Name Existed
+                            invites audiences to consider a possibility that is
+                            both timeless and deeply personal.
+                        </p>
+
+                        <p>
+                            Whether viewed through psychology, spirituality,
+                            destiny, or personal experience, these stories
+                            challenge what we believe about love, fate, and
+                            human connection.
+                        </p>
+
+                        <p>
+                            This film is for anyone who has ever wondered whether
+                            certain people are destined to cross our paths—and
+                            whether the heart sometimes recognizes a story before
+                            it knows the character.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Production Note */}
+            <div className="mx-auto mt-20 max-w-4xl text-center">
+                <h3 className="text-3xl font-bold">
+                    Produced By Soulfire Chronicles
+                </h3>
+
+                <p className="mt-6 leading-relaxed text-gray-400">
+                    Soulfire Chronicles Production creates meaningful
+                    documentaries, inspiring stories, and cinematic explorations
+                    of the human experience. Through films, interviews, and
+                    visual storytelling, we explore spirituality, relationships,
+                    consciousness, personal transformation, and extraordinary
+                    true stories that illuminate minds and awaken souls.
+                </p>
+            </div>
+
+        {/* Production Types */ }
+        < section className = "mx-auto max-w-7xl px-6 py-24 lg:px-8" >
                 <div className="text-center">
                     <h2 className="text-4xl font-bold">
                         What We Create
@@ -429,40 +547,40 @@ export default function SoulfireChroniclesProductionPage() {
                         </div>
                     ))}
                 </div>
-            </section>
+            </section >
 
-            {/* Values */}
-            <section className="border-y border-white/10 bg-white/[0.03]">
-                <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-                    <div className="text-center">
-                        <h2 className="text-4xl font-bold">
-                            Our Core Values
-                        </h2>
-                    </div>
-
-                    <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-                        {values.map((value) => (
-                            <div
-                                key={value.title}
-                                className="rounded-2xl border border-white/10 bg-black/40 p-8"
-                            >
-                                <value.icon className="mb-4 h-10 w-10 text-amber-400" />
-
-                                <h3 className="mb-3 text-xl font-semibold">
-                                    {value.title}
-                                </h3>
-
-                                <p className="text-gray-400">
-                                    {value.description}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
+        {/* Values */ }
+        < section className = "border-y border-white/10 bg-white/[0.03]" >
+            <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+                <div className="text-center">
+                    <h2 className="text-4xl font-bold">
+                        Our Core Values
+                    </h2>
                 </div>
-            </section>
 
-            {/* Timeline */}
-            <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
+                <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                    {values.map((value) => (
+                        <div
+                            key={value.title}
+                            className="rounded-2xl border border-white/10 bg-black/40 p-8"
+                        >
+                            <value.icon className="mb-4 h-10 w-10 text-amber-400" />
+
+                            <h3 className="mb-3 text-xl font-semibold">
+                                {value.title}
+                            </h3>
+
+                            <p className="text-gray-400">
+                                {value.description}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            </section >
+
+        {/* Timeline */ }
+        < section className = "mx-auto max-w-6xl px-6 py-24 lg:px-8" >
                 <div className="text-center">
                     <h2 className="text-4xl font-bold">
                         Our Journey
@@ -493,65 +611,65 @@ export default function SoulfireChroniclesProductionPage() {
                         </div>
                     ))}
                 </div>
-            </section>
+            </section >
 
-            {/* CTA */}
-            <section className="border-t border-white/10">
-                <div className="mx-auto max-w-5xl px-6 py-24 text-center">
-                    <h2 className="text-5xl font-bold">
-                        Creating A Legacy Of Stories
-                    </h2>
+        {/* CTA */ }
+        < section className = "border-t border-white/10" >
+            <div className="mx-auto max-w-5xl px-6 py-24 text-center">
+                <h2 className="text-5xl font-bold">
+                    Creating A Legacy Of Stories
+                </h2>
 
-                    <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-300">
-                        We believe every extraordinary story has the power to
-                        inspire, heal, and transform. Join us as we explore the
-                        mysteries of life, destiny, and human connection
-                        through cinematic storytelling.
-                    </p>
+                <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-300">
+                    We believe every extraordinary story has the power to
+                    inspire, heal, and transform. Join us as we explore the
+                    mysteries of life, destiny, and human connection
+                    through cinematic storytelling.
+                </p>
 
-                    <div className="mt-10 flex flex-wrap justify-center gap-4">
-                        <Link
-                            href="/contact"
-                            className="rounded-xl bg-amber-500 px-8 py-4 font-semibold text-black"
-                        >
-                            Collaborate With Us
-                        </Link>
+                <div className="mt-10 flex flex-wrap justify-center gap-4">
+                    <Link
+                        href="/contact"
+                        className="rounded-xl bg-amber-500 px-8 py-4 font-semibold text-black"
+                    >
+                        Collaborate With Us
+                    </Link>
 
-                        <Link
-                            href="/projects"
-                            className="rounded-xl border border-white/20 px-8 py-4"
-                        >
-                            View Projects
-                        </Link>
-                    </div>
+                    <Link
+                        href="/projects"
+                        className="rounded-xl border border-white/20 px-8 py-4"
+                    >
+                        View Projects
+                    </Link>
                 </div>
-            </section>
+            </div>
+            </section >
 
-            <section className="border-y border-white/10 bg-gradient-to-br from-amber-500/5 via-transparent to-purple-500/5">
-                <div className="mx-auto max-w-5xl px-6 py-28 text-center lg:px-8">
-                    <span className="text-amber-400 uppercase tracking-[0.3em]">
-                        Looking Ahead
-                    </span>
+        <section className="border-y border-white/10 bg-gradient-to-br from-amber-500/5 via-transparent to-purple-500/5">
+            <div className="mx-auto max-w-5xl px-6 py-28 text-center lg:px-8">
+                <span className="text-amber-400 uppercase tracking-[0.3em]">
+                    Looking Ahead
+                </span>
 
-                    <h2 className="mt-6 text-6xl font-bold">
-                        The Future Of Soulfire Chronicles
-                    </h2>
+                <h2 className="mt-6 text-6xl font-bold">
+                    The Future Of Soulfire Chronicles
+                </h2>
 
-                    <p className="mx-auto mt-8 max-w-4xl text-lg leading-relaxed text-gray-300">
-                        Over the coming years, Soulfire Chronicles Production aims to
-                        develop feature documentaries, international collaborations,
-                        streaming platform releases, educational storytelling projects,
-                        and cinematic experiences that inspire millions around the world.
-                    </p>
+                <p className="mx-auto mt-8 max-w-4xl text-lg leading-relaxed text-gray-300">
+                    Over the coming years, Soulfire Chronicles Production aims to
+                    develop feature documentaries, international collaborations,
+                    streaming platform releases, educational storytelling projects,
+                    and cinematic experiences that inspire millions around the world.
+                </p>
 
-                    <p className="mx-auto mt-8 max-w-4xl text-lg leading-relaxed text-gray-400">
-                        We envision a future where storytelling becomes a bridge between
-                        cultures, generations, and perspectives—helping people better
-                        understand themselves and each other.
-                    </p>
-                </div>
-            </section>
+                <p className="mx-auto mt-8 max-w-4xl text-lg leading-relaxed text-gray-400">
+                    We envision a future where storytelling becomes a bridge between
+                    cultures, generations, and perspectives—helping people better
+                    understand themselves and each other.
+                </p>
+            </div>
+        </section>
 
-        </main>
+        </main >
     );
 }
