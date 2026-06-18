@@ -277,7 +277,7 @@ export default function SoulfireChroniclesProductionPage() {
                                     className="aspect-video w-full"
                                 >
                                     <source
-                                        src="https://m5seiikuxyzlci4v.public.blob.vercel-storage.com/Before%20Her%20Name%20Existed/Stories%20That%20Illuminate%20Minds%20And%20Awaken%20Souls.mp4"
+                                        src="/video/Stories That Illuminate Minds And Awaken Souls.mp4"
                                         type="video/mp4"
                                     />
                                 </video>

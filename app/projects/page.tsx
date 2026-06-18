@@ -968,7 +968,7 @@ export default function ProjectsPage() {
           playsInline
         >
           <source
-            src="https://m5seiikuxyzlci4v.public.blob.vercel-storage.com/Before%20Her%20Name%20Existed/Before%20HerName%20Existed.mp4"
+            src="/video/Before Her Name Existed.mp4"
             type="video/mp4"
           />
         </video>
