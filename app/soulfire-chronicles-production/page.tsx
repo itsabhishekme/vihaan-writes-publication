@@ -6,310 +6,291 @@ import {
     HiOutlineGlobeAlt,
     HiOutlineUserGroup,
     HiOutlineLightBulb,
-    HiOutlineBookOpen,
+    HiOutlineClock,
+    HiOutlinePlay,
+    HiOutlineHeart,
 } from "react-icons/hi";
 
 export const metadata: Metadata = {
     title: "Soulfire Chronicles Production | Vihaan Writes",
     description:
-        "Soulfire Chronicles Production explores destiny, spirituality, human connection, personal growth, extraordinary experiences, documentaries, films, interviews, and cinematic storytelling.",
+        "Soulfire Chronicles Production creates inspiring documentaries, cinematic storytelling, and visual experiences exploring destiny, spirituality, human connection, and the extraordinary journey of life.",
 };
 
-const pillars = [
+const timeline = [
     {
-        icon: HiOutlineFilm,
-        title: "Documentaries",
+        year: "2025",
+        title: "The Beginning",
         description:
-            "Authentic stories that explore the depth of the human experience, uncovering extraordinary truths hidden within ordinary lives.",
+            "Soulfire Chronicles Production was founded with a vision to create inspiring documentaries and cinematic stories.",
     },
     {
-        icon: HiOutlineUserGroup,
-        title: "Interviews",
+        year: "2026",
+        title: "First Documentary Projects",
         description:
-            "Meaningful conversations with individuals whose journeys reveal wisdom, transformation, resilience, and purpose.",
+            "Development began on original documentary concepts exploring destiny, spirituality, and human connection.",
     },
     {
-        icon: HiOutlineSparkles,
-        title: "Spiritual Exploration",
+        year: "2027",
+        title: "Global Expansion",
         description:
-            "Stories that investigate destiny, intuition, synchronicity, faith, divine timing, and life's deeper mysteries.",
+            "Building partnerships and reaching international audiences through digital platforms.",
     },
     {
-        icon: HiOutlineGlobeAlt,
-        title: "Human Stories",
+        year: "Future",
+        title: "A Legacy of Stories",
         description:
-            "Powerful narratives from around the world that highlight connection, compassion, growth, and shared humanity.",
+            "Creating films that inspire generations and leave a lasting impact on audiences worldwide.",
     },
 ];
 
-const themes = [
-    "Destiny & Divine Timing",
-    "Spiritual Awakening",
-    "Human Connection",
-    "Life-Changing Encounters",
-    "Personal Transformation",
-    "Purpose & Meaning",
-    "Synchronicity",
-    "Faith & Hope",
-    "Extraordinary Experiences",
-    "The Human Journey",
-    "Legacy & Memory",
-    "Stories That Inspire",
+const values = [
+    {
+        icon: HiOutlineHeart,
+        title: "Purpose",
+        description:
+            "Every project is created with meaning, authenticity, and a desire to inspire positive transformation.",
+    },
+    {
+        icon: HiOutlineSparkles,
+        title: "Creativity",
+        description:
+            "Combining cinematic excellence with innovative storytelling techniques and artistic vision.",
+    },
+    {
+        icon: HiOutlineUserGroup,
+        title: "Human Connection",
+        description:
+            "Exploring the experiences, relationships, and emotions that unite humanity.",
+    },
+    {
+        icon: HiOutlineGlobeAlt,
+        title: "Global Perspective",
+        description:
+            "Sharing stories that transcend borders and resonate with audiences worldwide.",
+    },
 ];
 
 const productions = [
     {
-        title: "Echoes of the River",
+        icon: HiOutlineFilm,
+        title: "Documentaries",
         description:
-            "A documentary exploring generational memory, faith, and the ties that bind a riverside community.",
+            "Thought-provoking films exploring extraordinary human experiences, spirituality, destiny, and personal growth.",
     },
     {
-        title: "Crossroads: Stories of Change",
+        icon: HiOutlinePlay,
+        title: "Cinematic Stories",
         description:
-            "Intimate interviews with individuals who faced pivotal moments that reshaped their lives.",
+            "Narrative-driven productions that blend emotion, visual artistry, and powerful storytelling.",
     },
     {
-        title: "Awakening Nights",
+        icon: HiOutlineLightBulb,
+        title: "Interviews & Conversations",
         description:
-            "A cinematic short that follows an unexpected encounter leading to spiritual transformation.",
-    },
-];
-
-const faqs = [
-    {
-        question: "What types of projects does Soulfire Chronicles Production create?",
-        answer:
-            "We focus on documentaries, films, interviews, and cinematic storytelling that explore destiny, spirituality, and human connection.",
+            "Authentic discussions with inspiring individuals, thought leaders, and visionaries.",
     },
     {
-        question: "How can I collaborate with your team?",
-        answer:
-            "You can reach out through our contact page to discuss story ideas, documentary concepts, and partnership opportunities.",
-    },
-    {
-        question: "Do you accept submissions from independent storytellers?",
-        answer:
-            "Yes. We welcome authentic stories that align with our mission of preserving meaningful human experiences.",
+        icon: HiOutlineSparkles,
+        title: "Visual Experiences",
+        description:
+            "Immersive creative projects designed to awaken curiosity and inspire reflection.",
     },
 ];
 
 export default function SoulfireChroniclesProductionPage() {
     return (
-        <main className="min-h-screen bg-black text-white">
-            {/* Hero Section */}
+        <main className="bg-black text-white">
+            {/* Hero */}
             <section className="relative overflow-hidden border-b border-white/10">
-                <div className="absolute inset-0 bg-gradient-to-b from-orange-500/10 via-transparent to-blue-500/10" />
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-purple-500/10 to-blue-500/10" />
 
-                <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-                    <div className="max-w-4xl">
-                        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-2 text-sm text-amber-400">
-                            <HiOutlineFilm className="h-4 w-4" />
-                            Cinematic Storytelling Studio
-                        </div>
+                <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8">
+                    <div className="mx-auto max-w-4xl text-center">
+                        <span className="rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm text-amber-300">
+                            Soulfire Chronicles Production
+                        </span>
 
-                        <h1 className="mb-8 text-5xl font-bold leading-tight md:text-7xl">
-                            Soulfire Chronicles
-                            <span className="block bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
-                                Production
+                        <h1 className="mt-8 text-5xl font-bold tracking-tight md:text-7xl">
+                            Telling Stories
+                            <span className="block bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
+                                That Inspire Humanity
                             </span>
                         </h1>
 
-                        <p className="mb-8 max-w-3xl text-lg leading-relaxed text-gray-300 md:text-xl">
-                            Soulfire Chronicles Production was founded on the belief that
-                            stories possess the power to transform lives. Through
-                            documentaries, films, interviews, and cinematic storytelling, we
-                            explore themes of destiny, spirituality, human connection,
-                            personal growth, and extraordinary experiences.
+                        <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-gray-300">
+                            Soulfire Chronicles Production is dedicated to
+                            creating powerful documentaries, cinematic
+                            narratives, and visual experiences that illuminate
+                            minds, awaken souls, and celebrate the
+                            extraordinary journey of human life.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* About */}
+            <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+                <div className="grid gap-16 lg:grid-cols-2">
+                    <div>
+                        <h2 className="mb-6 text-4xl font-bold">
+                            Our Story
+                        </h2>
+
+                        <p className="mb-6 text-lg leading-relaxed text-gray-300">
+                            More Than A Production House
                         </p>
 
-                        <p className="max-w-3xl text-lg leading-relaxed text-gray-400">
-                            Every story holds a spark capable of illuminating a path,
-                            inspiring change, revealing truth, or helping someone understand
-                            their own journey. Our mission is to capture these moments and
-                            preserve them through meaningful visual storytelling.
+                        <p className="mb-6 leading-relaxed text-gray-400">
+                            Soulfire Chronicles Production was founded on the
+                            belief that stories possess the power to transform
+                            lives. Through documentaries, films, interviews,
+                            and cinematic storytelling, we explore themes of
+                            destiny, spirituality, human connection, personal
+                            growth, and extraordinary experiences.
                         </p>
 
-                        <div className="mt-10 flex flex-wrap gap-4">
-                            <Link
-                                href="/contact"
-                                className="rounded-xl bg-gradient-to-r from-orange-500 to-red-500 px-6 py-3 font-medium transition hover:opacity-90"
-                            >
-                                Collaborate With Us
-                            </Link>
+                        <p className="leading-relaxed text-gray-400">
+                            Our mission is not simply to create content but to
+                            create meaningful experiences that inspire
+                            audiences to reflect, dream, and connect with
+                            something greater than themselves. Every project is
+                            approached with passion, creativity, and a
+                            commitment to excellence.
+                        </p>
+                    </div>
 
+                    <div className="rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur">
+                        <h3 className="mb-6 text-3xl font-bold">
+                            Our Mission
+                        </h3>
+
+                        <p className="mb-8 text-gray-300 leading-relaxed">
+                            To create films and documentaries that inspire
+                            reflection, awaken curiosity, and celebrate the
+                            extraordinary stories hidden within everyday life.
+                        </p>
+
+                        <h3 className="mb-6 text-3xl font-bold">
+                            Our Vision
+                        </h3>
+
+                        <p className="text-gray-300 leading-relaxed">
+                            To become a globally recognized storytelling brand
+                            that leaves a lasting impact on audiences through
+                            meaningful cinematic experiences.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Featured Production */}
+            <section className="border-y border-white/10 bg-white/[0.03]">
+                <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+                    <div className="mb-12 text-center">
+                        <span className="text-amber-400">
+                            Featured Production
+                        </span>
+
+                        <h2 className="mt-4 text-5xl font-bold">
+                            Before Her Name Existed
+                        </h2>
+
+                        <p className="mt-4 italic text-gray-400">
+                            “I loved the story before I knew the character.”
+                        </p>
+                    </div>
+
+                    <div className="mx-auto max-w-4xl text-center">
+                        <p className="text-lg leading-relaxed text-gray-300">
+                            What if the most important person in your life
+                            entered your story long before you knew their
+                            name?
+                        </p>
+
+                        <p className="mt-6 leading-relaxed text-gray-400">
+                            A cinematic journey through dreams, intuition,
+                            synchronicities, destiny, and extraordinary human
+                            experiences shared across cultures and generations.
+                        </p>
+
+                        <div className="mt-10 flex flex-wrap justify-center gap-4">
+                            <span className="rounded-full border border-white/10 px-4 py-2">
+                                Spiritual Documentary
+                            </span>
+
+                            <span className="rounded-full border border-white/10 px-4 py-2">
+                                90 Minutes
+                            </span>
+
+                            <span className="rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-amber-300">
+                                Coming Soon
+                            </span>
+                        </div>
+
+                        <div className="mt-10">
                             <Link
-                                href="/the-human-archive"
-                                className="rounded-xl border border-white/20 px-6 py-3 font-medium transition hover:bg-white/5"
+                                href="/before-her-name-existed"
+                                className="rounded-xl bg-amber-500 px-8 py-4 font-semibold text-black transition hover:bg-amber-400"
                             >
-                                Explore Stories
+                                Learn More
                             </Link>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Storytelling Philosophy */}
-            <div className="mt-28 grid gap-12 lg:grid-cols-2">
-                <div>
-                    <h3 className="mb-8 text-4xl font-bold">
-                        Our Storytelling Philosophy
-                    </h3>
-
-                    <p className="mb-6 leading-relaxed text-gray-300">
-                        We believe every story contains layers beyond what is visible on
-                        the surface. Behind every achievement lies sacrifice. Behind
-                        every challenge lies resilience. Behind every encounter lies the
-                        possibility of transformation.
-                    </p>
-
-                    <p className="mb-6 leading-relaxed text-gray-300">
-                        Our role is not merely to document events but to uncover the
-                        deeper truths that give those events meaning. We seek to reveal
-                        the emotions, lessons, and human experiences that connect people
-                        across cultures, generations, and backgrounds.
-                    </p>
-
-                    <p className="leading-relaxed text-gray-300">
-                        Through cinematic visuals, authentic interviews, thoughtful
-                        narratives, and emotional storytelling, we create experiences
-                        that resonate long after the screen fades to black and continue
-                        inspiring reflection, empathy, and understanding.
-                    </p>
-                </div>
-
-                <div className="rounded-[32px] border border-orange-500/20 bg-gradient-to-br from-orange-500/10 to-red-500/5 p-10">
-                    <h3 className="mb-8 text-4xl font-bold">
-                        Looking Forward
-                    </h3>
-
-                    <p className="mb-6 leading-relaxed text-gray-300">
-                        Soulfire Chronicles Production is more than a studio. It is a
-                        growing archive of human experiences, a platform for meaningful
-                        voices, and a long-term commitment to preserving stories that
-                        deserve to be remembered.
-                    </p>
-
-                    <p className="mb-6 leading-relaxed text-gray-300">
-                        As we continue to grow, we aim to expand our documentaries,
-                        interviews, films, educational projects, and global storytelling
-                        initiatives while building a lasting collection of stories that
-                        inspire future generations.
-                    </p>
-
-                    <p className="leading-relaxed text-gray-300">
-                        Our vision is simple: create stories that matter, preserve them
-                        with care, and share them with the world.
-                    </p>
-                </div>
-            </div>
-
-            {/* What We Create */}
-            <section className="relative overflow-hidden border-y border-white/10 bg-gradient-to-b from-zinc-950 via-black to-zinc-950">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(249,115,22,0.08),transparent_60%)]" />
-
-                <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8">
-                    <div className="mx-auto mb-20 max-w-4xl text-center">
-                        <span className="mb-5 inline-flex rounded-full border border-orange-500/20 bg-orange-500/10 px-5 py-2 text-sm font-medium text-orange-400">
-                            Creative Productions
-                        </span>
-
-                        <h2 className="mb-8 text-5xl font-bold md:text-6xl">
-                            What We Create
-                        </h2>
-
-                        <p className="text-lg leading-relaxed text-gray-400 md:text-xl">
-                            Soulfire Chronicles Production creates cinematic experiences that
-                            preserve human stories, explore life&apos;s deeper questions, and inspire
-                            meaningful reflection. Every project is designed to connect people
-                            through authentic storytelling and unforgettable visual narratives.
-                        </p>
-                    </div>
-
-                    <div className="grid gap-8 md:grid-cols-2">
-                        {pillars.map((item) => {
-                            const Icon = item.icon;
-
-                            return (
-                                <div
-                                    key={item.title}
-                                    className="group rounded-[32px] border border-white/10 bg-white/[0.03] p-10 transition-all duration-500 hover:border-orange-500/30 hover:bg-white/[0.05]"
-                                >
-                                    <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-500/20">
-                                        <Icon className="h-10 w-10 text-orange-400" />
-                                    </div>
-
-                                    <h3 className="mb-5 text-3xl font-bold">
-                                        {item.title}
-                                    </h3>
-
-                                    <p className="mb-6 leading-relaxed text-gray-300">
-                                        {item.description}
-                                    </p>
-
-                                    <p className="leading-relaxed text-gray-400">
-                                        Through meticulous research, thoughtful storytelling,
-                                        cinematic visuals, and emotional authenticity, we
-                                        transform ideas and experiences into compelling
-                                        narratives that resonate with audiences long after
-                                        the credits roll.
-                                    </p>
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
-
-            {/* Themes */}
-            <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-                <div className="mb-12 text-center">
-                    <h2 className="mb-4 text-4xl font-bold">
-                        Themes We Explore
+            {/* Production Types */}
+            <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+                <div className="text-center">
+                    <h2 className="text-4xl font-bold">
+                        What We Create
                     </h2>
-
-                    <p className="mx-auto max-w-3xl text-gray-400">
-                        Our stories revolve around universal questions, transformative
-                        experiences, and the deeper mysteries of human existence.
-                    </p>
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-4">
-                    {themes.map((theme) => (
+                <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                    {productions.map((item) => (
                         <div
-                            key={theme}
-                            className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm text-gray-300"
+                            key={item.title}
+                            className="rounded-2xl border border-white/10 bg-white/5 p-8"
                         >
-                            {theme}
+                            <item.icon className="mb-4 h-10 w-10 text-amber-400" />
+
+                            <h3 className="mb-3 text-xl font-semibold">
+                                {item.title}
+                            </h3>
+
+                            <p className="text-gray-400">
+                                {item.description}
+                            </p>
                         </div>
                     ))}
                 </div>
             </section>
 
-            <section className="border-y border-white/10 bg-black">
-                <div className="mx-auto max-w-7xl px-6 py-24">
-                    <div className="mb-14 text-center">
-                        <h2 className="text-5xl font-bold">
-                            Featured Productions
+            {/* Values */}
+            <section className="border-y border-white/10 bg-white/[0.03]">
+                <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+                    <div className="text-center">
+                        <h2 className="text-4xl font-bold">
+                            Our Core Values
                         </h2>
-
-                        <p className="mt-6 text-gray-400 max-w-3xl mx-auto">
-                            Stories brought to life through cinematic vision,
-                            emotional depth, and meaningful storytelling.
-                        </p>
                     </div>
 
-                    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                        {productions.map((item) => (
+                    <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                        {values.map((value) => (
                             <div
-                                key={item.title}
-                                className="rounded-3xl border border-white/10 bg-white/5 p-8"
+                                key={value.title}
+                                className="rounded-2xl border border-white/10 bg-black/40 p-8"
                             >
-                                <h3 className="mb-4 text-2xl font-semibold">
-                                    {item.title}
+                                <value.icon className="mb-4 h-10 w-10 text-amber-400" />
+
+                                <h3 className="mb-3 text-xl font-semibold">
+                                    {value.title}
                                 </h3>
 
-                                <p className="text-gray-300 leading-relaxed">
-                                    {item.description}
+                                <p className="text-gray-400">
+                                    {value.description}
                                 </p>
                             </div>
                         ))}
@@ -317,132 +298,68 @@ export default function SoulfireChroniclesProductionPage() {
                 </div>
             </section>
 
-            <section className="bg-gradient-to-b from-black to-orange-950/20">
-                <div className="mx-auto max-w-6xl px-6 py-24">
-                    <div className="text-center">
-                        <h2 className="text-5xl font-bold mb-10">
-                            The Soulfire Philosophy
-                        </h2>
+            {/* Timeline */}
+            <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
+                <div className="text-center">
+                    <h2 className="text-4xl font-bold">
+                        Our Journey
+                    </h2>
+                </div>
 
-                        <p className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
-                            We believe stories are more than entertainment.
-                            They are vessels of memory, wisdom, healing,
-                            identity, and transformation. Every life contains
-                            moments capable of inspiring countless others.
-                        </p>
-                    </div>
+                <div className="mt-20 space-y-8">
+                    {timeline.map((item) => (
+                        <div
+                            key={item.year}
+                            className="rounded-2xl border border-white/10 bg-white/5 p-8"
+                        >
+                            <div className="flex items-center gap-4">
+                                <HiOutlineClock className="h-8 w-8 text-amber-400" />
+
+                                <span className="text-2xl font-bold text-amber-400">
+                                    {item.year}
+                                </span>
+                            </div>
+
+                            <h3 className="mt-4 text-2xl font-semibold">
+                                {item.title}
+                            </h3>
+
+                            <p className="mt-3 text-gray-400">
+                                {item.description}
+                            </p>
+                        </div>
+                    ))}
                 </div>
             </section>
 
-            <section className="border-t border-white/10 bg-gradient-to-b from-black via-zinc-950 to-black">
-                <div className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
-                    <div className="mb-16 text-center">
-                        <span className="mb-4 inline-block rounded-full border border-orange-500/20 bg-orange-500/10 px-4 py-2 text-sm text-orange-400">
-                            Questions & Answers
-                        </span>
+            {/* CTA */}
+            <section className="border-t border-white/10">
+                <div className="mx-auto max-w-5xl px-6 py-24 text-center">
+                    <h2 className="text-5xl font-bold">
+                        Creating A Legacy Of Stories
+                    </h2>
 
-                        <h2 className="mb-6 text-4xl font-bold md:text-6xl">
-                            Frequently Asked Questions
-                        </h2>
+                    <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-300">
+                        We believe every extraordinary story has the power to
+                        inspire, heal, and transform. Join us as we explore the
+                        mysteries of life, destiny, and human connection
+                        through cinematic storytelling.
+                    </p>
 
-                        <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-400">
-                            Learn more about Soulfire Chronicles Production, our mission,
-                            storytelling philosophy, documentary projects, interviews,
-                            collaborations, and future productions.
-                        </p>
-                    </div>
+                    <div className="mt-10 flex flex-wrap justify-center gap-4">
+                        <Link
+                            href="/contact"
+                            className="rounded-xl bg-amber-500 px-8 py-4 font-semibold text-black"
+                        >
+                            Collaborate With Us
+                        </Link>
 
-                    <div className="space-y-8">
-                        {faqs.map((faq, index) => (
-                            <div
-                                key={faq.question}
-                                className="group rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm transition-all duration-300 hover:border-orange-500/30 hover:bg-white/[0.05]"
-                            >
-                                <div className="flex items-start gap-6">
-                                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-red-500 font-bold text-white">
-                                        {String(index + 1).padStart(2, "0")}
-                                    </div>
-
-                                    <div className="flex-1">
-                                        <h3 className="mb-4 text-2xl font-semibold text-white">
-                                            {faq.question}
-                                        </h3>
-
-                                        <p className="leading-relaxed text-gray-300">
-                                            {faq.answer}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* Additional FAQ Information */}
-                    <div className="mt-20 grid gap-8 md:grid-cols-3">
-                        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
-                            <h3 className="mb-4 text-2xl font-semibold text-orange-400">
-                                Documentary Projects
-                            </h3>
-
-                            <p className="leading-relaxed text-gray-300">
-                                Our documentary productions focus on authentic human experiences,
-                                personal transformation, spirituality, resilience, destiny,
-                                meaningful encounters, and stories that inspire reflection.
-                            </p>
-                        </div>
-
-                        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
-                            <h3 className="mb-4 text-2xl font-semibold text-orange-400">
-                                Collaborations
-                            </h3>
-
-                            <p className="leading-relaxed text-gray-300">
-                                We welcome collaborations with storytellers, filmmakers,
-                                writers, researchers, creatives, organizations, and individuals
-                                whose stories align with our mission and vision.
-                            </p>
-                        </div>
-
-                        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8">
-                            <h3 className="mb-4 text-2xl font-semibold text-orange-400">
-                                Global Vision
-                            </h3>
-
-                            <p className="leading-relaxed text-gray-300">
-                                Soulfire Chronicles Production aims to become a global archive
-                                of transformative stories that connect humanity through shared
-                                experiences, wisdom, compassion, and understanding.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="mt-24 rounded-[32px] border border-orange-500/20 bg-gradient-to-r from-orange-500/10 via-red-500/10 to-amber-500/10 p-12 text-center">
-                        <h3 className="mb-6 text-4xl font-bold">
-                            Have a Story Worth Sharing?
-                        </h3>
-
-                        <p className="mx-auto mb-8 max-w-3xl text-lg leading-relaxed text-gray-300">
-                            Every life contains moments of courage, transformation,
-                            discovery, love, loss, hope, and meaning. If you have a story
-                            that could inspire others, we would love to hear from you.
-                        </p>
-
-                        <div className="flex flex-wrap justify-center gap-4">
-                            <Link
-                                href="/contact"
-                                className="rounded-xl bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 px-8 py-4 font-semibold text-white transition hover:scale-105"
-                            >
-                                Contact Us
-                            </Link>
-
-                            <Link
-                                href="/the-human-archive"
-                                className="rounded-xl border border-white/20 px-8 py-4 font-semibold text-white transition hover:bg-white/5"
-                            >
-                                Explore Human Stories
-                            </Link>
-                        </div>
+                        <Link
+                            href="/projects"
+                            className="rounded-xl border border-white/20 px-8 py-4"
+                        >
+                            View Projects
+                        </Link>
                     </div>
                 </div>
             </section>
