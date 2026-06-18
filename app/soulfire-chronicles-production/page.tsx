@@ -439,7 +439,7 @@ export default function SoulfireChroniclesProductionPage() {
 
                             <p className="mt-4 text-gray-400">
                                 Explore whether coincidence alone can explain some of
-                                life's most extraordinary experiences.
+                                life&#39;s most extraordinary experiences.
                             </p>
                         </div>
 
@@ -521,8 +521,8 @@ export default function SoulfireChroniclesProductionPage() {
                 </p>
             </div>
 
-        {/* Production Types */ }
-        < section className = "mx-auto max-w-7xl px-6 py-24 lg:px-8" >
+            {/* Production Types */}
+            < section className="mx-auto max-w-7xl px-6 py-24 lg:px-8" >
                 <div className="text-center">
                     <h2 className="text-4xl font-bold">
                         What We Create
@@ -549,38 +549,38 @@ export default function SoulfireChroniclesProductionPage() {
                 </div>
             </section >
 
-        {/* Values */ }
-        < section className = "border-y border-white/10 bg-white/[0.03]" >
-            <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-                <div className="text-center">
-                    <h2 className="text-4xl font-bold">
-                        Our Core Values
-                    </h2>
+            {/* Values */}
+            < section className="border-y border-white/10 bg-white/[0.03]" >
+                <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+                    <div className="text-center">
+                        <h2 className="text-4xl font-bold">
+                            Our Core Values
+                        </h2>
+                    </div>
+
+                    <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                        {values.map((value) => (
+                            <div
+                                key={value.title}
+                                className="rounded-2xl border border-white/10 bg-black/40 p-8"
+                            >
+                                <value.icon className="mb-4 h-10 w-10 text-amber-400" />
+
+                                <h3 className="mb-3 text-xl font-semibold">
+                                    {value.title}
+                                </h3>
+
+                                <p className="text-gray-400">
+                                    {value.description}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-
-                <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-                    {values.map((value) => (
-                        <div
-                            key={value.title}
-                            className="rounded-2xl border border-white/10 bg-black/40 p-8"
-                        >
-                            <value.icon className="mb-4 h-10 w-10 text-amber-400" />
-
-                            <h3 className="mb-3 text-xl font-semibold">
-                                {value.title}
-                            </h3>
-
-                            <p className="text-gray-400">
-                                {value.description}
-                            </p>
-                        </div>
-                    ))}
-                </div>
-            </div>
             </section >
 
-        {/* Timeline */ }
-        < section className = "mx-auto max-w-6xl px-6 py-24 lg:px-8" >
+            {/* Timeline */}
+            < section className="mx-auto max-w-6xl px-6 py-24 lg:px-8" >
                 <div className="text-center">
                     <h2 className="text-4xl font-bold">
                         Our Journey
@@ -613,62 +613,62 @@ export default function SoulfireChroniclesProductionPage() {
                 </div>
             </section >
 
-        {/* CTA */ }
-        < section className = "border-t border-white/10" >
-            <div className="mx-auto max-w-5xl px-6 py-24 text-center">
-                <h2 className="text-5xl font-bold">
-                    Creating A Legacy Of Stories
-                </h2>
+            {/* CTA */}
+            < section className="border-t border-white/10" >
+                <div className="mx-auto max-w-5xl px-6 py-24 text-center">
+                    <h2 className="text-5xl font-bold">
+                        Creating A Legacy Of Stories
+                    </h2>
 
-                <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-300">
-                    We believe every extraordinary story has the power to
-                    inspire, heal, and transform. Join us as we explore the
-                    mysteries of life, destiny, and human connection
-                    through cinematic storytelling.
-                </p>
+                    <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-300">
+                        We believe every extraordinary story has the power to
+                        inspire, heal, and transform. Join us as we explore the
+                        mysteries of life, destiny, and human connection
+                        through cinematic storytelling.
+                    </p>
 
-                <div className="mt-10 flex flex-wrap justify-center gap-4">
-                    <Link
-                        href="/contact"
-                        className="rounded-xl bg-amber-500 px-8 py-4 font-semibold text-black"
-                    >
-                        Collaborate With Us
-                    </Link>
+                    <div className="mt-10 flex flex-wrap justify-center gap-4">
+                        <Link
+                            href="/contact"
+                            className="rounded-xl bg-amber-500 px-8 py-4 font-semibold text-black"
+                        >
+                            Collaborate With Us
+                        </Link>
 
-                    <Link
-                        href="/projects"
-                        className="rounded-xl border border-white/20 px-8 py-4"
-                    >
-                        View Projects
-                    </Link>
+                        <Link
+                            href="/projects"
+                            className="rounded-xl border border-white/20 px-8 py-4"
+                        >
+                            View Projects
+                        </Link>
+                    </div>
                 </div>
-            </div>
             </section >
 
-        <section className="border-y border-white/10 bg-gradient-to-br from-amber-500/5 via-transparent to-purple-500/5">
-            <div className="mx-auto max-w-5xl px-6 py-28 text-center lg:px-8">
-                <span className="text-amber-400 uppercase tracking-[0.3em]">
-                    Looking Ahead
-                </span>
+            <section className="border-y border-white/10 bg-gradient-to-br from-amber-500/5 via-transparent to-purple-500/5">
+                <div className="mx-auto max-w-5xl px-6 py-28 text-center lg:px-8">
+                    <span className="text-amber-400 uppercase tracking-[0.3em]">
+                        Looking Ahead
+                    </span>
 
-                <h2 className="mt-6 text-6xl font-bold">
-                    The Future Of Soulfire Chronicles
-                </h2>
+                    <h2 className="mt-6 text-6xl font-bold">
+                        The Future Of Soulfire Chronicles
+                    </h2>
 
-                <p className="mx-auto mt-8 max-w-4xl text-lg leading-relaxed text-gray-300">
-                    Over the coming years, Soulfire Chronicles Production aims to
-                    develop feature documentaries, international collaborations,
-                    streaming platform releases, educational storytelling projects,
-                    and cinematic experiences that inspire millions around the world.
-                </p>
+                    <p className="mx-auto mt-8 max-w-4xl text-lg leading-relaxed text-gray-300">
+                        Over the coming years, Soulfire Chronicles Production aims to
+                        develop feature documentaries, international collaborations,
+                        streaming platform releases, educational storytelling projects,
+                        and cinematic experiences that inspire millions around the world.
+                    </p>
 
-                <p className="mx-auto mt-8 max-w-4xl text-lg leading-relaxed text-gray-400">
-                    We envision a future where storytelling becomes a bridge between
-                    cultures, generations, and perspectives—helping people better
-                    understand themselves and each other.
-                </p>
-            </div>
-        </section>
+                    <p className="mx-auto mt-8 max-w-4xl text-lg leading-relaxed text-gray-400">
+                        We envision a future where storytelling becomes a bridge between
+                        cultures, generations, and perspectives—helping people better
+                        understand themselves and each other.
+                    </p>
+                </div>
+            </section>
 
         </main >
     );
