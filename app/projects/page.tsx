@@ -29,6 +29,7 @@ const projects = [
     url: "https://thehumanarchive.vercel.app/",
     image: "/images/the-human-archive-banner.jpg",
     year: "2026",
+    tags: ["Archive", "Memory", "Stories"],
     stats: [
       { label: "Stories", value: "100+" },
       { label: "Voices", value: "Global" },
@@ -45,6 +46,7 @@ const projects = [
     url: "https://before-her-name-existed.vercel.app/",
     image: "/images/before-her-name-existed-banner.jpg",
     year: "2026",
+    tags: ["Destiny", "Intuition", "Longing"],
     stats: [
       { label: "Chapters", value: "∞" },
       { label: "Journey", value: "Soul" },
@@ -60,6 +62,7 @@ const projects = [
     url: "https://lettersneversent.vercel.app/",
     image: "/images/letters-never-sent-banner.jpg",
     year: "2026",
+    tags: ["Letters", "Emotion", "Healing"],
     stats: [
       { label: "Letters", value: "∞" },
       { label: "Emotion", value: "Unspoken" },
@@ -76,6 +79,7 @@ const projects = [
     url: "https://echoes-of-destiny.vercel.app/",
     image: "/images/echoes-of-destiny-banner.jpg",
     year: "2026",
+    tags: ["Echoes", "Memories", "Destiny"],
     stats: [
       { label: "Dreams", value: "Endless" },
       { label: "Echoes", value: "Timeless" },
@@ -105,6 +109,14 @@ const features = [
     title: "Creative Exploration",
     text: "Storytelling beyond traditional books and publishing formats.",
   },
+];
+
+const floatingStars = [
+  { id: 1, left: "14%", top: "16%", delay: "0s" },
+  { id: 2, left: "68%", top: "22%", delay: "0.2s" },
+  { id: 3, left: "44%", top: "8%", delay: "0.35s" },
+  { id: 4, left: "24%", top: "72%", delay: "0.5s" },
+  { id: 5, left: "76%", top: "68%", delay: "0.7s" },
 ];
 
 export default function ProjectsPage() {
@@ -273,14 +285,14 @@ export default function ProjectsPage() {
             </div>
 
             {/* Floating Stars */}
-            {[...Array(20)].map((_, i) => (
+            {floatingStars.map((star) => (
               <div
-                key={i}
+                key={star.id}
                 className="absolute h-1 w-1 rounded-full bg-white/60 animate-pulse"
                 style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${i * 0.2}s`,
+                  left: star.left,
+                  top: star.top,
+                  animationDelay: star.delay,
                 }}
               />
             ))}
@@ -576,7 +588,7 @@ export default function ProjectsPage() {
 
                 {/* Subtitle */}
                 <p className="mt-5 max-w-[180px] text-[11px] uppercase tracking-[0.35em] text-white/40">
-                  Preserving Humanity's Infinite Stories
+                  Preserving Humanity&apos;s Infinite Stories
                 </p>
               </div>
 
@@ -785,9 +797,8 @@ export default function ProjectsPage() {
 
                 {/* Content */}
                 <div className="absolute bottom-12 left-12 right-12 z-20">
-
                   <div className="mb-6 flex flex-wrap gap-3">
-                    {(project as any).tags?.map((tag: string) => (
+                    {project.tags?.map((tag) => (
                       <span
                         key={tag}
                         className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs uppercase tracking-widest text-white/70 backdrop-blur-md"
@@ -804,41 +815,19 @@ export default function ProjectsPage() {
                   <p className="max-w-4xl text-lg leading-relaxed text-white/80 md:text-2xl">
                     {project.tagline}
                   </p>
-
-                  {/* Decorative Line */}
-                  <div className="mt-8 h-px w-40 bg-gradient-to-r from-violet-400 via-white to-transparent" />
                 </div>
 
-                {/* Floating Stats */}
-                <div className="absolute bottom-10 right-10 hidden lg:flex gap-4">
-
-                  <div className="rounded-3xl border border-white/10 bg-black/30 px-8 py-5 backdrop-blur-xl">
-                    <p className="text-xs uppercase tracking-widest text-white/40">
-                      Legacy
-                    </p>
-                    <h4 className="mt-1 text-2xl font-bold text-white">
-                      Timeless
-                    </h4>
-                  </div>
-
-                  <div className="rounded-3xl border border-white/10 bg-black/30 px-8 py-5 backdrop-blur-xl">
-                    <p className="text-xs uppercase tracking-widest text-white/40">
-                      Impact
-                    </p>
-                    <h4 className="mt-1 text-2xl font-bold text-white">
-                      Global
-                    </h4>
-                  </div>
-                </div>
-
-                {/* Hover Glow */}
-                <div className="absolute inset-0 opacity-0 transition duration-700 group-hover:opacity-100">
-                  <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-transparent to-rose-500/10" />
-                </div>
-
-                {/* Animated Border */}
-                <div className="pointer-events-none absolute inset-0 rounded-[48px] border border-white/5" />
+                {/* Decorative Line */}
+                <div className="mt-8 h-px w-40 bg-gradient-to-r from-violet-400 via-white to-transparent" />
               </div>
+
+              {/* Hover Glow */}
+              <div className="absolute inset-0 opacity-0 transition duration-700 group-hover:opacity-100">
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-transparent to-rose-500/10" />
+              </div>
+
+              {/* Animated Border */}
+              <div className="pointer-events-none absolute inset-0 rounded-[48px] border border-white/5" />
 
               {/* Bottom Information Bar */}
               <div className="grid gap-8 border-t border-white/10 bg-black/30 p-8 backdrop-blur-xl md:grid-cols-3">
