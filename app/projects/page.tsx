@@ -198,244 +198,6 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Projects */}
-      <section className="px-6 pb-32">
-        <div className="max-w-7xl mx-auto space-y-20">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 80 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="group overflow-hidden rounded-[40px] border border-white/10 bg-white/[0.03] backdrop-blur-xl"
-            >
-              {/* Banner */}
-              <div className="relative h-[350px] md:h-[600px] overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  priority
-                  className="object-cover transition duration-1000 group-hover:scale-110"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/40" />
-
-                <div className="absolute top-8 left-8">
-                  <span className="rounded-full border border-amber-500/20 bg-amber-500/20 px-5 py-2 text-sm text-amber-200">
-                    {project.year}
-                  </span>
-                </div>
-
-                <div className="absolute bottom-10 left-10 right-10">
-                  <h2 className="text-4xl md:text-7xl font-black mb-5">
-                    {project.title}
-                  </h2>
-
-                  <p className="max-w-4xl text-lg md:text-2xl text-amber-100">
-                    {project.tagline}
-                  </p>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-8 md:p-14">
-                <div className="grid lg:grid-cols-[1.5fr_0.9fr] gap-12">
-                  <div>
-                    <div className="inline-flex items-center gap-2 mb-6 text-amber-300">
-                      <Quote className="w-5 h-5" />
-                      <span className="text-sm uppercase tracking-[0.2em]">
-                        Project Vision
-                      </span>
-                    </div>
-
-                    <p className="text-zinc-400 text-lg leading-relaxed mb-10">
-                      {project.description}
-                    </p>
-
-                    <div className="grid md:grid-cols-3 gap-5 mb-10">
-                      {project.stats.map((stat) => (
-                        <div
-                          key={stat.label}
-                          className="rounded-3xl border border-white/10 bg-white/[0.03] p-6"
-                        >
-                          <div className="text-3xl font-black">
-                            {stat.value}
-                          </div>
-                          <div className="text-zinc-500 text-sm mt-2">
-                            {stat.label}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-300 to-orange-300 px-8 py-4 text-black font-bold transition hover:scale-105"
-                    >
-                      The Archive of Echoes
-                      <ArrowUpRight className="w-5 h-5" />
-                    </a>
-                  </div>
-
-                  <div className="space-y-5">
-                    <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-                      <ScrollText className="w-6 h-6 text-amber-400 mb-4" />
-                      <h3 className="font-bold mb-3">Purpose</h3>
-                      <p className="text-zinc-400 text-sm leading-relaxed">
-                        Building meaningful digital experiences around stories,
-                        memory, identity, destiny, and the human condition.
-                      </p>
-                    </div>
-
-                    <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-                      <Layers3 className="w-6 h-6 text-amber-400 mb-4" />
-                      <h3 className="font-bold mb-3">Format</h3>
-                      <p className="text-zinc-400 text-sm leading-relaxed">
-                        A blend of archives, reflections, essays,
-                        documentary-style narratives, and immersive storytelling.
-                      </p>
-                    </div>
-
-                    <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-                      <Clock3 className="w-6 h-6 text-amber-400 mb-4" />
-                      <h3 className="font-bold mb-3">Future Growth</h3>
-                      <p className="text-zinc-400 text-sm leading-relaxed">
-                        Continuously expanding through new stories, new voices,
-                        and new storytelling experiments.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Quote Section */}
-      <section className="px-6 pb-28">
-        <div className="max-w-6xl mx-auto rounded-[40px] border border-white/10 bg-white/[0.03] p-12 md:p-20 text-center backdrop-blur-xl">
-          <Stars className="w-10 h-10 mx-auto text-amber-400 mb-8" />
-
-          <h2 className="text-3xl md:text-6xl font-black mb-8 leading-tight">
-            Every Story
-            <br />
-            Deserves A Place To Exist
-          </h2>
-
-          <p className="max-w-3xl mx-auto text-zinc-400 text-lg leading-relaxed">
-            Some stories become books. Some become archives. Some become
-            letters, memories, documentaries, and digital worlds. Every project
-            here exists to preserve what would otherwise disappear.
-          </p>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="px-6 pb-32">
-        <div className="max-w-6xl mx-auto rounded-[40px] border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-12 md:p-24 text-center backdrop-blur-xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-5 py-2 mb-8">
-            <Sparkles className="w-4 h-4 text-amber-400" />
-            <span className="text-sm text-amber-200">
-              More Originals Coming Soon
-            </span>
-          </div>
-
-          <h2 className="text-5xl md:text-8xl font-black mb-8">
-            The Journey
-            <br />
-            Continues
-          </h2>
-
-          <p className="max-w-3xl mx-auto text-zinc-400 text-lg leading-relaxed mb-12">
-            These projects are only the beginning of a larger storytelling
-            vision spanning books, archives, documentaries, essays,
-            reflections, and immersive digital experiences.
-          </p>
-
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-300 to-orange-300 px-10 py-5 text-black font-bold hover:scale-105 transition"
-          >
-            Connect With Vihaan
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-        </div>
-      </section>
-
-      <section className="relative min-h-screen bg-black text-white overflow-hidden">
-        {/* Background Video */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source
-            src="https://m5seiikuxyzlci4v.public.blob.vercel-storage.com/Before%20Her%20Name%20Existed/Before%20HerName%20Existed.mp4"
-            type="video/mp4"
-          />
-        </video>
-
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
-
-        {/* Cinematic Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/80" />
-
-        {/* Content */}
-        <div className="relative z-10 flex min-h-screen items-center justify-center px-6">
-          <div className="max-w-5xl text-center">
-            <p className="mb-4 text-xs md:text-sm tracking-[0.5em] uppercase text-zinc-400">
-              Documentary Trailer • 2026
-            </p>
-
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-none">
-              Before Her Name Existed
-            </h1>
-
-            <div className="mx-auto my-8 h-px w-32 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
-
-            <p className="mx-auto max-w-3xl text-lg md:text-2xl text-zinc-300 leading-relaxed font-light">
-              A story written before the person it was written for entered my life.
-            </p>
-
-            <div className="mt-12 flex flex-col items-center gap-6">
-              <span className="rounded-full border border-white/20 px-6 py-2 text-xs tracking-[0.3em] uppercase text-zinc-400">
-                Coming 2026
-              </span>
-
-              <button
-                onClick={() => {
-                  const video = document.querySelector("video");
-                  if (video) {
-                    video.muted = false;
-                    video.play();
-                  }
-                }}
-                className="group flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-8 py-4 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/40"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30">
-                  ▶
-                </div>
-                <span className="tracking-widest uppercase text-sm">
-                  Watch Trailer
-                </span>
-              </button>
-            </div>
-
-            <div className="mt-20 text-zinc-500 text-xs tracking-[0.4em] uppercase">
-              A Documentary About Fate, Timing & Unwritten Love
-            </div>
-          </div>
-        </div>
-      </section>
       {/* =========================
     FOUR PILLARS CONNECTED ECOSYSTEM
 ========================== */}
@@ -741,7 +503,7 @@ export default function ProjectsPage() {
               <h4 className="mt-3 text-2xl font-light text-white">
                 The Human Archive
               </h4>
-              
+
               <p className="mt-3 text-sm leading-relaxed text-white/50">
                 Preserving humanity&apos;s memories, experiences, interviews, and collective wisdom.
               </p>
@@ -813,6 +575,245 @@ export default function ProjectsPage() {
           </div>
         </div>
       </div>
+
+      {/* Projects */}
+      <section className="px-6 pb-32">
+        <div className="max-w-7xl mx-auto space-y-20">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 80 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="group overflow-hidden rounded-[40px] border border-white/10 bg-white/[0.03] backdrop-blur-xl"
+            >
+              {/* Banner */}
+              <div className="relative h-[350px] md:h-[600px] overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  priority
+                  className="object-cover transition duration-1000 group-hover:scale-110"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/40" />
+
+                <div className="absolute top-8 left-8">
+                  <span className="rounded-full border border-amber-500/20 bg-amber-500/20 px-5 py-2 text-sm text-amber-200">
+                    {project.year}
+                  </span>
+                </div>
+
+                <div className="absolute bottom-10 left-10 right-10">
+                  <h2 className="text-4xl md:text-7xl font-black mb-5">
+                    {project.title}
+                  </h2>
+
+                  <p className="max-w-4xl text-lg md:text-2xl text-amber-100">
+                    {project.tagline}
+                  </p>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-8 md:p-14">
+                <div className="grid lg:grid-cols-[1.5fr_0.9fr] gap-12">
+                  <div>
+                    <div className="inline-flex items-center gap-2 mb-6 text-amber-300">
+                      <Quote className="w-5 h-5" />
+                      <span className="text-sm uppercase tracking-[0.2em]">
+                        Project Vision
+                      </span>
+                    </div>
+
+                    <p className="text-zinc-400 text-lg leading-relaxed mb-10">
+                      {project.description}
+                    </p>
+
+                    <div className="grid md:grid-cols-3 gap-5 mb-10">
+                      {project.stats.map((stat) => (
+                        <div
+                          key={stat.label}
+                          className="rounded-3xl border border-white/10 bg-white/[0.03] p-6"
+                        >
+                          <div className="text-3xl font-black">
+                            {stat.value}
+                          </div>
+                          <div className="text-zinc-500 text-sm mt-2">
+                            {stat.label}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-300 to-orange-300 px-8 py-4 text-black font-bold transition hover:scale-105"
+                    >
+                      The Archive of Echoes
+                      <ArrowUpRight className="w-5 h-5" />
+                    </a>
+                  </div>
+
+                  <div className="space-y-5">
+                    <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+                      <ScrollText className="w-6 h-6 text-amber-400 mb-4" />
+                      <h3 className="font-bold mb-3">Purpose</h3>
+                      <p className="text-zinc-400 text-sm leading-relaxed">
+                        Building meaningful digital experiences around stories,
+                        memory, identity, destiny, and the human condition.
+                      </p>
+                    </div>
+
+                    <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+                      <Layers3 className="w-6 h-6 text-amber-400 mb-4" />
+                      <h3 className="font-bold mb-3">Format</h3>
+                      <p className="text-zinc-400 text-sm leading-relaxed">
+                        A blend of archives, reflections, essays,
+                        documentary-style narratives, and immersive storytelling.
+                      </p>
+                    </div>
+
+                    <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+                      <Clock3 className="w-6 h-6 text-amber-400 mb-4" />
+                      <h3 className="font-bold mb-3">Future Growth</h3>
+                      <p className="text-zinc-400 text-sm leading-relaxed">
+                        Continuously expanding through new stories, new voices,
+                        and new storytelling experiments.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Quote Section */}
+      <section className="px-6 pb-28">
+        <div className="max-w-6xl mx-auto rounded-[40px] border border-white/10 bg-white/[0.03] p-12 md:p-20 text-center backdrop-blur-xl">
+          <Stars className="w-10 h-10 mx-auto text-amber-400 mb-8" />
+
+          <h2 className="text-3xl md:text-6xl font-black mb-8 leading-tight">
+            Every Story
+            <br />
+            Deserves A Place To Exist
+          </h2>
+
+          <p className="max-w-3xl mx-auto text-zinc-400 text-lg leading-relaxed">
+            Some stories become books. Some become archives. Some become
+            letters, memories, documentaries, and digital worlds. Every project
+            here exists to preserve what would otherwise disappear.
+          </p>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 pb-32">
+        <div className="max-w-6xl mx-auto rounded-[40px] border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-12 md:p-24 text-center backdrop-blur-xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-5 py-2 mb-8">
+            <Sparkles className="w-4 h-4 text-amber-400" />
+            <span className="text-sm text-amber-200">
+              More Originals Coming Soon
+            </span>
+          </div>
+
+          <h2 className="text-5xl md:text-8xl font-black mb-8">
+            The Journey
+            <br />
+            Continues
+          </h2>
+
+          <p className="max-w-3xl mx-auto text-zinc-400 text-lg leading-relaxed mb-12">
+            These projects are only the beginning of a larger storytelling
+            vision spanning books, archives, documentaries, essays,
+            reflections, and immersive digital experiences.
+          </p>
+
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-300 to-orange-300 px-10 py-5 text-black font-bold hover:scale-105 transition"
+          >
+            Connect With Vihaan
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+      </section>
+
+      <section className="relative min-h-screen bg-black text-white overflow-hidden">
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source
+            src="https://m5seiikuxyzlci4v.public.blob.vercel-storage.com/Before%20Her%20Name%20Existed/Before%20HerName%20Existed.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+
+        {/* Cinematic Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/80" />
+
+        {/* Content */}
+        <div className="relative z-10 flex min-h-screen items-center justify-center px-6">
+          <div className="max-w-5xl text-center">
+            <p className="mb-4 text-xs md:text-sm tracking-[0.5em] uppercase text-zinc-400">
+              Documentary Trailer • 2026
+            </p>
+
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-none">
+              Before Her Name Existed
+            </h1>
+
+            <div className="mx-auto my-8 h-px w-32 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
+
+            <p className="mx-auto max-w-3xl text-lg md:text-2xl text-zinc-300 leading-relaxed font-light">
+              A story written before the person it was written for entered my life.
+            </p>
+
+            <div className="mt-12 flex flex-col items-center gap-6">
+              <span className="rounded-full border border-white/20 px-6 py-2 text-xs tracking-[0.3em] uppercase text-zinc-400">
+                Coming 2026
+              </span>
+
+              <button
+                onClick={() => {
+                  const video = document.querySelector("video");
+                  if (video) {
+                    video.muted = false;
+                    video.play();
+                  }
+                }}
+                className="group flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-8 py-4 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/40"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30">
+                  ▶
+                </div>
+                <span className="tracking-widest uppercase text-sm">
+                  Watch Trailer
+                </span>
+              </button>
+            </div>
+
+            <div className="mt-20 text-zinc-500 text-xs tracking-[0.4em] uppercase">
+              A Documentary About Fate, Timing & Unwritten Love
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
