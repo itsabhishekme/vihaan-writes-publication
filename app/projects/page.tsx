@@ -236,27 +236,108 @@ export default function ProjectsPage() {
             </p>
           </div>
 
-          {/* Central Hub */}
-          <div className="relative mb-28 hidden xl:flex justify-center">
-            <div className="absolute top-1/2 h-px w-[75%] -translate-y-1/2 bg-gradient-to-r from-rose-400/30 via-white/20 to-violet-400/30" />
+          {/* ================================
+    Soulfire Central Nexus
+================================ */}
+          <div className="relative mb-40 hidden xl:flex items-center justify-center overflow-visible py-20">
 
-            <div className="relative z-20 flex h-40 w-40 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-2xl">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent" />
+            {/* Cosmic Background Glow */}
+            <div className="absolute h-[600px] w-[600px] rounded-full bg-violet-500/10 blur-[150px]" />
+            <div className="absolute h-[450px] w-[450px] rounded-full bg-rose-500/10 blur-[120px]" />
 
-              <div className="text-center">
-                <div className="mb-2 text-xs uppercase tracking-[0.35em] text-white/50">
-                  Foundation
+            {/* Energy Beam */}
+            <div className="absolute top-1/2 h-px w-[90%] -translate-y-1/2 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+            <div className="absolute top-1/2 h-[2px] w-[75%] -translate-y-1/2 bg-gradient-to-r from-rose-500/40 via-purple-400/40 to-violet-500/40 blur-sm" />
+
+            {/* Orbit Ring 1 */}
+            <div className="absolute h-[380px] w-[380px] rounded-full border border-white/10 animate-[spin_60s_linear_infinite]" />
+
+            {/* Orbit Ring 2 */}
+            <div className="absolute h-[300px] w-[300px] rounded-full border border-violet-400/10 animate-[spin_40s_linear_infinite_reverse]" />
+
+            {/* Orbit Ring 3 */}
+            <div className="absolute h-[240px] w-[240px] rounded-full border border-rose-400/10 animate-[spin_25s_linear_infinite]" />
+
+            {/* Orbiting Nodes */}
+            <div className="absolute h-[380px] w-[380px] animate-[spin_60s_linear_infinite]">
+              <div className="absolute left-1/2 top-0 h-4 w-4 -translate-x-1/2 rounded-full bg-violet-400 shadow-[0_0_30px_#a855f7]" />
+            </div>
+
+            <div className="absolute h-[300px] w-[300px] animate-[spin_40s_linear_infinite_reverse]">
+              <div className="absolute right-0 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-rose-400 shadow-[0_0_25px_#fb7185]" />
+            </div>
+
+            <div className="absolute h-[240px] w-[240px] animate-[spin_25s_linear_infinite]">
+              <div className="absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-cyan-400 shadow-[0_0_25px_#22d3ee]" />
+            </div>
+
+            {/* Floating Stars */}
+            {[...Array(20)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute h-1 w-1 rounded-full bg-white/60 animate-pulse"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${i * 0.2}s`,
+                }}
+              />
+            ))}
+
+            {/* Main Core */}
+            <div className="group relative z-20">
+
+              {/* Outer Halo */}
+              <div className="absolute inset-[-40px] rounded-full bg-gradient-to-r from-rose-500/20 via-purple-500/20 to-violet-500/20 blur-3xl opacity-70 animate-pulse" />
+
+              {/* Animated Border */}
+              <div className="absolute inset-[-12px] rounded-full bg-gradient-to-r from-rose-500 via-violet-500 to-cyan-400 p-[1px] animate-[spin_18s_linear_infinite]">
+
+                <div className="h-full w-full rounded-full bg-black" />
+              </div>
+
+              {/* Glass Sphere */}
+              <div className="relative flex h-56 w-56 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] backdrop-blur-3xl shadow-[0_0_100px_rgba(168,85,247,0.15)] transition-all duration-700 group-hover:scale-110">
+
+                {/* Reflection */}
+                <div className="absolute inset-4 rounded-full bg-gradient-to-br from-white/20 via-transparent to-transparent" />
+
+                {/* Inner Circle */}
+                <div className="absolute inset-8 rounded-full border border-white/10" />
+
+                {/* Content */}
+                <div className="relative text-center">
+
+
+                  <h2 className="bg-gradient-to-r from-white via-violet-200 to-rose-200 bg-clip-text text-3xl font-extralight tracking-wide text-transparent">
+                    Soulfire
+                  </h2>
+
+                  <h2 className="bg-gradient-to-r from-rose-200 via-white to-violet-200 bg-clip-text text-3xl font-extralight tracking-wide text-transparent">
+                    Chronicles
+                  </h2>
+
+                  <div className="mx-auto mt-5 h-px w-20 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+
                 </div>
 
-                <div className="text-lg font-light text-white">
-                  Soulfire
-                </div>
-
-                <div className="text-lg font-light text-white">
-                  Chronicles
-                </div>
+                {/* Hover Energy */}
+                <div className="absolute inset-0 rounded-full opacity-0 blur-2xl transition-all duration-700 group-hover:opacity-100 bg-gradient-to-r from-rose-500/20 via-violet-500/20 to-cyan-500/20" />
               </div>
             </div>
+
+            {/* Side Energy Points */}
+            <div className="absolute left-[12%] flex flex-col items-center">
+              <div className="h-4 w-4 rounded-full bg-rose-400 shadow-[0_0_30px_#fb7185]" />
+              <div className="mt-3 h-16 w-px bg-gradient-to-b from-rose-400/50 to-transparent" />
+            </div>
+
+            <div className="absolute right-[12%] flex flex-col items-center">
+              <div className="h-4 w-4 rounded-full bg-violet-400 shadow-[0_0_30px_#a855f7]" />
+              <div className="mt-3 h-16 w-px bg-gradient-to-b from-violet-400/50 to-transparent" />
+            </div>
+
           </div>
 
           {/* Pillars */}
@@ -433,31 +514,93 @@ export default function ProjectsPage() {
         <div className="relative mx-auto h-[650px] max-w-6xl">
 
 
-          {/* Central Circle */}
-          <div className="absolute left-1/2 top-1/2 z-30 h-52 w-52 -translate-x-1/2 -translate-y-1/2">
-            <div className="absolute inset-0 rounded-full border border-white/20 bg-white/[0.03] backdrop-blur-3xl" />
+          {/* =====================================
+               Soulfire Central Nexus Core
+            ===================================== */}
+          <div className="absolute left-1/2 top-1/2 z-30 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2">
 
-            <div className="absolute inset-0 animate-pulse rounded-full bg-gradient-to-br from-white/10 to-transparent" />
+            {/* Cosmic Glow */}
+            <div className="absolute inset-[-80px] rounded-full bg-violet-500/10 blur-[120px]" />
+            <div className="absolute inset-[-60px] rounded-full bg-rose-500/10 blur-[100px]" />
 
-            <div className="absolute inset-4 rounded-full border border-white/10" />
+            {/* Rotating Orbit Ring */}
+            <div className="absolute inset-[-35px] rounded-full border border-violet-400/10 animate-[spin_30s_linear_infinite]" />
 
-            <div className="flex h-full flex-col items-center justify-center text-center">
-              <span className="text-xs uppercase tracking-[0.45em] text-white/50">
-                Foundation
-              </span>
+            {/* Secondary Ring */}
+            <div className="absolute inset-[-20px] rounded-full border border-rose-400/10 animate-[spin_20s_linear_infinite_reverse]" />
 
-              <h3 className="mt-3 text-2xl font-light text-white">
-                Soulfire
-              </h3>
+            {/* Outer Halo */}
+            <div className="absolute inset-[-10px] rounded-full bg-gradient-to-r from-violet-500/20 via-purple-500/10 to-rose-500/20 blur-xl animate-pulse" />
 
-              <h3 className="text-2xl font-light text-white">
-                Chronicles
-              </h3>
+            {/* Animated Gradient Border */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-violet-500 via-rose-500 to-cyan-400 p-[1px]">
 
-              <p className="mt-3 text-xs uppercase tracking-[0.3em] text-white/40">
-                Infinite Stories
-              </p>
+              <div className="h-full w-full rounded-full bg-black/80 backdrop-blur-3xl" />
             </div>
+
+            {/* Glass Core */}
+            <div className="absolute inset-0 rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-3xl shadow-[0_0_80px_rgba(168,85,247,0.15)]">
+
+              {/* Reflection */}
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-white/20 via-transparent to-transparent" />
+
+              {/* Inner Ring */}
+              <div className="absolute inset-6 rounded-full border border-white/10" />
+
+              {/* Energy Ring */}
+              <div className="absolute inset-10 rounded-full border border-violet-400/10" />
+
+              {/* Floating Particles */}
+              <div className="absolute left-10 top-12 h-2 w-2 rounded-full bg-violet-400 animate-pulse shadow-[0_0_20px_#a855f7]" />
+
+              <div className="absolute right-12 top-20 h-2 w-2 rounded-full bg-rose-400 animate-pulse shadow-[0_0_20px_#fb7185]" />
+
+              <div className="absolute bottom-16 left-16 h-2 w-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_20px_#22d3ee]" />
+
+              <div className="absolute bottom-10 right-14 h-1.5 w-1.5 rounded-full bg-white animate-ping" />
+
+              {/* Content */}
+              <div className="relative flex h-full flex-col items-center justify-center text-center">
+
+                {/* Title */}
+                <h3 className="bg-gradient-to-r from-white via-violet-200 to-rose-200 bg-clip-text text-4xl font-extralight tracking-wide text-transparent">
+                  Soulfire
+                </h3>
+
+                <h3 className="bg-gradient-to-r from-rose-200 via-white to-violet-200 bg-clip-text text-4xl font-extralight tracking-wide text-transparent">
+                  Chronicles
+                </h3>
+
+                {/* Divider */}
+                <div className="mt-5 h-px w-24 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
+
+                {/* Subtitle */}
+                <p className="mt-5 max-w-[180px] text-[11px] uppercase tracking-[0.35em] text-white/40">
+                  Preserving Humanity's Infinite Stories
+                </p>
+              </div>
+
+              {/* Hover Glow */}
+              <div className="absolute inset-0 rounded-full opacity-40 blur-2xl bg-gradient-to-r from-violet-500/20 via-purple-500/20 to-rose-500/20 animate-pulse" />
+            </div>
+
+            {/* Orbiting Energy Nodes */}
+            <div className="absolute inset-[-35px] animate-[spin_25s_linear_infinite]">
+              <div className="absolute left-1/2 top-0 h-4 w-4 -translate-x-1/2 rounded-full bg-violet-400 shadow-[0_0_30px_#a855f7]" />
+            </div>
+
+            <div className="absolute inset-[-20px] animate-[spin_18s_linear_infinite_reverse]">
+              <div className="absolute bottom-0 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-rose-400 shadow-[0_0_25px_#fb7185]" />
+            </div>
+
+            <div className="absolute inset-[-50px] animate-[spin_40s_linear_infinite]">
+              <div className="absolute right-0 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-cyan-400 shadow-[0_0_25px_#22d3ee]" />
+            </div>
+
+            {/* Outer Energy Waves */}
+            <div className="absolute inset-[-55px] rounded-full border border-white/5 animate-ping" />
+            <div className="absolute inset-[-75px] rounded-full border border-violet-400/5 animate-pulse" />
+
           </div>
 
           {/* Animated Rings */}
@@ -576,45 +719,155 @@ export default function ProjectsPage() {
         </div>
       </div>
 
-      {/* Projects */}
-      <section className="px-6 pb-32">
-        <div className="max-w-7xl mx-auto space-y-20">
+      {/* ================================
+    Premium Project Showcase
+================================ */}
+      <section className="relative px-6 pb-40">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.08),transparent_70%)]" />
+
+        <div className="relative mx-auto max-w-7xl space-y-28">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="group overflow-hidden rounded-[40px] border border-white/10 bg-white/[0.03] backdrop-blur-xl"
+              transition={{ duration: 0.9, delay: index * 0.15 }}
+              className="group relative overflow-hidden rounded-[48px] border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_80px_rgba(0,0,0,0.45)]"
             >
+              {/* Glow Background */}
+              <div className="absolute inset-0 opacity-0 transition duration-1000 group-hover:opacity-100">
+                <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-violet-500/15 blur-[120px]" />
+                <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-rose-500/15 blur-[120px]" />
+              </div>
+
               {/* Banner */}
-              <div className="relative h-[350px] md:h-[600px] overflow-hidden">
+              <div className="relative h-[420px] overflow-hidden md:h-[700px]">
+
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
                   priority
-                  className="object-cover transition duration-1000 group-hover:scale-110"
+                  className="object-cover transition duration-[2500ms] ease-out group-hover:scale-110"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/40" />
+                {/* Luxury Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/40" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.18),transparent_35%)]" />
 
-                <div className="absolute top-8 left-8">
-                  <span className="rounded-full border border-amber-500/20 bg-amber-500/20 px-5 py-2 text-sm text-amber-200">
-                    {project.year}
+                {/* Project Number */}
+                <div className="absolute right-10 top-10">
+                  <span className="text-[120px] font-black text-white/5">
+                    {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
 
-                <div className="absolute bottom-10 left-10 right-10">
-                  <h2 className="text-4xl md:text-7xl font-black mb-5">
+                {/* Year Badge */}
+                <div className="absolute left-10 top-10">
+                  <div className="rounded-full border border-white/10 bg-white/10 px-6 py-3 backdrop-blur-xl">
+                    <span className="text-sm tracking-[0.25em] text-amber-200 uppercase">
+                      {project.year}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Featured Badge */}
+                <div className="absolute left-10 top-32">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-5 py-2 backdrop-blur-xl">
+                    <span className="h-2 w-2 rounded-full bg-amber-400 animate-pulse" />
+                    <span className="text-xs uppercase tracking-[0.25em] text-amber-200">
+                      Featured Story
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="absolute bottom-12 left-12 right-12 z-20">
+
+                  <div className="mb-6 flex flex-wrap gap-3">
+                    {(project as any).tags?.map((tag: string) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs uppercase tracking-widest text-white/70 backdrop-blur-md"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <h2 className="mb-6 max-w-5xl bg-gradient-to-r from-white via-violet-100 to-amber-100 bg-clip-text text-5xl font-black leading-tight text-transparent md:text-8xl">
                     {project.title}
                   </h2>
 
-                  <p className="max-w-4xl text-lg md:text-2xl text-amber-100">
+                  <p className="max-w-4xl text-lg leading-relaxed text-white/80 md:text-2xl">
                     {project.tagline}
                   </p>
+
+                  {/* Decorative Line */}
+                  <div className="mt-8 h-px w-40 bg-gradient-to-r from-violet-400 via-white to-transparent" />
+                </div>
+
+                {/* Floating Stats */}
+                <div className="absolute bottom-10 right-10 hidden lg:flex gap-4">
+
+                  <div className="rounded-3xl border border-white/10 bg-black/30 px-8 py-5 backdrop-blur-xl">
+                    <p className="text-xs uppercase tracking-widest text-white/40">
+                      Legacy
+                    </p>
+                    <h4 className="mt-1 text-2xl font-bold text-white">
+                      Timeless
+                    </h4>
+                  </div>
+
+                  <div className="rounded-3xl border border-white/10 bg-black/30 px-8 py-5 backdrop-blur-xl">
+                    <p className="text-xs uppercase tracking-widest text-white/40">
+                      Impact
+                    </p>
+                    <h4 className="mt-1 text-2xl font-bold text-white">
+                      Global
+                    </h4>
+                  </div>
+                </div>
+
+                {/* Hover Glow */}
+                <div className="absolute inset-0 opacity-0 transition duration-700 group-hover:opacity-100">
+                  <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-transparent to-rose-500/10" />
+                </div>
+
+                {/* Animated Border */}
+                <div className="pointer-events-none absolute inset-0 rounded-[48px] border border-white/5" />
+              </div>
+
+              {/* Bottom Information Bar */}
+              <div className="grid gap-8 border-t border-white/10 bg-black/30 p-8 backdrop-blur-xl md:grid-cols-3">
+
+                <div>
+                  <p className="mb-2 text-xs uppercase tracking-widest text-white/40">
+                    Category
+                  </p>
+                  <h4 className="text-lg font-semibold text-white">
+                    Digital Preservation
+                  </h4>
+                </div>
+
+                <div>
+                  <p className="mb-2 text-xs uppercase tracking-widest text-white/40">
+                    Vision
+                  </p>
+                  <h4 className="text-lg font-semibold text-white">
+                    Preserving Human Stories
+                  </h4>
+                </div>
+
+                <div>
+                  <p className="mb-2 text-xs uppercase tracking-widest text-white/40">
+                    Status
+                  </p>
+                  <h4 className="text-lg font-semibold text-white">
+                    Ongoing
+                  </h4>
                 </div>
               </div>
 
@@ -691,12 +944,13 @@ export default function ProjectsPage() {
                 </div>
               </div>
             </motion.div>
-          ))}
-        </div>
-      </section>
+          ))
+          }
+        </div >
+      </section >
 
       {/* Quote Section */}
-      <section className="px-6 pb-28">
+      < section className="px-6 pb-28" >
         <div className="max-w-6xl mx-auto rounded-[40px] border border-white/10 bg-white/[0.03] p-12 md:p-20 text-center backdrop-blur-xl">
           <Stars className="w-10 h-10 mx-auto text-amber-400 mb-8" />
 
@@ -712,39 +966,8 @@ export default function ProjectsPage() {
             here exists to preserve what would otherwise disappear.
           </p>
         </div>
-      </section>
+      </section >
 
-      {/* CTA */}
-      <section className="px-6 pb-32">
-        <div className="max-w-6xl mx-auto rounded-[40px] border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-12 md:p-24 text-center backdrop-blur-xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-5 py-2 mb-8">
-            <Sparkles className="w-4 h-4 text-amber-400" />
-            <span className="text-sm text-amber-200">
-              More Originals Coming Soon
-            </span>
-          </div>
-
-          <h2 className="text-5xl md:text-8xl font-black mb-8">
-            The Journey
-            <br />
-            Continues
-          </h2>
-
-          <p className="max-w-3xl mx-auto text-zinc-400 text-lg leading-relaxed mb-12">
-            These projects are only the beginning of a larger storytelling
-            vision spanning books, archives, documentaries, essays,
-            reflections, and immersive digital experiences.
-          </p>
-
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-300 to-orange-300 px-10 py-5 text-black font-bold hover:scale-105 transition"
-          >
-            Connect With Vihaan
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-        </div>
-      </section>
 
       <section className="relative min-h-screen bg-black text-white overflow-hidden">
         {/* Background Video */}
@@ -814,6 +1037,38 @@ export default function ProjectsPage() {
           </div>
         </div>
       </section>
-    </main>
+
+      {/* CTA */}
+      < section className="px-6 pb-32" >
+        <div className="max-w-6xl mx-auto rounded-[40px] border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-12 md:p-24 text-center backdrop-blur-xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-5 py-2 mb-8">
+            <Sparkles className="w-4 h-4 text-amber-400" />
+            <span className="text-sm text-amber-200">
+              More Originals Coming Soon
+            </span>
+          </div>
+
+          <h2 className="text-5xl md:text-8xl font-black mb-8">
+            The Journey
+            <br />
+            Continues
+          </h2>
+
+          <p className="max-w-3xl mx-auto text-zinc-400 text-lg leading-relaxed mb-12">
+            These projects are only the beginning of a larger storytelling
+            vision spanning books, archives, documentaries, essays,
+            reflections, and immersive digital experiences.
+          </p>
+
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-300 to-orange-300 px-10 py-5 text-black font-bold hover:scale-105 transition"
+          >
+            Connect With Vihaan
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+      </section >
+    </main >
   );
 }
