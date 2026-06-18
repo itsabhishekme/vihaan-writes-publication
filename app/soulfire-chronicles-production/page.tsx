@@ -270,17 +270,13 @@ export default function SoulfireChroniclesProductionPage() {
                         {/* Video */}
                         <div>
                             <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl">
-                                <video
-                                    controls
-                                    preload="metadata"
-                                    poster="/images/before-her-name-existed-poster.jpg"
+                                <iframe
                                     className="aspect-video w-full"
-                                >
-                                    <source
-                                        src="/video/Stories That Illuminate Minds And Awaken Souls.mp4"
-                                        type="video/mp4"
-                                    />
-                                </video>
+                                    src="https://www.youtube.com/embed/f9XxlIRBO-E"
+                                    title="Stories That Illuminate Minds And Awaken Souls"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                />
                             </div>
 
                             {/* Trailer Stats */}
