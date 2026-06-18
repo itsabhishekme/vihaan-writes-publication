@@ -741,11 +741,11 @@ export default function ProjectsPage() {
               <h4 className="mt-3 text-2xl font-light text-white">
                 The Human Archive
               </h4>
-
+              
               <p className="mt-3 text-sm leading-relaxed text-white/50">
-                Preserving humanity's memories, experiences, interviews,
-                and collective wisdom.
+                Preserving humanity&apos;s memories, experiences, interviews, and collective wisdom.
               </p>
+
             </div>
           </div>
 
