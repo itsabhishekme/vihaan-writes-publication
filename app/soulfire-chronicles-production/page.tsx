@@ -722,7 +722,7 @@ export default function SoulfireChroniclesProductionPage() {
                                     By blending personal narratives with broader discussions
                                     surrounding psychology, spirituality, consciousness,
                                     destiny, and emotional connection, the documentary
-                                    creates an engaging exploration of one of humanity's
+                                    creates an engaging exploration of one of humanity&apos;s
                                     most enduring questions: Are some people meant to meet?
                                 </p>
 
