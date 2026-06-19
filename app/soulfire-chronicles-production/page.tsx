@@ -998,39 +998,216 @@ export default function SoulfireChroniclesProductionPage() {
                 </div>
             </section >
 
-            {/* Timeline */}
-            < section className="mx-auto max-w-6xl px-6 py-24 lg:px-8" >
-                <div className="text-center">
-                    <h2 className="text-4xl font-bold">
-                        Our Journey
-                    </h2>
+            {/* Our Journey Timeline - SEO Optimized */}
+            <section
+                id="our-journey"
+                aria-labelledby="journey-heading"
+                className="relative overflow-hidden bg-black"
+            >
+                {/* Background Effects */}
+                <div className="absolute inset-0 -z-10">
+                    <div className="absolute left-0 top-20 h-96 w-96 rounded-full bg-amber-500/10 blur-3xl" />
+                    <div className="absolute right-0 bottom-20 h-96 w-96 rounded-full bg-orange-500/10 blur-3xl" />
                 </div>
 
-                <div className="mt-20 space-y-8">
-                    {timeline.map((item) => (
-                        <div
-                            key={item.year}
-                            className="rounded-2xl border border-white/10 bg-white/5 p-8"
+                <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+                    {/* Header */}
+                    <div className="mx-auto max-w-4xl text-center">
+                        <span className="mb-4 inline-flex rounded-full border border-amber-500/30 bg-amber-500/10 px-5 py-2 text-sm font-medium uppercase tracking-widest text-amber-400">
+                            Our Story & Growth
+                        </span>
+
+                        <h2
+                            id="journey-heading"
+                            className="text-4xl font-bold text-white md:text-5xl lg:text-6xl"
                         >
-                            <div className="flex items-center gap-4">
-                                <HiOutlineClock className="h-8 w-8 text-amber-400" />
+                            Our
+                            <span className="block bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 bg-clip-text text-transparent">
+                                Journey Through Storytelling
+                            </span>
+                        </h2>
 
-                                <span className="text-2xl font-bold text-amber-400">
-                                    {item.year}
-                                </span>
-                            </div>
+                        <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-gray-400 md:text-xl">
+                            Explore the evolution of Soulfire Chronicles Production and
+                            discover the milestones, creative achievements, documentary
+                            projects, and cinematic storytelling experiences that have
+                            shaped our vision and mission over the years.
+                        </p>
+                    </div>
 
-                            <h3 className="mt-4 text-2xl font-semibold">
-                                {item.title}
+                    {/* Timeline */}
+                    <div className="relative mt-24">
+                        {/* Center Line */}
+                        <div className="absolute left-6 top-0 hidden h-full w-px bg-gradient-to-b from-amber-500/50 via-orange-500/50 to-transparent lg:block" />
+
+                        <div className="space-y-10">
+                            {timeline.map((item, index) => (
+                                <article
+                                    key={item.year}
+                                    className="group relative"
+                                >
+                                    <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-8 backdrop-blur-md transition-all duration-500 hover:border-amber-500/30 hover:bg-white/10 hover:shadow-2xl hover:shadow-amber-500/10 lg:ml-16">
+                                        {/* Timeline Dot */}
+                                        <div className="absolute -left-20 top-10 hidden h-12 w-12 items-center justify-center rounded-full border border-amber-500/30 bg-black lg:flex">
+                                            <HiOutlineClock className="h-6 w-6 text-amber-400" />
+                                        </div>
+
+                                        <div className="flex flex-wrap items-center gap-4">
+                                            <span className="inline-flex rounded-full border border-amber-500/30 bg-amber-500/10 px-5 py-2 text-lg font-bold text-amber-400">
+                                                {item.year}
+                                            </span>
+
+                                            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm uppercase tracking-wider text-gray-400">
+                                                Milestone {index + 1}
+                                            </span>
+                                        </div>
+
+                                        <h3 className="mt-6 text-2xl font-bold text-white md:text-3xl">
+                                            {item.title}
+                                        </h3>
+
+                                        <p className="mt-5 text-lg leading-relaxed text-gray-400">
+                                            {item.description}
+                                        </p>
+
+                                        <div className="mt-8 border-t border-white/10 pt-6">
+                                            <p className="leading-relaxed text-gray-500">
+                                                This milestone represents an important step
+                                                in our ongoing commitment to creating
+                                                meaningful documentaries, cinematic films,
+                                                inspirational storytelling projects, and
+                                                transformative visual experiences that
+                                                connect with audiences around the world.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Journey Description */}
+                    <div className="mt-24 rounded-[2rem] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl md:p-14">
+                        <div className="mx-auto max-w-5xl">
+                            <h3 className="mb-8 text-center text-3xl font-bold text-white md:text-4xl">
+                                The Story Behind Our Journey
                             </h3>
 
-                            <p className="mt-3 text-gray-400">
-                                {item.description}
+                            <div className="space-y-6 text-lg leading-relaxed text-gray-300">
+                                <p>
+                                    Every great story begins with a vision. At Soulfire
+                                    Chronicles Production, our journey has been driven by a
+                                    passion for authentic storytelling and a commitment to
+                                    exploring the experiences that shape the human spirit.
+                                    From our earliest creative concepts to our most
+                                    ambitious documentary productions, each chapter has been
+                                    guided by curiosity, creativity, and purpose.
+                                </p>
+
+                                <p>
+                                    Over the years, we have continuously evolved as
+                                    filmmakers, storytellers, and creative visionaries. Each
+                                    project has provided opportunities to learn, grow, and
+                                    deepen our understanding of the power that stories hold
+                                    to inspire reflection, encourage dialogue, and foster
+                                    meaningful human connections.
+                                </p>
+
+                                <p>
+                                    Our timeline reflects more than professional
+                                    achievements. It represents the people we have met, the
+                                    stories we have uncovered, and the experiences that have
+                                    reinforced our belief that every individual possesses a
+                                    unique narrative worth sharing with the world.
+                                </p>
+
+                                <p>
+                                    Through documentary filmmaking, cinematic productions,
+                                    interviews, and visual storytelling, we continue to
+                                    explore themes of destiny, spirituality, consciousness,
+                                    personal transformation, resilience, and human
+                                    connection. These themes remain at the heart of
+                                    everything we create.
+                                </p>
+
+                                <p>
+                                    As we move forward, our journey remains focused on
+                                    discovering extraordinary stories hidden within everyday
+                                    life and transforming them into cinematic experiences
+                                    that resonate with audiences across cultures,
+                                    generations, and backgrounds.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Values Section */}
+                    <div className="mt-20 grid gap-8 md:grid-cols-3">
+                        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-sm">
+                            <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-amber-500/10">
+                                <HiOutlineClock className="h-8 w-8 text-amber-400" />
+                            </div>
+
+                            <h4 className="mb-4 text-2xl font-bold text-white">
+                                Experience
+                            </h4>
+
+                            <p className="leading-relaxed text-gray-400">
+                                Years of dedication to documentary filmmaking, visual
+                                storytelling, and cinematic content creation.
                             </p>
                         </div>
-                    ))}
+
+                        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-sm">
+                            <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-orange-500/10">
+                                <HiOutlineClock className="h-8 w-8 text-orange-400" />
+                            </div>
+
+                            <h4 className="mb-4 text-2xl font-bold text-white">
+                                Growth
+                            </h4>
+
+                            <p className="leading-relaxed text-gray-400">
+                                Continuous innovation and creative development through
+                                meaningful projects and powerful storytelling experiences.
+                            </p>
+                        </div>
+
+                        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-sm">
+                            <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-yellow-500/10">
+                                <HiOutlineClock className="h-8 w-8 text-yellow-400" />
+                            </div>
+
+                            <h4 className="mb-4 text-2xl font-bold text-white">
+                                Vision
+                            </h4>
+
+                            <p className="leading-relaxed text-gray-400">
+                                Building a globally recognized storytelling brand that
+                                inspires audiences through impactful cinematic experiences.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* SEO Content Block */}
+                    <div className="mt-24 rounded-3xl border border-amber-500/10 bg-gradient-to-r from-amber-500/10 via-transparent to-orange-500/10 p-12 text-center">
+                        <h3 className="mb-6 text-3xl font-bold text-white">
+                            A Legacy Built Through Documentary Storytelling
+                        </h3>
+
+                        <p className="mx-auto max-w-4xl text-lg leading-relaxed text-gray-300">
+                            The journey of Soulfire Chronicles Production reflects a deep
+                            commitment to documentary filmmaking, cinematic storytelling,
+                            creative production, visual media, inspirational content, human
+                            connection, personal transformation, and meaningful narratives.
+                            Each milestone represents our dedication to producing films and
+                            documentaries that inspire audiences, spark curiosity, and leave
+                            a lasting impact through authentic storytelling and creative
+                            excellence.
+                        </p>
+                    </div>
                 </div>
-            </section >
+            </section>
 
             {/* CTA */}
             < section className="border-t border-white/10" >
