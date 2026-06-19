@@ -129,56 +129,235 @@ export default function SoulfireChroniclesProductionPage() {
                 </div>
             </section>
 
-            {/* About */}
-            <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
-                <div className="grid gap-16 lg:grid-cols-2">
-                    <div>
-                        <h2 className="mb-6 text-4xl font-bold">
-                            Our Story
+            {/* About Soulfire Chronicles Production - SEO Optimized */}
+            <section
+                id="about"
+                aria-labelledby="about-heading"
+                className="relative overflow-hidden bg-black"
+            >
+                {/* Background Effects */}
+                <div className="absolute inset-0 -z-10">
+                    <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-orange-500/10 blur-3xl" />
+                    <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-red-500/10 blur-3xl" />
+                </div>
+
+                <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+                    {/* Section Header */}
+                    <div className="mx-auto mb-20 max-w-4xl text-center">
+                        <span className="mb-4 inline-flex rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-medium tracking-wide text-orange-400 uppercase">
+                            About Soulfire Chronicles Production
+                        </span>
+
+                        <h2
+                            id="about-heading"
+                            className="mb-6 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl"
+                        >
+                            Crafting Powerful Stories Through
+                            <span className="block bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+                                Film, Documentary & Cinematic Storytelling
+                            </span>
                         </h2>
 
-                        <p className="mb-6 text-lg leading-relaxed text-gray-300">
-                            More Than A Production House
-                        </p>
-
-                        <p className="mb-6 leading-relaxed text-gray-400">
-                            Soulfire Chronicles Production was founded on the
-                            belief that stories possess the power to transform
-                            lives. Through documentaries, films, interviews,
-                            and cinematic storytelling, we explore themes of
-                            destiny, spirituality, human connection, personal
-                            growth, and extraordinary experiences.
-                        </p>
-
-                        <p className="leading-relaxed text-gray-400">
-                            Our mission is not simply to create content but to
-                            create meaningful experiences that inspire
-                            audiences to reflect, dream, and connect with
-                            something greater than themselves. Every project is
-                            approached with passion, creativity, and a
-                            commitment to excellence.
+                        <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-400 md:text-xl">
+                            Soulfire Chronicles Production is a creative film production
+                            company dedicated to producing inspiring documentaries,
+                            cinematic films, interviews, and visual storytelling projects
+                            that explore spirituality, personal growth, human connection,
+                            destiny, and transformative life experiences.
                         </p>
                     </div>
 
-                    <div className="rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur">
-                        <h3 className="mb-6 text-3xl font-bold">
-                            Our Mission
+                    <div className="grid items-center gap-16 lg:grid-cols-2">
+                        {/* Left Content */}
+                        <div>
+                            <div className="mb-8">
+                                <span className="text-sm font-semibold tracking-widest text-orange-400 uppercase">
+                                    Our Story
+                                </span>
+
+                                <h3 className="mt-3 mb-6 text-4xl font-bold text-white">
+                                    More Than Just A Production House
+                                </h3>
+                            </div>
+
+                            <p className="mb-6 text-lg leading-relaxed text-gray-300">
+                                At Soulfire Chronicles Production, we believe that every
+                                story carries the potential to inspire, heal, and transform
+                                lives. Founded with a passion for authentic storytelling,
+                                our production house creates meaningful visual experiences
+                                that resonate deeply with audiences around the world.
+                            </p>
+
+                            <p className="mb-6 leading-relaxed text-gray-400">
+                                Through professionally crafted documentaries, cinematic
+                                films, interviews, digital media projects, and creative
+                                productions, we uncover extraordinary narratives hidden
+                                within everyday life. Our stories explore universal themes
+                                such as spirituality, self-discovery, destiny, personal
+                                transformation, resilience, and the profound connections
+                                that unite humanity.
+                            </p>
+
+                            <p className="mb-6 leading-relaxed text-gray-400">
+                                Every project we undertake is driven by a commitment to
+                                excellence, creativity, authenticity, and emotional impact.
+                                We combine cinematic visuals, compelling narratives, and
+                                thoughtful production techniques to create films that leave
+                                lasting impressions.
+                            </p>
+
+                            <p className="leading-relaxed text-gray-400">
+                                Our goal extends beyond entertainment. We strive to spark
+                                meaningful conversations, encourage reflection, inspire
+                                positive change, and help audiences connect with something
+                                greater than themselves through the power of storytelling.
+                            </p>
+
+                            {/* Statistics */}
+                            <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
+                                <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur-sm">
+                                    <h4 className="text-3xl font-bold text-white">50+</h4>
+                                    <p className="mt-2 text-sm text-gray-400">
+                                        Creative Projects
+                                    </p>
+                                </div>
+
+                                <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur-sm">
+                                    <h4 className="text-3xl font-bold text-white">10+</h4>
+                                    <p className="mt-2 text-sm text-gray-400">
+                                        Years Experience
+                                    </p>
+                                </div>
+
+                                <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur-sm">
+                                    <h4 className="text-3xl font-bold text-white">100%</h4>
+                                    <p className="mt-2 text-sm text-gray-400">
+                                        Story Driven
+                                    </p>
+                                </div>
+
+                                <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur-sm">
+                                    <h4 className="text-3xl font-bold text-white">Global</h4>
+                                    <p className="mt-2 text-sm text-gray-400">
+                                        Audience Reach
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right Content */}
+                        <div className="space-y-8">
+                            {/* Mission Card */}
+                            <div className="group rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-10 backdrop-blur-md transition-all duration-500 hover:border-orange-500/30 hover:bg-white/10">
+                                <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-500/20">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-8 w-8 text-orange-400"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M13 10V3L4 14h7v7l9-11h-7z"
+                                        />
+                                    </svg>
+                                </div>
+
+                                <h3 className="mb-5 text-3xl font-bold text-white">
+                                    Our Mission
+                                </h3>
+
+                                <p className="leading-relaxed text-gray-300">
+                                    Our mission is to create impactful films,
+                                    documentaries, and visual stories that inspire
+                                    reflection, awaken curiosity, encourage personal
+                                    growth, and celebrate the extraordinary experiences
+                                    found within everyday life. We aim to connect audiences
+                                    through meaningful storytelling that transcends cultural
+                                    and geographical boundaries.
+                                </p>
+                            </div>
+
+                            {/* Vision Card */}
+                            <div className="group rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-10 backdrop-blur-md transition-all duration-500 hover:border-red-500/30 hover:bg-white/10">
+                                <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-red-500/20">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-8 w-8 text-red-400"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M15 10l4.55-2.275A1 1 0 0121 8.618v6.764a1 1 0 01-1.45.893L15 14m-6 2h6a2 2 0 002-2V10a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm0 0l-4.55 2.275A1 1 0 013 17.382V6.618a1 1 0 011.45-.893L9 8"
+                                        />
+                                    </svg>
+                                </div>
+
+                                <h3 className="mb-5 text-3xl font-bold text-white">
+                                    Our Vision
+                                </h3>
+
+                                <p className="leading-relaxed text-gray-300">
+                                    To become a globally recognized film production and
+                                    storytelling brand known for creating transformative
+                                    cinematic experiences. We envision a future where our
+                                    documentaries, films, and creative productions inspire
+                                    millions of people worldwide to dream bigger, think
+                                    deeper, and embrace meaningful human connections.
+                                </p>
+                            </div>
+
+                            {/* Values Card */}
+                            <div className="rounded-3xl border border-white/10 bg-white/5 p-10 backdrop-blur-md">
+                                <h3 className="mb-8 text-3xl font-bold text-white">
+                                    Core Values
+                                </h3>
+
+                                <div className="grid gap-5 sm:grid-cols-2">
+                                    {[
+                                        "Authentic Storytelling",
+                                        "Creative Excellence",
+                                        "Human Connection",
+                                        "Purpose-Driven Content",
+                                        "Innovation & Vision",
+                                        "Lasting Impact",
+                                    ].map((value) => (
+                                        <div
+                                            key={value}
+                                            className="flex items-center gap-3"
+                                        >
+                                            <div className="h-2.5 w-2.5 rounded-full bg-orange-400" />
+                                            <span className="text-gray-300">
+                                                {value}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* SEO Rich Content */}
+                    <div className="mt-24 rounded-3xl border border-white/10 bg-gradient-to-r from-orange-500/10 via-red-500/5 to-orange-500/10 p-12 text-center">
+                        <h3 className="mb-6 text-3xl font-bold text-white">
+                            Why Choose Soulfire Chronicles Production?
                         </h3>
 
-                        <p className="mb-8 text-gray-300 leading-relaxed">
-                            To create films and documentaries that inspire
-                            reflection, awaken curiosity, and celebrate the
-                            extraordinary stories hidden within everyday life.
-                        </p>
-
-                        <h3 className="mb-6 text-3xl font-bold">
-                            Our Vision
-                        </h3>
-
-                        <p className="text-gray-300 leading-relaxed">
-                            To become a globally recognized storytelling brand
-                            that leaves a lasting impact on audiences through
-                            meaningful cinematic experiences.
+                        <p className="mx-auto max-w-4xl leading-relaxed text-gray-300">
+                            Whether producing documentaries, cinematic films, branded
+                            storytelling content, interviews, or creative media projects,
+                            Soulfire Chronicles Production combines artistic vision with
+                            professional filmmaking expertise. Our dedication to powerful
+                            narratives, cinematic excellence, and authentic human stories
+                            helps create content that resonates deeply with audiences while
+                            delivering meaningful and memorable experiences.
                         </p>
                     </div>
                 </div>
@@ -469,37 +648,281 @@ export default function SoulfireChroniclesProductionPage() {
                 </div>
             </section>
 
-            {/* Extended Description */}
-            <div className="mx-auto mt-24 max-w-5xl">
-                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-10 backdrop-blur">
-                    <h3 className="mb-8 text-center text-4xl font-bold">
-                        About The Documentary
-                    </h3>
+            {/* Extended Documentary Description - SEO Optimized */}
+            <section
+                id="about-documentary"
+                aria-labelledby="documentary-heading"
+                className="relative mx-auto mt-24 max-w-7xl px-6 lg:px-8"
+            >
+                {/* Background Decoration */}
+                <div className="absolute inset-0 -z-10 overflow-hidden">
+                    <div className="absolute left-1/4 top-0 h-72 w-72 rounded-full bg-orange-500/10 blur-3xl" />
+                    <div className="absolute right-1/4 bottom-0 h-72 w-72 rounded-full bg-red-500/10 blur-3xl" />
+                </div>
 
-                    <div className="space-y-6 text-lg leading-relaxed text-gray-300">
-                        <p>
-                            From recurring dreams and chance encounters to moments
-                            of profound recognition, Before Her Name Existed
-                            invites audiences to consider a possibility that is
-                            both timeless and deeply personal.
+                <div className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl md:p-12 lg:p-16">
+                    {/* Header */}
+                    <div className="mx-auto mb-16 max-w-4xl text-center">
+                        <span className="mb-4 inline-flex rounded-full border border-orange-500/30 bg-orange-500/10 px-5 py-2 text-sm font-medium uppercase tracking-widest text-orange-400">
+                            Feature Documentary Film
+                        </span>
+
+                        <h2
+                            id="documentary-heading"
+                            className="mb-6 text-4xl font-bold text-white md:text-5xl lg:text-6xl"
+                        >
+                            About
+                            <span className="block bg-gradient-to-r from-orange-400 via-red-400 to-orange-500 bg-clip-text text-transparent">
+                                Before Her Name Existed
+                            </span>
+                        </h2>
+
+                        <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-400 md:text-xl">
+                            An inspiring documentary exploring destiny, soul connections,
+                            synchronicity, love, intuition, and the mysterious experiences
+                            that lead people toward life-changing relationships long before
+                            they officially meet.
                         </p>
+                    </div>
 
-                        <p>
-                            Whether viewed through psychology, spirituality,
-                            destiny, or personal experience, these stories
-                            challenge what we believe about love, fate, and
-                            human connection.
-                        </p>
+                    {/* Main Content */}
+                    <div className="grid gap-16 lg:grid-cols-2">
+                        {/* Left Side */}
+                        <div>
+                            <h3 className="mb-8 text-3xl font-bold text-white">
+                                A Documentary About Love, Destiny & Human Connection
+                            </h3>
 
-                        <p>
-                            This film is for anyone who has ever wondered whether
-                            certain people are destined to cross our paths—and
-                            whether the heart sometimes recognizes a story before
-                            it knows the character.
+                            <div className="space-y-6 text-lg leading-relaxed text-gray-300">
+                                <p>
+                                    <strong className="font-semibold text-white">
+                                        Before Her Name Existed
+                                    </strong>{" "}
+                                    is a thought-provoking documentary that examines the
+                                    fascinating moments people experience before meeting
+                                    someone who ultimately changes their lives forever.
+                                    Through real stories, personal testimonies, and
+                                    reflective insights, the film explores the possibility
+                                    that certain connections may begin long before two
+                                    individuals ever cross paths.
+                                </p>
+
+                                <p>
+                                    Across cultures, generations, and belief systems,
+                                    countless individuals have described recurring dreams,
+                                    unexplainable feelings, powerful intuitions, meaningful
+                                    coincidences, and moments of profound recognition that
+                                    seemed to foreshadow future relationships. These
+                                    experiences often leave people questioning whether life
+                                    unfolds according to chance alone or whether deeper
+                                    forces may be at work.
+                                </p>
+
+                                <p>
+                                    By blending personal narratives with broader discussions
+                                    surrounding psychology, spirituality, consciousness,
+                                    destiny, and emotional connection, the documentary
+                                    creates an engaging exploration of one of humanity's
+                                    most enduring questions: Are some people meant to meet?
+                                </p>
+
+                                <p>
+                                    Rather than offering definitive answers, the film
+                                    encourages viewers to reflect on their own experiences
+                                    and consider how seemingly ordinary moments can carry
+                                    extraordinary significance when viewed through the lens
+                                    of time.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Right Side */}
+                        <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-8 backdrop-blur-md">
+                            <h3 className="mb-8 text-3xl font-bold text-white">
+                                Key Themes Explored
+                            </h3>
+
+                            <div className="space-y-5">
+                                {[
+                                    {
+                                        title: "Destiny & Fate",
+                                        description:
+                                            "Examining whether life events and relationships may be guided by forces beyond coincidence.",
+                                    },
+                                    {
+                                        title: "Recurring Dreams",
+                                        description:
+                                            "Stories of individuals who experienced vivid dreams that later connected to real-life encounters.",
+                                    },
+                                    {
+                                        title: "Synchronicity",
+                                        description:
+                                            "Exploring meaningful coincidences and unexpected events that appear connected in profound ways.",
+                                    },
+                                    {
+                                        title: "Soul Connections",
+                                        description:
+                                            "Investigating the deep emotional bonds people describe when meeting certain individuals.",
+                                    },
+                                    {
+                                        title: "Intuition & Recognition",
+                                        description:
+                                            "Understanding moments when people feel they somehow know someone before formally meeting them.",
+                                    },
+                                    {
+                                        title: "Human Experience",
+                                        description:
+                                            "Celebrating the universal search for connection, meaning, purpose, and belonging.",
+                                    },
+                                ].map((item) => (
+                                    <div
+                                        key={item.title}
+                                        className="rounded-2xl border border-white/5 bg-white/5 p-5"
+                                    >
+                                        <h4 className="mb-2 text-xl font-semibold text-white">
+                                            {item.title}
+                                        </h4>
+                                        <p className="leading-relaxed text-gray-400">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Extended Description */}
+                    <div className="mt-20">
+                        <div className="rounded-3xl border border-white/10 bg-black/20 p-8 md:p-12">
+                            <h3 className="mb-8 text-center text-3xl font-bold text-white md:text-4xl">
+                                The Journey Behind The Story
+                            </h3>
+
+                            <div className="space-y-6 text-lg leading-relaxed text-gray-300">
+                                <p>
+                                    From recurring dreams and unexpected encounters to
+                                    moments of unmistakable recognition,{" "}
+                                    <strong className="text-white">
+                                        Before Her Name Existed
+                                    </strong>{" "}
+                                    invites audiences into a deeply personal and universal
+                                    exploration of connection. The documentary shines a
+                                    light on experiences that many people quietly carry with
+                                    them but rarely discuss openly.
+                                </p>
+
+                                <p>
+                                    Some describe seeing a future partner in dreams years
+                                    before meeting them. Others recall strange coincidences,
+                                    repeated symbols, familiar feelings, or powerful
+                                    emotional moments that only made sense in hindsight.
+                                    These stories raise compelling questions about memory,
+                                    intuition, timing, and the nature of human relationships.
+                                </p>
+
+                                <p>
+                                    Through carefully crafted storytelling and cinematic
+                                    presentation, the film encourages viewers to examine the
+                                    invisible threads that appear to connect life events
+                                    across time. It explores whether these experiences can
+                                    be explained through psychology and subconscious
+                                    processing, or whether they point toward something more
+                                    mysterious and profound.
+                                </p>
+
+                                <p>
+                                    The documentary does not seek to persuade audiences
+                                    toward a particular belief system. Instead, it creates a
+                                    space where curiosity, reflection, and open-minded
+                                    exploration can flourish. Viewers are invited to engage
+                                    with the stories from their own perspectives and draw
+                                    their own conclusions.
+                                </p>
+
+                                <p>
+                                    Whether viewed through the lens of psychology,
+                                    spirituality, destiny, consciousness studies, personal
+                                    growth, or lived experience, the stories featured in
+                                    this documentary challenge conventional assumptions
+                                    about love, timing, fate, and human connection.
+                                </p>
+
+                                <p>
+                                    At its heart,{" "}
+                                    <strong className="text-white">
+                                        Before Her Name Existed
+                                    </strong>{" "}
+                                    is a film about possibility—the possibility that certain
+                                    encounters may hold deeper meaning, that intuition may
+                                    sometimes reveal more than logic, and that the human
+                                    heart may recognize a story long before it learns the
+                                    name of the person within it.
+                                </p>
+
+                                <p>
+                                    This documentary is created for anyone who has ever
+                                    experienced an unexplained connection, questioned the
+                                    role of fate in their life, reflected on meaningful
+                                    coincidences, or wondered whether some relationships are
+                                    destined to emerge exactly when they are meant to.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* SEO Section */}
+                    <div className="mt-20 grid gap-8 md:grid-cols-3">
+                        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center">
+                            <h4 className="mb-3 text-3xl font-bold text-white">
+                                Documentary
+                            </h4>
+                            <p className="leading-relaxed text-gray-400">
+                                Cinematic storytelling that explores real-life experiences,
+                                emotional journeys, and profound human connections.
+                            </p>
+                        </div>
+
+                        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center">
+                            <h4 className="mb-3 text-3xl font-bold text-white">
+                                Inspiration
+                            </h4>
+                            <p className="leading-relaxed text-gray-400">
+                                Encouraging viewers to reflect on their own experiences with
+                                destiny, intuition, synchronicity, and meaningful
+                                relationships.
+                            </p>
+                        </div>
+
+                        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center">
+                            <h4 className="mb-3 text-3xl font-bold text-white">
+                                Human Stories
+                            </h4>
+                            <p className="leading-relaxed text-gray-400">
+                                Authentic narratives that explore the extraordinary moments
+                                hidden within everyday life and personal experience.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* SEO Keywords Content */}
+                    <div className="mt-20 rounded-3xl border border-orange-500/10 bg-gradient-to-r from-orange-500/10 via-transparent to-red-500/10 p-10 text-center">
+                        <h3 className="mb-6 text-3xl font-bold text-white">
+                            Exploring The Mystery Of Connection
+                        </h3>
+
+                        <p className="mx-auto max-w-4xl text-lg leading-relaxed text-gray-300">
+                            Before Her Name Existed is a documentary film about destiny,
+                            soulmates, intuition, synchronicity, meaningful coincidences,
+                            spiritual connection, personal transformation, consciousness,
+                            love, relationships, human psychology, emotional recognition,
+                            and the timeless search for meaning in our most important life
+                            encounters. Through compelling storytelling and cinematic
+                            filmmaking, the documentary invites audiences to reflect on the
+                            extraordinary possibilities hidden within ordinary moments.
                         </p>
                     </div>
                 </div>
-            </div>
+            </section>
 
             {/* Production Note */}
             <div className="mx-auto mt-20 max-w-4xl text-center">
