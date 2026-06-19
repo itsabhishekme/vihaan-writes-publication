@@ -670,18 +670,13 @@ export default function BeginJourneyPage() {
               {/* VIDEO */}
 
               <div className="relative aspect-video overflow-hidden bg-black">
-                <video
-                  autoPlay
-                  controls
-                  playsInline
-                  className="relative z-10 h-full w-full object-cover"
-                >
-                  <source
-                    src="https://m5seiikuxyzlci4v.public.blob.vercel-storage.com/Destiny/Two%20Worlds%2C%20One%20Destiny.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-
+                <iframe
+                  className="relative z-10 h-full w-full"
+                  src="https://www.youtube.com/embed/fTFoqosCYRc?autoplay=1&mute=1&playsinline=1"
+                  title="Video Player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
                 <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
               </div>
             </motion.div>
