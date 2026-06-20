@@ -86,6 +86,24 @@ const projects = [
       { label: "Theme", value: "Destiny" },
     ],
   },
+
+  {
+    title: "The Alchemy of Becoming",
+    tagline:
+      "Transformation after the lessons have been learned.",
+    description:
+      "Every human life is shaped by experiences that leave a permanent mark. Moments of loss, love, faith, uncertainty, resilience, discovery, failure, forgiveness, and renewal become the unseen architects of identity. Some transformations happen in an instant, while others unfold quietly over years. A single conversation can redirect a life. A painful ending can become the beginning of a new purpose. A season of uncertainty can reveal strengths hidden beneath fear and doubt. The Alchemy of Becoming explores how ordinary people evolve into wiser, stronger, and more authentic versions of themselves through personal growth, healing, resilience, reinvention, self-discovery, and purpose.",
+    url: "",
+    image: "/images/The Alchemy of Becoming.png",
+    year: "2026",
+    tags: ["Transformation", "Growth", "Resilience"],
+    stats: [
+      { label: "Stories", value: "Inspiring" },
+      { label: "Journey", value: "Lifelong" },
+      { label: "Theme", value: "Becoming" }
+    ],
+  },
+
 ];
 
 const features = [
