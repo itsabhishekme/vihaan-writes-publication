@@ -20,22 +20,6 @@ import {
 } from "lucide-react";
 
 const projects = [
-  {
-    title: "The Human Archive",
-    tagline:
-      "Preserving the stories people never thought anyone would read.",
-    description:
-      "A living archive dedicated to memories, regrets, transformations, lessons, turning points, forgotten letters, unfinished conversations, and human experiences from around the world.",
-    url: "https://thehumanarchive.vercel.app/",
-    image: "/images/the-human-archive-banner.jpg",
-    year: "2026",
-    tags: ["Archive", "Memory", "Stories"],
-    stats: [
-      { label: "Stories", value: "100+" },
-      { label: "Voices", value: "Global" },
-      { label: "Growth", value: "24/7" },
-    ],
-  },
 
   {
     title: "Before Her Name Existed",
@@ -51,6 +35,23 @@ const projects = [
       { label: "Chapters", value: "∞" },
       { label: "Journey", value: "Soul" },
       { label: "Theme", value: "Destiny" },
+    ],
+  },
+
+  {
+    title: "The Human Archive",
+    tagline:
+      "Preserving the stories people never thought anyone would read.",
+    description:
+      "A living archive dedicated to memories, regrets, transformations, lessons, turning points, forgotten letters, unfinished conversations, and human experiences from around the world.",
+    url: "https://thehumanarchive.vercel.app/",
+    image: "/images/the-human-archive-banner.jpg",
+    year: "2026",
+    tags: ["Archive", "Memory", "Stories"],
+    stats: [
+      { label: "Stories", value: "100+" },
+      { label: "Voices", value: "Global" },
+      { label: "Growth", value: "24/7" },
     ],
   },
 
