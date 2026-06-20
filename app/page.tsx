@@ -14,6 +14,7 @@ import {
   Globe,
   Layers,
   MoveRight,
+  Star,
 } from "lucide-react"
 
 export default function Home() {
@@ -473,44 +474,139 @@ export default function Home() {
           </div>
 
         </section>
-
         {/* ⭐ TESTIMONIALS */}
-        <section className="container-main py-32">
+        <section className="container-main py-32 relative overflow-hidden">
 
-          <div className="text-center mb-20">
-
-            <h2 className="text-5xl md:text-6xl font-black">
-              What Readers Feel
-            </h2>
-
-            <p className="mt-6 text-neutral-400 text-lg">
-              Emotional responses from readers around the world.
-            </p>
-
+          {/* Background Effects */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/10 blur-[140px] rounded-full" />
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/10 blur-[140px] rounded-full" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:80px_80px]" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="relative z-10">
 
-            {testimonials.map((text, i) => (
-              <div
-                key={i}
-                className="group relative p-10 rounded-2xl bg-neutral-900 border border-neutral-800 hover:scale-105 hover:border-purple-500 transition duration-500 overflow-hidden"
-              >
+            {/* Header */}
+            <div className="text-center max-w-4xl mx-auto mb-24">
 
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-purple-500/10 to-pink-500/10 transition"></div>
+              <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm font-semibold mb-8">
+                <Quote className="w-4 h-4" />
+                Reader Experiences
+              </div>
 
-                <div className="relative z-10">
+              <h2 className="text-5xl md:text-7xl font-black tracking-tight leading-none">
 
-                  <Quote className="w-10 h-10 text-purple-400 mb-6" />
+                Stories That
+                <span className="block mt-2 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                  Stay Forever
+                </span>
 
-                  <p className="text-neutral-300 text-lg leading-relaxed">
-                    “{text}”
-                  </p>
+              </h2>
+
+              <p className="mt-8 text-xl text-neutral-400 leading-relaxed max-w-3xl mx-auto">
+                Every story leaves an emotional imprint. These reflections reveal
+                how powerful personal experiences can inspire, heal, and transform
+                readers across different cultures and generations.
+              </p>
+
+            </div>
+
+            {/* Testimonials */}
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
+
+              {testimonials.map((text, i) => (
+                <div
+                  key={i}
+                  className="group relative rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02] backdrop-blur-xl p-10 hover:-translate-y-3 hover:border-purple-500/40 transition-all duration-700 overflow-hidden"
+                >
+
+                  {/* Hover Glow */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-pink-500/5 to-transparent" />
+                  </div>
+
+                  {/* Top Glow */}
+                  <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-purple-500/10 blur-3xl opacity-0 group-hover:opacity-100 transition duration-700" />
+
+                  <div className="relative z-10">
+
+                    {/* Rating */}
+                    <div className="flex items-center gap-1 mb-6">
+                      {[...Array(5)].map((_, star) => (
+                        <Star
+                          key={star}
+                          className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                        />
+                      ))}
+                    </div>
+
+                    {/* Quote Icon */}
+                    <div className="w-16 h-16 rounded-2xl bg-purple-500/15 border border-purple-500/20 flex items-center justify-center mb-8">
+                      <Quote className="w-8 h-8 text-purple-400" />
+                    </div>
+
+                    {/* Testimonial Text */}
+                    <p className="text-neutral-300 text-lg leading-relaxed mb-10">
+                      “{text}”
+                    </p>
+
+                    {/* Divider */}
+                    <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent mb-8" />
+
+                    {/* Reader Footer */}
+                    <div className="flex items-center justify-between">
+
+                      <div className="flex items-center gap-4">
+
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center font-bold text-white">
+                          {String.fromCharCode(65 + (i % 26))}
+                        </div>
+
+                        <div>
+                          <p className="font-semibold text-white">
+                            Anonymous Reader
+                          </p>
+                          <p className="text-sm text-neutral-500">
+                            Verified Community Member
+                          </p>
+                        </div>
+
+                      </div>
+
+                      <div className="text-xs tracking-[0.25em] uppercase text-purple-400">
+                        Review
+                      </div>
+
+                    </div>
+
+                  </div>
 
                 </div>
+              ))}
 
+            </div>
+
+            {/* Bottom Quote */}
+            <div className="mt-28 text-center max-w-5xl mx-auto">
+
+              <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/20 mb-10">
+                <Quote className="w-10 h-10 text-purple-400" />
               </div>
-            ))}
+
+              <h3 className="text-3xl md:text-5xl font-black leading-tight">
+                Every Story Shared
+                <span className="block mt-2 text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
+                  Creates Another Story
+                </span>
+              </h3>
+
+              <p className="mt-8 text-neutral-400 text-lg max-w-3xl mx-auto leading-relaxed">
+                The most meaningful stories are the ones that spark reflection,
+                courage, empathy, and connection. Your experience could be the
+                story someone else needs today.
+              </p>
+
+            </div>
 
           </div>
 
