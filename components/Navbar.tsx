@@ -7,7 +7,7 @@ import { useEffect, useCallback, useState } from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 
-import { HiMenu, HiX } from "react-icons/hi";
+import { HiArrowRight, HiMenu, HiOutlineFilm, HiX } from "react-icons/hi";
 import { HiOutlineSparkles } from "react-icons/hi2";
 
 /* ================= TYPES ================= */
@@ -55,7 +55,6 @@ const links: NavItem[] = [
 
   { name: "Stories", url: "/stories" },
   { name: "Blog", url: "/blog" },
-  { name: "Journey", url: "/journey" },
   { name: "Contact", url: "/contact" },
 ];
 
@@ -283,130 +282,181 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* ACTIONS */}
+          {/* RIGHT CTA + DOCUMENTARY LINK */}
+          <div className="hidden md:flex items-center gap-3">
+            {/* Documentary Button */}
+            <Link
+              href="/soulfire-chronicles-production"
+              onClick={closeMenu}
+              className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 px-5 py-3 font-medium text-white backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/40 hover:bg-white/15 hover:shadow-[0_10px_30px_rgba(255,120,50,0.25)]"
+            >
+              <span className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-400/10 to-orange-500/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-          <div className="flex items-center gap-3">
+              <span className="relative flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  />
+                </svg>
 
-            {/* READ NOW */}
+                <span>Documentary</span>
+              </span>
+            </Link>
 
+            {/* Submit Story Button */}
             <Link
               href="/submit-story"
               onClick={closeMenu}
-              className="group hidden items-center gap-2 rounded-2xl bg-white px-5 py-3 font-semibold text-black shadow-2xl transition-all duration-300 hover:scale-105 md:inline-flex"
+              className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 px-6 py-3 font-semibold text-white shadow-[0_10px_35px_rgba(255,120,50,0.45)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-[0_15px_45px_rgba(255,120,50,0.6)]"
             >
-              <HiOutlineSparkles className="text-lg transition-transform duration-300 group-hover:rotate-12" />
+              <span className="absolute inset-0 bg-white/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-              <span>Submit Story</span>
+              <span className="relative flex items-center gap-2">
+                <HiOutlineSparkles className="text-lg transition-transform duration-300 group-hover:rotate-12 group-hover:scale-125" />
+                <span>Submit Story</span>
+              </span>
             </Link>
-
-            {/* MOBILE BUTTON */}
-
-            <button
-              type="button"
-              aria-label="Toggle Menu"
-              onClick={toggleMenu}
-              className="relative flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-2xl text-white backdrop-blur-xl transition-all duration-300 hover:bg-white/10 lg:hidden"
-            >
-              <AnimatePresence mode="wait">
-
-                <motion.div
-                  key={open ? "close" : "menu"}
-                  initial={{
-                    opacity: 0,
-                    rotate: -90,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    rotate: 0,
-                  }}
-                  exit={{
-                    opacity: 0,
-                    rotate: 90,
-                  }}
-                  transition={{
-                    duration: 0.2,
-                  }}
-                >
-                  {open ? <HiX /> : <HiMenu />}
-                </motion.div>
-
-              </AnimatePresence>
-            </button>
-
           </div>
+
+          {/* MOBILE MENU ITEM */}
+          <Link
+            href="/soulfire-chronicles-production"
+            onClick={closeMenu}
+            className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white transition-all duration-300 hover:border-orange-400/30 hover:bg-white/10 md:hidden"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 text-orange-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+              />
+            </svg>
+
+            <span className="font-medium">Documentary</span>
+          </Link>
+
+          {/* MOBILE BUTTON */}
+
+          <button
+            type="button"
+            aria-label="Toggle Menu"
+            onClick={toggleMenu}
+            className="relative flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-2xl text-white backdrop-blur-xl transition-all duration-300 hover:bg-white/10 lg:hidden"
+          >
+            <AnimatePresence mode="wait">
+
+              <motion.div
+                key={open ? "close" : "menu"}
+                initial={{
+                  opacity: 0,
+                  rotate: -90,
+                }}
+                animate={{
+                  opacity: 1,
+                  rotate: 0,
+                }}
+                exit={{
+                  opacity: 0,
+                  rotate: 90,
+                }}
+                transition={{
+                  duration: 0.2,
+                }}
+              >
+                {open ? <HiX /> : <HiMenu />}
+              </motion.div>
+
+            </AnimatePresence>
+          </button>
         </div>
 
-        {/* MOBILE MENU */}
+      {/* MOBILE MENU */}
 
-        <AnimatePresence>
+      <AnimatePresence>
 
-          {open && (
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: -15,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              exit={{
-                opacity: 0,
-                y: -15,
-              }}
-              transition={{
-                duration: 0.25,
-              }}
-              className="border-t border-white/10 bg-black/95 backdrop-blur-2xl lg:hidden"
-            >
-              <nav className="container-main flex flex-col gap-3 px-4 py-6">
+        {open && (
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: -15,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              y: -15,
+            }}
+            transition={{
+              duration: 0.25,
+            }}
+            className="border-t border-white/10 bg-black/95 backdrop-blur-2xl lg:hidden"
+          >
+            <nav className="container-main flex flex-col gap-3 px-4 py-6">
 
-                {links.map((item) => {
-                  const active =
-                    isActive(item.url);
+              {links.map((item) => {
+                const active =
+                  isActive(item.url);
 
-                  return (
-                    <Link
-                      key={item.name}
-                      href={item.url}
-                      onClick={closeMenu}
-                      className={`rounded-2xl px-5 py-4 text-sm font-medium transition-all duration-300 ${active
-                        ? "bg-white text-black shadow-xl"
-                        : "bg-white/[0.03] text-neutral-300 hover:bg-white/10 hover:text-white"
-                        }`}
-                    >
-                      {item.name}
-                    </Link>
-                  );
-                })}
-
-                {/* MOBILE Submit Story */}
-
-                <div className="mt-3">
-
+                return (
                   <Link
-                    href="/submit-story"
+                    key={item.name}
+                    href={item.url}
                     onClick={closeMenu}
-                    className="group flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-4 py-4 font-semibold text-black transition-all duration-300 hover:scale-[1.02]"
+                    className={`rounded-2xl px-5 py-4 text-sm font-medium transition-all duration-300 ${active
+                      ? "bg-white text-black shadow-xl"
+                      : "bg-white/[0.03] text-neutral-300 hover:bg-white/10 hover:text-white"
+                      }`}
                   >
-                    <HiOutlineSparkles className="transition-transform duration-300 group-hover:rotate-12" />
-
-                    Submit Story
+                    {item.name}
                   </Link>
+                );
+              })}
 
-                </div>
+              {/* MOBILE Submit Story */}
 
-              </nav>
-            </motion.div>
-          )}
+              <div className="mt-3">
 
-        </AnimatePresence>
+                <Link
+                  href="/submit-story"
+                  onClick={closeMenu}
+                  className="group flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-4 py-4 font-semibold text-black transition-all duration-300 hover:scale-[1.02]"
+                >
+                  <HiOutlineSparkles className="transition-transform duration-300 group-hover:rotate-12" />
 
-      </header>
+                  Submit Story
+                </Link>
 
-      {/* SPACER */}
+              </div>
 
-      <div className="h-20 w-full" />
+            </nav>
+          </motion.div>
+        )}
+
+      </AnimatePresence>
+
+    </header >
+
+      {/* SPACER */ }
+
+      < div className = "h-20 w-full" />
     </>
   );
 }
