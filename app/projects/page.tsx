@@ -499,7 +499,7 @@ export default function ProjectsPage() {
             </p>
 
             <p className="mx-auto mt-6 max-w-4xl text-lg leading-relaxed text-white/50">
-              To create meaningful documentaries, films, interviews, and
+              To create meaningful <span className="text-white">Soulfire Chronicles</span> documentaries, films, interviews, and
               cinematic experiences that inspire reflection, awaken curiosity,
               strengthen human connection, and reveal the extraordinary stories
               hidden within ordinary lives.
