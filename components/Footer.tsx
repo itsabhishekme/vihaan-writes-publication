@@ -160,19 +160,18 @@ const exploreItems: ExploreItem[] = [
     desc: "Stories of synchronicity, divine timing, recurring patterns, meaningful coincidences, karmic encounters, and life's mysterious connections that quietly shape the path of every human journey.",
     href: "/echoes-of-destiny",
   },
+  {
+    icon: HiOutlineSparkles,
+    title: "The Alchemy of Becoming",
+    desc: "Stories of reinvention, resilience, personal growth, and the courageous evolution of the human spirit. Exploring the transformative moments that shape identity, reveal purpose, and turn life's lessons into wisdom. A journey through growth, self-discovery, and the extraordinary process of becoming who we are meant to be.",
+    href: "/the-alchemy-of-becoming",
+  },
 
   {
     icon: HiOutlineFilm,
     title: "Soulfire Chronicles Production",
     desc: "Soulfire Chronicles Production was founded on the belief that stories possess the power to transform lives. Through documentaries, films, interviews, and cinematic storytelling, we explore themes of destiny, spirituality, human connection, personal growth, and extraordinary experiences.",
     href: "/soulfire-chronicles-production",
-  },
-
-  {
-    icon: HiOutlineSparkles,
-    title: "The Alchemy of Becoming",
-    desc: "Stories of reinvention, resilience, personal growth, and the courageous evolution of the human spirit. Exploring the transformative moments that shape identity, reveal purpose, and turn life's lessons into wisdom. A journey through growth, self-discovery, and the extraordinary process of becoming who we are meant to be.",
-    href: "/the-alchemy-of-becoming",
   },
 
 ];
