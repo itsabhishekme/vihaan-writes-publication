@@ -194,13 +194,13 @@ export default function Navbar() {
             {/* READ NOW */}
 
             <Link
-              href="/read-now"
+              href="/submit-story"
               onClick={closeMenu}
               className="group hidden items-center gap-2 rounded-2xl bg-white px-5 py-3 font-semibold text-black shadow-2xl transition-all duration-300 hover:scale-105 md:inline-flex"
             >
               <HiOutlineSparkles className="text-lg transition-transform duration-300 group-hover:rotate-12" />
 
-              <span>Read Now</span>
+              <span>Submit Story</span>
             </Link>
 
             {/* MOBILE BUTTON */}

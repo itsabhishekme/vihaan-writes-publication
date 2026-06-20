@@ -536,9 +536,9 @@ export default function Home() {
                 Discover words that already know your emotions.
               </p>
 
-              <Link href="https://www.amazon.in/dp/B0GSSM874J" target="_blank">
+              <Link href="/read-now">
                 <span className="group mt-10 inline-flex items-center gap-3 px-10 py-5 bg-black text-white rounded-xl font-semibold hover:scale-105 transition">
-                  Start Now
+                  Read Now
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
                 </span>
               </Link>
