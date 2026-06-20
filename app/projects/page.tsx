@@ -228,7 +228,7 @@ export default function ProjectsPage() {
             <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 backdrop-blur-md">
               <span className="h-2 w-2 animate-pulse rounded-full bg-white" />
               <span className="text-xs uppercase tracking-[0.4em] text-white/60">
-                Soulfire Chronicles Production
+                The Alchemy of Becoming
               </span>
             </div>
 
@@ -240,11 +240,11 @@ export default function ProjectsPage() {
             </h2>
 
             <p className="mx-auto mt-8 max-w-4xl text-lg leading-relaxed text-white/60">
-              Soulfire Chronicles Production was founded on the belief that
-              stories possess the power to transform lives. Through
-              documentaries, films, interviews, and cinematic storytelling,
-              these four interconnected pillars explore destiny, spirituality,
-              human connection, personal growth, and extraordinary experiences.
+              The Alchemy of Becoming is a living archive of human transformation.
+              Through stories of resilience, healing, purpose, and personal growth,
+              it explores how individuals navigate change and emerge renewed. Each
+              narrative offers insight into the enduring process of becoming—one of
+              humanity&apos;s most profound and universal journeys.
             </p>
           </div>
 
@@ -321,14 +321,14 @@ export default function ProjectsPage() {
                 {/* Content */}
                 <div className="relative text-center">
 
-
-                  <h2 className="bg-gradient-to-r from-white via-violet-200 to-rose-200 bg-clip-text text-3xl font-extralight tracking-wide text-transparent">
-                    Soulfire
+                  <h2 className="bg-gradient-to-r from-white via-violet-200 to-rose-200 bg-clip-text text-2xl font-extralight tracking-wide text-transparent">
+                    The Alchemy
                   </h2>
 
-                  <h2 className="bg-gradient-to-r from-rose-200 via-white to-violet-200 bg-clip-text text-3xl font-extralight tracking-wide text-transparent">
-                    Chronicles
+                  <h2 className="bg-gradient-to-r from-rose-200 via-white to-violet-200 bg-clip-text text-2xl font-extralight tracking-wide text-transparent">
+                    of Becoming
                   </h2>
+
 
                   <div className="mx-auto mt-5 h-px w-20 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
 
