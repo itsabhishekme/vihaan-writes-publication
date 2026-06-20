@@ -380,7 +380,7 @@ export default function Navbar() {
                   );
                 })}
 
-                {/* MOBILE READ NOW */}
+                {/* MOBILE Submit Story */}
 
                 <div className="mt-3">
 
