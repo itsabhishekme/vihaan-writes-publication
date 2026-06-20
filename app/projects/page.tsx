@@ -210,7 +210,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-        {/* =========================
+      {/* =========================
          FOUR PILLARS CONNECTED ECOSYSTEM
         ========================== */}
       <section className="relative overflow-hidden bg-black py-32">
@@ -576,20 +576,13 @@ export default function ProjectsPage() {
 
                 {/* Title */}
                 <h3 className="bg-gradient-to-r from-white via-violet-200 to-rose-200 bg-clip-text text-4xl font-extralight tracking-wide text-transparent">
-                  Soulfire
+                  The Alchemy
                 </h3>
 
                 <h3 className="bg-gradient-to-r from-rose-200 via-white to-violet-200 bg-clip-text text-4xl font-extralight tracking-wide text-transparent">
-                  Chronicles
+                  of Becoming
                 </h3>
 
-                {/* Divider */}
-                <div className="mt-5 h-px w-24 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
-
-                {/* Subtitle */}
-                <p className="mt-5 max-w-[180px] text-[11px] uppercase tracking-[0.35em] text-white/40">
-                  Preserving Humanity&apos;s Infinite Stories
-                </p>
               </div>
 
               {/* Hover Glow */}

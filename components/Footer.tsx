@@ -168,6 +168,13 @@ const exploreItems: ExploreItem[] = [
     href: "/soulfire-chronicles-production",
   },
 
+  {
+    icon: HiOutlineSparkles,
+    title: "The Alchemy of Becoming",
+    desc: "Stories of reinvention, resilience, personal growth, and the courageous evolution of the human spirit. Exploring the transformative moments that shape identity, reveal purpose, and turn life's lessons into wisdom. A journey through growth, self-discovery, and the extraordinary process of becoming who we are meant to be.",
+    href: "/the-alchemy-of-becoming",
+  },
+
 ];
 
 const features: FeatureItem[] = [
