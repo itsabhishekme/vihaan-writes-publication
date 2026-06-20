@@ -15,6 +15,7 @@ import { HiOutlineSparkles } from "react-icons/hi2";
 type NavItem = {
   name: string;
   url: string;
+  children?: NavItem[];
 };
 
 /* ================= NAVIGATION ================= */
@@ -23,7 +24,35 @@ const links: NavItem[] = [
   { name: "Home", url: "/" },
   { name: "About", url: "/about" },
   { name: "Book", url: "/book" },
-  { name: "Projects", url: "/projects" },
+
+  {
+    name: "Projects",
+    url: "/projects",
+    children: [
+      {
+        name: "Before Her Name Existed",
+        url: "/before-her-name-existed",
+      },
+      {
+        name: "The Human Archive",
+        url: "/the-human-archive",
+      },
+      {
+        name: "Letters Never Sent",
+        url: "/letters-never-sent",
+      },
+      {
+        name: "Echoes of Destiny",
+        url: "/echoes-of-destiny",
+      },
+      {
+        name: "The Alchemy of Becoming",
+        url: "/the-alchemy-of-becoming",
+      },
+
+    ],
+  },
+
   { name: "Stories", url: "/stories" },
   { name: "Blog", url: "/blog" },
   { name: "Journey", url: "/journey" },
@@ -108,11 +137,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed left-0 top-0 z-[999] w-full transition-all duration-500 ${
-          scrolled
-            ? "border-b border-white/10 bg-black/75 shadow-[0_8px_40px_rgba(0,0,0,0.55)] backdrop-blur-2xl"
-            : "bg-transparent"
-        }`}
+        className={`fixed left-0 top-0 z-[999] w-full transition-all duration-500 ${scrolled
+          ? "border-b border-white/10 bg-black/75 shadow-[0_8px_40px_rgba(0,0,0,0.55)] backdrop-blur-2xl"
+          : "bg-transparent"
+          }`}
       >
         {/* BACKGROUND */}
 
@@ -158,21 +186,90 @@ export default function Navbar() {
           {/* DESKTOP NAV */}
 
           <nav className="hidden items-center gap-2 lg:flex">
-
             {links.map((item) => {
-              const active =
-                isActive(item.url);
+              const active = isActive(item.url);
+
+              if (item.children?.length) {
+                return (
+                  <div
+                    key={item.name}
+                    className="group relative"
+                  >
+                    <Link
+                      href={item.url}
+                      className={`relative flex items-center rounded-2xl px-5 py-3 text-sm font-medium transition-all duration-300 ${active
+                        ? "bg-white text-black shadow-xl"
+                        : "text-neutral-300 hover:text-white"
+                        }`}
+                    >
+                      {!active && (
+                        <span className="absolute inset-0 rounded-2xl bg-white/5 opacity-0 transition duration-300 group-hover:opacity-100" />
+                      )}
+
+                      <span className="relative z-10 flex items-center gap-2">
+                        {item.name}
+
+                        <svg
+                          className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </span>
+                    </Link>
+
+                    {/* DROPDOWN */}
+
+                    <div
+                      className="
+              invisible absolute left-0 top-full z-[9999]
+              mt-3 w-80
+              translate-y-2 opacity-0
+              transition-all duration-300
+              group-hover:visible
+              group-hover:translate-y-0
+              group-hover:opacity-100
+            "
+                    >
+                      <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/95 backdrop-blur-xl shadow-2xl">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.name}
+                            href={child.url}
+                            className="
+                    block border-b border-white/5
+                    px-5 py-4 text-sm text-neutral-300
+                    transition-all duration-200
+                    hover:bg-white/5
+                    hover:text-white
+                    last:border-b-0
+                  "
+                          >
+                            {child.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
 
               return (
                 <Link
                   key={item.name}
                   href={item.url}
                   onClick={closeMenu}
-                  className={`group relative overflow-hidden rounded-2xl px-5 py-3 text-sm font-medium transition-all duration-300 ${
-                    active
-                      ? "bg-white text-black shadow-xl"
-                      : "text-neutral-300 hover:text-white"
-                  }`}
+                  className={`group relative rounded-2xl px-5 py-3 text-sm font-medium transition-all duration-300 ${active
+                    ? "bg-white text-black shadow-xl"
+                    : "text-neutral-300 hover:text-white"
+                    }`}
                 >
                   {!active && (
                     <span className="absolute inset-0 rounded-2xl bg-white/5 opacity-0 transition duration-300 group-hover:opacity-100" />
@@ -184,7 +281,6 @@ export default function Navbar() {
                 </Link>
               );
             })}
-
           </nav>
 
           {/* ACTIONS */}
@@ -274,11 +370,10 @@ export default function Navbar() {
                       key={item.name}
                       href={item.url}
                       onClick={closeMenu}
-                      className={`rounded-2xl px-5 py-4 text-sm font-medium transition-all duration-300 ${
-                        active
-                          ? "bg-white text-black shadow-xl"
-                          : "bg-white/[0.03] text-neutral-300 hover:bg-white/10 hover:text-white"
-                      }`}
+                      className={`rounded-2xl px-5 py-4 text-sm font-medium transition-all duration-300 ${active
+                        ? "bg-white text-black shadow-xl"
+                        : "bg-white/[0.03] text-neutral-300 hover:bg-white/10 hover:text-white"
+                        }`}
                     >
                       {item.name}
                     </Link>
@@ -290,13 +385,13 @@ export default function Navbar() {
                 <div className="mt-3">
 
                   <Link
-                    href="/book"
+                    href="/submit-story"
                     onClick={closeMenu}
                     className="group flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-4 py-4 font-semibold text-black transition-all duration-300 hover:scale-[1.02]"
                   >
                     <HiOutlineSparkles className="transition-transform duration-300 group-hover:rotate-12" />
 
-                    Read Now
+                    Submit Story
                   </Link>
 
                 </div>
