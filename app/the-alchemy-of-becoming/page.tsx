@@ -190,9 +190,9 @@ export default function TheAlchemyOfBecomingPage() {
                             This project explores transformation, resilience, healing,
                             self-discovery, purpose, personal development, and the evolution
                             of the human spirit. Through stories of overcoming adversity,
-                            rebuilding after loss, finding meaning, and discovering inner
-                            strength, The Alchemy of Becoming documents humanity's journey
-                            toward growth and wisdom.
+                            rebuilding after loss, finding meaning, and awakening inner
+                            strength, The Alchemy of Becoming chronicles humanity&apos;s enduring
+                            journey toward growth, wisdom, and becoming.
                         </p>
 
                         <p className="mt-6 text-lg leading-relaxed text-zinc-400">
@@ -266,12 +266,12 @@ export default function TheAlchemyOfBecomingPage() {
                             <span className="text-emerald-400">
                                 Soulfire Chronicles
                             </span>
-                            , this project stands as a testament to humanity's remarkable ability
+                            , this project stands as a testament to humanity&apos;s remarkable ability
                             to adapt, heal, learn, and transform. It asks one timeless question:
                         </p>
 
                         <blockquote className="mx-auto max-w-4xl border-l-2 border-emerald-500 pl-8 text-left text-2xl italic leading-relaxed text-zinc-200">
-                            "Who do we become after life changes us?"
+                            &ldquo;Who do we become after life changes us?&rdquo;
                         </blockquote>
                     </div>
 
@@ -460,7 +460,7 @@ export default function TheAlchemyOfBecomingPage() {
                         Through interviews, essays, documentaries, reflections, and
                         personal narratives, The Alchemy of Becoming seeks to document the
                         extraordinary process of human growth and preserve the wisdom found
-                        within life's most transformative experiences.
+                        within life&apos;s most transformative experiences.
                     </p>
                 </div>
             </section>
@@ -530,7 +530,7 @@ export default function TheAlchemyOfBecomingPage() {
                                 </h3>
                                 <p className="leading-relaxed text-zinc-400">
                                     Become part of a growing archive dedicated to documenting
-                                    humanity's journey of becoming.
+                                    humanity&apos;s journey of becoming.
                                 </p>
                             </div>
                         </div>
@@ -769,7 +769,7 @@ export default function TheAlchemyOfBecomingPage() {
                             Stories of transformation serve as bridges between
                             experience and understanding. They reveal how individuals
                             navigate uncertainty, rebuild after loss, discover
-                            purpose, strengthen resilience, and evolve through life's
+                            purpose, strengthen resilience, and evolve through life&apos;s
                             defining moments. These narratives offer valuable insight
                             into the universal human experience of growth and change.
                         </p>
@@ -806,7 +806,7 @@ export default function TheAlchemyOfBecomingPage() {
                             opportunity, faith, personal growth, healing,
                             relationships, creativity, education, leadership, or
                             self-discovery, the journey of becoming remains one of
-                            humanity's most profound experiences. It is a process
+                            humanity&apos;s most profound experiences. It is a process
                             that connects people across cultures, generations, and
                             backgrounds through a shared pursuit of meaning and
                             growth.
