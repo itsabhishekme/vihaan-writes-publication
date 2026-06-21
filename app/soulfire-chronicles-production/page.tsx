@@ -395,11 +395,15 @@ export default function SoulfireChroniclesProductionPage() {
 
                         <div className="mt-10 flex flex-wrap justify-center gap-4">
                             <span className="rounded-full border border-white/10 px-4 py-2">
-                                Spiritual Documentary
+                                Spiritual Documentary Series
                             </span>
 
                             <span className="rounded-full border border-white/10 px-4 py-2">
-                                90 Minutes
+                                7 Episodes
+                            </span>
+
+                            <span className="rounded-full border border-white/10 px-4 py-2">
+                                45 Minutes Each
                             </span>
 
                             <span className="rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-amber-300">
@@ -409,7 +413,7 @@ export default function SoulfireChroniclesProductionPage() {
 
                         <div className="mt-10">
                             <Link
-                                href="/before-her-name-existed"
+                                href="https://before-her-name-existed.vercel.app/"
                                 className="rounded-xl bg-amber-500 px-8 py-4 font-semibold text-black transition hover:bg-amber-400"
                             >
                                 Learn More
