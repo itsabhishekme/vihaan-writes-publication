@@ -169,11 +169,10 @@ export default function AboutPage() {
               </button>
 
               <div
-                className={`${
-                  open
+                className={`${open
                     ? "max-h-[3000px] opacity-100"
                     : "max-h-0 opacity-0"
-                } overflow-hidden transition-all duration-700`}
+                  } overflow-hidden transition-all duration-700`}
               >
                 <div className="mt-10 space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-2xl">
                   <p className="leading-relaxed text-neutral-300">
@@ -430,32 +429,141 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* BOOKS */}
-        <section className="container mx-auto px-6 py-28 text-center lg:px-12">
-          <HiOutlineBookOpen className="mx-auto text-6xl text-white" />
-
-          <h2 className="mt-10 text-5xl font-black md:text-6xl">
-            The Work
-          </h2>
-
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-neutral-400">
-            Explore writings centered around spirituality, emotional connection,
-            soul recognition, destiny, and human consciousness.
-          </p>
-
-          <div className="mt-10 flex justify-center gap-2 text-yellow-400">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <HiOutlineStar key={i} className="text-3xl" />
-            ))}
+        {/* BOOKS SECTION */}
+        <section className="relative overflow-hidden py-32">
+          {/* Background Effects */}
+          <div className="absolute inset-0">
+            <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-purple-600/10 blur-3xl" />
+            <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03),transparent_70%)]" />
           </div>
 
-          <Link
-            href="/book"
-            className="group mt-12 inline-flex items-center gap-3 rounded-2xl bg-white px-8 py-4 font-semibold text-black transition duration-300 hover:scale-105"
-          >
-            Explore The Books
-            <HiOutlineArrowRight className="transition group-hover:translate-x-1" />
-          </Link>
+          <div className="container relative z-10 mx-auto px-6 lg:px-12">
+            {/* Header */}
+            <div className="mx-auto max-w-4xl text-center">
+              <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-xl">
+                <HiOutlineBookOpen className="text-2xl text-yellow-400" />
+                <span className="text-sm font-medium tracking-wider text-neutral-300 uppercase">
+                  Spiritual Literature & Consciousness Research
+                </span>
+              </div>
+
+              <h2 className="mt-10 bg-gradient-to-r from-white via-neutral-200 to-neutral-500 bg-clip-text text-5xl font-black leading-tight text-transparent md:text-7xl">
+                The Work
+              </h2>
+
+              <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-neutral-400 md:text-xl">
+                Discover a collection of transformative writings exploring
+                spirituality, soul recognition, divine timing, emotional
+                intelligence, destiny, higher consciousness, human connection,
+                awakening, and the mysteries that shape our lives.
+              </p>
+
+              <div className="mt-10 flex justify-center gap-2 text-yellow-400">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <HiOutlineStar
+                    key={i}
+                    className="text-3xl transition hover:scale-110"
+                  />
+                ))}
+              </div>
+
+              <p className="mt-4 text-sm tracking-widest text-neutral-500 uppercase">
+                Highly Appreciated By Readers Worldwide
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="mx-auto mt-20 grid max-w-5xl grid-cols-2 gap-6 md:grid-cols-4">
+              {[
+                {
+                  value: "10K+",
+                  label: "Readers",
+                },
+                {
+                  value: "50+",
+                  label: "Countries Reached",
+                },
+                {
+                  value: "4.9★",
+                  label: "Average Rating",
+                },
+                {
+                  value: "100%",
+                  label: "Authentic Writing",
+                },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl"
+                >
+                  <div className="text-4xl font-black text-white">
+                    {item.value}
+                  </div>
+
+                  <div className="mt-2 text-sm text-neutral-400">
+                    {item.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Topics */}
+            <div className="mx-auto mt-24 max-w-6xl">
+              <h3 className="text-center text-3xl font-bold text-white">
+                Themes Explored
+              </h3>
+
+              <div className="mt-12 flex flex-wrap justify-center gap-4">
+                {[
+                  "Soul Recognition",
+                  "Spiritual Awakening",
+                  "Twin Flames",
+                  "Human Consciousness",
+                  "Divine Timing",
+                  "Destiny",
+                  "Inner Transformation",
+                  "Emotional Intelligence",
+                  "Relationships",
+                  "Self Discovery",
+                  "Purpose",
+                  "Life Journey",
+                ].map((topic) => (
+                  <span
+                    key={topic}
+                    className="rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-neutral-300 transition hover:border-white/20 hover:bg-white/10"
+                  >
+                    {topic}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Quote */}
+            <div className="mx-auto mt-24 max-w-4xl rounded-[40px] border border-white/10 bg-white/5 p-10 backdrop-blur-xl md:p-16">
+              <p className="text-center text-2xl font-light leading-relaxed text-neutral-200 md:text-3xl">
+                “Every book is an invitation to look beyond the surface of life
+                and reconnect with the deeper truth that already exists within.”
+              </p>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-24 text-center">
+              <Link
+                href="/book"
+                className="group inline-flex items-center gap-4 rounded-2xl bg-white px-10 py-5 text-lg font-bold text-black transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/20"
+              >
+                Explore The Books
+
+                <HiOutlineArrowRight className="text-xl transition-transform duration-300 group-hover:translate-x-2" />
+              </Link>
+
+              <p className="mt-6 text-neutral-500">
+                Begin your journey into spirituality, consciousness,
+                self-discovery, and meaningful human connection.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* FINAL CTA */}
