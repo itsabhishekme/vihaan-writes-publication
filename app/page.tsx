@@ -16,7 +16,6 @@ import {
   MoveRight,
   Star,
 } from "lucide-react"
-import SocialPreview from '@/components/SocialPreview'
 
 export default function Home() {
   const journeySteps = [
