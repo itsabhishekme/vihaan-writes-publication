@@ -53,31 +53,49 @@ const letters = [
     category: "Love",
     title: "To The Person I Never Had The Chance To Tell",
     image: "/project/letter-1.jpg",
+    recipient: "The One Who Got Away",
+    excerpt:
+      "A heartfelt letter to the person whose presence lingered long after goodbye.",
   },
   {
     category: "Healing",
     title: "The Goodbye I Never Spoke",
     image: "/project/letter-2.jpg",
+    recipient: "The One I Let Go",
+    excerpt:
+      "A quiet farewell written for the moment I couldn't find the words.",
   },
   {
     category: "Reflection",
     title: "To My Younger Self",
     image: "/project/letter-3.jpg",
+    recipient: "My Younger Self",
+    excerpt:
+      "A reflective note full of advice, forgiveness, and the wisdom of time.",
   },
   {
     category: "Growth",
     title: "Thank You For Leaving",
     image: "/project/letter-4.jpg",
+    recipient: "The Person Who Moved On",
+    excerpt:
+      "A letter of gratitude to the one whose departure sparked a new beginning.",
   },
   {
     category: "Destiny",
     title: "A Letter To The Future",
     image: "/project/letter-5.jpg",
+    recipient: "Future Me",
+    excerpt:
+      "Words sent forward in time to the person I am still becoming.",
   },
   {
     category: "Memory",
     title: "The Conversation That Still Lives In My Mind",
     image: "/project/letter-6.jpg",
+    recipient: "The One I Still Remember",
+    excerpt:
+      "A remembrance of the unsaid words lingering in the quietest moments.",
   },
 ];
 
@@ -633,13 +651,17 @@ export default function LettersNeverSentPage() {
 
                   <div className="absolute top-6 left-6">
 
-                    <span className="px-4 py-2 rounded-full border border-white/10 bg-black/60 backdrop-blur-xl uppercase tracking-[0.2em] text-xs text-rose-300">
-                      {letter.category}
-                    </span>
+                    <div className="inline-flex items-center">
+                      <span className="h-px w-8 bg-rose-300 mr-3" />
+                      <span className="uppercase tracking-[0.35em] text-xs font-semibold text-rose-300">
+                        {letter.category}
+                      </span>
+                    </div>
 
                   </div>
 
                 </div>
+
                 {/* Content */}
                 <div className="p-8">
 
@@ -657,205 +679,171 @@ export default function LettersNeverSentPage() {
 
                 </div>
 
-                {/* Letter Preview */}
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 mb-8">
-
-                  <p className="text-zinc-400 italic text-sm leading-relaxed">
-
-                  </p>
-
-                </div>
-
-                {/* Footer */}
-                <div className="flex items-center justify-between">
-
-                  <div>
-
-                    <p className="font-medium">
-                      {(letter as any).recipient}
-                    </p>
-
-                    <p className="text-sm text-zinc-500">
-                      Intended Recipient
-                    </p>
-
-                  </div>
-
-                  <button className="inline-flex items-center gap-2 text-rose-300">
-
-                    Read Letter
-
-                    <HiOutlineArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />
-
-                  </button>
-
-                </div>
-
               </article>
 
             ))}
 
+          </div>
+
+          {/* Stats */}
+          <div className="grid md:grid-cols-4 gap-8 mt-32">
+
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+              <h3 className="text-5xl font-black text-rose-300">
+                1,200+
+              </h3>
+              <p className="text-zinc-500 mt-3">
+                Letters Written
+              </p>
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+              <h3 className="text-5xl font-black text-pink-300">
+                75+
+              </h3>
+              <p className="text-zinc-500 mt-3">
+                Categories
+              </p>
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+              <h3 className="text-5xl font-black text-purple-300">
+                50K+
+              </h3>
+              <p className="text-zinc-500 mt-3">
+                Readers
+              </p>
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+              <h3 className="text-5xl font-black text-rose-300">
+                Forever
+              </h3>
+              <p className="text-zinc-500 mt-3">
+                Remembered
+              </p>
+            </div>
+
+          </div>
+
+          {/* Bottom Quote */}
+          <div className="max-w-5xl mx-auto text-center mt-40">
+
+            <div className="text-8xl text-rose-300 mb-8">
+
+            </div>
+
+            <h3 className="text-4xl md:text-5xl font-light leading-relaxed text-zinc-300">
+              Not every letter needs to be delivered
+              to fulfill its purpose.
+              Sometimes writing the words is enough.
+            </h3>
+
+            <div className="w-32 h-[2px] bg-gradient-to-r from-rose-300 via-pink-300 to-purple-300 mx-auto mt-12" />
+
+            <p className="mt-8 uppercase tracking-[0.4em] text-sm text-zinc-500">
+              Letters Never Sent
+            </p>
+
+          </div>
+
+          {/* CTA */}
+          <div className="flex justify-center mt-24">
+
+            <button className="group px-10 py-5 rounded-full border border-rose-500/20 bg-rose-500/10 backdrop-blur-xl hover:bg-rose-500/20 transition-all duration-500 flex items-center gap-4">
+
+              <span className="font-semibold text-rose-300">
+                Explore All Letters
+              </span>
+
+              <HiOutlineArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />
+
+            </button>
+
+          </div>
+
         </div>
 
-        {/* Stats */}
-        <div className="grid md:grid-cols-4 gap-8 mt-32">
+      </section>
 
-          <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
-            <h3 className="text-5xl font-black text-rose-300">
-              1,200+
-            </h3>
-            <p className="text-zinc-500 mt-3">
-              Letters Written
-            </p>
-          </div>
+      {/* QUOTE */}
+      <section className="py-40">
 
-          <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
-            <h3 className="text-5xl font-black text-pink-300">
-              75+
-            </h3>
-            <p className="text-zinc-500 mt-3">
-              Categories
-            </p>
-          </div>
+        <div className="max-w-5xl mx-auto px-6 text-center">
 
-          <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
-            <h3 className="text-5xl font-black text-purple-300">
-              50K+
-            </h3>
-            <p className="text-zinc-500 mt-3">
-              Readers
-            </p>
-          </div>
+          <HiOutlineStar className="mx-auto text-7xl text-rose-300 mb-10" />
 
-          <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
-            <h3 className="text-5xl font-black text-rose-300">
-              Forever
-            </h3>
-            <p className="text-zinc-500 mt-3">
-              Remembered
-            </p>
-          </div>
+          <blockquote className="text-5xl md:text-7xl font-black leading-tight">
+            “Some letters were never meant
+            <span className="block mt-4">
+              to be delivered.
+            </span>
+            <span className="block mt-4">
+              Only written.”
+            </span>
+          </blockquote>
 
-        </div>
-
-        {/* Bottom Quote */}
-        <div className="max-w-5xl mx-auto text-center mt-40">
-
-          <div className="text-8xl text-rose-300 mb-8">
-
-          </div>
-
-          <h3 className="text-4xl md:text-5xl font-light leading-relaxed text-zinc-300">
-            Not every letter needs to be delivered
-            to fulfill its purpose.
-            Sometimes writing the words is enough.
-          </h3>
-
-          <div className="w-32 h-[2px] bg-gradient-to-r from-rose-300 via-pink-300 to-purple-300 mx-auto mt-12" />
-
-          <p className="mt-8 uppercase tracking-[0.4em] text-sm text-zinc-500">
+          <p className="mt-10 uppercase tracking-[0.4em] text-zinc-500">
             Letters Never Sent
           </p>
 
         </div>
 
-        {/* CTA */}
-        <div className="flex justify-center mt-24">
+      </section>
 
-          <button className="group px-10 py-5 rounded-full border border-rose-500/20 bg-rose-500/10 backdrop-blur-xl hover:bg-rose-500/20 transition-all duration-500 flex items-center gap-4">
+      {/* CTA */}
+      <section className="pb-32">
 
-            <span className="font-semibold text-rose-300">
-              Explore All Letters
-            </span>
+        <div className="max-w-6xl mx-auto px-6">
 
-            <HiOutlineArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />
+          <div className="relative overflow-hidden rounded-[40px] border border-white/10">
 
-          </button>
+            <Image
+              src="/project/Letters Never Sent.png"
+              alt=""
+              fill
+              className="object-cover opacity-20"
+            />
 
-        </div>
+            <div className="relative z-10 p-20 text-center">
 
-      </div>
+              <HiOutlineEnvelope className="mx-auto text-7xl text-rose-300 mb-8" />
 
-    </section>
+              <h2 className="text-6xl font-black mb-8">
+                Explore More Letters
+              </h2>
 
-      {/* QUOTE */ }
-  <section className="py-40">
+              <p className="max-w-3xl mx-auto text-xl text-zinc-300">
+                Discover reflections, healing,
+                gratitude, emotional growth,
+                and stories that remained beautifully unfinished.
+              </p>
 
-    <div className="max-w-5xl mx-auto px-6 text-center">
+              <div className="flex justify-center gap-5 mt-12 flex-wrap">
 
-      <HiOutlineStar className="mx-auto text-7xl text-rose-300 mb-10" />
+                <Link
+                  href="/newsletters"
+                  className="px-8 py-4 rounded-2xl bg-white text-black font-semibold"
+                >
+                  Subscribe
+                </Link>
 
-      <blockquote className="text-5xl md:text-7xl font-black leading-tight">
-        “Some letters were never meant
-        <span className="block mt-4">
-          to be delivered.
-        </span>
-        <span className="block mt-4">
-          Only written.”
-        </span>
-      </blockquote>
+                <Link
+                  href="/blog"
+                  className="px-8 py-4 rounded-2xl border border-white/10"
+                >
+                  Explore Archive
+                </Link>
 
-      <p className="mt-10 uppercase tracking-[0.4em] text-zinc-500">
-        Letters Never Sent
-      </p>
+              </div>
 
-    </div>
-
-  </section>
-
-  {/* CTA */ }
-  <section className="pb-32">
-
-    <div className="max-w-6xl mx-auto px-6">
-
-      <div className="relative overflow-hidden rounded-[40px] border border-white/10">
-
-        <Image
-          src="/project/Letters Never Sent.png"
-          alt=""
-          fill
-          className="object-cover opacity-20"
-        />
-
-        <div className="relative z-10 p-20 text-center">
-
-          <HiOutlineEnvelope className="mx-auto text-7xl text-rose-300 mb-8" />
-
-          <h2 className="text-6xl font-black mb-8">
-            Explore More Letters
-          </h2>
-
-          <p className="max-w-3xl mx-auto text-xl text-zinc-300">
-            Discover reflections, healing,
-            gratitude, emotional growth,
-            and stories that remained beautifully unfinished.
-          </p>
-
-          <div className="flex justify-center gap-5 mt-12 flex-wrap">
-
-            <Link
-              href="/newsletters"
-              className="px-8 py-4 rounded-2xl bg-white text-black font-semibold"
-            >
-              Subscribe
-            </Link>
-
-            <Link
-              href="/blog"
-              className="px-8 py-4 rounded-2xl border border-white/10"
-            >
-              Explore Archive
-            </Link>
+            </div>
 
           </div>
 
         </div>
 
-      </div>
-
-    </div>
-
-  </section>
+      </section>
 
     </main >
   );
