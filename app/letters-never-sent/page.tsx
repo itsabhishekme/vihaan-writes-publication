@@ -331,7 +331,7 @@ export default function LettersNeverSentPage() {
               <div className="absolute -bottom-10 -left-10 max-w-sm p-8 rounded-[30px] border border-white/10 bg-black/70 backdrop-blur-2xl">
 
                 <div className="text-6xl text-rose-300 leading-none mb-4">
-                  "
+                  
                 </div>
 
                 <p className="text-zinc-300 leading-relaxed">

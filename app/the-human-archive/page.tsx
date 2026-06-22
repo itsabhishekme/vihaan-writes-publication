@@ -455,7 +455,7 @@ export default function HumanArchivePage() {
               <div className="absolute -right-10 bottom-20 w-80 rounded-[32px] border border-white/10 bg-black/70 backdrop-blur-2xl p-8">
 
                 <div className="text-cyan-300 text-4xl mb-4">
-                  "
+                  
                 </div>
 
                 <p className="text-zinc-300 leading-relaxed">
@@ -787,7 +787,7 @@ export default function HumanArchivePage() {
                   <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 mb-8">
 
                     <div className="text-cyan-300 text-3xl mb-2">
-                      "
+                    
                     </div>
 
                     <p className="text-zinc-400 text-sm leading-relaxed italic">
@@ -901,7 +901,7 @@ export default function HumanArchivePage() {
           <div className="max-w-5xl mx-auto text-center mt-40">
 
             <div className="text-8xl text-cyan-300 mb-8">
-              "
+            
             </div>
 
             <h3 className="text-4xl md:text-5xl font-light leading-relaxed text-zinc-300">
