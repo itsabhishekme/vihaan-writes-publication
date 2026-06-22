@@ -673,10 +673,6 @@ export default function LettersNeverSentPage() {
                     {letter.title}
                   </h3>
 
-                  <p className="text-zinc-500 leading-relaxed mb-8">
-                    {(letter as any).excerpt}
-                  </p>
-
                 </div>
 
               </article>
