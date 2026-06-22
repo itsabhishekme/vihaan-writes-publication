@@ -730,7 +730,7 @@ export default function TheAlchemyOfBecomingPage() {
                     <div className="mx-auto mt-20 max-w-4xl rounded-[40px] border border-white/10 bg-white/[0.03] p-10 text-center backdrop-blur-xl">
 
                         <div className="mb-4 text-7xl text-emerald-400">
-                            "
+                            
                         </div>
 
                         <p className="text-2xl font-light leading-relaxed text-zinc-300 md:text-3xl">
