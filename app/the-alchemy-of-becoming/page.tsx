@@ -678,74 +678,317 @@ export default function TheAlchemyOfBecomingPage() {
             </section>
 
             {/* Pillars Of Transformation */}
+            <section className="relative overflow-hidden border-t border-zinc-900 py-40">
 
-            <section className="border-t border-zinc-900 py-32">
-                <div className="mx-auto max-w-7xl px-6">
-                    <div className="mx-auto max-w-4xl text-center">
-                        <p className="mb-4 text-sm uppercase tracking-[0.4em] text-emerald-400">
-                            Pillars of Becoming
+                {/* Background */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black" />
+
+                {/* Ambient Glows */}
+                <div className="absolute top-0 left-0 h-[700px] w-[700px] rounded-full bg-emerald-500/10 blur-[220px]" />
+                <div className="absolute bottom-0 right-0 h-[700px] w-[700px] rounded-full bg-teal-500/10 blur-[220px]" />
+                <div className="absolute left-1/2 top-1/2 h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/5 blur-[280px]" />
+
+                {/* Grid Pattern */}
+                <div className="absolute inset-0 opacity-[0.03]">
+                    <div
+                        className="h-full w-full"
+                        style={{
+                            backgroundImage:
+                                "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+                            backgroundSize: "80px 80px",
+                        }}
+                    />
+                </div>
+
+                <div className="relative mx-auto max-w-7xl px-6">
+
+                    {/* Header */}
+                    <div className="mx-auto max-w-5xl text-center">
+
+                        <p className="mb-6 text-sm font-medium uppercase tracking-[0.5em] text-emerald-400">
+                            Pillars Of Becoming
                         </p>
 
-                        <h2 className="text-5xl font-light md:text-6xl">
+                        <h2 className="text-5xl font-light leading-tight md:text-6xl xl:text-7xl">
                             The Forces Behind
-                            <span className="block text-emerald-400">
+                            <span className="block bg-gradient-to-r from-emerald-300 via-teal-300 to-cyan-300 bg-clip-text text-transparent">
                                 Human Transformation
                             </span>
                         </h2>
+
+                        <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-zinc-500">
+                            Every meaningful transformation is shaped by invisible
+                            forces working beneath the surface. Growth rarely arrives
+                            through a single event. Instead, it emerges through courage,
+                            resilience, purpose, wisdom, and the countless decisions
+                            made in moments of uncertainty.
+                        </p>
+
                     </div>
 
-                    <div className="mt-20 grid gap-8 lg:grid-cols-2">
-                        <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-10">
-                            <h3 className="mb-6 text-3xl font-light text-white">
-                                Courage
-                            </h3>
+                    {/* Quote */}
+                    <div className="mx-auto mt-20 max-w-4xl rounded-[40px] border border-white/10 bg-white/[0.03] p-10 text-center backdrop-blur-xl">
 
-                            <p className="leading-relaxed text-zinc-400">
-                                Courage allows individuals to step beyond comfort,
-                                face uncertainty, embrace vulnerability, and move
-                                forward despite fear. Every meaningful transformation
-                                requires the willingness to take a step into the
-                                unknown.
-                            </p>
+                        <div className="mb-4 text-7xl text-emerald-400">
+                            "
                         </div>
 
-                        <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-10">
-                            <h3 className="mb-6 text-3xl font-light text-white">
-                                Resilience
-                            </h3>
+                        <p className="text-2xl font-light leading-relaxed text-zinc-300 md:text-3xl">
+                            Transformation is not becoming someone else.
+                            It is becoming more fully who you already are.
+                        </p>
 
-                            <p className="leading-relaxed text-zinc-400">
-                                Resilience enables people to recover, adapt, and grow
-                                through adversity. It transforms setbacks into
-                                opportunities for learning and growth.
-                            </p>
-                        </div>
-
-                        <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-10">
-                            <h3 className="mb-6 text-3xl font-light text-white">
-                                Purpose
-                            </h3>
-
-                            <p className="leading-relaxed text-zinc-400">
-                                Purpose provides direction and meaning. It helps
-                                individuals navigate difficult periods while
-                                remaining connected to values, goals, and aspirations.
-                            </p>
-                        </div>
-
-                        <div className="rounded-3xl border border-zinc-800 bg-zinc-900/40 p-10">
-                            <h3 className="mb-6 text-3xl font-light text-white">
-                                Wisdom
-                            </h3>
-
-                            <p className="leading-relaxed text-zinc-400">
-                                Wisdom emerges through lived experience. It is the
-                                ability to transform lessons into understanding and
-                                understanding into meaningful action.
-                            </p>
-                        </div>
                     </div>
+
+                    {/* Main Grid */}
+                    <div className="mt-24 grid gap-8 lg:grid-cols-2">
+
+                        {/* Courage */}
+                        <div className="group relative overflow-hidden rounded-[36px] border border-zinc-800 bg-zinc-900/40 p-10 backdrop-blur-xl transition-all duration-700 hover:-translate-y-2 hover:border-emerald-500/30">
+
+                            <div className="absolute inset-0 opacity-0 transition duration-700 group-hover:opacity-100">
+                                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent" />
+                            </div>
+
+                            <div className="relative">
+
+                                <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl border border-emerald-500/20 bg-emerald-500/10 text-3xl">
+                                    ⚔️
+                                </div>
+
+                                <h3 className="mb-6 text-4xl font-light text-white">
+                                    Courage
+                                </h3>
+
+                                <p className="mb-8 leading-relaxed text-zinc-400">
+                                    Courage allows individuals to step beyond comfort,
+                                    face uncertainty, embrace vulnerability, and move
+                                    forward despite fear. Every meaningful transformation
+                                    begins with a decision to walk into territory where
+                                    outcomes are unknown.
+                                </p>
+
+                                <div className="grid gap-4 sm:grid-cols-2">
+
+                                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                                        <h4 className="mb-2 font-semibold text-white">
+                                            Risk
+                                        </h4>
+                                        <p className="text-sm text-zinc-500">
+                                            Growth requires stepping beyond familiar boundaries.
+                                        </p>
+                                    </div>
+
+                                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                                        <h4 className="mb-2 font-semibold text-white">
+                                            Action
+                                        </h4>
+                                        <p className="text-sm text-zinc-500">
+                                            Fear loses power when met with movement.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        {/* Resilience */}
+                        <div className="group relative overflow-hidden rounded-[36px] border border-zinc-800 bg-zinc-900/40 p-10 backdrop-blur-xl transition-all duration-700 hover:-translate-y-2 hover:border-emerald-500/30">
+
+                            <div className="absolute inset-0 opacity-0 transition duration-700 group-hover:opacity-100">
+                                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent" />
+                            </div>
+
+                            <div className="relative">
+
+                                <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl border border-teal-500/20 bg-teal-500/10 text-3xl">
+                                    🌊
+                                </div>
+
+                                <h3 className="mb-6 text-4xl font-light text-white">
+                                    Resilience
+                                </h3>
+
+                                <p className="mb-8 leading-relaxed text-zinc-400">
+                                    Resilience enables people to recover, adapt,
+                                    and continue forward through adversity.
+                                    It transforms setbacks into lessons and
+                                    challenges into opportunities for renewal.
+                                </p>
+
+                                <div className="grid gap-4 sm:grid-cols-2">
+
+                                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                                        <h4 className="mb-2 font-semibold text-white">
+                                            Recovery
+                                        </h4>
+                                        <p className="text-sm text-zinc-500">
+                                            Strength is built through repeated renewal.
+                                        </p>
+                                    </div>
+
+                                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                                        <h4 className="mb-2 font-semibold text-white">
+                                            Adaptation
+                                        </h4>
+                                        <p className="text-sm text-zinc-500">
+                                            Flexibility creates lasting endurance.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        {/* Purpose */}
+                        <div className="group relative overflow-hidden rounded-[36px] border border-zinc-800 bg-zinc-900/40 p-10 backdrop-blur-xl transition-all duration-700 hover:-translate-y-2 hover:border-emerald-500/30">
+
+                            <div className="absolute inset-0 opacity-0 transition duration-700 group-hover:opacity-100">
+                                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent" />
+                            </div>
+
+                            <div className="relative">
+
+                                <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-500/20 bg-cyan-500/10 text-3xl">
+                                    🧭
+                                </div>
+
+                                <h3 className="mb-6 text-4xl font-light text-white">
+                                    Purpose
+                                </h3>
+
+                                <p className="mb-8 leading-relaxed text-zinc-400">
+                                    Purpose provides direction through uncertainty.
+                                    It connects actions to meaning and helps people
+                                    remain committed to values, goals and aspirations
+                                    even during difficult seasons of life.
+                                </p>
+
+                                <div className="grid gap-4 sm:grid-cols-2">
+
+                                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                                        <h4 className="mb-2 font-semibold text-white">
+                                            Direction
+                                        </h4>
+                                        <p className="text-sm text-zinc-500">
+                                            Meaning creates momentum.
+                                        </p>
+                                    </div>
+
+                                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                                        <h4 className="mb-2 font-semibold text-white">
+                                            Values
+                                        </h4>
+                                        <p className="text-sm text-zinc-500">
+                                            Principles guide choices through complexity.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        {/* Wisdom */}
+                        <div className="group relative overflow-hidden rounded-[36px] border border-zinc-800 bg-zinc-900/40 p-10 backdrop-blur-xl transition-all duration-700 hover:-translate-y-2 hover:border-emerald-500/30">
+
+                            <div className="absolute inset-0 opacity-0 transition duration-700 group-hover:opacity-100">
+                                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent" />
+                            </div>
+
+                            <div className="relative">
+
+                                <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl border border-emerald-500/20 bg-emerald-500/10 text-3xl">
+                                    📖
+                                </div>
+
+                                <h3 className="mb-6 text-4xl font-light text-white">
+                                    Wisdom
+                                </h3>
+
+                                <p className="mb-8 leading-relaxed text-zinc-400">
+                                    Wisdom emerges through lived experience.
+                                    It is the ability to transform lessons into
+                                    understanding and understanding into meaningful
+                                    action that benefits both ourselves and others.
+                                </p>
+
+                                <div className="grid gap-4 sm:grid-cols-2">
+
+                                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                                        <h4 className="mb-2 font-semibold text-white">
+                                            Reflection
+                                        </h4>
+                                        <p className="text-sm text-zinc-500">
+                                            Experience becomes wisdom through reflection.
+                                        </p>
+                                    </div>
+
+                                    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+                                        <h4 className="mb-2 font-semibold text-white">
+                                            Understanding
+                                        </h4>
+                                        <p className="text-sm text-zinc-500">
+                                            Insight turns lessons into transformation.
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    {/* Statistics */}
+                    <div className="mt-32 grid gap-8 md:grid-cols-4">
+
+                        <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+                            <h3 className="text-5xl font-light text-emerald-400">
+                                4
+                            </h3>
+                            <p className="mt-3 text-zinc-500">
+                                Core Pillars
+                            </p>
+                        </div>
+
+                        <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+                            <h3 className="text-5xl font-light text-emerald-400">
+                                ∞
+                            </h3>
+                            <p className="mt-3 text-zinc-500">
+                                Possibilities
+                            </p>
+                        </div>
+
+                        <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+                            <h3 className="text-5xl font-light text-emerald-400">
+                                100%
+                            </h3>
+                            <p className="mt-3 text-zinc-500">
+                                Human Potential
+                            </p>
+                        </div>
+
+                        <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+                            <h3 className="text-5xl font-light text-emerald-400">
+                                Lifetime
+                            </h3>
+                            <p className="mt-3 text-zinc-500">
+                                Journey
+                            </p>
+                        </div>
+
+                    </div>
+
                 </div>
+
             </section>
 
             {/* Long Form SEO Section */}
