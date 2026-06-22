@@ -56,6 +56,11 @@ const letters = [
     recipient: "The One Who Got Away",
     excerpt:
       "A heartfelt letter to the person whose presence lingered long after goodbye.",
+    quote: "I still keep the words unsaid tucked in the corners of my heart.",
+    author: "Vihaan",
+    readTime: "4 min read",
+    date: "Jan 2025",
+    views: "1.2k",
   },
   {
     category: "Healing",
@@ -64,6 +69,11 @@ const letters = [
     recipient: "The One I Let Go",
     excerpt:
       "A quiet farewell written for the moment I couldn't find the words.",
+    quote: "Some farewells are written where no one can hear them.",
+    author: "Vihaan",
+    readTime: "3 min read",
+    date: "Feb 2025",
+    views: "980",
   },
   {
     category: "Reflection",
@@ -72,6 +82,11 @@ const letters = [
     recipient: "My Younger Self",
     excerpt:
       "A reflective note full of advice, forgiveness, and the wisdom of time.",
+    quote: "If I could go back, I'd tell you that every scar became a story.",
+    author: "Vihaan",
+    readTime: "5 min read",
+    date: "Mar 2025",
+    views: "1.5k",
   },
   {
     category: "Growth",
@@ -80,6 +95,11 @@ const letters = [
     recipient: "The Person Who Moved On",
     excerpt:
       "A letter of gratitude to the one whose departure sparked a new beginning.",
+    quote: "Your leaving taught me how to find myself again.",
+    author: "Vihaan",
+    readTime: "4 min read",
+    date: "Apr 2025",
+    views: "1.1k",
   },
   {
     category: "Destiny",
@@ -88,6 +108,11 @@ const letters = [
     recipient: "Future Me",
     excerpt:
       "Words sent forward in time to the person I am still becoming.",
+    quote: "I hope you remember why you started this journey.",
+    author: "Vihaan",
+    readTime: "3 min read",
+    date: "May 2025",
+    views: "860",
   },
   {
     category: "Memory",
@@ -96,6 +121,11 @@ const letters = [
     recipient: "The One I Still Remember",
     excerpt:
       "A remembrance of the unsaid words lingering in the quietest moments.",
+    quote: "That silent conversation still echoes in the spaces between us.",
+    author: "Vihaan",
+    readTime: "4 min read",
+    date: "Jun 2025",
+    views: "1.3k",
   },
 ];
 
@@ -561,67 +591,6 @@ export default function LettersNeverSentPage() {
 
           </div>
 
-          {/* Featured Letter */}
-          <div className="relative mb-28 overflow-hidden rounded-[42px] border border-white/10 bg-white/[0.03]">
-
-            <div className="grid lg:grid-cols-2">
-
-              <div className="relative min-h-[500px]">
-
-                <Image
-                  src="/letters/featured-letter.jpg"
-                  alt="The Words I Never Said banner featuring a silhouette surrounded by floating letters and fading memories"
-                  fill
-                  className="object-cover"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
-
-              </div>
-
-              <div className="p-12 md:p-16 flex flex-col justify-center">
-
-                <span className="uppercase tracking-[0.3em] text-xs text-rose-300 mb-6">
-                  Featured Letter
-                </span>
-
-                <h3 className="text-4xl md:text-5xl font-black mb-8">
-                  The Words I Never Said
-                </h3>
-
-                <p className="text-zinc-400 text-lg leading-relaxed mb-8">
-                  A reflection on missed opportunities,
-                  unspoken gratitude, and the conversations
-                  that continue to echo through memory.
-                </p>
-
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 mb-8">
-
-                  <div className="text-5xl text-rose-300 mb-2">
-
-                  </div>
-
-                  <p className="text-zinc-300 italic leading-relaxed">
-                    Sometimes silence becomes the loudest
-                    memory we carry.
-                  </p>
-
-                </div>
-
-                <button className="inline-flex items-center gap-3 text-rose-300 font-medium">
-
-                  Read Featured Letter
-
-                  <HiOutlineArrowRight />
-
-                </button>
-
-              </div>
-
-            </div>
-
-          </div>
-
           {/* Letters Grid */}
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
 
@@ -629,7 +598,20 @@ export default function LettersNeverSentPage() {
 
               <article
                 key={index}
-                className="group relative overflow-hidden rounded-[36px] border border-white/10 bg-white/[0.03] backdrop-blur-xl transition-all duration-700 hover:-translate-y-4 hover:border-rose-500/30"
+                className="
+        group
+        relative
+        overflow-hidden
+        rounded-[36px]
+        border
+        border-white/10
+        bg-white/[0.03]
+        backdrop-blur-xl
+        transition-all
+        duration-700
+        hover:-translate-y-4
+        hover:border-rose-500/30
+      "
               >
 
                 {/* Hover Glow */}
@@ -644,18 +626,37 @@ export default function LettersNeverSentPage() {
                     src={letter.image}
                     alt={letter.title}
                     fill
-                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                    className="
+            object-cover
+            transition-transform
+            duration-1000
+            group-hover:scale-110
+          "
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
                   <div className="absolute top-6 left-6">
-
                     <div className="inline-flex items-center">
                       <span className="h-px w-8 bg-rose-300 mr-3" />
                       <span className="uppercase tracking-[0.35em] text-xs font-semibold text-rose-300">
                         {letter.category}
                       </span>
+                    </div>
+                  </div>
+
+                  <div className="absolute bottom-6 left-6 right-6">
+
+                    <div className="flex items-center gap-3 text-xs text-zinc-300 mb-3">
+
+                      <span className="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10">
+                        {letter.readTime}
+                      </span>
+
+                      <span className="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10">
+                        {letter.date}
+                      </span>
+
                     </div>
 
                   </div>
@@ -665,101 +666,91 @@ export default function LettersNeverSentPage() {
                 {/* Content */}
                 <div className="p-8">
 
-                  <div className="flex items-center gap-4 text-sm text-zinc-500 mb-5">
-                    <span>{letter.category}</span>
+                  <div className="flex items-center justify-between mb-4">
+
+                    <span className="text-xs uppercase tracking-[0.25em] text-zinc-500">
+                      Letter #{index + 1}
+                    </span>
+
+                    <span className="text-zinc-500 text-sm">
+                      {letter.views} reads
+                    </span>
+
                   </div>
 
-                  <h3 className="text-3xl font-black mb-5 leading-snug group-hover:text-rose-300 transition-colors">
+                  <h3 className="
+          text-3xl
+          font-black
+          mb-5
+          leading-snug
+          group-hover:text-rose-300
+          transition-colors
+        ">
                     {letter.title}
                   </h3>
 
+                  <p className="text-zinc-400 leading-relaxed mb-6">
+                    {letter.excerpt}
+                  </p>
+
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 mb-6">
+
+                    <p className="italic text-zinc-300 leading-relaxed">
+                      &ldquo;{letter.quote}&rdquo;
+                    </p>
+
+                  </div>
+
+                  <div className="flex items-center justify-between">
+
+                    <div>
+
+                      <p className="text-sm text-zinc-500">
+                        Written by
+                      </p>
+
+                      <p className="font-medium text-zinc-300">
+                        {letter.author}
+                      </p>
+
+                    </div>
+
+                    <button
+                      className="
+              flex
+              items-center
+              gap-2
+              text-rose-300
+              font-medium
+              group/button
+            "
+                    >
+
+                      Read Letter
+
+                      <HiOutlineArrowRight
+                        className="
+                transition-transform
+                duration-300
+                group-hover/button:translate-x-1
+              "
+                      />
+
+                    </button>
+
+                  </div>
+
                 </div>
+
+                {/* Decorative Blur */}
+                <div className="absolute -bottom-24 -right-24 h-48 w-48 rounded-full bg-rose-500/10 blur-3xl opacity-0 group-hover:opacity-100 transition duration-700" />
 
               </article>
 
             ))}
 
           </div>
-
-          {/* Stats */}
-          <div className="grid md:grid-cols-4 gap-8 mt-32">
-
-            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
-              <h3 className="text-5xl font-black text-rose-300">
-                1,200+
-              </h3>
-              <p className="text-zinc-500 mt-3">
-                Letters Written
-              </p>
-            </div>
-
-            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
-              <h3 className="text-5xl font-black text-pink-300">
-                75+
-              </h3>
-              <p className="text-zinc-500 mt-3">
-                Categories
-              </p>
-            </div>
-
-            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
-              <h3 className="text-5xl font-black text-purple-300">
-                50K+
-              </h3>
-              <p className="text-zinc-500 mt-3">
-                Readers
-              </p>
-            </div>
-
-            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
-              <h3 className="text-5xl font-black text-rose-300">
-                Forever
-              </h3>
-              <p className="text-zinc-500 mt-3">
-                Remembered
-              </p>
-            </div>
-
-          </div>
-
-          {/* Bottom Quote */}
-          <div className="max-w-5xl mx-auto text-center mt-40">
-
-            <div className="text-8xl text-rose-300 mb-8">
-
-            </div>
-
-            <h3 className="text-4xl md:text-5xl font-light leading-relaxed text-zinc-300">
-              Not every letter needs to be delivered
-              to fulfill its purpose.
-              Sometimes writing the words is enough.
-            </h3>
-
-            <div className="w-32 h-[2px] bg-gradient-to-r from-rose-300 via-pink-300 to-purple-300 mx-auto mt-12" />
-
-            <p className="mt-8 uppercase tracking-[0.4em] text-sm text-zinc-500">
-              Letters Never Sent
-            </p>
-
-          </div>
-
-          {/* CTA */}
-          <div className="flex justify-center mt-24">
-
-            <button className="group px-10 py-5 rounded-full border border-rose-500/20 bg-rose-500/10 backdrop-blur-xl hover:bg-rose-500/20 transition-all duration-500 flex items-center gap-4">
-
-              <span className="font-semibold text-rose-300">
-                Explore All Letters
-              </span>
-
-              <HiOutlineArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />
-
-            </button>
-
-          </div>
-
         </div>
-
       </section>
 
       {/* QUOTE */}
