@@ -24,31 +24,49 @@ const reflections = [
     title: "The Coincidence That Changed Everything",
     image: "/echoes/coincidence.jpg",
     category: "Synchronicity",
+    excerpt: "Discover how meaningful coincidences shape our lives in unexpected ways.",
+    preview: "Sometimes the universe speaks in whispers, through events that seem too perfectly timed to be accidents.",
+    author: "Vihaan",
   },
   {
     title: "Why Certain Dreams Refuse To Leave",
     image: "/echoes/dreams.jpg",
     category: "Dreams",
+    excerpt: "Exploring the power of recurring dreams and their hidden messages.",
+    preview: "Dreams carry wisdom that our waking minds often struggle to comprehend.",
+    author: "Vihaan",
   },
   {
     title: "The Universe Repeats The Message",
     image: "/echoes/patterns.jpg",
     category: "Patterns",
+    excerpt: "Understanding the patterns that emerge when we pay close attention.",
+    preview: "Patterns are the universe's way of teaching us what we need to learn.",
+    author: "Vihaan",
   },
   {
     title: "Recognizing Invisible Threads",
     image: "/echoes/destiny.jpg",
     category: "Destiny",
+    excerpt: "The unseen connections that bind our experiences together.",
+    preview: "Destiny is not written in stone; it's woven through the choices we make and the connections we honor.",
+    author: "Vihaan",
   },
   {
     title: "The Language Of Intuition",
     image: "/echoes/intuition.jpg",
     category: "Intuition",
+    excerpt: "Learning to trust the inner knowing that guides us forward.",
+    preview: "Intuition speaks louder than logic when we finally decide to listen.",
+    author: "Vihaan",
   },
   {
     title: "Life's Hidden Architecture",
     image: "/echoes/reflection.jpg",
     category: "Reflection",
+    excerpt: "The underlying structure that connects all moments of our existence.",
+    preview: "Behind every reflection lies a deeper truth waiting to be discovered.",
+    author: "Vihaan",
   },
 ];
 
@@ -383,7 +401,7 @@ export default function EchoesOfDestinyPage() {
               <div className="absolute -left-12 bottom-16 max-w-sm rounded-[32px] border border-white/10 bg-black/70 backdrop-blur-2xl p-8">
 
                 <div className="text-6xl text-violet-300 leading-none mb-4">
-                
+
                 </div>
 
                 <p className="text-zinc-300 leading-relaxed">
@@ -510,7 +528,7 @@ export default function EchoesOfDestinyPage() {
           <div className="max-w-5xl mx-auto text-center mt-40">
 
             <div className="text-8xl text-violet-300 mb-8">
-              
+
             </div>
 
             <h3 className="text-4xl md:text-5xl font-light leading-relaxed text-zinc-300">
@@ -828,7 +846,7 @@ export default function EchoesOfDestinyPage() {
           <div className="max-w-5xl mx-auto text-center mt-40">
 
             <div className="text-8xl text-emerald-300 mb-8">
-              
+
             </div>
 
             <h3 className="text-4xl md:text-5xl font-light leading-relaxed text-zinc-300">
@@ -850,51 +868,349 @@ export default function EchoesOfDestinyPage() {
       </section>
 
       {/* REFLECTIONS */}
-      <section className="py-32">
+      <section className="relative py-40 overflow-hidden">
 
-        <div className="max-w-7xl mx-auto px-6">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black" />
 
-          <h2 className="text-6xl font-black mb-20">
-            Echoes & Reflections
-          </h2>
+        {/* Ambient Glow Effects */}
+        <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-yellow-500/10 rounded-full blur-[220px]" />
+        <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-amber-500/10 rounded-full blur-[220px]" />
+        <div className="absolute top-1/2 left-1/2 w-[900px] h-[900px] -translate-x-1/2 -translate-y-1/2 bg-yellow-500/5 rounded-full blur-[280px]" />
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div
+            className="h-full w-full"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+              backgroundSize: "80px 80px",
+            }}
+          />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6">
+
+          {/* Header */}
+          <div className="max-w-5xl mx-auto text-center mb-32">
+
+            <span className="uppercase tracking-[0.5em] text-yellow-300 text-sm font-semibold">
+              Reflections
+            </span>
+
+            <h2 className="mt-8 text-5xl md:text-6xl xl:text-7xl font-black leading-tight">
+              Echoes &
+              <span className="block bg-gradient-to-r from-yellow-300 via-amber-300 to-orange-300 bg-clip-text text-transparent">
+                Reflections
+              </span>
+            </h2>
+
+            <p className="mt-8 text-xl text-zinc-500 leading-relaxed max-w-3xl mx-auto">
+              Some thoughts linger long after the moment has passed.
+              Reflections help us understand the meaning hidden
+              inside experiences, memories, coincidences and
+              the quiet lessons life leaves behind.
+            </p>
+
+          </div>
+
+          {/* Featured Reflection */}
+          <div className="relative mb-32 overflow-hidden rounded-[42px] border border-white/10 bg-white/[0.03]">
+
+            <div className="grid lg:grid-cols-2">
+
+              <div className="relative min-h-[550px]">
+
+                <Image
+                  src="/reflections/featured-reflection.jpg"
+                  alt="Featured Reflection"
+                  fill
+                  className="object-cover"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/30 to-transparent" />
+
+              </div>
+
+              <div className="p-12 md:p-16 flex flex-col justify-center">
+
+                <span className="uppercase tracking-[0.3em] text-xs text-yellow-300 mb-6">
+                  Featured Reflection
+                </span>
+
+                <h3 className="text-4xl md:text-5xl font-black mb-8">
+                  The Meaning Hidden In Ordinary Days
+                </h3>
+
+                <p className="text-zinc-400 text-lg leading-relaxed mb-8">
+                  Sometimes the most significant moments
+                  disguise themselves as routine experiences.
+                  Only later do we recognize their impact.
+                </p>
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 mb-8">
+
+                  <div className="text-5xl text-yellow-300 mb-3">
+                    "
+                  </div>
+
+                  <p className="text-zinc-300 italic leading-relaxed">
+                    Reflection begins where certainty ends.
+                  </p>
+
+                </div>
+
+                <button className="inline-flex items-center gap-3 text-yellow-300 font-medium">
+                  Read Featured Reflection
+                  <HiOutlineArrowRight />
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Reflections Grid */}
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
 
             {reflections.map((story, index) => (
-              <div
+
+              <article
                 key={index}
-                className="group rounded-3xl overflow-hidden border border-white/10 bg-white/[0.03]"
+                className="group relative overflow-hidden rounded-[36px] border border-white/10 bg-white/[0.03] backdrop-blur-xl transition-all duration-700 hover:-translate-y-4 hover:border-yellow-500/30"
               >
-                <div className="relative h-80">
+
+                {/* Hover Glow */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700">
+                  <div className="absolute inset-0 bg-gradient-to-b from-yellow-500/5 via-transparent to-amber-500/5" />
+                </div>
+
+                {/* Image */}
+                <div className="relative h-80 overflow-hidden">
 
                   <Image
                     src={story.image}
                     alt={story.title}
                     fill
-                    className="object-cover transition duration-700 group-hover:scale-110"
+                    className="object-cover transition duration-1000 group-hover:scale-110"
                   />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+                  <div className="absolute top-6 left-6">
+
+                    <span className="px-4 py-2 rounded-full border border-white/10 bg-black/60 backdrop-blur-xl uppercase tracking-[0.2em] text-xs text-yellow-300">
+                      {story.category}
+                    </span>
+
+                  </div>
 
                 </div>
 
+                {/* Content */}
                 <div className="p-8">
 
-                  <span className="uppercase text-xs tracking-[0.3em] text-zinc-500">
-                    {story.category}
-                  </span>
+                  <div className="flex items-center gap-4 text-sm text-zinc-500 mb-5">
 
-                  <h3 className="text-2xl font-bold mt-4 mb-5">
+                    <span className="flex items-center gap-2">
+                      <HiOutlineClock className="w-4 h-4" />
+                      Reading Time
+                    </span>
+
+                  </div>
+
+                  <h3 className="text-3xl font-black mb-5 leading-snug group-hover:text-yellow-300 transition-colors">
                     {story.title}
                   </h3>
 
-                  <button className="inline-flex items-center gap-2 text-yellow-300">
-                    Read Reflection
-                    <HiOutlineArrowRight />
-                  </button>
+                  <p className="text-zinc-500 leading-relaxed mb-8">
+                    {story.excerpt}
+                  </p>
+
+                  {/* Reflection Preview */}
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 mb-8">
+
+                    <div className="text-3xl text-yellow-300 mb-3">
+                      
+                    </div>
+
+                    <p className="text-zinc-400 italic text-sm leading-relaxed">
+                      {story.preview}
+                    </p>
+
+                  </div>
+
+                  {/* Footer */}
+                  <div className="flex items-center justify-between">
+
+                    <div>
+
+                      <p className="font-medium">
+                        {story.author}
+                      </p>
+
+                      <p className="text-sm text-zinc-500">
+                        Reflection Author
+                      </p>
+
+                    </div>
+
+                    <button className="inline-flex items-center gap-2 text-yellow-300">
+
+                      Read Reflection
+
+                      <HiOutlineArrowRight className="transition-transform duration-300 group-hover:translate-x-2" />
+
+                    </button>
+
+                  </div>
 
                 </div>
 
-              </div>
+              </article>
+
             ))}
+
+          </div>
+
+          {/* Reflection Principles */}
+          <div className="mt-40">
+
+            <div className="text-center mb-20">
+
+              <span className="uppercase tracking-[0.4em] text-zinc-500 text-sm">
+                Core Themes
+              </span>
+
+              <h3 className="text-5xl font-black mt-6">
+                What Reflection
+                <span className="block text-yellow-300">
+                  Reveals
+                </span>
+              </h3>
+
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+
+              <div className="rounded-[36px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl">
+
+                <div className="text-5xl mb-6">
+                  🌙
+                </div>
+
+                <h4 className="text-2xl font-bold mb-5">
+                  Awareness
+                </h4>
+
+                <p className="text-zinc-500 leading-relaxed">
+                  Reflection helps reveal patterns,
+                  emotions and truths hidden beneath
+                  daily experience.
+                </p>
+
+              </div>
+
+              <div className="rounded-[36px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl">
+
+                <div className="text-5xl mb-6">
+                  📖
+                </div>
+
+                <h4 className="text-2xl font-bold mb-5">
+                  Understanding
+                </h4>
+
+                <p className="text-zinc-500 leading-relaxed">
+                  Looking back allows us to understand
+                  the meaning behind our choices
+                  and experiences.
+                </p>
+
+              </div>
+
+              <div className="rounded-[36px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl">
+
+                <div className="text-5xl mb-6">
+                  ✨
+                </div>
+
+                <h4 className="text-2xl font-bold mb-5">
+                  Growth
+                </h4>
+
+                <p className="text-zinc-500 leading-relaxed">
+                  Every reflection becomes an opportunity
+                  for deeper wisdom and personal growth.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Statistics */}
+          <div className="grid md:grid-cols-4 gap-8 mt-32">
+
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center">
+              <h3 className="text-5xl font-black text-yellow-300">
+                500+
+              </h3>
+              <p className="text-zinc-500 mt-3">
+                Reflections
+              </p>
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center">
+              <h3 className="text-5xl font-black text-amber-300">
+                120+
+              </h3>
+              <p className="text-zinc-500 mt-3">
+                Topics
+              </p>
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center">
+              <h3 className="text-5xl font-black text-orange-300">
+                50K+
+              </h3>
+              <p className="text-zinc-500 mt-3">
+                Readers
+              </p>
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center">
+              <h3 className="text-5xl font-black text-yellow-300">
+                Endless
+              </h3>
+              <p className="text-zinc-500 mt-3">
+                Insights
+              </p>
+            </div>
+
+          </div>
+
+          {/* Closing Quote */}
+          <div className="max-w-5xl mx-auto text-center mt-40">
+
+            <div className="text-8xl text-yellow-300 mb-8">
+              
+            </div>
+
+            <h3 className="text-4xl md:text-5xl font-light leading-relaxed text-zinc-300">
+              Reflection transforms experience into wisdom.
+              Without reflection, moments simply pass.
+              With reflection, they become understanding.
+            </h3>
+
+            <div className="w-32 h-[2px] bg-gradient-to-r from-yellow-300 via-amber-300 to-orange-300 mx-auto mt-12" />
+
+            <p className="mt-8 uppercase tracking-[0.4em] text-sm text-zinc-500">
+              Echoes & Reflections
+            </p>
 
           </div>
 
