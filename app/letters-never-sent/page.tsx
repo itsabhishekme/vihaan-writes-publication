@@ -226,46 +226,190 @@ export default function LettersNeverSentPage() {
       </section>
 
       {/* ABOUT */}
-      <section className="py-32">
+      <section className="relative py-36 overflow-hidden">
 
-        <div className="max-w-7xl mx-auto px-6">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black" />
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-rose-500/10 rounded-full blur-[180px]" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[180px]" />
 
+        <div className="relative max-w-7xl mx-auto px-6">
+
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
+
+            {/* LEFT CONTENT */}
             <div>
 
-              <span className="uppercase tracking-[0.4em] text-zinc-500 text-sm">
+              <span className="uppercase tracking-[0.5em] text-rose-300 text-sm font-semibold">
                 About The Project
               </span>
 
-              <h2 className="text-5xl font-black mt-6 mb-8">
+              <h2 className="mt-6 text-5xl md:text-6xl xl:text-7xl font-black leading-[1.05]">
                 Some Words
-                <span className="block text-rose-300">
+                <span className="block bg-gradient-to-r from-rose-300 via-pink-300 to-purple-300 bg-clip-text text-transparent">
                   Were Meant To Heal
                 </span>
               </h2>
 
-              <p className="text-lg text-zinc-400 leading-relaxed mb-6">
+              <div className="w-32 h-[2px] bg-gradient-to-r from-rose-300 to-purple-300 mt-10 mb-10" />
+
+              <p className="text-xl text-zinc-400 leading-relaxed mb-8">
                 Not every message reaches its destination.
-                Some remain hidden in journals,
-                memories and quiet moments of reflection.
+                Some remain hidden inside journals,
+                unfinished drafts, forgotten notes,
+                and quiet moments that never found a voice.
               </p>
 
-              <p className="text-lg text-zinc-400 leading-relaxed">
-                Letters Never Sent explores those words—
-                messages written for people,
-                moments, experiences and versions of ourselves.
+              <p className="text-lg text-zinc-500 leading-relaxed mb-8">
+                Letters Never Sent is a collection of emotions,
+                reflections, and truths left unspoken.
+                It explores the words we wished we had said,
+                the conversations we replay in our minds,
+                and the pieces of ourselves we continue to carry.
+              </p>
+
+              <p className="text-lg text-zinc-500 leading-relaxed mb-12">
+                Through storytelling, memory, and reflection,
+                this project creates a space where vulnerability
+                becomes strength and where untold stories
+                can finally exist without fear of judgment.
+              </p>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-6">
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-6">
+                  <h3 className="text-4xl font-black text-rose-300">
+                    120+
+                  </h3>
+                  <p className="text-zinc-500 text-sm mt-2">
+                    Letters Written
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-6">
+                  <h3 className="text-4xl font-black text-purple-300">
+                    50+
+                  </h3>
+                  <p className="text-zinc-500 text-sm mt-2">
+                    Stories Shared
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-6">
+                  <h3 className="text-4xl font-black text-pink-300">
+                    10K+
+                  </h3>
+                  <p className="text-zinc-500 text-sm mt-2">
+                    Readers Reached
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* RIGHT IMAGE */}
+            <div className="relative">
+
+              {/* Main Image */}
+              <div className="relative h-[700px] overflow-hidden rounded-[40px] border border-white/10">
+
+                <Image
+                  src="/project/letters-about.jpg"
+                  alt="Letters Never Sent"
+                  fill
+                  className="object-cover"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+              </div>
+
+              {/* Floating Card */}
+              <div className="absolute -bottom-10 -left-10 max-w-sm p-8 rounded-[30px] border border-white/10 bg-black/70 backdrop-blur-2xl">
+
+                <div className="text-6xl text-rose-300 leading-none mb-4">
+                  "
+                </div>
+
+                <p className="text-zinc-300 leading-relaxed">
+                  Sometimes the most important conversations
+                  are the ones we never had.
+                </p>
+
+                <div className="mt-6 flex items-center gap-4">
+
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-rose-400 to-purple-400" />
+
+                  <div>
+                    <p className="font-semibold">
+                      Letters Never Sent
+                    </p>
+                    <p className="text-sm text-zinc-500">
+                      Reflection Project
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+              {/* Floating Badge */}
+              <div className="absolute top-8 right-8 px-5 py-3 rounded-full border border-white/10 bg-black/60 backdrop-blur-xl">
+
+                <span className="text-sm tracking-[0.3em] uppercase text-rose-300">
+                  Since 2025
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Bottom Section */}
+
+          <div className="mt-32 grid md:grid-cols-3 gap-8">
+
+            <div className="p-10 rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-xl">
+
+              <h3 className="text-2xl font-bold mb-4">
+                Reflection
+              </h3>
+
+              <p className="text-zinc-500 leading-relaxed">
+                Exploring thoughts and emotions that often
+                remain hidden beneath everyday life.
               </p>
 
             </div>
 
-            <div className="relative h-[600px] overflow-hidden rounded-[40px] border border-white/10">
-              <Image
-                src="/project/letters-about.jpg"
-                alt=""
-                fill
-                className="object-cover"
-              />
+            <div className="p-10 rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-xl">
+
+              <h3 className="text-2xl font-bold mb-4">
+                Healing
+              </h3>
+
+              <p className="text-zinc-500 leading-relaxed">
+                Creating space for understanding,
+                forgiveness, growth, and acceptance.
+              </p>
+
+            </div>
+
+            <div className="p-10 rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-xl">
+
+              <h3 className="text-2xl font-bold mb-4">
+                Connection
+              </h3>
+
+              <p className="text-zinc-500 leading-relaxed">
+                Finding shared experiences through stories
+                that resonate across different lives.
+              </p>
+
             </div>
 
           </div>

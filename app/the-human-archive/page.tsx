@@ -69,31 +69,67 @@ const featuredStories = [
     category: "Transformation",
     title: "The Day Everything Changed",
     image: "/project/human-1.jpg",
+    date: "June 21, 2026",
+    readTime: "8 min read",
+    excerpt: "A story of how one decision shifted the course of a life.",
+    quote: "Change begins when you decide to stop being who you were.",
+    author: "Mia Carter",
+    authorImage: "/project/author-1.jpg",
   },
   {
     category: "Reflection",
     title: "A Letter To My Younger Self",
     image: "/project/human-2.jpg",
+    date: "May 16, 2026",
+    readTime: "7 min read",
+    excerpt: "A heartfelt reflection on lessons learned and time lost.",
+    quote: "If I could tell my younger self one thing, it would be to trust the journey.",
+    author: "Noah Patel",
+    authorImage: "/project/author-2.jpg",
   },
   {
     category: "Memory",
     title: "The Conversation I Never Forgot",
     image: "/project/human-3.jpg",
+    date: "April 3, 2026",
+    readTime: "6 min read",
+    excerpt: "The memory of a single conversation that changed everything.",
+    quote: "Some words stay with us forever, shaping who we become.",
+    author: "Ava Brooks",
+    authorImage: "/project/author-3.jpg",
   },
   {
     category: "Humanity",
     title: "What I Learned From Losing Everything",
     image: "/project/human-4.jpg",
+    date: "March 11, 2026",
+    readTime: "9 min read",
+    excerpt: "A powerful story about rebuilding from the ashes of loss.",
+    quote: "Sometimes losing everything is how you find your true self.",
+    author: "Elijah Reed",
+    authorImage: "/project/author-4.jpg",
   },
   {
     category: "Growth",
     title: "The Mistake That Saved My Life",
     image: "/project/human-5.jpg",
+    date: "February 28, 2026",
+    readTime: "7 min read",
+    excerpt: "An unexpected mistake that paved the way for growth.",
+    quote: "The greatest lessons often arrive disguised as failures.",
+    author: "Sophia Liu",
+    authorImage: "/project/author-5.jpg",
   },
   {
     category: "Legacy",
     title: "The Story Nobody Knew",
     image: "/project/human-6.jpg",
+    date: "January 9, 2026",
+    readTime: "8 min read",
+    excerpt: "A hidden story finally brought into the light.",
+    quote: "Every story deserves a voice, even the ones kept in silence.",
+    author: "Liam Bennett",
+    authorImage: "/project/author-6.jpg",
   },
 ];
 
@@ -240,50 +276,332 @@ export default function HumanArchivePage() {
       </section>
 
       {/* MISSION */}
-      <section className="py-32">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative py-40 overflow-hidden">
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black" />
 
+        {/* Decorative Glow */}
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[180px]" />
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[180px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-cyan-500/5 rounded-full blur-[250px]" />
+
+        <div className="relative max-w-7xl mx-auto px-6">
+
+          {/* Section Header */}
+          <div className="max-w-4xl mx-auto text-center mb-32">
+
+            <span className="uppercase tracking-[0.5em] text-cyan-300 text-sm font-semibold">
+              Mission
+            </span>
+
+            <h2 className="mt-8 text-5xl md:text-6xl xl:text-7xl font-black leading-tight">
+              Every Human Life
+              <span className="block bg-gradient-to-r from-cyan-300 via-blue-300 to-cyan-400 bg-clip-text text-transparent">
+                Deserves To Be Remembered
+              </span>
+            </h2>
+
+            <p className="mt-10 text-xl text-zinc-500 leading-relaxed max-w-3xl mx-auto">
+              Behind every face exists a story.
+              Behind every story exists a lifetime of memories,
+              lessons, struggles, dreams, and moments that deserve
+              to live beyond a single generation.
+            </p>
+
+          </div>
+
+          {/* Main Content */}
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
+
+            {/* LEFT CONTENT */}
             <div>
 
               <span className="uppercase tracking-[0.4em] text-zinc-500 text-sm">
-                Mission
+                Why We Exist
               </span>
 
-              <h2 className="text-5xl font-black mt-6 mb-8">
-                Every Human Life
+              <h3 className="text-5xl md:text-6xl font-black mt-6 mb-10 leading-tight">
+                Preserving The
                 <span className="block text-cyan-300">
-                  Deserves To Be Remembered
+                  Human Experience
                 </span>
-              </h2>
+              </h3>
 
-              <p className="text-lg text-zinc-400 leading-relaxed mb-6">
+              <p className="text-lg text-zinc-400 leading-relaxed mb-8">
                 Most stories disappear quietly.
-                Not because they lacked meaning,
-                but because nobody asked to hear them.
+                Not because they lacked significance,
+                but because nobody thought they were important enough
+                to preserve.
               </p>
 
-              <p className="text-lg text-zinc-400 leading-relaxed">
-                The Human Archive preserves experiences,
-                reflections, struggles, victories,
-                memories and lessons that define humanity.
+              <p className="text-lg text-zinc-500 leading-relaxed mb-8">
+                The Human Archive exists to challenge that belief.
+                We believe every person carries knowledge,
+                experiences, emotions and memories that contribute
+                to the collective story of humanity.
               </p>
+
+              <p className="text-lg text-zinc-500 leading-relaxed mb-12">
+                Through storytelling, documentation and reflection,
+                we create a place where lives are remembered,
+                wisdom is shared, and future generations can learn
+                from the journeys that came before them.
+              </p>
+
+              {/* Feature Grid */}
+              <div className="grid sm:grid-cols-2 gap-5">
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl">
+                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 flex items-center justify-center mb-5">
+                    🌍
+                  </div>
+
+                  <h4 className="font-bold text-xl mb-3">
+                    Global Stories
+                  </h4>
+
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Capturing experiences from different cultures,
+                    backgrounds and perspectives around the world.
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl">
+                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 flex items-center justify-center mb-5">
+                    📖
+                  </div>
+
+                  <h4 className="font-bold text-xl mb-3">
+                    Life Lessons
+                  </h4>
+
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Preserving knowledge, wisdom and reflections
+                    learned through lived experiences.
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl">
+                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 flex items-center justify-center mb-5">
+                    ❤️
+                  </div>
+
+                  <h4 className="font-bold text-xl mb-3">
+                    Human Connection
+                  </h4>
+
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Building empathy through authentic stories
+                    and meaningful shared experiences.
+                  </p>
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl">
+                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 flex items-center justify-center mb-5">
+                    ⏳
+                  </div>
+
+                  <h4 className="font-bold text-xl mb-3">
+                    Future Legacy
+                  </h4>
+
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Ensuring valuable stories continue inspiring
+                    generations to come.
+                  </p>
+                </div>
+
+              </div>
 
             </div>
 
-            <div className="relative h-[600px] overflow-hidden rounded-[40px] border border-white/10">
-              <Image
-                src="/project/human-mission.jpg"
-                alt=""
-                fill
-                className="object-cover"
-              />
+            {/* RIGHT IMAGE SIDE */}
+            <div className="relative">
+
+              {/* Main Image */}
+              <div className="relative h-[750px] overflow-hidden rounded-[40px] border border-white/10">
+
+                <Image
+                  src="/project/human-mission.jpg"
+                  alt="Human Mission"
+                  fill
+                  className="object-cover"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+              </div>
+
+              {/* Floating Card 1 */}
+              <div className="absolute -left-10 top-12 w-72 rounded-[32px] border border-white/10 bg-black/70 backdrop-blur-2xl p-8">
+
+                <div className="text-cyan-300 text-5xl font-black mb-2">
+                  50K+
+                </div>
+
+                <h4 className="font-semibold mb-2">
+                  Stories Preserved
+                </h4>
+
+                <p className="text-sm text-zinc-500 leading-relaxed">
+                  Personal experiences collected and archived
+                  for future generations.
+                </p>
+
+              </div>
+
+              {/* Floating Card 2 */}
+              <div className="absolute -right-10 bottom-20 w-80 rounded-[32px] border border-white/10 bg-black/70 backdrop-blur-2xl p-8">
+
+                <div className="text-cyan-300 text-4xl mb-4">
+                  "
+                </div>
+
+                <p className="text-zinc-300 leading-relaxed">
+                  The greatest library in the world is not built
+                  from books. It is built from human lives.
+                </p>
+
+                <div className="mt-6 pt-4 border-t border-white/10">
+                  <p className="text-sm text-zinc-500">
+                    Human Archive Project
+                  </p>
+                </div>
+
+              </div>
+
+              {/* Floating Badge */}
+              <div className="absolute top-10 right-10 px-5 py-3 rounded-full border border-cyan-500/20 bg-black/70 backdrop-blur-xl">
+
+                <span className="text-cyan-300 uppercase tracking-[0.3em] text-xs">
+                  Since 2025
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Mission Values */}
+          <div className="mt-40">
+
+            <div className="text-center mb-20">
+
+              <span className="uppercase tracking-[0.4em] text-zinc-500 text-sm">
+                Core Values
+              </span>
+
+              <h3 className="text-5xl font-black mt-6">
+                What Drives
+                <span className="block text-cyan-300">
+                  Our Mission
+                </span>
+              </h3>
+
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+
+              <div className="group rounded-[36px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl hover:border-cyan-500/30 transition-all duration-500">
+
+                <div className="text-6xl mb-6">
+                  📚
+                </div>
+
+                <h4 className="text-2xl font-bold mb-5">
+                  Preservation
+                </h4>
+
+                <p className="text-zinc-500 leading-relaxed">
+                  Protecting valuable human stories from being
+                  forgotten or lost to time.
+                </p>
+
+              </div>
+
+              <div className="group rounded-[36px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl hover:border-cyan-500/30 transition-all duration-500">
+
+                <div className="text-6xl mb-6">
+                  🤝
+                </div>
+
+                <h4 className="text-2xl font-bold mb-5">
+                  Understanding
+                </h4>
+
+                <p className="text-zinc-500 leading-relaxed">
+                  Encouraging empathy through authentic
+                  personal experiences and perspectives.
+                </p>
+
+              </div>
+
+              <div className="group rounded-[36px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl hover:border-cyan-500/30 transition-all duration-500">
+
+                <div className="text-6xl mb-6">
+                  🌟
+                </div>
+
+                <h4 className="text-2xl font-bold mb-5">
+                  Legacy
+                </h4>
+
+                <p className="text-zinc-500 leading-relaxed">
+                  Leaving behind meaningful knowledge for future
+                  generations to discover and learn from.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Bottom Statistics */}
+          <div className="mt-32 grid md:grid-cols-4 gap-8">
+
+            <div className="text-center p-8 rounded-[32px] border border-white/10 bg-white/[0.03]">
+              <h3 className="text-5xl font-black text-cyan-300">
+                50K+
+              </h3>
+              <p className="text-zinc-500 mt-3">
+                Stories Archived
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-[32px] border border-white/10 bg-white/[0.03]">
+              <h3 className="text-5xl font-black text-cyan-300">
+                120+
+              </h3>
+              <p className="text-zinc-500 mt-3">
+                Countries Reached
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-[32px] border border-white/10 bg-white/[0.03]">
+              <h3 className="text-5xl font-black text-cyan-300">
+                1M+
+              </h3>
+              <p className="text-zinc-500 mt-3">
+                Readers Inspired
+              </p>
+            </div>
+
+            <div className="text-center p-8 rounded-[32px] border border-white/10 bg-white/[0.03]">
+              <h3 className="text-5xl font-black text-cyan-300">
+                Forever
+              </h3>
+              <p className="text-zinc-500 mt-3">
+                Preserved Legacy
+              </p>
             </div>
 
           </div>
 
         </div>
+
       </section>
 
       {/* COLLECTIONS */}
@@ -358,53 +676,261 @@ export default function HumanArchivePage() {
       </section>
 
       {/* FEATURED STORIES */}
-      <section className="py-32 border-y border-white/10">
+      <section className="relative py-40 overflow-hidden border-y border-white/10">
 
-        <div className="max-w-7xl mx-auto px-6">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black" />
 
-          <div className="mb-20">
-            <h2 className="text-6xl font-black">
-              Stories Worth Preserving
+        {/* Glow Effects */}
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[180px]" />
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[180px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-cyan-500/5 rounded-full blur-[220px]" />
+
+        <div className="relative max-w-7xl mx-auto px-6">
+
+          {/* Header */}
+          <div className="max-w-5xl mx-auto text-center mb-28">
+
+            <span className="uppercase tracking-[0.5em] text-cyan-300 text-sm font-semibold">
+              Human Archive
+            </span>
+
+            <h2 className="mt-8 text-5xl md:text-6xl xl:text-7xl font-black leading-tight">
+              Stories Worth
+              <span className="block bg-gradient-to-r from-cyan-300 via-blue-300 to-cyan-400 bg-clip-text text-transparent">
+                Preserving
+              </span>
             </h2>
+
+            <p className="mt-8 text-xl text-zinc-500 leading-relaxed max-w-3xl mx-auto">
+              Every life contains moments of courage, sacrifice,
+              transformation and wisdom. These featured stories
+              preserve the experiences that define humanity and
+              inspire future generations.
+            </p>
+
           </div>
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+          {/* Featured Stories Grid */}
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
 
             {featuredStories.map((story, index) => (
-              <div
+
+              <article
                 key={index}
-                className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]"
+                className="group relative overflow-hidden rounded-[36px] border border-white/10 bg-white/[0.03] backdrop-blur-xl transition-all duration-700 hover:-translate-y-4 hover:border-cyan-500/30"
               >
-                <div className="relative h-72">
+
+                {/* Hover Glow */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700 pointer-events-none">
+                  <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 via-transparent to-cyan-500/5" />
+                </div>
+
+                {/* Image */}
+                <div className="relative h-80 overflow-hidden">
 
                   <Image
                     src={story.image}
                     alt={story.title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
+
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+                  {/* Category Badge */}
+                  <div className="absolute top-6 left-6">
+
+                    <span className="px-4 py-2 rounded-full border border-white/10 bg-black/60 backdrop-blur-xl uppercase tracking-[0.2em] text-xs text-cyan-300">
+                      {story.category}
+                    </span>
+
+                  </div>
+
+                  {/* Featured Badge */}
+                  <div className="absolute top-6 right-6">
+
+                    <span className="px-4 py-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 text-cyan-300 text-xs uppercase tracking-[0.2em]">
+                      Featured
+                    </span>
+
+                  </div>
 
                 </div>
 
+                {/* Content */}
                 <div className="p-8">
 
-                  <span className="uppercase tracking-[0.3em] text-xs text-zinc-500">
-                    {story.category}
-                  </span>
+                  {/* Meta */}
+                  <div className="flex items-center gap-4 text-sm text-zinc-500 mb-5">
 
-                  <h3 className="text-2xl font-bold mt-4 mb-6">
+                    <span>{story.date}</span>
+
+                    <span>•</span>
+
+                    <span>{story.readTime}</span>
+
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-3xl font-black leading-snug mb-5 group-hover:text-cyan-300 transition-colors duration-500">
                     {story.title}
                   </h3>
 
-                  <button className="inline-flex items-center gap-2 text-cyan-300">
-                    Read Story
-                    <HiOutlineArrowRight />
-                  </button>
+                  {/* Description */}
+                  <p className="text-zinc-500 leading-relaxed mb-8">
+                    {story.excerpt}
+                  </p>
+
+                  {/* Quote */}
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 mb-8">
+
+                    <div className="text-cyan-300 text-3xl mb-2">
+                      "
+                    </div>
+
+                    <p className="text-zinc-400 text-sm leading-relaxed italic">
+                      {story.quote}
+                    </p>
+
+                  </div>
+
+                  {/* Author */}
+                  <div className="flex items-center justify-between">
+
+                    <div className="flex items-center gap-4">
+
+                      <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/10">
+
+                        <Image
+                          src={story.authorImage}
+                          alt={story.author}
+                          fill
+                          className="object-cover"
+                        />
+
+                      </div>
+
+                      <div>
+
+                        <h4 className="font-semibold">
+                          {story.author}
+                        </h4>
+
+                        <p className="text-sm text-zinc-500">
+                          Story Contributor
+                        </p>
+
+                      </div>
+
+                    </div>
+
+                    <button className="group/btn flex items-center gap-2 text-cyan-300 font-medium">
+
+                      Read Story
+
+                      <HiOutlineArrowRight className="transition-transform duration-300 group-hover/btn:translate-x-2" />
+
+                    </button>
+
+                  </div>
 
                 </div>
 
-              </div>
+              </article>
+
             ))}
+
+          </div>
+
+          {/* Featured Stats */}
+          <div className="grid md:grid-cols-4 gap-8 mt-32">
+
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+
+              <h3 className="text-5xl font-black text-cyan-300">
+                500+
+              </h3>
+
+              <p className="text-zinc-500 mt-3">
+                Stories Archived
+              </p>
+
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+
+              <h3 className="text-5xl font-black text-cyan-300">
+                120+
+              </h3>
+
+              <p className="text-zinc-500 mt-3">
+                Countries
+              </p>
+
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+
+              <h3 className="text-5xl font-black text-cyan-300">
+                50K+
+              </h3>
+
+              <p className="text-zinc-500 mt-3">
+                Readers
+              </p>
+
+            </div>
+
+            <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+
+              <h3 className="text-5xl font-black text-cyan-300">
+                Forever
+              </h3>
+
+              <p className="text-zinc-500 mt-3">
+                Preserved
+              </p>
+
+            </div>
+
+          </div>
+
+          {/* Bottom Quote Section */}
+          <div className="max-w-5xl mx-auto text-center mt-40">
+
+            <div className="text-8xl text-cyan-300 mb-8">
+              "
+            </div>
+
+            <h3 className="text-4xl md:text-5xl font-light leading-relaxed text-zinc-300">
+              Stories are the fingerprints of humanity.
+              Long after we are gone, they remain—
+              teaching, inspiring and reminding future
+              generations what it meant to be human.
+            </h3>
+
+            <div className="w-32 h-[2px] bg-gradient-to-r from-cyan-300 to-blue-300 mx-auto mt-12" />
+
+            <p className="mt-8 text-zinc-500 uppercase tracking-[0.4em] text-sm">
+              Human Archive Project
+            </p>
+
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="flex justify-center mt-24">
+
+            <button className="group px-10 py-5 rounded-full border border-cyan-500/20 bg-cyan-500/10 backdrop-blur-xl hover:bg-cyan-500/20 transition-all duration-500 flex items-center gap-4">
+
+              <span className="font-semibold text-cyan-300">
+                Explore All Stories
+              </span>
+
+              <HiOutlineArrowRight className="text-xl transition-transform duration-300 group-hover:translate-x-2" />
+
+            </button>
 
           </div>
 
