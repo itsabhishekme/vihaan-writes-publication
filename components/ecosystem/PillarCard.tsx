@@ -57,7 +57,7 @@ export default function PillarCard({ pillar }: Props) {
           </span>
 
           <p className="text-xl italic text-zinc-300 leading-relaxed">
-            "{pillar.question}"
+            &ldquo;{pillar.question}&rdquo;
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export default function PillarCard({ pillar }: Props) {
             This pillar serves as one stage in a five-part narrative arc:
             Origin → Memory → Healing → Destiny → Transformation. While each
             documentary stands independently, together they create a complete
-            exploration of humanity's shared journey.
+            exploration of humanity&apos;s shared journey.
           </p>
         </div>
 
@@ -137,11 +137,12 @@ export default function PillarCard({ pillar }: Props) {
           <p className="text-zinc-500 text-sm leading-relaxed">
             Soulfire Chronicles Documentary Ecosystem • Pillar {pillar.number}
           </p>
-
+          
           <p className="mt-3 text-zinc-400 leading-relaxed">
-            Exploring one chapter of humanity's ongoing story through cinematic
+            Exploring one chapter of humanity&apos;s ongoing story through cinematic
             documentary storytelling.
           </p>
+
         </div>
       </div>
     </article>

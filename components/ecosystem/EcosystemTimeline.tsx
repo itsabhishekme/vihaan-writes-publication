@@ -109,33 +109,33 @@ export default function EcosystemTimeline() {
 
                     <blockquote className="border-l border-zinc-700 pl-6">
                       <p className="text-xl italic text-zinc-300">
-                        "{stage.question}"
+                        &ldquo;{stage.question}&rdquo;
                       </p>
                     </blockquote>
-                  </div>
                 </div>
               </div>
             </div>
+            </div>
           ))}
-        </div>
       </div>
+    </div>
 
-      {/* Closing Statement */}
-      <div className="max-w-5xl mx-auto text-center mt-40">
-        <p className="text-3xl md:text-5xl font-light leading-relaxed">
-          Every documentary begins with a story.
-        </p>
+      {/* Closing Statement */ }
+  <div className="max-w-5xl mx-auto text-center mt-40">
+    <p className="text-3xl md:text-5xl font-light leading-relaxed">
+      Every documentary begins with a story.
+    </p>
 
-        <p className="text-3xl md:text-5xl font-light leading-relaxed mt-4">
-          Together, they tell the story of humanity.
-        </p>
+    <p className="text-3xl md:text-5xl font-light leading-relaxed mt-4">
+      Together, they tell the story of humanity.
+    </p>
 
-        <p className="mt-10 text-zinc-500 text-lg leading-relaxed">
-          From origin to transformation, the five pillars form a complete
-          documentary ecosystem exploring the universal journey shared by us
-          all.
-        </p>
-      </div>
-    </section>
+    <p className="mt-10 text-zinc-500 text-lg leading-relaxed">
+      From origin to transformation, the five pillars form a complete
+      documentary ecosystem exploring the universal journey shared by us
+      all.
+    </p>
+  </div>
+    </section >
   );
 }

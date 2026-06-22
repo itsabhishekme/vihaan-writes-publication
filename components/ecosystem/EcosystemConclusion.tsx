@@ -61,7 +61,7 @@ export default function EcosystemConclusion() {
               </p>
 
               <blockquote className="border-l border-zinc-700 pl-6 mt-6 text-zinc-500 italic">
-                "Who are we before fate introduces itself?"
+                &ldquo;Who are we before fate introduces itself?&rdquo;
               </blockquote>
             </div>
           </div>
@@ -80,11 +80,11 @@ export default function EcosystemConclusion() {
               <p className="text-zinc-400 text-lg leading-relaxed">
                 Once lives are lived, memories emerge. Stories become legacy.
                 Voices become history. This pillar is dedicated to preserving
-                humanity's collective memory before it disappears into silence.
+                humanity&apos;s collective memory before it disappears into silence.
               </p>
 
               <blockquote className="border-l border-zinc-700 pl-6 mt-6 text-zinc-500 italic">
-                "What deserves to be remembered?"
+                &ldquo;What deserves to be remembered?&rdquo;
               </blockquote>
             </div>
           </div>
@@ -108,7 +108,7 @@ export default function EcosystemConclusion() {
               </p>
 
               <blockquote className="border-l border-zinc-700 pl-6 mt-6 text-zinc-500 italic">
-                "What must be released in order to move forward?"
+                &ldquo;What must be released in order to move forward?&rdquo;
               </blockquote>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function EcosystemConclusion() {
               </p>
 
               <blockquote className="border-l border-zinc-700 pl-6 mt-6 text-zinc-500 italic">
-                "Why did it happen?"
+                &ldquo;Why did it happen?&rdquo;
               </blockquote>
             </div>
           </div>
@@ -163,10 +163,10 @@ export default function EcosystemConclusion() {
                 resilience, reinvention, and the quiet process through which
                 people become someone they never imagined they could be.
               </p>
-
               <blockquote className="border-l border-amber-500/40 pl-6 mt-6 text-zinc-300 italic">
-                "Who do we become after everything changes?"
+                &ldquo;Who do we become after everything changes?&rdquo;
               </blockquote>
+
             </div>
           </div>
         </div>
