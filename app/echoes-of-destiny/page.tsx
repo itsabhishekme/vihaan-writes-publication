@@ -383,7 +383,7 @@ export default function EchoesOfDestinyPage() {
               <div className="absolute -left-12 bottom-16 max-w-sm rounded-[32px] border border-white/10 bg-black/70 backdrop-blur-2xl p-8">
 
                 <div className="text-6xl text-violet-300 leading-none mb-4">
-                  "
+                
                 </div>
 
                 <p className="text-zinc-300 leading-relaxed">
@@ -510,7 +510,7 @@ export default function EchoesOfDestinyPage() {
           <div className="max-w-5xl mx-auto text-center mt-40">
 
             <div className="text-8xl text-violet-300 mb-8">
-              "
+              
             </div>
 
             <h3 className="text-4xl md:text-5xl font-light leading-relaxed text-zinc-300">
@@ -828,7 +828,7 @@ export default function EchoesOfDestinyPage() {
           <div className="max-w-5xl mx-auto text-center mt-40">
 
             <div className="text-8xl text-emerald-300 mb-8">
-              "
+              
             </div>
 
             <h3 className="text-4xl md:text-5xl font-light leading-relaxed text-zinc-300">

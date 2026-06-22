@@ -355,8 +355,8 @@ export default function BeforeHerNameExistedPage() {
                 <div
                   key={i}
                   className={`relative flex items-center ${i % 2 === 0
-                      ? "lg:flex-row"
-                      : "lg:flex-row-reverse"
+                    ? "lg:flex-row"
+                    : "lg:flex-row-reverse"
                     }`}
                 >
 
@@ -528,12 +528,12 @@ export default function BeforeHerNameExistedPage() {
           <div className="max-w-4xl mx-auto text-center mt-32">
 
             <div className="text-7xl text-purple-300 mb-6">
-              "
+
             </div>
 
             <p className="text-3xl md:text-4xl font-light leading-relaxed text-zinc-300">
-              Looking back isn't about living in the past.
-              It's about understanding the path that brought
+              Looking back isn&apos;t about living in the past.
+              It&apos;s about understanding the path that brought
               us here and appreciating every step along the way.
             </p>
 
