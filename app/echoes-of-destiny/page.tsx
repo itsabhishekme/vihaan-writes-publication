@@ -216,46 +216,314 @@ export default function EchoesOfDestinyPage() {
       </section>
 
       {/* INTRO */}
-      <section className="py-32">
+      <section className="relative py-40 overflow-hidden">
 
-        <div className="max-w-7xl mx-auto px-6">
+        {/* Background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black" />
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+        {/* Ambient Glow Effects */}
+        <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-violet-500/10 rounded-full blur-[220px]" />
+        <div className="absolute bottom-0 right-0 w-[700px] h-[700px] bg-cyan-500/10 rounded-full blur-[220px]" />
+        <div className="absolute top-1/2 left-1/2 w-[900px] h-[900px] -translate-x-1/2 -translate-y-1/2 bg-white/[0.02] rounded-full blur-[250px]" />
 
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div
+            className="h-full w-full"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+              backgroundSize: "80px 80px",
+            }}
+          />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6">
+
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
+
+            {/* LEFT CONTENT */}
             <div>
 
-              <span className="uppercase tracking-[0.4em] text-zinc-500 text-sm">
+              {/* Label */}
+              <span className="uppercase tracking-[0.5em] text-violet-300 text-sm font-semibold">
                 About The Journey
               </span>
 
-              <h2 className="text-5xl font-black mt-6 mb-8">
-                Life Speaks Through Patterns
+              {/* Heading */}
+              <h2 className="mt-8 text-5xl md:text-6xl xl:text-7xl font-black leading-[1.05]">
+
+                Life Speaks
+                <span className="block bg-gradient-to-r from-violet-300 via-cyan-300 to-blue-300 bg-clip-text text-transparent">
+                  Through Patterns
+                </span>
+
               </h2>
 
-              <p className="text-zinc-400 text-lg leading-relaxed mb-6">
+              {/* Divider */}
+              <div className="w-32 h-[2px] bg-gradient-to-r from-violet-300 via-cyan-300 to-blue-300 mt-10 mb-10" />
+
+              {/* Description */}
+              <p className="text-zinc-400 text-xl leading-relaxed mb-8">
                 Some moments feel ordinary at first.
-                Years later they reveal themselves as turning points.
+                A brief conversation.
+                A forgotten decision.
+                A random encounter on an ordinary day.
               </p>
 
-              <p className="text-zinc-400 text-lg leading-relaxed">
+              <p className="text-zinc-500 text-lg leading-relaxed mb-8">
+                Yet years later those same moments reveal themselves
+                as hidden crossroads. Looking back, we begin to see
+                connections that were invisible while living them.
+              </p>
+
+              <p className="text-zinc-500 text-lg leading-relaxed mb-12">
                 A recurring dream.
                 A repeated number.
-                A chance meeting.
+                A place that keeps appearing.
                 An intuition that refuses to leave.
+                The echoes of life often arrive long before
+                we understand their meaning.
               </p>
 
+              {/* Feature Cards */}
+              <div className="grid sm:grid-cols-2 gap-5">
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-6">
+
+                  <div className="w-14 h-14 rounded-2xl bg-violet-500/10 flex items-center justify-center text-2xl mb-5">
+                    ✨
+                  </div>
+
+                  <h3 className="font-bold text-xl mb-3">
+                    Synchronicity
+                  </h3>
+
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Meaningful coincidences that seem too precise
+                    to be random.
+                  </p>
+
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-6">
+
+                  <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-2xl mb-5">
+                    🔄
+                  </div>
+
+                  <h3 className="font-bold text-xl mb-3">
+                    Repetition
+                  </h3>
+
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Patterns that continue appearing until
+                    their lesson is understood.
+                  </p>
+
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-6">
+
+                  <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-2xl mb-5">
+                    🌙
+                  </div>
+
+                  <h3 className="font-bold text-xl mb-3">
+                    Intuition
+                  </h3>
+
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Quiet guidance that often knows the path
+                    before logic can explain it.
+                  </p>
+
+                </div>
+
+                <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-6">
+
+                  <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center text-2xl mb-5">
+                    🧭
+                  </div>
+
+                  <h3 className="font-bold text-xl mb-3">
+                    Direction
+                  </h3>
+
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Discovering purpose through seemingly
+                    unrelated events.
+                  </p>
+
+                </div>
+
+              </div>
+
             </div>
 
-            <div className="relative h-[600px] rounded-[40px] overflow-hidden border border-white/10">
+            {/* RIGHT SIDE */}
+            <div className="relative">
 
-              <Image
-                src="/echoes/feature.jpg"
-                alt=""
-                fill
-                className="object-cover"
-              />
+              {/* Main Image */}
+              <div className="relative h-[750px] rounded-[42px] overflow-hidden border border-white/10">
+
+                <Image
+                  src="/echoes/feature.jpg"
+                  alt="Life Patterns"
+                  fill
+                  className="object-cover"
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+              </div>
+
+              {/* Floating Quote */}
+              <div className="absolute -left-12 bottom-16 max-w-sm rounded-[32px] border border-white/10 bg-black/70 backdrop-blur-2xl p-8">
+
+                <div className="text-6xl text-violet-300 leading-none mb-4">
+                  "
+                </div>
+
+                <p className="text-zinc-300 leading-relaxed">
+                  The patterns of our lives are often visible
+                  only when viewed from a distance.
+                </p>
+
+                <div className="mt-6 pt-5 border-t border-white/10">
+
+                  <p className="font-semibold">
+                    Echoes Project
+                  </p>
+
+                  <p className="text-sm text-zinc-500">
+                    Reflections & Meaning
+                  </p>
+
+                </div>
+
+              </div>
+
+              {/* Floating Stats */}
+              <div className="absolute top-10 right-10 rounded-[28px] border border-white/10 bg-black/70 backdrop-blur-2xl p-6">
+
+                <h3 className="text-4xl font-black text-cyan-300">
+                  1000+
+                </h3>
+
+                <p className="text-zinc-500 text-sm mt-2">
+                  Stories Analyzed
+                </p>
+
+              </div>
+
+              {/* Floating Badge */}
+              <div className="absolute top-1/2 -right-10 rounded-full border border-violet-500/20 bg-violet-500/10 backdrop-blur-xl px-6 py-4">
+
+                <span className="uppercase tracking-[0.3em] text-xs text-violet-300">
+                  Since 2025
+                </span>
+
+              </div>
 
             </div>
+
+          </div>
+
+          {/* Bottom Values */}
+          <div className="mt-40">
+
+            <div className="text-center mb-20">
+
+              <span className="uppercase tracking-[0.4em] text-zinc-500 text-sm">
+                Core Themes
+              </span>
+
+              <h3 className="text-5xl font-black mt-6">
+                Understanding
+                <span className="block text-cyan-300">
+                  The Invisible Threads
+                </span>
+              </h3>
+
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+
+              <div className="rounded-[36px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl">
+
+                <div className="text-5xl mb-6">
+                  🔍
+                </div>
+
+                <h4 className="text-2xl font-bold mb-5">
+                  Observation
+                </h4>
+
+                <p className="text-zinc-500 leading-relaxed">
+                  Learning to notice recurring symbols,
+                  moments and experiences.
+                </p>
+
+              </div>
+
+              <div className="rounded-[36px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl">
+
+                <div className="text-5xl mb-6">
+                  📖
+                </div>
+
+                <h4 className="text-2xl font-bold mb-5">
+                  Interpretation
+                </h4>
+
+                <p className="text-zinc-500 leading-relaxed">
+                  Discovering meaning hidden within
+                  repeated events and memories.
+                </p>
+
+              </div>
+
+              <div className="rounded-[36px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl">
+
+                <div className="text-5xl mb-6">
+                  🌌
+                </div>
+
+                <h4 className="text-2xl font-bold mb-5">
+                  Connection
+                </h4>
+
+                <p className="text-zinc-500 leading-relaxed">
+                  Understanding how seemingly unrelated
+                  moments shape a larger story.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Bottom Quote */}
+          <div className="max-w-5xl mx-auto text-center mt-40">
+
+            <div className="text-8xl text-violet-300 mb-8">
+              "
+            </div>
+
+            <h3 className="text-4xl md:text-5xl font-light leading-relaxed text-zinc-300">
+              Sometimes the answers we seek are not hidden.
+              They have been repeating themselves all along,
+              patiently waiting to be noticed.
+            </h3>
+
+            <div className="w-32 h-[2px] bg-gradient-to-r from-violet-300 via-cyan-300 to-blue-300 mx-auto mt-12" />
+
+            <p className="mt-8 uppercase tracking-[0.4em] text-sm text-zinc-500">
+              Echoes Of Meaning
+            </p>
 
           </div>
 
@@ -340,35 +608,240 @@ export default function EchoesOfDestinyPage() {
       </section>
 
       {/* TIMELINE */}
-      <section className="py-32 border-y border-white/10">
+      <section className="relative py-40 overflow-hidden border-y border-white/10">
 
-        <div className="max-w-6xl mx-auto px-6">
+        {/* Background Layers */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-950 to-black" />
 
-          <div className="text-center mb-24">
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[200px]" />
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[200px]" />
+        <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 bg-cyan-500/5 rounded-full blur-[250px]" />
 
-            <h2 className="text-6xl font-black">
-              Journey Of Meaning
+        <div className="relative max-w-7xl mx-auto px-6">
+
+          {/* Section Heading */}
+          <div className="max-w-5xl mx-auto text-center mb-32">
+
+            <span className="uppercase tracking-[0.5em] text-emerald-300 text-sm font-semibold">
+              Human Journey
+            </span>
+
+            <h2 className="mt-8 text-5xl md:text-6xl xl:text-7xl font-black leading-tight">
+              Journey Of
+              <span className="block bg-gradient-to-r from-emerald-300 via-cyan-300 to-teal-300 bg-clip-text text-transparent">
+                Meaning
+              </span>
             </h2>
+
+            <p className="mt-8 text-xl text-zinc-500 leading-relaxed max-w-3xl mx-auto">
+              Every meaningful life is shaped by moments of discovery,
+              struggle, reflection, growth and purpose. These milestones
+              tell the story of how ordinary experiences become extraordinary lessons.
+            </p>
 
           </div>
 
-          <div className="space-y-8">
+          {/* Timeline Wrapper */}
+          <div className="relative">
 
-            {timeline.map((item, index) => (
-              <div
-                key={index}
-                className="rounded-3xl border border-white/10 bg-white/[0.03] p-10"
-              >
-                <h3 className="text-3xl font-bold mb-4">
-                  {item.title}
+            {/* Center Line */}
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+
+            <div className="space-y-24">
+
+              {timeline.map((item, index) => (
+
+                <div
+                  key={index}
+                  className={`relative flex items-center ${index % 2 === 0
+                    ? "lg:flex-row"
+                    : "lg:flex-row-reverse"
+                    }`}
+                >
+
+                  {/* Card Side */}
+                  <div className="w-full lg:w-1/2">
+
+                    <div
+                      className={`group relative rounded-[36px] border border-white/10 bg-white/[0.03] backdrop-blur-xl p-10 md:p-12 transition-all duration-700 hover:-translate-y-3 hover:border-emerald-500/30 ${index % 2 === 0
+                        ? "lg:mr-20"
+                        : "lg:ml-20"
+                        }`}
+                    >
+
+                      {/* Hover Glow */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-700">
+                        <div className="absolute inset-0 rounded-[36px] bg-gradient-to-r from-emerald-500/5 to-cyan-500/5" />
+                      </div>
+
+                      {/* Timeline Number */}
+                      <div className="flex items-center gap-4 mb-8">
+
+                        <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-300 font-black text-xl">
+                          {String(index + 1).padStart(2, "0")}
+                        </div>
+
+                        <div>
+                          <p className="uppercase tracking-[0.3em] text-xs text-zinc-500">
+                            Chapter
+                          </p>
+
+                          <p className="text-emerald-300 font-semibold">
+                            Journey Stage
+                          </p>
+                        </div>
+
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-3xl md:text-4xl font-black mb-6 group-hover:text-emerald-300 transition-colors duration-500">
+                        {item.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-zinc-400 text-lg leading-relaxed mb-8">
+                        {item.description}
+                      </p>
+
+                      {/* Feature Grid */}
+                      <div className="grid sm:grid-cols-2 gap-4 mb-8">
+
+                        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+
+                          <h4 className="font-semibold mb-2">
+                            Key Lesson
+                          </h4>
+
+                          <p className="text-sm text-zinc-500 leading-relaxed">
+                            Important insights gained through
+                            experience, reflection and growth.
+                          </p>
+
+                        </div>
+
+                        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+
+                          <h4 className="font-semibold mb-2">
+                            Impact
+                          </h4>
+
+                          <p className="text-sm text-zinc-500 leading-relaxed">
+                            Lasting influence on future choices,
+                            beliefs and personal development.
+                          </p>
+
+                        </div>
+
+                      </div>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-3">
+
+                        <span className="px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-sm">
+                          Growth
+                        </span>
+
+                        <span className="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-sm">
+                          Reflection
+                        </span>
+
+                        <span className="px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-sm">
+                          Purpose
+                        </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  {/* Center Dot */}
+                  <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 z-20">
+
+                    <div className="relative">
+
+                      <div className="w-10 h-10 rounded-full bg-emerald-400 border-[6px] border-black" />
+
+                      <div className="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-20" />
+
+                    </div>
+
+                  </div>
+
+                  {/* Empty Side */}
+                  <div className="hidden lg:block w-1/2" />
+
+                </div>
+
+              ))}
+
+            </div>
+
+          </div>
+
+          {/* Statistics */}
+          <div className="mt-40">
+
+            <div className="grid md:grid-cols-4 gap-8">
+
+              <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+                <h3 className="text-5xl font-black text-emerald-300">
+                  25+
                 </h3>
-
-                <p className="text-zinc-400 text-lg">
-                  {item.description}
+                <p className="text-zinc-500 mt-3">
+                  Life Chapters
                 </p>
-
               </div>
-            ))}
+
+              <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+                <h3 className="text-5xl font-black text-cyan-300">
+                  500+
+                </h3>
+                <p className="text-zinc-500 mt-3">
+                  Reflections
+                </p>
+              </div>
+
+              <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+                <h3 className="text-5xl font-black text-teal-300">
+                  100+
+                </h3>
+                <p className="text-zinc-500 mt-3">
+                  Lessons Shared
+                </p>
+              </div>
+
+              <div className="rounded-[32px] border border-white/10 bg-white/[0.03] p-8 text-center backdrop-blur-xl">
+                <h3 className="text-5xl font-black text-emerald-300">
+                  Infinite
+                </h3>
+                <p className="text-zinc-500 mt-3">
+                  Possibilities
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Closing Quote */}
+          <div className="max-w-5xl mx-auto text-center mt-40">
+
+            <div className="text-8xl text-emerald-300 mb-8">
+              "
+            </div>
+
+            <h3 className="text-4xl md:text-5xl font-light leading-relaxed text-zinc-300">
+              Meaning is not found in a single moment.
+              It is discovered through countless experiences,
+              connections and lessons gathered throughout life.
+            </h3>
+
+            <div className="w-32 h-[2px] bg-gradient-to-r from-emerald-300 via-cyan-300 to-teal-300 mx-auto mt-12" />
+
+            <p className="mt-8 text-zinc-500 uppercase tracking-[0.4em] text-sm">
+              Journey Of Meaning
+            </p>
 
           </div>
 
