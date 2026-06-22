@@ -952,7 +952,7 @@ export default function EchoesOfDestinyPage() {
                 <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 mb-8">
 
                   <div className="text-5xl text-yellow-300 mb-3">
-                    "
+                    
                   </div>
 
                   <p className="text-zinc-300 italic leading-relaxed">
