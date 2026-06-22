@@ -1,3 +1,4 @@
+import DocumentaryEcosystem from "@/components/ecosystem/DocumentaryEcosystem";
 import { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -101,33 +102,144 @@ const productions = [
 export default function SoulfireChroniclesProductionPage() {
     return (
         <main className="bg-black text-white">
-            {/* Hero */}
-            <section className="relative overflow-hidden border-b border-white/10">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-purple-500/10 to-blue-500/10" />
 
-                <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8">
-                    <div className="mx-auto max-w-4xl text-center">
-                        <span className="rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-2 text-sm text-amber-300">
-                            Soulfire Chronicles Production
-                        </span>
+            <main className="min-h-screen bg-black text-white">
+                {/* Hero */}
+                <section className="relative overflow-hidden border-b border-white/10">
+                    {/* Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10" />
 
-                        <h1 className="mt-8 text-5xl font-bold tracking-tight md:text-7xl">
-                            Telling Stories
-                            <span className="block bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
-                                That Inspire Humanity
-                            </span>
-                        </h1>
-
-                        <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-gray-300">
-                            Soulfire Chronicles Production is dedicated to
-                            creating powerful documentaries, cinematic
-                            narratives, and visual experiences that illuminate
-                            minds, awaken souls, and celebrate the
-                            extraordinary journey of human life.
-                        </p>
+                    <div className="absolute inset-0">
+                        <div className="absolute left-1/4 top-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
+                        <div className="absolute right-1/4 bottom-0 h-96 w-96 rounded-full bg-purple-500/10 blur-3xl" />
                     </div>
-                </div>
-            </section>
+
+                    <div className="relative mx-auto max-w-7xl px-6 py-28 lg:px-8">
+                        <div className="mx-auto max-w-5xl text-center">
+                            {/* Badge */}
+                            <span className="inline-flex items-center gap-3 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-5 py-2 text-sm text-cyan-300">
+                                <svg
+                                    viewBox="0 0 100 100"
+                                    className="h-4 w-4"
+                                    fill="none"
+                                >
+                                    <circle
+                                        cx="50"
+                                        cy="50"
+                                        r="38"
+                                        stroke="currentColor"
+                                        strokeWidth="4"
+                                    />
+
+                                    <circle cx="50" cy="50" r="5" fill="currentColor" />
+
+                                    <circle cx="50" cy="18" r="5" fill="currentColor" />
+                                    <circle cx="80" cy="40" r="5" fill="currentColor" />
+                                    <circle cx="68" cy="76" r="5" fill="currentColor" />
+                                    <circle cx="32" cy="76" r="5" fill="currentColor" />
+                                    <circle cx="20" cy="40" r="5" fill="currentColor" />
+                                </svg>
+
+                                Documentary Ecosystem
+                            </span>
+
+                            {/* Heading */}
+                            <h1 className="mt-8 text-5xl font-bold tracking-tight md:text-7xl xl:text-8xl">
+                                Five Pillars.
+                                <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+                                    One Human Journey.
+                                </span>
+                            </h1>
+
+                            {/* Description */}
+                            <p className="mx-auto mt-8 max-w-4xl text-lg leading-relaxed text-gray-300 md:text-xl">
+                                The Soulfire Chronicles Documentary Ecosystem is a cinematic
+                                universe built around five interconnected documentary pillars.
+                                Together they explore identity, memory, healing, destiny, and
+                                transformation through stories that reveal what it means to be
+                                human.
+                            </p>
+
+                            {/* Statistics */}
+                            <div className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-4">
+                                <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                                    <div className="text-4xl font-light text-cyan-400">
+                                        05
+                                    </div>
+
+                                    <p className="mt-2 text-sm uppercase tracking-widest text-gray-500">
+                                        Pillars
+                                    </p>
+                                </div>
+
+                                <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                                    <div className="text-4xl font-light text-blue-400">
+                                        01
+                                    </div>
+
+                                    <p className="mt-2 text-sm uppercase tracking-widest text-gray-500">
+                                        Ecosystem
+                                    </p>
+                                </div>
+
+                                <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                                    <div className="text-4xl font-light text-purple-400">
+                                        ∞
+                                    </div>
+
+                                    <p className="mt-2 text-sm uppercase tracking-widest text-gray-500">
+                                        Stories
+                                    </p>
+                                </div>
+
+                                <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                                    <div className="text-4xl font-light text-indigo-400">
+                                        ∞
+                                    </div>
+
+                                    <p className="mt-2 text-sm uppercase tracking-widest text-gray-500">
+                                        Possibilities
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Narrative Flow */}
+                            <div className="mt-20 flex flex-wrap justify-center gap-4 text-sm md:text-base">
+                                <span className="rounded-full border border-white/10 px-5 py-2 text-gray-300">
+                                    Origin
+                                </span>
+
+                                <span className="text-gray-600">→</span>
+
+                                <span className="rounded-full border border-white/10 px-5 py-2 text-gray-300">
+                                    Memory
+                                </span>
+
+                                <span className="text-gray-600">→</span>
+
+                                <span className="rounded-full border border-white/10 px-5 py-2 text-gray-300">
+                                    Healing
+                                </span>
+
+                                <span className="text-gray-600">→</span>
+
+                                <span className="rounded-full border border-white/10 px-5 py-2 text-gray-300">
+                                    Destiny
+                                </span>
+
+                                <span className="text-gray-600">→</span>
+
+                                <span className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-5 py-2 text-cyan-300">
+                                    Transformation
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Documentary Ecosystem Sections */}
+                <DocumentaryEcosystem />
+            </main>
 
             {/* About Soulfire Chronicles Production - SEO Optimized */}
             <section

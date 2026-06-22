@@ -230,7 +230,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* =========================
-         FOUR PILLARS CONNECTED ECOSYSTEM
+         FIVE PILLARS CONNECTED ECOSYSTEM
         ========================== */}
       <section className="relative overflow-hidden bg-black py-32">
         {/* Background Effects */}
@@ -252,7 +252,7 @@ export default function ProjectsPage() {
             </div>
 
             <h2 className="mt-8 text-5xl font-extralight tracking-tight text-white md:text-7xl">
-              The Four
+              The Five
               <span className="block bg-gradient-to-r from-white via-white to-white/40 bg-clip-text text-transparent">
                 Pillars
               </span>
