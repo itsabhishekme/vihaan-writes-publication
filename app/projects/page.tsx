@@ -17,6 +17,7 @@ import {
   ScrollText,
   Layers3,
   Mail,
+  PlayCircle,
 } from "lucide-react";
 
 const projects = [
@@ -907,6 +908,156 @@ export default function ProjectsPage() {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+      <section className="relative overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-900 to-black py-20">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-red-500/10 blur-3xl" />
+          <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Header */}
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <span className="mb-4 inline-flex items-center rounded-full border border-red-500/20 bg-red-500/10 px-4 py-2 text-sm font-medium text-red-400">
+              Featured Video
+            </span>
+
+            <h2 className="mb-6 text-4xl font-bold tracking-tight text-white md:text-5xl">
+              Watch the Complete Story
+            </h2>
+
+            <p className="text-lg leading-relaxed text-zinc-400">
+              Experience this inspiring journey through a cinematic visual story.
+              Watch directly below and enjoy the full video without leaving the
+              page.
+            </p>
+          </div>
+
+          {/* Video Card */}
+          <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/50 shadow-2xl backdrop-blur-sm">
+            {/* Top Bar */}
+            <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+              <div>
+                <h3 className="font-semibold text-white">
+                  The Journey of Becoming
+                </h3>
+                <p className="text-sm text-zinc-400">
+                  Motivational Animated Story
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 rounded-full bg-red-500/10 px-4 py-2 text-red-400">
+                <PlayCircle size={18} />
+                <span className="text-sm font-medium">Now Playing</span>
+              </div>
+            </div>
+
+            {/* Video */}
+            <div className="relative aspect-video overflow-hidden">
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src="https://www.youtube.com/embed/eUwIwQ5yaVM"
+                title="YouTube Video Player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            {/* Footer */}
+            <div className="border-t border-white/10 bg-gradient-to-b from-zinc-900/60 to-black/40 p-8 lg:p-10">
+              <div className="grid gap-8 lg:grid-cols-4">
+
+                {/* About Video */}
+                <div className="lg:col-span-2">
+                  <span className="mb-3 inline-flex rounded-full border border-red-500/20 bg-red-500/10 px-3 py-1 text-xs font-medium text-red-400">
+                    Featured Documentary
+                  </span>
+
+                  <h3 className="mb-4 text-2xl font-bold text-white">
+                    The Journey of Becoming
+                  </h3>
+
+                  <p className="leading-relaxed text-zinc-400">
+                    Every experience shapes who we become. This cinematic animated
+                    story explores destiny, transformation, personal growth,
+                    resilience, and the unseen moments that define our lives.
+                    Through powerful visuals and storytelling, viewers are invited
+                    to reflect on their own journey of becoming.
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <span className="rounded-full bg-white/5 px-4 py-2 text-sm text-zinc-300">
+                      Motivation
+                    </span>
+                    <span className="rounded-full bg-white/5 px-4 py-2 text-sm text-zinc-300">
+                      Self Growth
+                    </span>
+                    <span className="rounded-full bg-white/5 px-4 py-2 text-sm text-zinc-300">
+                      Destiny
+                    </span>
+                    <span className="rounded-full bg-white/5 px-4 py-2 text-sm text-zinc-300">
+                      Inspiration
+                    </span>
+                  </div>
+                </div>
+
+                {/* Feature 1 */}
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red-500/10">
+                    🎬
+                  </div>
+
+                  <h4 className="mb-3 text-lg font-semibold text-white">
+                    Cinematic Storytelling
+                  </h4>
+
+                  <p className="text-sm leading-relaxed text-zinc-400">
+                    Carefully crafted visuals and emotional storytelling combine to
+                    create an engaging viewing experience.
+                  </p>
+                </div>
+
+                {/* Feature 2 */}
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10">
+                    ✨
+                  </div>
+
+                  <h4 className="mb-3 text-lg font-semibold text-white">
+                    Life Lessons
+                  </h4>
+
+                  <p className="text-sm leading-relaxed text-zinc-400">
+                    Explore themes of transformation, purpose, perseverance, and
+                    personal evolution through a meaningful narrative.
+                  </p>
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="my-10 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+              {/* Bottom Meta */}
+              <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-zinc-500 md:flex-row">
+                <p>
+                  © 2026 Documentary Experience. All rights reserved.
+                </p>
+
+                <div className="flex gap-6">
+                  <button className="transition hover:text-white">
+                    Share
+                  </button>
+                  <button className="transition hover:text-white">
+                    Watch Later
+                  </button>
+                  <button className="transition hover:text-white">
+                    Explore More
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
