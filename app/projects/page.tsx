@@ -903,43 +903,33 @@ export default function ProjectsPage() {
                       ))}
                     </div>
 
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-amber-300 to-orange-300 px-8 py-4 text-black font-bold transition hover:scale-105"
-                    >
-                      The Archive of Echoes
-                      <ArrowUpRight className="w-5 h-5" />
-                    </a>
-                  </div>
+                    <div className="space-y-5">
+                      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+                        <ScrollText className="w-6 h-6 text-amber-400 mb-4" />
+                        <h3 className="font-bold mb-3">Purpose</h3>
+                        <p className="text-zinc-400 text-sm leading-relaxed">
+                          Building meaningful digital experiences around stories,
+                          memory, identity, destiny, and the human condition.
+                        </p>
+                      </div>
 
-                  <div className="space-y-5">
-                    <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-                      <ScrollText className="w-6 h-6 text-amber-400 mb-4" />
-                      <h3 className="font-bold mb-3">Purpose</h3>
-                      <p className="text-zinc-400 text-sm leading-relaxed">
-                        Building meaningful digital experiences around stories,
-                        memory, identity, destiny, and the human condition.
-                      </p>
-                    </div>
+                      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+                        <Layers3 className="w-6 h-6 text-amber-400 mb-4" />
+                        <h3 className="font-bold mb-3">Format</h3>
+                        <p className="text-zinc-400 text-sm leading-relaxed">
+                          A blend of archives, reflections, essays,
+                          documentary-style narratives, and immersive storytelling.
+                        </p>
+                      </div>
 
-                    <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-                      <Layers3 className="w-6 h-6 text-amber-400 mb-4" />
-                      <h3 className="font-bold mb-3">Format</h3>
-                      <p className="text-zinc-400 text-sm leading-relaxed">
-                        A blend of archives, reflections, essays,
-                        documentary-style narratives, and immersive storytelling.
-                      </p>
-                    </div>
-
-                    <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
-                      <Clock3 className="w-6 h-6 text-amber-400 mb-4" />
-                      <h3 className="font-bold mb-3">Future Growth</h3>
-                      <p className="text-zinc-400 text-sm leading-relaxed">
-                        Continuously expanding through new stories, new voices,
-                        and new storytelling experiments.
-                      </p>
+                      <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
+                        <Clock3 className="w-6 h-6 text-amber-400 mb-4" />
+                        <h3 className="font-bold mb-3">Future Growth</h3>
+                        <p className="text-zinc-400 text-sm leading-relaxed">
+                          Continuously expanding through new stories, new voices,
+                          and new storytelling experiments.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
