@@ -1080,7 +1080,6 @@ export default function ProjectsPage() {
         </div>
       </section >
 
-
       <section className="relative min-h-screen bg-black text-white overflow-hidden">
         {/* Background Video */}
         <video
@@ -1103,55 +1102,106 @@ export default function ProjectsPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/80" />
 
         {/* Content */}
-        <div className="relative z-10 flex min-h-screen items-center justify-center px-6">
-          <div className="max-w-5xl text-center">
-            <p className="mb-4 text-xs md:text-sm tracking-[0.5em] uppercase text-zinc-400">
+        <div className="relative z-10 flex min-h-screen items-center justify-center px-6 py-24">
+          <div className="w-full max-w-6xl text-center">
+
+            {/* Trailer Video */}
+            <div className="mx-auto mb-12 overflow-hidden rounded-3xl border border-white/10 bg-black/40 shadow-[0_0_80px_rgba(255,255,255,0.05)] backdrop-blur-sm">
+              <div className="relative aspect-video w-full">
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src="https://www.youtube.com/embed/oMnXbMWYB_4?rel=0&modestbranding=1"
+                  title="Before Her Name Existed Trailer"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+
+            <p className="mb-4 text-xs tracking-[0.5em] uppercase text-zinc-400 md:text-sm">
               Documentary Trailer • 2026
             </p>
 
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-tight leading-none">
+            <h1 className="font-serif text-5xl font-light leading-none tracking-tight md:text-7xl lg:text-8xl">
               Before Her Name Existed
             </h1>
 
             <div className="mx-auto my-8 h-px w-32 bg-gradient-to-r from-transparent via-white/70 to-transparent" />
 
-            <p className="mx-auto max-w-3xl text-lg md:text-2xl text-zinc-300 leading-relaxed font-light">
+            <p className="mx-auto max-w-3xl text-lg font-light leading-relaxed text-zinc-300 md:text-2xl">
               A story written before the person it was written for entered my life.
             </p>
 
             <div className="mt-12 flex flex-col items-center gap-6">
-              <span className="rounded-full border border-white/20 px-6 py-2 text-xs tracking-[0.3em] uppercase text-zinc-400">
+              <span className="rounded-full border border-white/20 px-6 py-2 text-xs uppercase tracking-[0.3em] text-zinc-400">
                 Coming 2026
               </span>
 
               <button
                 onClick={() => {
-                  const video = document.querySelector("video");
-                  if (video) {
-                    video.muted = false;
-                    video.play();
+                  const trailerSection =
+                    document.getElementById("documentary-trailer");
+
+                  if (trailerSection) {
+                    trailerSection.scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                    });
                   }
                 }}
-                className="group flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-8 py-4 backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/40"
+                className="group flex items-center gap-3 rounded-full border border-white/20 bg-white/5 px-8 py-4 backdrop-blur-sm transition-all duration-300 hover:border-white/40 hover:bg-white/10"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 transition-transform duration-300 group-hover:scale-110">
                   ▶
                 </div>
-                <span className="tracking-widest uppercase text-sm">
+
+                <span className="text-sm uppercase tracking-widest">
                   Watch Trailer
                 </span>
               </button>
             </div>
 
-            <div className="mt-20 text-zinc-500 text-xs tracking-[0.4em] uppercase">
+            {/* Film Information */}
+            <div className="mx-auto mt-16 max-w-4xl">
+              <div className="grid grid-cols-1 gap-6 border-t border-white/10 pt-8 md:grid-cols-3">
+                <div>
+                  <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                    Genre
+                  </p>
+                  <p className="text-zinc-300">
+                    Documentary
+                  </p>
+                </div>
+
+                <div>
+                  <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                    Theme
+                  </p>
+                  <p className="text-zinc-300">
+                    Fate, Timing & Love
+                  </p>
+                </div>
+
+                <div>
+                  <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                    Release
+                  </p>
+                  <p className="text-zinc-300">
+                    2026
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-20 text-xs uppercase tracking-[0.4em] text-zinc-500">
               A Documentary About Fate, Timing & Unwritten Love
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* CTA */}
-      < section className="px-6 pb-32" >
+      <section className="px-6 pb-32">
         <div className="max-w-6xl mx-auto rounded-[40px] border border-white/10 bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-12 md:p-24 text-center backdrop-blur-xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-5 py-2 mb-8">
             <Sparkles className="w-4 h-4 text-amber-400" />
