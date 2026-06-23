@@ -286,7 +286,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             {/* Documentary Button */}
             <Link
-              href="/soulfire-chronicles-production"
+              href="/documentary"
               onClick={closeMenu}
               className="group relative overflow-hidden rounded-2xl border border-white/20 bg-white/10 px-5 py-3 font-medium text-white backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/40 hover:bg-white/15 hover:shadow-[0_10px_30px_rgba(255,120,50,0.25)]"
             >
@@ -329,7 +329,7 @@ export default function Navbar() {
 
             {/* MOBILE MENU ITEM */}
             <Link
-              href="/soulfire-chronicles-production"
+              href="/documentary"
               onClick={closeMenu}
               className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white transition-all duration-300 hover:border-orange-400/30 hover:bg-white/10 md:hidden"
             >
