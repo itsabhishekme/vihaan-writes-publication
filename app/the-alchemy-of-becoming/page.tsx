@@ -111,7 +111,7 @@ export default function TheAlchemyOfBecomingPage() {
                     {/* CTA */}
                     <div className="mt-14 flex flex-wrap justify-center gap-5">
                         <Link
-                            href="#journeys"
+                            href="https://the-alchemy-of-becoming.vercel.app/"
                             className="rounded-full bg-emerald-500 px-10 py-5 text-lg font-medium text-black transition duration-300 hover:scale-105"
                         >
                             Explore Stories
