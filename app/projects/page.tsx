@@ -4,18 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-  ArrowUpRight,
   ArrowRight,
   Sparkles,
   Globe,
   BookOpen,
   Heart,
-  Clock3,
   Feather,
   Stars,
   Quote,
-  ScrollText,
-  Layers3,
   Mail,
   PlayCircle,
 } from "lucide-react";
@@ -1160,41 +1156,168 @@ export default function ProjectsPage() {
                 </span>
               </button>
             </div>
-
             {/* Film Information */}
-            <div className="mx-auto mt-16 max-w-4xl">
-              <div className="grid grid-cols-1 gap-6 border-t border-white/10 pt-8 md:grid-cols-3">
-                <div>
-                  <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
-                    Genre
-                  </p>
-                  <p className="text-zinc-300">
-                    Documentary
+            <div className="mx-auto mt-20 max-w-6xl">
+              <div className="border-t border-white/10 pt-10">
+                <h2 className="mb-10 text-center text-3xl font-light tracking-[0.2em] text-white">
+                  Film Information
+                </h2>
+
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+
+                  <div>
+                    <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                      Genre
+                    </p>
+                    <p className="text-lg text-zinc-300">
+                      Documentary
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                      Theme
+                    </p>
+                    <p className="text-lg text-zinc-300">
+                      Fate, Timing & Love
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                      Release
+                    </p>
+                    <p className="text-lg text-zinc-300">
+                      2030
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                      Runtime
+                    </p>
+                    <p className="text-lg text-zinc-300">
+                      95 Minutes
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                      Language
+                    </p>
+                    <p className="text-lg text-zinc-300">
+                      English • Hindi
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                      Director
+                    </p>
+                    <p className="text-lg text-zinc-300">
+                      Soulfire Chronicles
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                      Cinematography
+                    </p>
+                    <p className="text-lg text-zinc-300">
+                      Natural & Minimal
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                      Status
+                    </p>
+                    <p className="text-lg text-emerald-400">
+                      Coming Soon
+                    </p>
+                  </div>
+
+                </div>
+
+                {/* Synopsis */}
+                <div className="mx-auto mt-16 max-w-4xl text-center">
+                  <h3 className="mb-6 text-xl font-light tracking-widest text-white">
+                    Synopsis
+                  </h3>
+                  <p className="leading-8 text-zinc-400">
+                    Some stories are never written—they simply happen. This documentary
+                    explores the mysterious intersections of fate, timing, coincidence,
+                    and human connection. Through real moments, cinematic visuals, and
+                    heartfelt storytelling, it asks one timeless question:
+                    <span className="mt-6 block text-lg italic text-zinc-200">
+                      &ldquo;Are we truly in control of our destiny, or does destiny quietly
+                      guide us?&rdquo;
+                    </span>
                   </p>
                 </div>
 
-                <div>
-                  <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
-                    Theme
+                {/* Quote */}
+                <div className="mx-auto mt-20 max-w-3xl border-l-2 border-white/20 pl-6">
+                  <p className="text-2xl font-light italic leading-relaxed text-white">
+                    &ldquo;Sometimes the right person arrives at the wrong time&hellip; only to become
+                    the right story.&rdquo;
                   </p>
-                  <p className="text-zinc-300">
-                    Fate, Timing & Love
+
+                  <p className="mt-4 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                    — Documentary Tagline
                   </p>
                 </div>
 
-                <div>
-                  <p className="mb-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
-                    Release
+                {/* Stats */}
+                <div className="mt-20 grid grid-cols-2 gap-8 border-t border-white/10 pt-10 text-center md:grid-cols-4">
+
+                  <div>
+                    <h4 className="text-4xl font-light text-white">2030</h4>
+                    <p className="mt-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                      Release Year
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-4xl font-light text-white">95</h4>
+                    <p className="mt-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                      Minutes
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-4xl font-light text-white">4K</h4>
+                    <p className="mt-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                      Resolution
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-4xl font-light text-white">∞</h4>
+                    <p className="mt-2 text-xs uppercase tracking-[0.3em] text-zinc-500">
+                      Emotions
+                    </p>
+                  </div>
+
+                </div>
+
+                {/* Footer Text */}
+                <div className="mt-24 text-center">
+                  <p className="text-xs uppercase tracking-[0.45em] text-zinc-500">
+                    A Documentary About Fate, Timing & Unwritten Love
                   </p>
-                  <p className="text-zinc-300">
-                    2026
+
+                  <h3 className="mt-6 text-4xl font-light text-white md:text-5xl">
+                    Every Story Begins Before We Notice It.
+                  </h3>
+
+                  <p className="mx-auto mt-6 max-w-2xl leading-8 text-zinc-400">
+                    A cinematic exploration of unexpected encounters, silent emotions,
+                    unforgettable memories, and the invisible threads that connect two
+                    lives long before they ever meet.
                   </p>
                 </div>
               </div>
-            </div>
-
-            <div className="mt-20 text-xs uppercase tracking-[0.4em] text-zinc-500">
-              A Documentary About Fate, Timing & Unwritten Love
             </div>
           </div>
         </div>
