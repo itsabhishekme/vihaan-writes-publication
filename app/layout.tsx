@@ -77,10 +77,14 @@ const SITE_URL =
    SITE NAME
 ========================================================= */
 
+const DEFAULT_SITE_NAME =
+  'Vihaan Writes | A world of soulful literature, karmic reflections, emotional storytelling, and timeless words written before destiny arrived.';
+
 const SITE_NAME: string =
-  typeof metadataConfig.title === 'string'
+  typeof metadataConfig.title === 'string' &&
+  metadataConfig.title.trim().length > 0
     ? metadataConfig.title.trim()
-    : 'Vihaan Writes'
+    : DEFAULT_SITE_NAME;
 
 /* =========================================================
    SITE DESCRIPTION
