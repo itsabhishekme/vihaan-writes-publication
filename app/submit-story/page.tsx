@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, type DragEvent } from "react";
+
 import {
   BookOpen,
   PenSquare,
@@ -17,65 +18,152 @@ import {
   BarChart3,
 } from "lucide-react";
 
+
+import { useEffect } from "react";
+
+import type {
+  ChangeEvent,
+} from "react";
+
+type CoverImage = {
+  file: File;
+  preview: string;
+};
+
+const AVAILABLE_TAGS = [
+  "Inspiration",
+  "Growth",
+  "Healing",
+  "Courage",
+  "Hope",
+  "Adversity",
+  "Transformation",
+  "Family",
+  "Love",
+  "Faith",
+] as const;
+
+const CATEGORIES = [
+  "Love",
+  "Destiny",
+  "Life Lessons",
+  "Childhood",
+  "Family",
+  "Friendship",
+  "Personal Growth",
+  "Travel",
+  "Dreams",
+  "Human Experience",
+] as const;
+
 export default function SubmitStoryPage() {
+  // Form State
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
+  const [email, setEmail] = useState("");
   const [category, setCategory] = useState("");
   const [story, setStory] = useState("");
-  const [email, setEmail] = useState("");
-  const [consent, setConsent] = useState(false);
+
+  // UI State
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [coverImage, setCoverImage] = useState<{ file: File; preview: string } | null>(null);
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const [coverImage, setCoverImage] = useState<CoverImage | null>(null);
+  const [consent, setConsent] = useState(false);
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    return () => {
+      if (coverImage?.preview) {
+        URL.revokeObjectURL(coverImage.preview);
+      }
+    };
+  }, [coverImage]);
 
   const handleImageSelect = (file?: File | null) => {
     if (!file) return;
 
-    const preview = URL.createObjectURL(file);
-    setCoverImage({ file, preview });
-  };
+    if (!file.type.startsWith("image/")) return;
 
-  const handleDrop = (event: DragEvent<HTMLDivElement>) => {
-    event.preventDefault();
-
-    const droppedFile = event.dataTransfer.files?.[0];
-    if (droppedFile) {
-      handleImageSelect(droppedFile);
+    if (coverImage?.preview) {
+      URL.revokeObjectURL(coverImage.preview);
     }
+
+    setCoverImage({
+      file,
+      preview: URL.createObjectURL(file),
+    });
   };
 
-  const availableTags = [
-    "Inspiration",
-    "Growth",
-    "Healing",
-    "Courage",
-    "Hope",
-    "Adversity",
-    "Transformation",
-    "Family",
-    "Love",
-    "Faith",
-  ];
+  const handleFileChange = (
+    e: ChangeEvent<HTMLInputElement>
+  ) => {
+    handleImageSelect(e.target.files?.[0]);
+  };
+
+  const handleDrop = (
+    e: DragEvent<HTMLDivElement>
+  ) => {
+    e.preventDefault();
+    handleImageSelect(e.dataTransfer.files?.[0]);
+  };
+
+  const handleDragOver = (
+    e: DragEvent<HTMLDivElement>
+  ) => {
+    e.preventDefault();
+  };
 
   const toggleTag = (tag: string) => {
-    setSelectedTags((prevTags) =>
-      prevTags.includes(tag)
-        ? prevTags.filter((item) => item !== tag)
-        : [...prevTags, tag]
+    setSelectedTags((prev) =>
+      prev.includes(tag)
+        ? prev.filter((item) => item !== tag)
+        : [...prev, tag]
     );
   };
 
-  const categories = [
-    "Love",
-    "Destiny",
-    "Life Lessons",
-    "Childhood",
-    "Family",
-    "Friendship",
-    "Personal Growth",
-    "Travel",
-    "Dreams",
-    "Human Experience",
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const payload = {
+      title,
+      author,
+      email,
+      category,
+      story,
+      tags: selectedTags,
+      consent,
+      coverImage: coverImage?.file,
+    };
+
+    console.log(payload);
+  };
+
+  const progressSteps = [
+    {
+      label: "Title",
+      icon: <PenSquare className="h-6 w-6 text-zinc-400" />,
+      completed: Boolean(title),
+    },
+    {
+      label: "Author",
+      icon: <Users className="h-6 w-6 text-zinc-400" />,
+      completed: Boolean(author),
+    },
+    {
+      label: "Email",
+      icon: <MessageSquare className="h-6 w-6 text-zinc-400" />,
+      completed: Boolean(email),
+    },
+    {
+      label: "Category",
+      icon: <Tag className="h-6 w-6 text-zinc-400" />,
+      completed: Boolean(category),
+    },
+    {
+      label: "Story",
+      icon: <BookOpen className="h-6 w-6 text-zinc-400" />,
+      completed: Boolean(story),
+    },
   ];
 
   return (
@@ -241,7 +329,7 @@ export default function SubmitStoryPage() {
                     >
                       <option value="">Choose Category</option>
 
-                      {categories.map((item) => (
+                      {CATEGORIES.map((item) => (
                         <option key={item}>{item}</option>
                       ))}
                     </select>
@@ -254,7 +342,7 @@ export default function SubmitStoryPage() {
                     </label>
 
                     <div className="flex flex-wrap gap-3">
-                      {availableTags.map((tag) => {
+                      {AVAILABLE_TAGS.map((tag) => {
                         const selected = selectedTags.includes(tag);
 
                         return (
@@ -492,47 +580,25 @@ export default function SubmitStoryPage() {
 
                 {/* Progress Steps */}
                 <div className="space-y-4">
-                  {[
-                    {
-                      label: "Story Title",
-                      value: title,
-                      icon: "📝",
-                    },
-                    {
-                      label: "Author Information",
-                      value: author,
-                      icon: "👤",
-                    },
-                    {
-                      label: "Email Address",
-                      value: email,
-                      icon: "📧",
-                    },
-                    {
-                      label: "Story Category",
-                      value: category,
-                      icon: "🏷️",
-                    },
-                    {
-                      label: "Story Content",
-                      value: story.length > 100,
-                      icon: "📖",
-                    },
-                  ].map((step) => (
+                  {progressSteps.map((step) => (
                     <div
                       key={step.label}
-                      className={`flex items-center gap-4 rounded-2xl border p-4 transition-all duration-300 ${step.value
-                        ? "border-emerald-500/20 bg-emerald-500/10"
-                        : "border-white/10 bg-white/[0.03]"
+                      className={`flex items-center gap-4 rounded-2xl border p-4 transition-all duration-300 ${step.completed
+                          ? "border-emerald-500/20 bg-emerald-500/10"
+                          : "border-white/10 bg-white/[0.03]"
                         }`}
                     >
                       <div
-                        className={`flex h-12 w-12 items-center justify-center rounded-2xl text-xl ${step.value
-                          ? "bg-emerald-500/20"
-                          : "bg-white/5"
+                        className={`flex h-12 w-12 items-center justify-center rounded-2xl text-xl transition-all ${step.completed
+                            ? "bg-emerald-500/20 text-emerald-400"
+                            : "bg-white/5"
                           }`}
                       >
-                        {step.value ? "✓" : step.icon}
+                        {step.completed ? (
+                          <CheckCircle className="h-6 w-6" />
+                        ) : (
+                          step.icon
+                        )}
                       </div>
 
                       <div className="flex-1">
@@ -540,14 +606,17 @@ export default function SubmitStoryPage() {
                           {step.label}
                         </h4>
 
-                        <p className="text-sm text-zinc-500">
-                          {step.value
-                            ? "Completed"
-                            : "Pending"}
+                        <p
+                          className={`text-sm ${step.completed
+                              ? "text-emerald-400"
+                              : "text-zinc-500"
+                            }`}
+                        >
+                          {step.completed ? "Completed" : "Pending"}
                         </p>
                       </div>
 
-                      {step.value && (
+                      {step.completed && (
                         <CheckCircle className="h-5 w-5 text-emerald-400" />
                       )}
                     </div>
