@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, type DragEvent } from "react";
 import {
   BookOpen,
   PenSquare,
@@ -23,6 +23,47 @@ export default function SubmitStoryPage() {
   const [category, setCategory] = useState("");
   const [story, setStory] = useState("");
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [coverImage, setCoverImage] = useState<{ file: File; preview: string } | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  const handleImageSelect = (file?: File | null) => {
+    if (!file) return;
+
+    const preview = URL.createObjectURL(file);
+    setCoverImage({ file, preview });
+  };
+
+  const handleDrop = (event: DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+
+    const droppedFile = event.dataTransfer.files?.[0];
+    if (droppedFile) {
+      handleImageSelect(droppedFile);
+    }
+  };
+
+  const availableTags = [
+    "Inspiration",
+    "Growth",
+    "Healing",
+    "Courage",
+    "Hope",
+    "Adversity",
+    "Transformation",
+    "Family",
+    "Love",
+    "Faith",
+  ];
+
+  const toggleTag = (tag: string) => {
+    setSelectedTags((prevTags) =>
+      prevTags.includes(tag)
+        ? prevTags.filter((item) => item !== tag)
+        : [...prevTags, tag]
+    );
+  };
 
   const categories = [
     "Love",
@@ -213,55 +254,89 @@ export default function SubmitStoryPage() {
                     </label>
 
                     <div className="flex flex-wrap gap-3">
-                      {[
-                        "Life",
-                        "Motivation",
-                        "Love",
-                        "Travel",
-                        "Career",
-                        "Family",
-                        "Success",
-                        "Failure",
-                        "Dreams",
-                        "Growth",
-                      ].map((tag) => (
-                        <button
-                          key={tag}
-                          type="button"
-                          className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm transition-all hover:border-purple-500 hover:bg-purple-500/10"
-                        >
-                          #{tag}
-                        </button>
-                      ))}
+                      {availableTags.map((tag) => {
+                        const selected = selectedTags.includes(tag);
+
+                        return (
+                          <button
+                            key={tag}
+                            type="button"
+                            onClick={() => toggleTag(tag)}
+                            className={`rounded-full border px-4 py-2 text-sm transition-all duration-200 ${selected
+                              ? "border-purple-500 bg-purple-600 text-white shadow-lg shadow-purple-500/20"
+                              : "border-white/10 bg-white/5 text-zinc-300 hover:border-purple-500 hover:bg-purple-500/10 hover:text-white"
+                              }`}
+                          >
+                            #{tag}
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
 
-                  {/* Upload Area */}
+                  {/* Cover Image */}
                   <div>
                     <label className="mb-4 block text-sm font-medium text-zinc-300">
                       Cover Image
                     </label>
 
-                    <div className="group rounded-[32px] border-2 border-dashed border-white/10 bg-black/20 p-14 text-center transition-all duration-300 hover:border-purple-500 hover:bg-purple-500/5">
-                      <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-white/5">
-                        <Upload className="h-10 w-10 text-zinc-400 transition-all group-hover:scale-110 group-hover:text-purple-400" />
-                      </div>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept="image/png,image/jpeg,image/jpg,image/webp"
+                      className="hidden"
+                      onChange={(e) => {
+                        const file = e.target.files?.[0];
+                        if (file) handleImageSelect(file);
+                      }}
+                    />
 
-                      <h3 className="text-2xl font-semibold text-white">
-                        Upload Cover Image
-                      </h3>
+                    <div
+                      onDragOver={(e) => e.preventDefault()}
+                      onDrop={handleDrop}
+                      className="group rounded-[32px] border-2 border-dashed border-white/10 bg-black/20 p-10 text-center transition-all duration-300 hover:border-purple-500 hover:bg-purple-500/5"
+                    >
+                      {coverImage ? (
+                        <div className="space-y-5">
+                          <img
+                            src={coverImage.preview}
+                            alt="Cover Preview"
+                            className="mx-auto h-64 w-full max-w-lg rounded-2xl object-cover shadow-xl"
+                          />
 
-                      <p className="mx-auto mt-3 max-w-md text-zinc-500">
-                        Drag & drop your image here or browse files from your device.
-                        PNG, JPG and WEBP formats supported.
-                      </p>
+                          <button
+                            type="button"
+                            onClick={() => fileInputRef.current?.click()}
+                            className="rounded-xl bg-purple-600 px-6 py-3 font-medium text-white transition hover:bg-purple-700"
+                          >
+                            Change Image
+                          </button>
+                        </div>
+                      ) : (
+                        <>
+                          <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-white/5">
+                            <Upload className="h-10 w-10 text-zinc-400 transition-all duration-300 group-hover:scale-110 group-hover:text-purple-400" />
+                          </div>
 
-                      <button
-                        type="button"
-                        className="mt-8 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 font-semibold transition-all hover:scale-105"
-                      >
-                        Choose Image
-                      </button>
+                          <h3 className="text-2xl font-semibold text-white">
+                            Upload Cover Image
+                          </h3>
+
+                          <p className="mx-auto mt-3 max-w-md text-zinc-500">
+                            Drag & drop your image here or click the button below.
+                            <br />
+                            PNG, JPG, JPEG and WEBP supported.
+                          </p>
+
+                          <button
+                            type="button"
+                            onClick={() => fileInputRef.current?.click()}
+                            className="mt-8 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/30"
+                          >
+                            Choose Image
+                          </button>
+                        </>
+                      )}
                     </div>
                   </div>
 
@@ -294,6 +369,8 @@ export default function SubmitStoryPage() {
                     <label className="flex items-start gap-4">
                       <input
                         type="checkbox"
+                        checked={consent}
+                        onChange={(e) => setConsent(e.target.checked)}
                         className="mt-1 h-5 w-5 rounded border-white/20"
                       />
 
