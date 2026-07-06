@@ -134,26 +134,23 @@ const socials: SocialItem[] = [
 
 const exploreItems: ExploreItem[] = [
   {
-    icon: HiOutlineBookOpen,
-    title: "The Human Archive",
-    desc: "A living collection of humanity's stories, memories, reflections, lessons, turning points, and defining moments. Every story becomes a preserved piece of collective human history, documenting how ordinary lives create extraordinary meaning.",
-    href: "/the-human-archive",
-  },
-
-  {
     icon: HiOutlineSparkles,
     title: "Before Her Name Existed",
     desc: "An exploration of destiny before arrival. A journey through intuition, timing, dreams, synchronicities, unanswered questions, and the invisible chapters that existed before a person became part of the story.",
     href: "/before-her-name-existed",
   },
-
+  {
+    icon: HiOutlineBookOpen,
+    title: "The Human Archive",
+    desc: "A living collection of humanity's stories, memories, reflections, lessons, turning points, and defining moments. Every story becomes a preserved piece of collective human history, documenting how ordinary lives create extraordinary meaning.",
+    href: "/the-human-archive",
+  },
   {
     icon: HiOutlineEnvelope,
     title: "Letters Never Sent",
     desc: "A collection of unspoken emotions, unfinished conversations, untold truths, and words that remained trapped between memory and silence. Letters written for healing, reflection, forgiveness, closure, and understanding.",
     href: "/letters-never-sent",
   },
-
   {
     icon: HiOutlineGlobeAlt,
     title: "Echoes of Destiny",
@@ -165,13 +162,6 @@ const exploreItems: ExploreItem[] = [
     title: "The Alchemy of Becoming",
     desc: "Stories of reinvention, resilience, personal growth, and the courageous evolution of the human spirit. Exploring the transformative moments that shape identity, reveal purpose, and turn life's lessons into wisdom. A journey through growth, self-discovery, and the extraordinary process of becoming who we are meant to be.",
     href: "/the-alchemy-of-becoming",
-  },
-
-  {
-    icon: HiOutlineFilm,
-    title: "Soulfire Chronicles Production",
-    desc: "Soulfire Chronicles Production was founded on the belief that stories possess the power to transform lives. Through documentaries, films, interviews, and cinematic storytelling, we explore themes of destiny, spirituality, human connection, personal growth, and extraordinary experiences.",
-    href: "/soulfire-chronicles-production",
   },
 
 ];
