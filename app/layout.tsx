@@ -78,8 +78,8 @@ const SITE_URL =
 ========================================================= */
 
 const DEFAULT_SITE_NAME =
-  'Vihaan Writes | A world of soulful literature, karmic reflections, emotional storytelling, and timeless words written before destiny arrived.';
-
+  'Vihaan Writes | Soulful Stories, Poetry, Karmic Reflections, Life Lessons & Emotional Storytelling';
+  
 const SITE_NAME: string =
   typeof metadataConfig.title === 'string' &&
   metadataConfig.title.trim().length > 0
